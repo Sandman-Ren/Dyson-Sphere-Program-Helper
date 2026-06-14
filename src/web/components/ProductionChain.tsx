@@ -83,16 +83,14 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
                 onValueChange={(v) => onMachineChange(node.item, v)}
               >
                 <SelectTrigger className="h-9 min-w-0 flex-1 text-xs sm:h-7">
-                  <span className="flex items-center gap-1.5 truncate">
-                    <ItemIcon id={node.machine.id} size={16} />
-                    <SelectValue />
-                  </span>
+                  <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
                   {producers.map((m) => (
                     <SelectItem key={m.id} value={m.id}>
-                      <span className="flex items-center gap-1.5">
-                        <ItemIcon id={m.id} size={16} />{m.name}
+                      <span className="flex min-w-0 items-center gap-1.5">
+                        <ItemIcon id={m.id} size={16} />
+                        <span className="truncate">{m.name}</span>
                       </span>
                     </SelectItem>
                   ))}

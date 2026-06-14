@@ -116,8 +116,9 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
               <SelectItem value="none">None</SelectItem>
               {proliferators.map((p) => (
                 <SelectItem key={p.id} value={p.id}>
-                  <span className="flex items-center gap-1.5">
-                    <ItemIcon id={p.tier} size={16} />{p.name}
+                  <span className="flex min-w-0 items-center gap-1.5">
+                    <ItemIcon id={p.tier} size={16} />
+                    <span className="truncate">{p.name}</span>
                   </span>
                 </SelectItem>
               ))}
