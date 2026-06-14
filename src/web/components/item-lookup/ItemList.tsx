@@ -69,7 +69,8 @@ export function ItemList({ items, selectedItem, onSelectItem }: ItemListProps) {
                     aria-current={active ? 'true' : undefined}
                     className={cn(
                       'flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-sm cursor-pointer transition-colors',
-                      'hover:bg-accent',
+                      'hover:bg-accent active:bg-accent/70',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                       active && 'bg-accent font-medium text-primary',
                     )}
                   >

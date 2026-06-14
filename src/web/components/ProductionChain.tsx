@@ -40,40 +40,49 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
   return (
     <div>
       <div
-        className={cn('flex items-center gap-2 rounded px-2 py-1.5 hover:bg-accent/50')}
-        style={{ paddingLeft: depth * 18 + 8 }}
+        className={cn(
+          'flex flex-wrap items-center gap-x-2 gap-y-1 rounded py-1.5 pr-2 hover:bg-accent/50',
+          // Responsive indent: tighter steps on mobile to preserve row width.
+          'pl-[calc(var(--d)*0.75rem_+_0.5rem)] sm:pl-[calc(var(--d)*1.125rem_+_0.5rem)]',
+        )}
+        style={{ '--d': depth } as React.CSSProperties}
       >
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          className={cn('flex size-4 items-center justify-center text-muted-foreground', !hasChildren && 'invisible')}
+          className={cn(
+            'flex size-6 shrink-0 items-center justify-center rounded text-muted-foreground transition-colors sm:size-5',
+            'hover:text-foreground active:text-foreground',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+            !hasChildren && 'invisible',
+          )}
           aria-label={open ? 'Collapse' : 'Expand'}
         >
           <ChevronRightIcon className={cn('size-4 transition-transform', open && 'rotate-90')} />
         </button>
 
-        <ItemIcon id={node.item} size={22} tinted />
-        <span className="font-medium">{displayName(node.item)}</span>
+        <ItemIcon id={node.item} size={22} tinted className="shrink-0" />
+        <span className="min-w-0 truncate font-medium">{displayName(node.item)}</span>
 
         {node.proliferated && (
           <Tooltip>
             <TooltipTrigger asChild>
-              <SparklesIcon className="size-3.5 text-amber" />
+              <SparklesIcon className="size-3.5 shrink-0 text-amber" />
             </TooltipTrigger>
             <TooltipContent>Proliferator applied</TooltipContent>
           </Tooltip>
         )}
 
-        <span className="ml-auto font-medium tabular-nums text-primary">{rate(node.ratePerSecond, timeUnit)}</span>
+        <span className="ml-auto shrink-0 font-medium tabular-nums text-primary">{rate(node.ratePerSecond, timeUnit)}</span>
 
         {node.machine ? (
-          <div className="flex w-56 items-center gap-1.5">
+          <div className="flex w-full items-center gap-1.5 sm:w-56 sm:shrink-0">
             {producers.length > 1 ? (
               <Select
                 value={node.machine.id}
                 onValueChange={(v) => onMachineChange(node.item, v)}
               >
-                <SelectTrigger className="h-7 min-w-0 flex-1 text-xs">
+                <SelectTrigger className="h-9 min-w-0 flex-1 text-xs sm:h-7">
                   <span className="flex items-center gap-1.5 truncate">
                     <ItemIcon id={node.machine.id} size={16} />
                     <SelectValue />
@@ -94,12 +103,12 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
                 <ItemIcon id={node.machine.id} size={16} />{node.machine.name}
               </span>
             )}
-            <span className="w-12 text-right text-xs font-semibold tabular-nums" title={`${num(node.machinesNeeded)} exact`}>
+            <span className="w-12 shrink-0 text-right text-xs font-semibold tabular-nums" title={`${num(node.machinesNeeded)} exact`}>
               ×{num(Math.ceil(node.machinesNeeded - 1e-9))}
             </span>
           </div>
         ) : (
-          <span className="flex w-56 items-center justify-end gap-1 text-xs text-muted-foreground">
+          <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
             <PickaxeIcon className="size-3.5" />{node.mined ? 'mined' : 'raw input'}
           </span>
         )}

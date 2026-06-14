@@ -91,7 +91,7 @@ export function TabsTrigger({ className, ...props }: React.ComponentProps<typeof
   return (
     <RTabs.Trigger
       className={cn(
-        'px-3.5 py-2 text-sm font-medium text-muted-foreground border-b-2 border-transparent -mb-px cursor-pointer',
+        'px-3.5 py-2.5 text-sm font-medium text-muted-foreground border-b-2 border-transparent -mb-px cursor-pointer',
         'transition-colors hover:text-foreground focus-visible:outline-none',
         'data-[state=active]:text-primary data-[state=active]:border-primary',
         className,

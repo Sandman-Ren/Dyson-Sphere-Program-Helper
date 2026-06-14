@@ -108,7 +108,8 @@ function UnlockedBy({ producedBy, onViewTech }: { producedBy: Recipe[]; onViewTe
             onClick={() => onViewTech(tech.id)}
             className={cn(
               'inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary px-2.5 py-1 text-xs text-secondary-foreground cursor-pointer',
-              'transition-colors hover:border-primary/50 hover:text-primary',
+              'transition-colors hover:border-primary/50 hover:text-primary active:bg-accent',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
             )}
           >
             <FlaskConicalIcon className="size-3.5 text-amber" />
@@ -220,7 +221,7 @@ function IngredientChip({ id, amount, onClick }: { id: string; amount: number; o
         <button
           type="button"
           onClick={onClick}
-          className={cn(className, 'cursor-pointer transition-colors hover:bg-accent')}
+          className={cn(className, 'cursor-pointer transition-colors hover:bg-accent active:bg-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring')}
         >
           {content}
         </button>
@@ -244,7 +245,7 @@ function UsedInRow({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (id
               <button
                 type="button"
                 onClick={() => onSelectItem(output.id)}
-                className="flex items-center gap-1 rounded px-1 py-0.5 cursor-pointer transition-colors hover:bg-accent"
+                className="flex items-center gap-1 rounded px-1 py-0.5 cursor-pointer transition-colors hover:bg-accent active:bg-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <ItemIcon id={output.id} size={20} tinted />
                 <span className="text-xs font-medium tabular-nums">{num(output.amount)}</span>

@@ -70,12 +70,47 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
+  /* Keep iOS from inflating text in landscape; prevent sideways scroll bleed. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+/* Comfortable hit areas on touch devices without bloating the pointer UI. */
+@media (pointer: coarse) {
+  button,
+  [role='button'],
+  [role='combobox'],
+  [role='tab'] {
+    touch-action: manipulation;
+  }
 }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--background); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+/* Mobile bottom-sheet entrance (the tech detail panel slides up). */
+@keyframes dsp-sheet-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@media (max-width: 639px) {
+  .dsp-sheet { animation: dsp-sheet-up 240ms cubic-bezier(0.22, 1, 0.36, 1); }
+}
+
+/* Honor reduced-motion: collapse animations and transitions to a snap. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 /* React Flow surface tuned to the dark theme */
 .react-flow__background { background: var(--background); }

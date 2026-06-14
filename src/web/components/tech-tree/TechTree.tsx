@@ -151,7 +151,7 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
     <div className="flex h-full w-full">
       <div className="relative h-full min-w-0 flex-1">
         {/* Search overlay */}
-        <div className="absolute left-3 top-3 z-10 w-72">
+        <div className="absolute left-3 right-3 top-3 z-10 sm:right-auto sm:w-72">
           <div className="relative">
             <SearchIcon className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input

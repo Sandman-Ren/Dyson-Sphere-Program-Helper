@@ -39,21 +39,27 @@ export function App() {
 
   return (
     <TooltipProvider delayDuration={300}>
-      <Tabs value={tab} onValueChange={setTab} className="flex h-screen flex-col">
-        <header className="flex-shrink-0 px-5 pt-3">
+      <Tabs value={tab} onValueChange={setTab} className="flex h-dvh flex-col">
+        <header className="flex-shrink-0 px-3 pt-2.5 sm:px-5 sm:pt-3">
           <div className="mb-2 flex items-center gap-2.5">
             <ItemIcon id="universe-matrix" size={28} tinted />
-            <div>
-              <h1 className="text-lg font-bold leading-tight">DSP Helper</h1>
-              <p className="text-xs text-muted-foreground">
+            <div className="min-w-0">
+              <h1 className="text-base font-bold leading-tight sm:text-lg">DSP Helper</h1>
+              <p className="hidden truncate text-xs text-muted-foreground sm:block">
                 Production calculator, research tree &amp; item reference · Dyson Sphere Program {meta.version}
               </p>
             </div>
           </div>
-          <TabsList>
-            <TabsTrigger value="calculator">Calculator</TabsTrigger>
-            <TabsTrigger value="tech-tree">Research Tree</TabsTrigger>
-            <TabsTrigger value="item-lookup">Item Lookup</TabsTrigger>
+          <TabsList className="w-full sm:w-auto">
+            <TabsTrigger value="calculator" className="flex-1 sm:flex-none">Calculator</TabsTrigger>
+            <TabsTrigger value="tech-tree" className="flex-1 sm:flex-none">
+              <span className="sm:hidden">Research</span>
+              <span className="hidden sm:inline">Research Tree</span>
+            </TabsTrigger>
+            <TabsTrigger value="item-lookup" className="flex-1 sm:flex-none">
+              <span className="sm:hidden">Items</span>
+              <span className="hidden sm:inline">Item Lookup</span>
+            </TabsTrigger>
           </TabsList>
         </header>
 
@@ -90,9 +96,9 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
   const { plan } = calc;
   const proliferator = proliferators.find((p) => p.id === calc.proliferatorId) ?? null;
   return (
-    <div className="mx-auto max-w-4xl p-5">
-      <div className="mb-4 flex flex-wrap items-end gap-4">
-        <div>
+    <div className="mx-auto max-w-4xl p-3 sm:p-5">
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:gap-4">
+        <div className="w-full sm:w-auto">
           <Label className="mb-1">Produce</Label>
           <ItemSelector items={graph.allProducts} value={calc.targetItem} onChange={calc.setTargetItem} />
         </div>
@@ -102,10 +108,10 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
           timeUnit={calc.timeUnit}
           onTimeUnitChange={calc.setTimeUnit}
         />
-        <div>
+        <div className="w-full sm:w-auto">
           <Label className="mb-1">Proliferator</Label>
           <Select value={calc.proliferatorId} onValueChange={calc.setProliferatorId}>
-            <SelectTrigger className="min-w-[13rem]"><SelectValue /></SelectTrigger>
+            <SelectTrigger className="w-full sm:w-auto sm:min-w-[13rem]"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="none">None</SelectItem>
               {proliferators.map((p) => (

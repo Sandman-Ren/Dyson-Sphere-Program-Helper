@@ -4,6 +4,7 @@ import ClockIcon from 'lucide-react/dist/esm/icons/clock';
 import { ItemIcon } from '../ItemIcon.js';
 import { Badge, Button } from '../../ui/index.js';
 import { num } from '../../lib/format.js';
+import { cn } from '../../lib/cn.js';
 import { displayName, recipeById, graph, techById } from '../../data.js';
 import type { Technology } from '../../../data/schema.js';
 import { matrixTotal } from './techGraph.js';
@@ -33,7 +34,17 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
   const totalTime = tech.cost.time * tech.cost.hash;
 
   return (
-    <aside className="flex h-full w-[340px] flex-shrink-0 flex-col border-l border-border bg-card">
+    <aside
+      className={cn(
+        'dsp-sheet z-40 flex flex-col bg-card',
+        // Mobile: slide-up bottom sheet over the canvas.
+        'fixed inset-x-0 bottom-0 max-h-[70dvh] rounded-t-2xl border-t border-border shadow-2xl',
+        // Desktop: static right-hand side panel.
+        'sm:static sm:inset-auto sm:h-full sm:max-h-none sm:w-[340px] sm:flex-shrink-0 sm:rounded-none sm:border-t-0 sm:border-l sm:shadow-none',
+      )}
+    >
+      {/* Drag-handle affordance, mobile only. */}
+      <div className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-border sm:hidden" />
       <header className="flex items-start gap-2.5 border-b border-border p-4">
         <ItemIcon id={tech.id} size={40} tinted />
         <div className="min-w-0 flex-1">
@@ -47,7 +58,7 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
         </Button>
       </header>
 
-      <div className="flex-1 space-y-5 overflow-y-auto p-4">
+      <div className="flex-1 space-y-5 overflow-y-auto px-4 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:pb-4">
         {/* Research cost */}
         <section>
           <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -90,7 +101,7 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
                     key={pid}
                     type="button"
                     onClick={() => onSelectTech(pid)}
-                    className="flex w-full items-center gap-2 rounded-md border border-border bg-secondary/40 px-2 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-accent"
+                    className="flex w-full items-center gap-2 rounded-md border border-border bg-secondary/40 px-2 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-accent active:bg-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     <ItemIcon id={pid} size={20} tinted />
                     <span className="truncate">{pre?.name ?? displayName(pid)}</span>

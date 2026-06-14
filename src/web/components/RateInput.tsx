@@ -13,7 +13,7 @@ interface RateInputProps {
 /** Target production rate input with a per second/minute/hour unit selector. */
 export function RateInput({ amount, onAmountChange, timeUnit, onTimeUnitChange }: RateInputProps) {
   return (
-    <div>
+    <div className="w-full sm:w-auto">
       <Label className="mb-1">Target rate</Label>
       <div className="flex gap-2">
         <Input
@@ -22,10 +22,10 @@ export function RateInput({ amount, onAmountChange, timeUnit, onTimeUnitChange }
           step="any"
           value={Number.isFinite(amount) ? amount : ''}
           onChange={(e) => onAmountChange(Math.max(0, Number(e.target.value) || 0))}
-          className="w-28"
+          className="w-24 flex-shrink-0 sm:w-28"
         />
         <Select value={timeUnit} onValueChange={(v) => onTimeUnitChange(v as TimeUnit)}>
-          <SelectTrigger className="min-w-[7rem]"><SelectValue /></SelectTrigger>
+          <SelectTrigger className="flex-1 sm:flex-none sm:min-w-[7rem]"><SelectValue /></SelectTrigger>
           <SelectContent>
             <SelectItem value="second">per second</SelectItem>
             <SelectItem value="minute">per minute</SelectItem>

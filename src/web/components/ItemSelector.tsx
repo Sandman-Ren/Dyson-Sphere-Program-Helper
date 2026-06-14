@@ -43,7 +43,7 @@ export function ItemSelector({ items, value, onChange, placeholder = 'Search ite
   }, [items, query]);
 
   return (
-    <div ref={ref} className="relative" style={{ minWidth: 260 }}>
+    <div ref={ref} className="relative w-full sm:w-auto sm:min-w-[260px]">
       <button
         type="button"
         onClick={() => { setOpen((o) => !o); setQuery(''); }}
@@ -83,8 +83,10 @@ export function ItemSelector({ items, value, onChange, placeholder = 'Search ite
                 type="button"
                 onClick={() => { onChange(id); setOpen(false); }}
                 className={cn(
-                  'flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-sm cursor-pointer',
-                  'hover:bg-accent', id === value && 'bg-accent',
+                  'flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-sm cursor-pointer transition-colors',
+                  'hover:bg-accent active:bg-accent/70',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                  id === value && 'bg-accent',
                 )}
               >
                 <ItemIcon id={id} size={20} tinted />
