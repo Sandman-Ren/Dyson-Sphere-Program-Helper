@@ -1,0 +1,8475 @@
+[
+  {
+    "id": "applied-superconductor",
+    "name": "Applied Superconductor",
+    "prerequisites": [
+      "basic-chemical-engineering"
+    ],
+    "recipeUnlock": [
+      "graphene",
+      "graphene-advanced"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "artificial-star-technology",
+    "name": "Artificial Star",
+    "prerequisites": [
+      "controlled-annihilation-reaction"
+    ],
+    "recipeUnlock": [
+      "artificial-star"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "automatic-metallurgy",
+    "name": "Automatic Metallurgy",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "arc-smelter",
+      "glass"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "circuit-board",
+          "amount": 20
+        },
+        {
+          "id": "magnetic-coil",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "basic-assembling-processes",
+    "name": "Basic Assembling",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "assembling-machine-1"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "circuit-board",
+          "amount": 20
+        },
+        {
+          "id": "gear",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "basic-chemical-engineering",
+    "name": "Basic Chemical Engineering",
+    "prerequisites": [
+      "fluid-storage-encapsulation",
+      "plasma-extract-refining"
+    ],
+    "recipeUnlock": [
+      "chemical-plant",
+      "plastic",
+      "sulfuric-acid"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "basic-logistics-system",
+    "name": "Basic Logistics System",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "conveyor-belt-1",
+      "storage-1",
+      "sorter-1"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "circuit-board",
+          "amount": 20
+        },
+        {
+          "id": "gear",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "casimir-crystal-technology",
+    "name": "Casimir Crystal",
+    "prerequisites": [
+      "structure-matrix-technology"
+    ],
+    "recipeUnlock": [
+      "casimir-crystal",
+      "casimir-crystal-advanced"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "controlled-annihilation-reaction",
+    "name": "Controlled Annihilation Reaction",
+    "prerequisites": [
+      "dirac-inversion-mechanism"
+    ],
+    "recipeUnlock": [
+      "annihilation-constraint-sphere",
+      "antimatter-fuel-rod"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 24
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "crystal-smelting",
+    "name": "Crystal Smelting",
+    "prerequisites": [
+      "smelting-purification"
+    ],
+    "recipeUnlock": [
+      "crystal-silicon",
+      "diamond",
+      "diamond-advanced"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "deuterium-fractionation-technology",
+    "name": "Deuterium Fractionation",
+    "prerequisites": [
+      "thermal-power",
+      "plasma-extract-refining"
+    ],
+    "recipeUnlock": [
+      "fractionator",
+      "deuterium-fractionation"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-antimatter-capsule-tech",
+    "name": "Antimatter Capsule",
+    "prerequisites": [
+      "controlled-annihilation-reaction",
+      "df-plasma-turret-tech"
+    ],
+    "recipeUnlock": [
+      "df-antimatter-capsule"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-attack-drone-tech",
+    "name": "Attack Drone",
+    "prerequisites": [
+      "df-prototype-tech",
+      "magnetic-particle-trap"
+    ],
+    "recipeUnlock": [
+      "df-attack-drone"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-battlefield-analysis-base-tech",
+    "name": "Battlefield Analysis Base",
+    "prerequisites": [
+      "df-weapon-system",
+      "df-engine-tech"
+    ],
+    "recipeUnlock": [
+      "df-battlefield-analysis-base"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-combustible-unit-tech",
+    "name": "Combustible Unit",
+    "prerequisites": [
+      "automatic-metallurgy"
+    ],
+    "recipeUnlock": [
+      "df-combustible-unit"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-corvette-tech",
+    "name": "Corvette",
+    "prerequisites": [
+      "df-planetary-defense-system",
+      "df-precision-drone-tech"
+    ],
+    "recipeUnlock": [
+      "df-corvette"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-crystal-explosive-unit-tech",
+    "name": "Crystal Explosive Unit",
+    "prerequisites": [
+      "casimir-crystal-technology"
+    ],
+    "recipeUnlock": [
+      "df-crystal-explosive-unit"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-crystal-shell-set-tech",
+    "name": "Crystal Shell Set",
+    "prerequisites": [
+      "df-supersonic-missile-set-tech",
+      "high-strength-titanium-alloy"
+    ],
+    "recipeUnlock": [
+      "df-crystal-shell-set"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-destroyer-tech",
+    "name": "Destroyer",
+    "prerequisites": [
+      "df-corvette-tech",
+      "df-attack-drone-tech"
+    ],
+    "recipeUnlock": [
+      "df-destroyer"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-digital-analog-computation",
+    "name": "Digital Analog Computation",
+    "prerequisites": [
+      "information-matrix-technology"
+    ],
+    "recipeUnlock": [
+      "df-self-evolution-lab"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "df-dark-fog-matrix",
+          "amount": 120
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-engine-tech",
+    "name": "Engine",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "df-engine"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-explosive-unit-tech",
+    "name": "Explosive Unit",
+    "prerequisites": [
+      "high-strength-crystal"
+    ],
+    "recipeUnlock": [
+      "df-explosive-unit"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-gravity-missile-set-tech",
+    "name": "Gravity Missile Set",
+    "prerequisites": [
+      "df-crystal-shell-set-tech",
+      "strange-matter-technology"
+    ],
+    "recipeUnlock": [
+      "df-gravity-missile-set"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-high-density-controlled-annihilation",
+    "name": "High-Density Controlled Annihilation",
+    "prerequisites": [
+      "controlled-annihilation-reaction"
+    ],
+    "recipeUnlock": [
+      "df-strange-annihilation-fuel-rod"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "df-dark-fog-matrix",
+          "amount": 120
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-high-explosive-shell-set-tech",
+    "name": "High-Explosive Shell Set",
+    "prerequisites": [
+      "df-implosion-cannon-tech",
+      "titanium-smelting"
+    ],
+    "recipeUnlock": [
+      "df-high-explosive-shell-set"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-implosion-cannon-tech",
+    "name": "Implosion Cannon",
+    "prerequisites": [
+      "df-missile-turret-tech",
+      "magnetic-levitation-technology"
+    ],
+    "recipeUnlock": [
+      "df-implosion-cannon",
+      "df-shell-set"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-jammer-tower-tech",
+    "name": "Jammer Tower",
+    "prerequisites": [
+      "df-missile-turret-tech",
+      "processor-technology"
+    ],
+    "recipeUnlock": [
+      "df-jammer-tower",
+      "df-jamming-capsule"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-matter-recombination",
+    "name": "Matter Recombination",
+    "prerequisites": [
+      "quantum-printing-technology"
+    ],
+    "recipeUnlock": [
+      "df-recomposing-assembler"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "df-dark-fog-matrix",
+          "amount": 120
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-missile-turret-tech",
+    "name": "Missile Turret",
+    "prerequisites": [
+      "df-engine-tech",
+      "df-weapon-system",
+      "df-combustible-unit-tech"
+    ],
+    "recipeUnlock": [
+      "df-missile-turret",
+      "df-missile-set"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-negentropy-recursion",
+    "name": "Negentropy Recursion",
+    "prerequisites": [
+      "plane-filter-smelting-technology"
+    ],
+    "recipeUnlock": [
+      "df-negentropy-smelter"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "df-dark-fog-matrix",
+          "amount": 120
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-planetary-defense-system",
+    "name": "Planetary Defense System",
+    "prerequisites": [
+      "df-implosion-cannon-tech",
+      "magnetic-particle-trap"
+    ],
+    "recipeUnlock": [
+      "df-laser-turret",
+      "df-planetary-shield-generator"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-plasma-turret-tech",
+    "name": "Plasma Turret",
+    "prerequisites": [
+      "df-planetary-defense-system",
+      "high-strength-glass"
+    ],
+    "recipeUnlock": [
+      "df-plasma-turret",
+      "df-plasma-turret-sr",
+      "df-plasma-capsule"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-precision-drone-tech",
+    "name": "Precision Drone",
+    "prerequisites": [
+      "df-prototype-tech",
+      "photon-frequency-conversion"
+    ],
+    "recipeUnlock": [
+      "df-precision-drone"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-prototype-tech",
+    "name": "Prototype",
+    "prerequisites": [
+      "df-battlefield-analysis-base-tech",
+      "high-efficiency-plasma-control"
+    ],
+    "recipeUnlock": [
+      "df-prototype"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-signal-tower-tech",
+    "name": "Signal Tower",
+    "prerequisites": [
+      "df-missile-turret-tech",
+      "high-efficiency-plasma-control"
+    ],
+    "recipeUnlock": [
+      "df-signal-tower"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-superalloy-ammo-box-tech",
+    "name": "Superalloy Ammo Box",
+    "prerequisites": [
+      "df-titanium-ammo-box-tech",
+      "high-strength-titanium-alloy"
+    ],
+    "recipeUnlock": [
+      "df-superalloy-ammo-box"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-supersonic-missile-set-tech",
+    "name": "Supersonic Missile Set",
+    "prerequisites": [
+      "df-high-explosive-shell-set-tech",
+      "thruster-technology"
+    ],
+    "recipeUnlock": [
+      "df-supersonic-missile-set"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 3
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-suppressing-capsule-tech",
+    "name": "Suppressing Capsule",
+    "prerequisites": [
+      "df-jammer-tower-tech"
+    ],
+    "recipeUnlock": [
+      "df-suppressing-capsule"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-titanium-ammo-box-tech",
+    "name": "Titanium Ammo Box",
+    "prerequisites": [
+      "df-weapon-system",
+      "titanium-smelting"
+    ],
+    "recipeUnlock": [
+      "df-titanium-ammo-box"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "df-weapon-system",
+    "name": "Weapon System",
+    "prerequisites": [
+      "electromagnetism",
+      "automatic-metallurgy"
+    ],
+    "recipeUnlock": [
+      "df-gauss-turret",
+      "df-magnum-ammo-box"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "dirac-inversion-mechanism",
+    "name": "Dirac Inversion Mechanism",
+    "prerequisites": [
+      "planetary-ionosphere-utilization"
+    ],
+    "recipeUnlock": [
+      "critical-photon",
+      "critical-photon-graviton",
+      "mass-energy-storage"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "distribution-logistics-system",
+    "name": "Distribution Logistics System",
+    "prerequisites": [
+      "improved-logistics-system",
+      "magnetic-levitation-technology"
+    ],
+    "recipeUnlock": [
+      "logistics-distributor",
+      "logistics-bot"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "dyson-sphere-stress-system-1",
+    "name": "Dyson Sphere Stress System (Lv1)",
+    "prerequisites": [
+      "vertical-launching-silo-technology"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "electromagnetic-drive",
+    "name": "Electromagnetic Drive",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "electric-motor"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "electromagnetic-matrix-technology",
+    "name": "Electromagnetic Matrix",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "matrix-lab",
+      "electromagnetic-matrix"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "circuit-board",
+          "amount": 20
+        },
+        {
+          "id": "magnetic-coil",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "electromagnetism",
+    "name": "Electromagnetism",
+    "prerequisites": [],
+    "recipeUnlock": [
+      "tesla-tower",
+      "wind-turbine",
+      "mining-machine"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "magnetic-coil",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "energy-matrix-technology",
+    "name": "Energy Matrix",
+    "prerequisites": [
+      "plasma-extract-refining"
+    ],
+    "recipeUnlock": [
+      "energy-matrix"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "energy-storage",
+    "name": "Energy Storage",
+    "prerequisites": [
+      "crystal-smelting",
+      "solar-collection",
+      "super-magnetic-field-generator"
+    ],
+    "recipeUnlock": [
+      "accumulator"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "environment-modification",
+    "name": "Reclamation",
+    "prerequisites": [
+      "steel-smelting"
+    ],
+    "recipeUnlock": [
+      "foundation"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "fluid-storage-encapsulation",
+    "name": "Fluid Storage Encapsulation",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "storage-tank",
+      "water-pump"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "gas-giants-exploitation",
+    "name": "Gas Giants Exploitation",
+    "prerequisites": [
+      "interstellar-logistics-system",
+      "interstellar-power-transmission"
+    ],
+    "recipeUnlock": [
+      "orbital-collector",
+      "gas-giant",
+      "gas-giant-deuterium",
+      "gas-giant-hydrogen",
+      "ice-giant",
+      "ice-giant-gas-hydrate",
+      "ice-giant-hydrogen"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "geothermal-extraction",
+    "name": "Geothermal Extraction",
+    "prerequisites": [
+      "photon-frequency-conversion",
+      "super-magnetic-field-generator"
+    ],
+    "recipeUnlock": [
+      "geothermal-power-station"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "gravitational-wave-refraction",
+    "name": "Gravitational Wave Refraction",
+    "prerequisites": [
+      "strange-matter-technology",
+      "magnetic-particle-trap"
+    ],
+    "recipeUnlock": [
+      "graviton-lens",
+      "space-warper"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "gravity-matrix-technology",
+    "name": "Gravity Matrix",
+    "prerequisites": [
+      "quantum-chip-technology",
+      "gravitational-wave-refraction"
+    ],
+    "recipeUnlock": [
+      "space-warper-advanced",
+      "gravity-matrix"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-efficiency-logistics-system",
+    "name": "High-Efficiency Logistics System",
+    "prerequisites": [
+      "improved-logistics-system",
+      "magnetic-levitation-technology"
+    ],
+    "recipeUnlock": [
+      "conveyor-belt-2",
+      "storage-2",
+      "sorter-3"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-efficiency-plasma-control",
+    "name": "High-Efficiency Plasma Control",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [
+      "wireless-power-tower",
+      "prism",
+      "plasma-exciter"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-speed-assembling-processes",
+    "name": "High-Speed Assembling",
+    "prerequisites": [
+      "basic-assembling-processes",
+      "processor-technology"
+    ],
+    "recipeUnlock": [
+      "assembling-machine-2"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-strength-crystal",
+    "name": "High-Strength Crystal",
+    "prerequisites": [
+      "polymer-chemical-engineering"
+    ],
+    "recipeUnlock": [
+      "titanium-crystal"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-strength-glass",
+    "name": "High-Strength Glass",
+    "prerequisites": [
+      "high-strength-material"
+    ],
+    "recipeUnlock": [
+      "titanium-glass"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-strength-lightweight-structure",
+    "name": "High-Strength Lightweight Structure",
+    "prerequisites": [
+      "solar-sail-orbit-system",
+      "high-strength-material"
+    ],
+    "recipeUnlock": [
+      "frame-material",
+      "dyson-sphere-component"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-strength-material",
+    "name": "High-Strength Material",
+    "prerequisites": [
+      "applied-superconductor"
+    ],
+    "recipeUnlock": [
+      "carbon-nanotube",
+      "carbon-nanotube-advanced"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 16
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "high-strength-titanium-alloy",
+    "name": "High-Strength Titanium Alloy",
+    "prerequisites": [
+      "titanium-smelting"
+    ],
+    "recipeUnlock": [
+      "titanium-alloy"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "hydrogen-fuel-rod-technology",
+    "name": "Hydrogen Fuel Rod",
+    "prerequisites": [
+      "energy-matrix-technology"
+    ],
+    "recipeUnlock": [
+      "hydrogen-fuel-rod"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "improved-logistics-system",
+    "name": "Upgraded Logistics System",
+    "prerequisites": [
+      "basic-logistics-system"
+    ],
+    "recipeUnlock": [
+      "splitter",
+      "traffic-monitor",
+      "sorter-2"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "information-matrix-technology",
+    "name": "Information Matrix",
+    "prerequisites": [
+      "processor-technology",
+      "particle-control-technology"
+    ],
+    "recipeUnlock": [
+      "information-matrix"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "integrated-logistics-system",
+    "name": "Integrated Logistics System",
+    "prerequisites": [
+      "high-efficiency-logistics-system",
+      "super-magnetic-field-generator"
+    ],
+    "recipeUnlock": [
+      "automatic-piler",
+      "sorter-4"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 1
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "interstellar-logistics-system",
+    "name": "Interstellar Logistics System",
+    "prerequisites": [
+      "planetary-logistics-system",
+      "high-strength-titanium-alloy",
+      "reinforced-thruster-technology"
+    ],
+    "recipeUnlock": [
+      "interstellar-logistics-station",
+      "logistics-vessel"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "interstellar-power-transmission",
+    "name": "Interstellar Power Transmission",
+    "prerequisites": [
+      "high-strength-titanium-alloy",
+      "energy-storage"
+    ],
+    "recipeUnlock": [
+      "energy-exchanger",
+      "accumulator-discharge",
+      "accumulator-full"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "magnetic-levitation-technology",
+    "name": "Magnetic Levitation",
+    "prerequisites": [
+      "electromagnetic-drive"
+    ],
+    "recipeUnlock": [
+      "electromagnetic-turbine"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "magnetic-particle-trap",
+    "name": "Magnetic Particle Trap",
+    "prerequisites": [
+      "magnetic-levitation-technology"
+    ],
+    "recipeUnlock": [
+      "particle-container",
+      "particle-container-advanced"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "mesoscopic-quantum-entanglement",
+    "name": "Mesoscopic Quantum Entanglement",
+    "prerequisites": [
+      "quantum-chip-technology",
+      "strange-matter-technology"
+    ],
+    "recipeUnlock": [
+      "quantum-chemical-plant"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "mini-fusion-power-generation",
+    "name": "Mini Fusion Power Generation",
+    "prerequisites": [
+      "deuterium-fractionation-technology",
+      "high-strength-titanium-alloy"
+    ],
+    "recipeUnlock": [
+      "mini-fusion-power-plant",
+      "deuteron-fuel-rod"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "miniature-particle-collider-technology",
+    "name": "Miniature Particle Collider",
+    "prerequisites": [
+      "structure-matrix-technology"
+    ],
+    "recipeUnlock": [
+      "miniature-particle-collider",
+      "deuterium"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "mission-completed",
+    "name": "Mission Completed!",
+    "prerequisites": [
+      "universe-matrix-technology"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "particle-control-technology",
+    "name": "Particle Control",
+    "prerequisites": [
+      "high-strength-material"
+    ],
+    "recipeUnlock": [
+      "crystal-silicon-advanced",
+      "particle-broadband"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 16
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 16
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "photon-frequency-conversion",
+    "name": "Photon Frequency Conversion",
+    "prerequisites": [
+      "solar-collection"
+    ],
+    "recipeUnlock": [
+      "photon-combiner",
+      "photon-combiner-advanced"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "photon-spotlight-mining-technology",
+    "name": "Photon Spotlight Mining",
+    "prerequisites": [
+      "quantum-chip-technology"
+    ],
+    "recipeUnlock": [
+      "advanced-mining-machine"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "plane-filter-smelting-technology",
+    "name": "Plane-Filter Smelting",
+    "prerequisites": [
+      "wave-function-interference",
+      "crystal-smelting"
+    ],
+    "recipeUnlock": [
+      "plane-smelter"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "planetary-ionosphere-utilization",
+    "name": "Planetary Ionosphere Utilization",
+    "prerequisites": [
+      "ray-receiver-technology",
+      "gravitational-wave-refraction"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "planetary-logistics-system",
+    "name": "Planetary Logistics System",
+    "prerequisites": [
+      "high-efficiency-logistics-system",
+      "thruster-technology",
+      "vertical-construction-1"
+    ],
+    "recipeUnlock": [
+      "conveyor-belt-3",
+      "planetary-logistics-station",
+      "logistics-drone"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "plasma-extract-refining",
+    "name": "Plasma Extract Refining",
+    "prerequisites": [
+      "fluid-storage-encapsulation",
+      "high-efficiency-plasma-control"
+    ],
+    "recipeUnlock": [
+      "oil-extractor",
+      "oil-refinery",
+      "plasma-refining"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "polymer-chemical-engineering",
+    "name": "Polymer chemical engineering",
+    "prerequisites": [
+      "basic-chemical-engineering"
+    ],
+    "recipeUnlock": [
+      "organic-crystal",
+      "organic-crystal-original"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "processor-technology",
+    "name": "Processor",
+    "prerequisites": [
+      "semiconductor-material"
+    ],
+    "recipeUnlock": [
+      "processor"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "proliferator-1-technology",
+    "name": "Proliferator Mk.I",
+    "prerequisites": [
+      "semiconductor-material",
+      "high-efficiency-plasma-control"
+    ],
+    "recipeUnlock": [
+      "spray-coater",
+      "proliferator-1"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "proliferator-2-technology",
+    "name": "Proliferator Mk.II",
+    "prerequisites": [
+      "processor-technology",
+      "proliferator-1-technology"
+    ],
+    "recipeUnlock": [
+      "proliferator-2"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 16
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "proliferator-3-technology",
+    "name": "Proliferator Mk.III",
+    "prerequisites": [
+      "proliferator-2-technology",
+      "high-strength-material"
+    ],
+    "recipeUnlock": [
+      "proliferator-3"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 8
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "quantum-chip-technology",
+    "name": "Quantum Chip",
+    "prerequisites": [
+      "information-matrix-technology",
+      "wave-function-interference"
+    ],
+    "recipeUnlock": [
+      "quantum-chip"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "quantum-printing-technology",
+    "name": "Quantum Printing",
+    "prerequisites": [
+      "high-speed-assembling-processes",
+      "quantum-chip-technology"
+    ],
+    "recipeUnlock": [
+      "assembling-machine-3"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "ray-receiver-technology",
+    "name": "Ray Receiver",
+    "prerequisites": [
+      "solar-sail-orbit-system"
+    ],
+    "recipeUnlock": [
+      "ray-receiver"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "reforming-refine-technology",
+    "name": "Reformed Refinement",
+    "prerequisites": [
+      "x-ray-cracking-technology"
+    ],
+    "recipeUnlock": [
+      "reforming-refine"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "reinforced-thruster-technology",
+    "name": "Reinforced Thruster",
+    "prerequisites": [
+      "thruster-technology"
+    ],
+    "recipeUnlock": [
+      "reinforced-thruster"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "satellite-power-distribution-system",
+    "name": "Satellite Power Distribution System",
+    "prerequisites": [
+      "super-magnetic-field-generator",
+      "high-strength-lightweight-structure"
+    ],
+    "recipeUnlock": [
+      "satellite-substation"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "semiconductor-material",
+    "name": "Semiconductor Material",
+    "prerequisites": [
+      "basic-assembling-processes"
+    ],
+    "recipeUnlock": [
+      "microcrystalline-component"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "smelting-purification",
+    "name": "Smelting Purification",
+    "prerequisites": [
+      "automatic-metallurgy"
+    ],
+    "recipeUnlock": [
+      "high-purity-silicon",
+      "energetic-graphite",
+      "silicon-ore"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "solar-collection",
+    "name": "Solar Collection",
+    "prerequisites": [
+      "smelting-purification",
+      "electromagnetic-matrix-technology",
+      "basic-assembling-processes"
+    ],
+    "recipeUnlock": [
+      "solar-panel"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "solar-sail-orbit-system",
+    "name": "Solar Sail Orbit System",
+    "prerequisites": [
+      "photon-frequency-conversion",
+      "super-magnetic-field-generator"
+    ],
+    "recipeUnlock": [
+      "em-rail-ejector",
+      "solar-sail"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "steel-smelting",
+    "name": "Steel Smelting",
+    "prerequisites": [
+      "automatic-metallurgy"
+    ],
+    "recipeUnlock": [
+      "steel"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "strange-matter-technology",
+    "name": "Strange Matter",
+    "prerequisites": [
+      "miniature-particle-collider-technology"
+    ],
+    "recipeUnlock": [
+      "strange-matter"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "structure-matrix-technology",
+    "name": "Structure Matrix",
+    "prerequisites": [
+      "high-strength-crystal"
+    ],
+    "recipeUnlock": [
+      "structure-matrix"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "super-magnetic-field-generator",
+    "name": "Super Magnetic Field Generator",
+    "prerequisites": [
+      "magnetic-levitation-technology"
+    ],
+    "recipeUnlock": [
+      "super-magnetic-ring"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "thermal-power",
+    "name": "Thermal Power",
+    "prerequisites": [
+      "basic-assembling-processes"
+    ],
+    "recipeUnlock": [
+      "thermal-power-plant"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "thruster-technology",
+    "name": "Thruster",
+    "prerequisites": [
+      "hydrogen-fuel-rod-technology"
+    ],
+    "recipeUnlock": [
+      "thruster"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "titanium-smelting",
+    "name": "Titanium Smelting",
+    "prerequisites": [
+      "steel-smelting"
+    ],
+    "recipeUnlock": [
+      "titanium-ingot"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "universe-matrix-technology",
+    "name": "Universe Matrix",
+    "prerequisites": [
+      "dirac-inversion-mechanism"
+    ],
+    "recipeUnlock": [
+      "universe-matrix"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "vertical-launching-silo-technology",
+    "name": "Vertical Launching Silo",
+    "prerequisites": [
+      "high-strength-lightweight-structure",
+      "quantum-chip-technology"
+    ],
+    "recipeUnlock": [
+      "vertical-launching-silo",
+      "small-carrier-rocket"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "wave-function-interference",
+    "name": "Wave Function Interference",
+    "prerequisites": [
+      "high-strength-glass",
+      "casimir-crystal-technology"
+    ],
+    "recipeUnlock": [
+      "plane-filter"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "x-ray-cracking-technology",
+    "name": "X-Ray Cracking",
+    "prerequisites": [
+      "basic-chemical-engineering",
+      "plasma-extract-refining"
+    ],
+    "recipeUnlock": [
+      "x-ray-cracking"
+    ],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": false
+  },
+  {
+    "id": "communication-control-1",
+    "name": "Communication Control (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "communication-control-2",
+    "name": "Communication Control (Lv2)",
+    "prerequisites": [
+      "communication-control-1",
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "communication-control-3",
+    "name": "Communication Control (Lv3)",
+    "prerequisites": [
+      "communication-control-2",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "communication-control-4",
+    "name": "Communication Control (Lv4)",
+    "prerequisites": [
+      "communication-control-3",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "communication-control-5",
+    "name": "Communication Control (Lv5)",
+    "prerequisites": [
+      "communication-control-4",
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "communication-control-6",
+    "name": "Communication Control (Lv6)",
+    "prerequisites": [
+      "communication-control-5",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 4
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 4
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 4
+        },
+        {
+          "id": "information-matrix",
+          "amount": 4
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "communication-control-7",
+    "name": "Communication Control (Lv7)",
+    "prerequisites": [
+      "communication-control-6",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-auto-reconstruction-marking-1",
+    "name": "Auto Reconstruction Marking (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-auto-reconstruction-marking-2",
+    "name": "Auto Reconstruction Marking (Lv2)",
+    "prerequisites": [
+      "df-auto-reconstruction-marking-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-auto-reconstruction-marking-3",
+    "name": "Auto Reconstruction Marking (Lv3)",
+    "prerequisites": [
+      "df-auto-reconstruction-marking-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-auto-reconstruction-marking-4",
+    "name": "Auto Reconstruction Marking (Lv4)",
+    "prerequisites": [
+      "df-auto-reconstruction-marking-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-auto-reconstruction-marking-5",
+    "name": "Auto Reconstruction Marking (Lv5)",
+    "prerequisites": [
+      "df-auto-reconstruction-marking-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 8
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 8
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 8
+        },
+        {
+          "id": "information-matrix",
+          "amount": 8
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 8
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-auto-reconstruction-marking-6",
+    "name": "Auto Reconstruction Marking (Lv6)",
+    "prerequisites": [
+      "df-auto-reconstruction-marking-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 8
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-attack-speed-1",
+    "name": "Combat Drone Attack Speed (Lv1)",
+    "prerequisites": [
+      "df-prototype-tech"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-attack-speed-2",
+    "name": "Combat Drone Attack Speed (Lv2)",
+    "prerequisites": [
+      "df-combat-drone-attack-speed-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-attack-speed-3",
+    "name": "Combat Drone Attack Speed (Lv3)",
+    "prerequisites": [
+      "df-combat-drone-attack-speed-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-attack-speed-4",
+    "name": "Combat Drone Attack Speed (Lv4)",
+    "prerequisites": [
+      "df-combat-drone-attack-speed-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-attack-speed-5",
+    "name": "Combat Drone Attack Speed (Lv5)",
+    "prerequisites": [
+      "df-combat-drone-attack-speed-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-damage-1",
+    "name": "Combat Drone Damage (Lv1)",
+    "prerequisites": [
+      "df-prototype-tech"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-damage-2",
+    "name": "Combat Drone Damage (Lv2)",
+    "prerequisites": [
+      "df-combat-drone-damage-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-damage-3",
+    "name": "Combat Drone Damage (Lv3)",
+    "prerequisites": [
+      "df-combat-drone-damage-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-damage-4",
+    "name": "Combat Drone Damage (Lv4)",
+    "prerequisites": [
+      "df-combat-drone-damage-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 5
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-damage-5",
+    "name": "Combat Drone Damage (Lv5)",
+    "prerequisites": [
+      "df-combat-drone-damage-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-durability-1",
+    "name": "Combat Drone Durability (Lv1)",
+    "prerequisites": [
+      "df-prototype-tech"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-durability-2",
+    "name": "Combat Drone Durability (Lv2)",
+    "prerequisites": [
+      "df-combat-drone-durability-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-durability-3",
+    "name": "Combat Drone Durability (Lv3)",
+    "prerequisites": [
+      "df-combat-drone-durability-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-durability-4",
+    "name": "Combat Drone Durability (Lv4)",
+    "prerequisites": [
+      "df-combat-drone-durability-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-combat-drone-durability-5",
+    "name": "Combat Drone Durability (Lv5)",
+    "prerequisites": [
+      "df-combat-drone-durability-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-em-weapon-strength-1",
+    "name": "EM Weapon Strength (Lv1)",
+    "prerequisites": [
+      "df-jammer-tower-tech"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-em-weapon-strength-2",
+    "name": "EM Weapon Strength (Lv2)",
+    "prerequisites": [
+      "df-em-weapon-strength-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-em-weapon-strength-3",
+    "name": "EM Weapon Strength (Lv3)",
+    "prerequisites": [
+      "df-em-weapon-strength-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-em-weapon-strength-4",
+    "name": "EM Weapon Strength (Lv4)",
+    "prerequisites": [
+      "df-em-weapon-strength-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-em-weapon-strength-5",
+    "name": "EM Weapon Strength (Lv5)",
+    "prerequisites": [
+      "df-em-weapon-strength-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 5
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-em-weapon-strength-6",
+    "name": "EM Weapon Strength (Lv6)",
+    "prerequisites": [
+      "df-em-weapon-strength-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-shield-1",
+    "name": "Energy Shield (Lv1)",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-shield-2",
+    "name": "Energy Shield (Lv2)",
+    "prerequisites": [
+      "df-energy-shield-1",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-shield-3",
+    "name": "Energy Shield (Lv3)",
+    "prerequisites": [
+      "df-energy-shield-2",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-shield-4",
+    "name": "Energy Shield (Lv4)",
+    "prerequisites": [
+      "df-energy-shield-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-shield-5",
+    "name": "Energy Shield (Lv5)",
+    "prerequisites": [
+      "df-energy-shield-4",
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 5
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-shield-6",
+    "name": "Energy Shield (Lv6)",
+    "prerequisites": [
+      "df-energy-shield-5",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-shield-7",
+    "name": "Energy Shield (Lv26)",
+    "prerequisites": [
+      "df-energy-shield-6"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-weapon-damage-1",
+    "name": "Energy Weapon Damage (Lv1)",
+    "prerequisites": [
+      "df-weapon-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-weapon-damage-2",
+    "name": "Energy Weapon Damage (Lv2)",
+    "prerequisites": [
+      "df-energy-weapon-damage-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-weapon-damage-3",
+    "name": "Energy Weapon Damage (Lv3)",
+    "prerequisites": [
+      "df-energy-weapon-damage-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-weapon-damage-4",
+    "name": "Energy Weapon Damage (Lv4)",
+    "prerequisites": [
+      "df-energy-weapon-damage-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-weapon-damage-5",
+    "name": "Energy Weapon Damage (Lv5)",
+    "prerequisites": [
+      "df-energy-weapon-damage-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 5
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-energy-weapon-damage-6",
+    "name": "Energy Weapon Damage (Lv6)",
+    "prerequisites": [
+      "df-energy-weapon-damage-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-enhanced-structure-1",
+    "name": "Enhanced Structure (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-enhanced-structure-2",
+    "name": "Enhanced Structure (Lv2)",
+    "prerequisites": [
+      "df-enhanced-structure-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-enhanced-structure-3",
+    "name": "Enhanced Structure (Lv3)",
+    "prerequisites": [
+      "df-enhanced-structure-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-enhanced-structure-4",
+    "name": "Enhanced Structure (Lv4)",
+    "prerequisites": [
+      "df-enhanced-structure-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-enhanced-structure-5",
+    "name": "Enhanced Structure (Lv5)",
+    "prerequisites": [
+      "df-enhanced-structure-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-enhanced-structure-6",
+    "name": "Enhanced Structure (Lv6)",
+    "prerequisites": [
+      "df-enhanced-structure-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-explosive-weapon-damage-1",
+    "name": "Explosive Weapon Damage (Lv1)",
+    "prerequisites": [
+      "df-combustible-unit-tech"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-explosive-weapon-damage-2",
+    "name": "Explosive Weapon Damage (Lv2)",
+    "prerequisites": [
+      "df-explosive-weapon-damage-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-explosive-weapon-damage-3",
+    "name": "Explosive Weapon Damage (Lv3)",
+    "prerequisites": [
+      "df-explosive-weapon-damage-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-explosive-weapon-damage-4",
+    "name": "Explosive Weapon Damage (Lv4)",
+    "prerequisites": [
+      "df-explosive-weapon-damage-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-explosive-weapon-damage-5",
+    "name": "Explosive Weapon Damage (Lv5)",
+    "prerequisites": [
+      "df-explosive-weapon-damage-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 5
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-explosive-weapon-damage-6",
+    "name": "Explosive Weapon Damage (Lv6)",
+    "prerequisites": [
+      "df-explosive-weapon-damage-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-ground-squadron-expansion-1",
+    "name": "Ground Squadron Expansion (Lv1)",
+    "prerequisites": [
+      "df-prototype-tech"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-ground-squadron-expansion-2",
+    "name": "Ground Squadron Expansion (Lv2)",
+    "prerequisites": [
+      "df-ground-squadron-expansion-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-ground-squadron-expansion-3",
+    "name": "Ground Squadron Expansion (Lv3)",
+    "prerequisites": [
+      "df-ground-squadron-expansion-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-ground-squadron-expansion-4",
+    "name": "Ground Squadron Expansion (Lv4)",
+    "prerequisites": [
+      "df-ground-squadron-expansion-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-ground-squadron-expansion-5",
+    "name": "Ground Squadron Expansion (Lv5)",
+    "prerequisites": [
+      "df-ground-squadron-expansion-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-ground-squadron-expansion-6",
+    "name": "Ground Squadron Expansion (Lv6)",
+    "prerequisites": [
+      "df-ground-squadron-expansion-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-ground-squadron-expansion-7",
+    "name": "Ground Squadron Expansion (Lv7)",
+    "prerequisites": [
+      "df-ground-squadron-expansion-6"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-kinetic-weapon-damage-1",
+    "name": "Kinetic Weapon Damage (Lv1)",
+    "prerequisites": [
+      "df-weapon-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-kinetic-weapon-damage-2",
+    "name": "Kinetic Weapon Damage (Lv2)",
+    "prerequisites": [
+      "df-kinetic-weapon-damage-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-kinetic-weapon-damage-3",
+    "name": "Kinetic Weapon Damage (Lv3)",
+    "prerequisites": [
+      "df-kinetic-weapon-damage-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-kinetic-weapon-damage-4",
+    "name": "Kinetic Weapon Damage (Lv4)",
+    "prerequisites": [
+      "df-kinetic-weapon-damage-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-kinetic-weapon-damage-5",
+    "name": "Kinetic Weapon Damage (Lv5)",
+    "prerequisites": [
+      "df-kinetic-weapon-damage-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 5
+        },
+        {
+          "id": "information-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-kinetic-weapon-damage-6",
+    "name": "Kinetic Weapon Damage (Lv6)",
+    "prerequisites": [
+      "df-kinetic-weapon-damage-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-planetary-shield-1",
+    "name": "Planetary Shield (Lv1)",
+    "prerequisites": [
+      "df-planetary-defense-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-planetary-shield-2",
+    "name": "Planetary Shield (Lv2)",
+    "prerequisites": [
+      "df-planetary-shield-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 5
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 5
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 5
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-planetary-shield-3",
+    "name": "Planetary Shield (Lv3)",
+    "prerequisites": [
+      "df-planetary-shield-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-planetary-shield-4",
+    "name": "Planetary Shield (Lv4)",
+    "prerequisites": [
+      "df-planetary-shield-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-planetary-shield-5",
+    "name": "Planetary Shield (Lv5)",
+    "prerequisites": [
+      "df-planetary-shield-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-space-fleet-expansion-1",
+    "name": "Space Fleet Expansion (Lv1)",
+    "prerequisites": [
+      "df-corvette-tech"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-space-fleet-expansion-2",
+    "name": "Space Fleet Expansion (Lv2)",
+    "prerequisites": [
+      "df-space-fleet-expansion-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "information-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-space-fleet-expansion-3",
+    "name": "Space Fleet Expansion (Lv3)",
+    "prerequisites": [
+      "df-space-fleet-expansion-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 15
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 15
+        },
+        {
+          "id": "information-matrix",
+          "amount": 15
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 15
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-space-fleet-expansion-4",
+    "name": "Space Fleet Expansion (Lv4)",
+    "prerequisites": [
+      "df-space-fleet-expansion-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-space-fleet-expansion-5",
+    "name": "Space Fleet Expansion (Lv5)",
+    "prerequisites": [
+      "df-space-fleet-expansion-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-space-fleet-expansion-6",
+    "name": "Space Fleet Expansion (Lv6)",
+    "prerequisites": [
+      "df-space-fleet-expansion-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "df-space-fleet-expansion-7",
+    "name": "Space Fleet Expansion (Lv7)",
+    "prerequisites": [
+      "df-space-fleet-expansion-6"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "distribution-range-1",
+    "name": "Distribution Range (Lv1)",
+    "prerequisites": [
+      "distribution-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "distribution-range-2",
+    "name": "Distribution Range (Lv2)",
+    "prerequisites": [
+      "distribution-range-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "distribution-range-3",
+    "name": "Distribution Range (Lv3)",
+    "prerequisites": [
+      "distribution-range-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "distribution-range-4",
+    "name": "Distribution Range (Lv4)",
+    "prerequisites": [
+      "distribution-range-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "distribution-range-5",
+    "name": "Distribution Range (Lv5)",
+    "prerequisites": [
+      "distribution-range-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drive-engine-1",
+    "name": "Drive Engine (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "coal",
+          "amount": 30
+        },
+        {
+          "id": "df-engine",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drive-engine-2",
+    "name": "Drive Engine (Lv2)",
+    "prerequisites": [
+      "drive-engine-1",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drive-engine-3",
+    "name": "Drive Engine (Lv3)",
+    "prerequisites": [
+      "drive-engine-2",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drive-engine-4",
+    "name": "Drive Engine (Lv4)",
+    "prerequisites": [
+      "drive-engine-3",
+      "mecha-core-4",
+      "gravitational-wave-refraction"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drive-engine-5",
+    "name": "Drive Engine (Lv5)",
+    "prerequisites": [
+      "drive-engine-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drive-engine-6",
+    "name": "Drive Engine (Lv6)",
+    "prerequisites": [
+      "drive-engine-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drone-engine-1",
+    "name": "Drone Engine (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drone-engine-2",
+    "name": "Drone Engine (Lv2)",
+    "prerequisites": [
+      "drone-engine-1",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drone-engine-3",
+    "name": "Drone Engine (Lv3)",
+    "prerequisites": [
+      "drone-engine-2",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drone-engine-4",
+    "name": "Drone Engine (Lv4)",
+    "prerequisites": [
+      "drone-engine-3",
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drone-engine-5",
+    "name": "Drone Engine (Lv5)",
+    "prerequisites": [
+      "drone-engine-4",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 4
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 4
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 4
+        },
+        {
+          "id": "information-matrix",
+          "amount": 4
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "drone-engine-6",
+    "name": "Drone Engine (Lv6)",
+    "prerequisites": [
+      "drone-engine-5",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "energy-circuit-1",
+    "name": "Energy Circuit (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "coal",
+          "amount": 30
+        },
+        {
+          "id": "energetic-graphite",
+          "amount": 30
+        },
+        {
+          "id": "log",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "energy-circuit-2",
+    "name": "Energy Circuit (Lv2)",
+    "prerequisites": [
+      "energy-circuit-1",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "energy-circuit-3",
+    "name": "Energy Circuit (Lv3)",
+    "prerequisites": [
+      "energy-circuit-2",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "energy-circuit-4",
+    "name": "Energy Circuit (Lv4)",
+    "prerequisites": [
+      "energy-circuit-3",
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "energy-circuit-5",
+    "name": "Energy Circuit (Lv5)",
+    "prerequisites": [
+      "energy-circuit-4",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 4
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 4
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 4
+        },
+        {
+          "id": "information-matrix",
+          "amount": 4
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "energy-circuit-6",
+    "name": "Energy Circuit (Lv6)",
+    "prerequisites": [
+      "energy-circuit-5",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "inventory-capacity-1",
+    "name": "Inventory Capacity (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "circuit-board",
+          "amount": 60
+        },
+        {
+          "id": "steel",
+          "amount": 60
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "inventory-capacity-2",
+    "name": "Inventory Capacity (Lv2)",
+    "prerequisites": [
+      "inventory-capacity-1",
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "inventory-capacity-3",
+    "name": "Inventory Capacity (Lv3)",
+    "prerequisites": [
+      "inventory-capacity-2",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "inventory-capacity-4",
+    "name": "Inventory Capacity (Lv4)",
+    "prerequisites": [
+      "inventory-capacity-3",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "inventory-capacity-5",
+    "name": "Inventory Capacity (Lv5)",
+    "prerequisites": [
+      "inventory-capacity-4",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "inventory-capacity-6",
+    "name": "Inventory Capacity (Lv6)",
+    "prerequisites": [
+      "inventory-capacity-5",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "inventory-capacity-7",
+    "name": "Inventory Capacity (Lv7)",
+    "prerequisites": [
+      "inventory-capacity-6"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-1",
+    "name": "Logistics Carrier Capacity (Lv1)",
+    "prerequisites": [
+      "planetary-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-12",
+    "name": "Logistics Carrier Capacity (Lv12)",
+    "prerequisites": [
+      "logistics-carrier-capacity-9"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 3
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-2",
+    "name": "Logistics Carrier Capacity (Lv2)",
+    "prerequisites": [
+      "logistics-carrier-capacity-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-3",
+    "name": "Logistics Carrier Capacity (Lv3)",
+    "prerequisites": [
+      "logistics-carrier-capacity-2",
+      "interstellar-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-4",
+    "name": "Logistics Carrier Capacity (Lv4)",
+    "prerequisites": [
+      "logistics-carrier-capacity-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-5",
+    "name": "Logistics Carrier Capacity (Lv5)",
+    "prerequisites": [
+      "logistics-carrier-capacity-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-6",
+    "name": "Logistics Carrier Capacity (Lv6)",
+    "prerequisites": [
+      "logistics-carrier-capacity-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-7",
+    "name": "Logistics Carrier Capacity (Lv7)",
+    "prerequisites": [
+      "logistics-carrier-capacity-6"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 3
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 3
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 3
+        },
+        {
+          "id": "information-matrix",
+          "amount": 3
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 3
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-8",
+    "name": "Logistics Carrier Capacity (Lv8)",
+    "prerequisites": [
+      "logistics-carrier-capacity-7"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 3
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 3
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 3
+        },
+        {
+          "id": "information-matrix",
+          "amount": 3
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 3
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-capacity-9",
+    "name": "Logistics Carrier Capacity (Lv9)",
+    "prerequisites": [
+      "logistics-carrier-capacity-8"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 3
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-engine-1",
+    "name": "Logistics Carrier Engine (Lv1)",
+    "prerequisites": [
+      "planetary-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-engine-2",
+    "name": "Logistics Carrier Engine (Lv2)",
+    "prerequisites": [
+      "logistics-carrier-engine-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-engine-3",
+    "name": "Logistics Carrier Engine (Lv3)",
+    "prerequisites": [
+      "logistics-carrier-engine-2",
+      "interstellar-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-engine-4",
+    "name": "Logistics Carrier Engine (Lv4)",
+    "prerequisites": [
+      "logistics-carrier-engine-3",
+      "drive-engine-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-engine-5",
+    "name": "Logistics Carrier Engine (Lv5)",
+    "prerequisites": [
+      "logistics-carrier-engine-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-engine-6",
+    "name": "Logistics Carrier Engine (Lv6)",
+    "prerequisites": [
+      "logistics-carrier-engine-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 4
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 4
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 4
+        },
+        {
+          "id": "information-matrix",
+          "amount": 4
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-carrier-engine-7",
+    "name": "Logistics Carrier Engine (Lv7)",
+    "prerequisites": [
+      "logistics-carrier-engine-6"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-station-integrated-logistics-1",
+    "name": "Station Integrated Logistics (Lv1)",
+    "prerequisites": [
+      "logistics-carrier-capacity-8"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 3
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-station-integrated-logistics-2",
+    "name": "Station Integrated Logistics (Lv2)",
+    "prerequisites": [
+      "logistics-station-integrated-logistics-1",
+      "logistics-carrier-capacity-9"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "logistics-station-integrated-logistics-3",
+    "name": "Station Integrated Logistics (Lv3)",
+    "prerequisites": [
+      "logistics-station-integrated-logistics-2",
+      "logistics-carrier-capacity-12"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mass-construction-1",
+    "name": "Mass Construction (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "circuit-board",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mass-construction-2",
+    "name": "Mass Construction (Lv2)",
+    "prerequisites": [
+      "mass-construction-1",
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mass-construction-3",
+    "name": "Mass Construction (Lv3)",
+    "prerequisites": [
+      "mass-construction-2",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 30
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mass-construction-4",
+    "name": "Mass Construction (Lv4)",
+    "prerequisites": [
+      "mass-construction-3",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 15
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 15
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 15
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mass-construction-5",
+    "name": "Mass Construction (Lv5)",
+    "prerequisites": [
+      "mass-construction-4",
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 15
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 15
+        },
+        {
+          "id": "information-matrix",
+          "amount": 15
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 15
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mecha-core-1",
+    "name": "Mecha Core (Lv1)",
+    "prerequisites": [],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "copper-ingot",
+          "amount": 20
+        },
+        {
+          "id": "iron-ingot",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mecha-core-2",
+    "name": "Mecha Core (Lv2)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mecha-core-3",
+    "name": "Mecha Core (Lv3)",
+    "prerequisites": [
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 10
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 10
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 10
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mecha-core-4",
+    "name": "Mecha Core (Lv4)",
+    "prerequisites": [
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mecha-core-5",
+    "name": "Mecha Core (Lv5)",
+    "prerequisites": [
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 2
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 2
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 2
+        },
+        {
+          "id": "information-matrix",
+          "amount": 2
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mecha-core-6",
+    "name": "Mecha Core (Lv6)",
+    "prerequisites": [
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-1",
+    "name": "Mechanical Frame (Lv1)",
+    "prerequisites": [
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electric-motor",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-2",
+    "name": "Mechanical Frame (Lv2)",
+    "prerequisites": [
+      "mechanical-frame-1",
+      "mecha-core-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-3",
+    "name": "Mechanical Frame (Lv3)",
+    "prerequisites": [
+      "mechanical-frame-2",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-4",
+    "name": "Mechanical Frame (Lv4)",
+    "prerequisites": [
+      "mechanical-frame-3",
+      "mecha-core-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-5",
+    "name": "Mechanical Frame (Lv5)",
+    "prerequisites": [
+      "mechanical-frame-4",
+      "mecha-core-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-6",
+    "name": "Mechanical Frame (Lv6)",
+    "prerequisites": [
+      "mechanical-frame-5",
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-7",
+    "name": "Mechanical Frame (Lv7)",
+    "prerequisites": [
+      "mechanical-frame-6",
+      "mecha-core-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "mechanical-frame-8",
+    "name": "Mechanical Frame (Lv8)",
+    "prerequisites": [
+      "mechanical-frame-7",
+      "mecha-core-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "pile-sorter-1",
+    "name": "Pile Sorter Upgrade (Lv1)",
+    "prerequisites": [
+      "integrated-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 30
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 30
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "pile-sorter-2",
+    "name": "Pile Sorter Upgrade (Lv2)",
+    "prerequisites": [
+      "pile-sorter-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 30
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 30
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "pile-sorter-3",
+    "name": "Pile Sorter Upgrade (Lv3)",
+    "prerequisites": [
+      "pile-sorter-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 30
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 30
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 30
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "pile-sorter-4",
+    "name": "Pile Sorter Upgrade (Lv4)",
+    "prerequisites": [
+      "pile-sorter-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 15
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 15
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 15
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "pile-sorter-5",
+    "name": "Pile Sorter Upgrade (Lv5)",
+    "prerequisites": [
+      "pile-sorter-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 15
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 15
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 15
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "pile-sorter-6",
+    "name": "Pile Sorter Upgrade (Lv6)",
+    "prerequisites": [
+      "pile-sorter-5",
+      "integrated-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-1",
+    "name": "Ray Transmission Efficiency (Lv1)",
+    "prerequisites": [
+      "ray-receiver-technology"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-2",
+    "name": "Ray Transmission Efficiency (Lv2)",
+    "prerequisites": [
+      "ray-transmission-efficiency-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-3",
+    "name": "Ray Transmission Efficiency (Lv3)",
+    "prerequisites": [
+      "ray-transmission-efficiency-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-4",
+    "name": "Ray Transmission Efficiency (Lv4)",
+    "prerequisites": [
+      "ray-transmission-efficiency-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-5",
+    "name": "Ray Transmission Efficiency (Lv5)",
+    "prerequisites": [
+      "ray-transmission-efficiency-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-6",
+    "name": "Ray Transmission Efficiency (Lv6)",
+    "prerequisites": [
+      "ray-transmission-efficiency-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-7",
+    "name": "Ray Transmission Efficiency (Lv7)",
+    "prerequisites": [
+      "ray-transmission-efficiency-6"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 4
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 4
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 4
+        },
+        {
+          "id": "information-matrix",
+          "amount": 4
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "ray-transmission-efficiency-8",
+    "name": "Ray Transmission Efficiency (Lv8)",
+    "prerequisites": [
+      "ray-transmission-efficiency-7"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "research-speed-1",
+    "name": "Research Speed (Lv1)",
+    "prerequisites": [
+      "information-matrix-technology"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "information-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "research-speed-2",
+    "name": "Research Speed (Lv2)",
+    "prerequisites": [
+      "research-speed-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "information-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "research-speed-3",
+    "name": "Research Speed (Lv3)",
+    "prerequisites": [
+      "research-speed-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "information-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "research-speed-4",
+    "name": "Research Speed (Lv4)",
+    "prerequisites": [
+      "research-speed-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 2
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "solar-sail-life-1",
+    "name": "Solar Sail Life (Lv1)",
+    "prerequisites": [
+      "solar-sail-orbit-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "solar-sail-life-2",
+    "name": "Solar Sail Life (Lv2)",
+    "prerequisites": [
+      "solar-sail-life-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "solar-sail-life-3",
+    "name": "Solar Sail Life (Lv3)",
+    "prerequisites": [
+      "solar-sail-life-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "solar-sail-life-4",
+    "name": "Solar Sail Life (Lv4)",
+    "prerequisites": [
+      "solar-sail-life-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "solar-sail-life-5",
+    "name": "Solar Sail Life (Lv5)",
+    "prerequisites": [
+      "solar-sail-life-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "solar-sail-life-6",
+    "name": "Solar Sail Life (Lv6)",
+    "prerequisites": [
+      "solar-sail-life-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "sorter-cargo-integration",
+    "name": "Sorter Cargo Integration (Lv1)",
+    "prerequisites": [
+      "sorter-cargo-stacking-5",
+      "integrated-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "sorter-cargo-stacking-1",
+    "name": "Sorter Cargo Stacking (Lv1)",
+    "prerequisites": [
+      "integrated-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "sorter-cargo-stacking-2",
+    "name": "Sorter Cargo Stacking (Lv2)",
+    "prerequisites": [
+      "sorter-cargo-stacking-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "sorter-cargo-stacking-3",
+    "name": "Sorter Cargo Stacking (Lv3)",
+    "prerequisites": [
+      "sorter-cargo-stacking-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "sorter-cargo-stacking-4",
+    "name": "Sorter Cargo Stacking (Lv4)",
+    "prerequisites": [
+      "sorter-cargo-stacking-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "sorter-cargo-stacking-5",
+    "name": "Sorter Cargo Stacking (Lv5)",
+    "prerequisites": [
+      "sorter-cargo-stacking-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "universe-exploration-1",
+    "name": "Universe Exploration (Lv1)",
+    "prerequisites": [],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "universe-exploration-2",
+    "name": "Universe Exploration (Lv2)",
+    "prerequisites": [
+      "universe-exploration-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "universe-exploration-3",
+    "name": "Universe Exploration (Lv3)",
+    "prerequisites": [
+      "universe-exploration-2",
+      "drive-engine-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "universe-exploration-4",
+    "name": "Universe Exploration (Lv4)",
+    "prerequisites": [
+      "universe-exploration-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 6
+        },
+        {
+          "id": "information-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "veins-utilization-1",
+    "name": "Vein Utilization (Lv1)",
+    "prerequisites": [
+      "electromagnetism"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 40
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "veins-utilization-2",
+    "name": "Vein Utilization (Lv2)",
+    "prerequisites": [
+      "veins-utilization-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "veins-utilization-3",
+    "name": "Vein Utilization (Lv3)",
+    "prerequisites": [
+      "veins-utilization-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 20
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "information-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "veins-utilization-4",
+    "name": "Vein Utilization (Lv4)",
+    "prerequisites": [
+      "veins-utilization-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "information-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "veins-utilization-5",
+    "name": "Vein Utilization (Lv5)",
+    "prerequisites": [
+      "veins-utilization-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 4
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 4
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 4
+        },
+        {
+          "id": "information-matrix",
+          "amount": 4
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "veins-utilization-6",
+    "name": "Vein Utilization (Lv6)",
+    "prerequisites": [
+      "veins-utilization-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "universe-matrix",
+          "amount": 4
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "vertical-construction-1",
+    "name": "Vertical Construction (Lv1)",
+    "prerequisites": [
+      "basic-logistics-system"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 40
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "vertical-construction-2",
+    "name": "Vertical Construction (Lv2)",
+    "prerequisites": [
+      "vertical-construction-1"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "vertical-construction-3",
+    "name": "Vertical Construction (Lv3)",
+    "prerequisites": [
+      "vertical-construction-2"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "energy-matrix",
+          "amount": 20
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 20
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "vertical-construction-4",
+    "name": "Vertical Construction (Lv4)",
+    "prerequisites": [
+      "vertical-construction-3"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "vertical-construction-5",
+    "name": "Vertical Construction (Lv5)",
+    "prerequisites": [
+      "vertical-construction-4"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 12
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 12
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 12
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  },
+  {
+    "id": "vertical-construction-6",
+    "name": "Vertical Construction (Lv6)",
+    "prerequisites": [
+      "vertical-construction-5"
+    ],
+    "recipeUnlock": [],
+    "cost": {
+      "time": 1,
+      "matrices": [
+        {
+          "id": "electromagnetic-matrix",
+          "amount": 6
+        },
+        {
+          "id": "energy-matrix",
+          "amount": 6
+        },
+        {
+          "id": "gravity-matrix",
+          "amount": 6
+        },
+        {
+          "id": "structure-matrix",
+          "amount": 6
+        }
+      ],
+      "hash": 3600
+    },
+    "row": 0,
+    "upgrade": true
+  }
+]

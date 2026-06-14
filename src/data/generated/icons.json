@@ -1,0 +1,3092 @@
+[
+  {
+    "id": "iron-ore",
+    "x": 0,
+    "y": 0,
+    "color": "#5a7c8e"
+  },
+  {
+    "id": "copper-ore",
+    "x": 64,
+    "y": 0,
+    "color": "#a27d72"
+  },
+  {
+    "id": "silicon-ore",
+    "x": 128,
+    "y": 0,
+    "color": "#598b73"
+  },
+  {
+    "id": "titanium-ore",
+    "x": 192,
+    "y": 0,
+    "color": "#b8c4ca"
+  },
+  {
+    "id": "stone",
+    "x": 256,
+    "y": 0,
+    "color": "#7a7d83"
+  },
+  {
+    "id": "coal",
+    "x": 320,
+    "y": 0,
+    "color": "#4d4955"
+  },
+  {
+    "id": "log",
+    "x": 384,
+    "y": 0,
+    "color": "#856252"
+  },
+  {
+    "id": "plant-fuel",
+    "x": 448,
+    "y": 0,
+    "color": "#617842"
+  },
+  {
+    "id": "fire-ice",
+    "x": 512,
+    "y": 0,
+    "color": "#dfe3e8"
+  },
+  {
+    "id": "kimberlite-ore",
+    "x": 576,
+    "y": 0,
+    "color": "#a9b0be"
+  },
+  {
+    "id": "fractal-silicon",
+    "x": 640,
+    "y": 0,
+    "color": "#6a998d"
+  },
+  {
+    "id": "optical-grating-crystal",
+    "x": 704,
+    "y": 0,
+    "color": "#b194be"
+  },
+  {
+    "id": "spiniform-stalagmite-crystal",
+    "x": 768,
+    "y": 0,
+    "color": "#81cac4"
+  },
+  {
+    "id": "unipolar-magnet",
+    "x": 832,
+    "y": 0,
+    "color": "#797776"
+  },
+  {
+    "id": "iron-ingot",
+    "x": 896,
+    "y": 0,
+    "color": "#7a7f84"
+  },
+  {
+    "id": "copper-ingot",
+    "x": 960,
+    "y": 0,
+    "color": "#aa7460"
+  },
+  {
+    "id": "high-purity-silicon",
+    "x": 1024,
+    "y": 0,
+    "color": "#679c90"
+  },
+  {
+    "id": "titanium-ingot",
+    "x": 1088,
+    "y": 0,
+    "color": "#d2d7dc"
+  },
+  {
+    "id": "stone-brick",
+    "x": 1152,
+    "y": 0,
+    "color": "#7c7a77"
+  },
+  {
+    "id": "energetic-graphite",
+    "x": 1216,
+    "y": 0,
+    "color": "#4b515f"
+  },
+  {
+    "id": "steel",
+    "x": 1280,
+    "y": 0,
+    "color": "#8b8a8b"
+  },
+  {
+    "id": "titanium-alloy",
+    "x": 1344,
+    "y": 0,
+    "color": "#929291"
+  },
+  {
+    "id": "glass",
+    "x": 1408,
+    "y": 0,
+    "color": "#5a948c"
+  },
+  {
+    "id": "titanium-glass",
+    "x": 0,
+    "y": 64,
+    "color": "#739bb6"
+  },
+  {
+    "id": "prism",
+    "x": 64,
+    "y": 64,
+    "color": "#c7c6d5"
+  },
+  {
+    "id": "diamond",
+    "x": 128,
+    "y": 64,
+    "color": "#a1aab8"
+  },
+  {
+    "id": "crystal-silicon",
+    "x": 192,
+    "y": 64,
+    "color": "#4c806b"
+  },
+  {
+    "id": "gear",
+    "x": 256,
+    "y": 64,
+    "color": "#77797c"
+  },
+  {
+    "id": "magnet",
+    "x": 320,
+    "y": 64,
+    "color": "#4e4f4f"
+  },
+  {
+    "id": "magnetic-coil",
+    "x": 384,
+    "y": 64,
+    "color": "#655856"
+  },
+  {
+    "id": "electric-motor",
+    "x": 448,
+    "y": 64,
+    "color": "#5f565b"
+  },
+  {
+    "id": "electromagnetic-turbine",
+    "x": 512,
+    "y": 64,
+    "color": "#506a64"
+  },
+  {
+    "id": "super-magnetic-ring",
+    "x": 576,
+    "y": 64,
+    "color": "#648ea9"
+  },
+  {
+    "id": "particle-container",
+    "x": 640,
+    "y": 64,
+    "color": "#aa90c0"
+  },
+  {
+    "id": "strange-matter",
+    "x": 704,
+    "y": 64,
+    "color": "#78b286"
+  },
+  {
+    "id": "circuit-board",
+    "x": 768,
+    "y": 64,
+    "color": "#628d75"
+  },
+  {
+    "id": "processor",
+    "x": 832,
+    "y": 64,
+    "color": "#ad8c6f"
+  },
+  {
+    "id": "quantum-chip",
+    "x": 896,
+    "y": 64,
+    "color": "#6b93c4"
+  },
+  {
+    "id": "microcrystalline-component",
+    "x": 960,
+    "y": 64,
+    "color": "#6e92a0"
+  },
+  {
+    "id": "plane-filter",
+    "x": 1024,
+    "y": 64,
+    "color": "#85b9f4"
+  },
+  {
+    "id": "particle-broadband",
+    "x": 1088,
+    "y": 64,
+    "color": "#6285bd"
+  },
+  {
+    "id": "plasma-exciter",
+    "x": 1152,
+    "y": 64,
+    "color": "#8398cc"
+  },
+  {
+    "id": "photon-combiner",
+    "x": 1216,
+    "y": 64,
+    "color": "#c073b1"
+  },
+  {
+    "id": "solar-sail",
+    "x": 1280,
+    "y": 64,
+    "color": "#a9c5db"
+  },
+  {
+    "id": "water",
+    "x": 1344,
+    "y": 64,
+    "color": "#93a9b3"
+  },
+  {
+    "id": "crude-oil",
+    "x": 1408,
+    "y": 64,
+    "color": "#3a3d48"
+  },
+  {
+    "id": "refined-oil",
+    "x": 0,
+    "y": 128,
+    "color": "#998371"
+  },
+  {
+    "id": "sulfuric-acid",
+    "x": 64,
+    "y": 128,
+    "color": "#d4c573"
+  },
+  {
+    "id": "hydrogen",
+    "x": 128,
+    "y": 128,
+    "color": "#9fc5ce"
+  },
+  {
+    "id": "deuterium",
+    "x": 192,
+    "y": 128,
+    "color": "#a1c1c9"
+  },
+  {
+    "id": "antimatter",
+    "x": 256,
+    "y": 128,
+    "color": "#536b7a"
+  },
+  {
+    "id": "critical-photon",
+    "x": 320,
+    "y": 128,
+    "color": "#607d82"
+  },
+  {
+    "id": "hydrogen-fuel-rod",
+    "x": 384,
+    "y": 128,
+    "color": "#76858b"
+  },
+  {
+    "id": "deuteron-fuel-rod",
+    "x": 448,
+    "y": 128,
+    "color": "#6e8273"
+  },
+  {
+    "id": "antimatter-fuel-rod",
+    "x": 512,
+    "y": 128,
+    "color": "#656f76"
+  },
+  {
+    "id": "df-strange-annihilation-fuel-rod",
+    "x": 576,
+    "y": 128,
+    "color": "#a19c6a"
+  },
+  {
+    "id": "plastic",
+    "x": 640,
+    "y": 128,
+    "color": "#bab7b4"
+  },
+  {
+    "id": "graphene",
+    "x": 704,
+    "y": 128,
+    "color": "#9c9999"
+  },
+  {
+    "id": "carbon-nanotube",
+    "x": 768,
+    "y": 128,
+    "color": "#dadbdd"
+  },
+  {
+    "id": "organic-crystal",
+    "x": 832,
+    "y": 128,
+    "color": "#a5a870"
+  },
+  {
+    "id": "titanium-crystal",
+    "x": 896,
+    "y": 128,
+    "color": "#cad3dc"
+  },
+  {
+    "id": "casimir-crystal",
+    "x": 960,
+    "y": 128,
+    "color": "#dfa7cb"
+  },
+  {
+    "id": "df-combustible-unit",
+    "x": 1024,
+    "y": 128,
+    "color": "#8e7a74"
+  },
+  {
+    "id": "df-explosive-unit",
+    "x": 1088,
+    "y": 128,
+    "color": "#938574"
+  },
+  {
+    "id": "df-crystal-explosive-unit",
+    "x": 1152,
+    "y": 128,
+    "color": "#9081a1"
+  },
+  {
+    "id": "graviton-lens",
+    "x": 1216,
+    "y": 128,
+    "color": "#629a86"
+  },
+  {
+    "id": "space-warper",
+    "x": 1280,
+    "y": 128,
+    "color": "#807b6c"
+  },
+  {
+    "id": "annihilation-constraint-sphere",
+    "x": 1344,
+    "y": 128,
+    "color": "#4a90c7"
+  },
+  {
+    "id": "df-engine",
+    "x": 1408,
+    "y": 128,
+    "color": "#a89a83"
+  },
+  {
+    "id": "thruster",
+    "x": 0,
+    "y": 192,
+    "color": "#9cafc1"
+  },
+  {
+    "id": "reinforced-thruster",
+    "x": 64,
+    "y": 192,
+    "color": "#92a9c1"
+  },
+  {
+    "id": "logistics-bot",
+    "x": 128,
+    "y": 192,
+    "color": "#7a8ebd"
+  },
+  {
+    "id": "logistics-drone",
+    "x": 192,
+    "y": 192,
+    "color": "#a0b0bf"
+  },
+  {
+    "id": "logistics-vessel",
+    "x": 256,
+    "y": 192,
+    "color": "#a0a6a9"
+  },
+  {
+    "id": "frame-material",
+    "x": 320,
+    "y": 192,
+    "color": "#838c8d"
+  },
+  {
+    "id": "dyson-sphere-component",
+    "x": 384,
+    "y": 192,
+    "color": "#7392a4"
+  },
+  {
+    "id": "small-carrier-rocket",
+    "x": 448,
+    "y": 192,
+    "color": "#6585a0"
+  },
+  {
+    "id": "foundation",
+    "x": 512,
+    "y": 192,
+    "color": "#b0b0b7"
+  },
+  {
+    "id": "proliferator-1",
+    "x": 576,
+    "y": 192,
+    "color": "#967c5b"
+  },
+  {
+    "id": "proliferator-2",
+    "x": 640,
+    "y": 192,
+    "color": "#59947d"
+  },
+  {
+    "id": "proliferator-3",
+    "x": 704,
+    "y": 192,
+    "color": "#5b8095"
+  },
+  {
+    "id": "df-magnum-ammo-box",
+    "x": 768,
+    "y": 192,
+    "color": "#a4715c"
+  },
+  {
+    "id": "df-titanium-ammo-box",
+    "x": 832,
+    "y": 192,
+    "color": "#848998"
+  },
+  {
+    "id": "df-superalloy-ammo-box",
+    "x": 896,
+    "y": 192,
+    "color": "#a78c5f"
+  },
+  {
+    "id": "df-shell-set",
+    "x": 960,
+    "y": 192,
+    "color": "#818386"
+  },
+  {
+    "id": "df-high-explosive-shell-set",
+    "x": 1024,
+    "y": 192,
+    "color": "#9d8e76"
+  },
+  {
+    "id": "df-crystal-shell-set",
+    "x": 1088,
+    "y": 192,
+    "color": "#a184ab"
+  },
+  {
+    "id": "df-plasma-capsule",
+    "x": 1152,
+    "y": 192,
+    "color": "#488d7b"
+  },
+  {
+    "id": "df-antimatter-capsule",
+    "x": 1216,
+    "y": 192,
+    "color": "#564b72"
+  },
+  {
+    "id": "df-missile-set",
+    "x": 1280,
+    "y": 192,
+    "color": "#938789"
+  },
+  {
+    "id": "df-supersonic-missile-set",
+    "x": 1344,
+    "y": 192,
+    "color": "#948573"
+  },
+  {
+    "id": "df-gravity-missile-set",
+    "x": 1408,
+    "y": 192,
+    "color": "#749789"
+  },
+  {
+    "id": "df-jamming-capsule",
+    "x": 0,
+    "y": 256,
+    "color": "#618ca8"
+  },
+  {
+    "id": "df-suppressing-capsule",
+    "x": 64,
+    "y": 256,
+    "color": "#a79875"
+  },
+  {
+    "id": "df-prototype",
+    "x": 128,
+    "y": 256,
+    "color": "#8f8390"
+  },
+  {
+    "id": "df-precision-drone",
+    "x": 192,
+    "y": 256,
+    "color": "#8e8b94"
+  },
+  {
+    "id": "df-attack-drone",
+    "x": 256,
+    "y": 256,
+    "color": "#968a91"
+  },
+  {
+    "id": "df-corvette",
+    "x": 320,
+    "y": 256,
+    "color": "#868383"
+  },
+  {
+    "id": "df-destroyer",
+    "x": 384,
+    "y": 256,
+    "color": "#857b75"
+  },
+  {
+    "id": "df-dark-fog-matrix",
+    "x": 448,
+    "y": 256,
+    "color": "#5dccc2"
+  },
+  {
+    "id": "df-silicon-based-neuron",
+    "x": 512,
+    "y": 256,
+    "color": "#397f7b"
+  },
+  {
+    "id": "df-matter-recombinator",
+    "x": 576,
+    "y": 256,
+    "color": "#528985"
+  },
+  {
+    "id": "df-negentropy-singularity",
+    "x": 640,
+    "y": 256,
+    "color": "#4f7371"
+  },
+  {
+    "id": "df-core-element",
+    "x": 704,
+    "y": 256,
+    "color": "#c3ab4c"
+  },
+  {
+    "id": "df-energy-shard",
+    "x": 768,
+    "y": 256,
+    "color": "#466b6b"
+  },
+  {
+    "id": "conveyor-belt-1",
+    "x": 832,
+    "y": 256,
+    "color": "#998f81"
+  },
+  {
+    "id": "conveyor-belt-2",
+    "x": 896,
+    "y": 256,
+    "color": "#7a8f8a"
+  },
+  {
+    "id": "conveyor-belt-3",
+    "x": 960,
+    "y": 256,
+    "color": "#7d8e98"
+  },
+  {
+    "id": "sorter-1",
+    "x": 1024,
+    "y": 256,
+    "color": "#adaba7"
+  },
+  {
+    "id": "sorter-2",
+    "x": 1088,
+    "y": 256,
+    "color": "#9babad"
+  },
+  {
+    "id": "sorter-3",
+    "x": 1152,
+    "y": 256,
+    "color": "#9cabb8"
+  },
+  {
+    "id": "sorter-4",
+    "x": 1216,
+    "y": 256,
+    "color": "#acb2b5"
+  },
+  {
+    "id": "splitter",
+    "x": 1280,
+    "y": 256,
+    "color": "#868e92"
+  },
+  {
+    "id": "automatic-piler",
+    "x": 1344,
+    "y": 256,
+    "color": "#8e95a6"
+  },
+  {
+    "id": "traffic-monitor",
+    "x": 1408,
+    "y": 256,
+    "color": "#87ab96"
+  },
+  {
+    "id": "spray-coater",
+    "x": 0,
+    "y": 320,
+    "color": "#9a9792"
+  },
+  {
+    "id": "logistics-distributor",
+    "x": 64,
+    "y": 320,
+    "color": "#727684"
+  },
+  {
+    "id": "storage-1",
+    "x": 128,
+    "y": 320,
+    "color": "#a5acb0"
+  },
+  {
+    "id": "storage-2",
+    "x": 192,
+    "y": 320,
+    "color": "#a9b1b5"
+  },
+  {
+    "id": "storage-tank",
+    "x": 256,
+    "y": 320,
+    "color": "#89979e"
+  },
+  {
+    "id": "assembling-machine-1",
+    "x": 320,
+    "y": 320,
+    "color": "#a08b7a"
+  },
+  {
+    "id": "assembling-machine-2",
+    "x": 384,
+    "y": 320,
+    "color": "#70a1a0"
+  },
+  {
+    "id": "assembling-machine-3",
+    "x": 448,
+    "y": 320,
+    "color": "#6f8fa2"
+  },
+  {
+    "id": "df-recomposing-assembler",
+    "x": 512,
+    "y": 320,
+    "color": "#668083"
+  },
+  {
+    "id": "tesla-tower",
+    "x": 576,
+    "y": 320,
+    "color": "#b39292"
+  },
+  {
+    "id": "wireless-power-tower",
+    "x": 640,
+    "y": 320,
+    "color": "#5a81b9"
+  },
+  {
+    "id": "satellite-substation",
+    "x": 704,
+    "y": 320,
+    "color": "#9898af"
+  },
+  {
+    "id": "wind-turbine",
+    "x": 768,
+    "y": 320,
+    "color": "#bc898e"
+  },
+  {
+    "id": "thermal-power-plant",
+    "x": 832,
+    "y": 320,
+    "color": "#b99d90"
+  },
+  {
+    "id": "mini-fusion-power-plant",
+    "x": 896,
+    "y": 320,
+    "color": "#8a9bab"
+  },
+  {
+    "id": "geothermal-power-station",
+    "x": 960,
+    "y": 320,
+    "color": "#91868c"
+  },
+  {
+    "id": "mining-machine",
+    "x": 1024,
+    "y": 320,
+    "color": "#908e9b"
+  },
+  {
+    "id": "advanced-mining-machine",
+    "x": 1088,
+    "y": 320,
+    "color": "#8a99c1"
+  },
+  {
+    "id": "water-pump",
+    "x": 1152,
+    "y": 320,
+    "color": "#82a1a7"
+  },
+  {
+    "id": "arc-smelter",
+    "x": 1216,
+    "y": 320,
+    "color": "#a1abb9"
+  },
+  {
+    "id": "plane-smelter",
+    "x": 1280,
+    "y": 320,
+    "color": "#b0a0a1"
+  },
+  {
+    "id": "df-negentropy-smelter",
+    "x": 1344,
+    "y": 320,
+    "color": "#869393"
+  },
+  {
+    "id": "oil-extractor",
+    "x": 1408,
+    "y": 320,
+    "color": "#9fa7b6"
+  },
+  {
+    "id": "oil-refinery",
+    "x": 0,
+    "y": 384,
+    "color": "#949fb3"
+  },
+  {
+    "id": "chemical-plant",
+    "x": 64,
+    "y": 384,
+    "color": "#8b9596"
+  },
+  {
+    "id": "quantum-chemical-plant",
+    "x": 128,
+    "y": 384,
+    "color": "#819bbc"
+  },
+  {
+    "id": "fractionator",
+    "x": 192,
+    "y": 384,
+    "color": "#7d909e"
+  },
+  {
+    "id": "solar-panel",
+    "x": 256,
+    "y": 384,
+    "color": "#818b9d"
+  },
+  {
+    "id": "accumulator",
+    "x": 320,
+    "y": 384,
+    "color": "#868e8f"
+  },
+  {
+    "id": "accumulator-full",
+    "x": 384,
+    "y": 384,
+    "color": "#969cba"
+  },
+  {
+    "id": "em-rail-ejector",
+    "x": 448,
+    "y": 384,
+    "color": "#9098b5"
+  },
+  {
+    "id": "ray-receiver",
+    "x": 512,
+    "y": 384,
+    "color": "#728da8"
+  },
+  {
+    "id": "vertical-launching-silo",
+    "x": 576,
+    "y": 384,
+    "color": "#769fc1"
+  },
+  {
+    "id": "energy-exchanger",
+    "x": 640,
+    "y": 384,
+    "color": "#7291af"
+  },
+  {
+    "id": "miniature-particle-collider",
+    "x": 704,
+    "y": 384,
+    "color": "#667fa8"
+  },
+  {
+    "id": "artificial-star",
+    "x": 768,
+    "y": 384,
+    "color": "#b1a46c"
+  },
+  {
+    "id": "planetary-logistics-station",
+    "x": 832,
+    "y": 384,
+    "color": "#767f87"
+  },
+  {
+    "id": "interstellar-logistics-station",
+    "x": 896,
+    "y": 384,
+    "color": "#767f8a"
+  },
+  {
+    "id": "orbital-collector",
+    "x": 960,
+    "y": 384,
+    "color": "#728196"
+  },
+  {
+    "id": "matrix-lab",
+    "x": 1024,
+    "y": 384,
+    "color": "#839bb0"
+  },
+  {
+    "id": "df-self-evolution-lab",
+    "x": 1088,
+    "y": 384,
+    "color": "#5f8d94"
+  },
+  {
+    "id": "df-gauss-turret",
+    "x": 1152,
+    "y": 384,
+    "color": "#a19082"
+  },
+  {
+    "id": "df-laser-turret",
+    "x": 1216,
+    "y": 384,
+    "color": "#9398a7"
+  },
+  {
+    "id": "df-implosion-cannon",
+    "x": 1280,
+    "y": 384,
+    "color": "#776b67"
+  },
+  {
+    "id": "df-plasma-turret",
+    "x": 1344,
+    "y": 384,
+    "color": "#9997a8"
+  },
+  {
+    "id": "df-missile-turret",
+    "x": 1408,
+    "y": 384,
+    "color": "#919481"
+  },
+  {
+    "id": "df-jammer-tower",
+    "x": 0,
+    "y": 448,
+    "color": "#727e9a"
+  },
+  {
+    "id": "df-signal-tower",
+    "x": 64,
+    "y": 448,
+    "color": "#7d8893"
+  },
+  {
+    "id": "df-planetary-shield-generator",
+    "x": 128,
+    "y": 448,
+    "color": "#798a9c"
+  },
+  {
+    "id": "df-battlefield-analysis-base",
+    "x": 192,
+    "y": 448,
+    "color": "#929090"
+  },
+  {
+    "id": "df-plasma-turret-sr",
+    "x": 256,
+    "y": 448,
+    "color": "#a19ac7"
+  },
+  {
+    "id": "electromagnetic-matrix",
+    "x": 320,
+    "y": 448,
+    "color": "#4492c8"
+  },
+  {
+    "id": "energy-matrix",
+    "x": 384,
+    "y": 448,
+    "color": "#de6472"
+  },
+  {
+    "id": "structure-matrix",
+    "x": 448,
+    "y": 448,
+    "color": "#ecb029"
+  },
+  {
+    "id": "information-matrix",
+    "x": 512,
+    "y": 448,
+    "color": "#9c62dd"
+  },
+  {
+    "id": "gravity-matrix",
+    "x": 576,
+    "y": 448,
+    "color": "#53bf5c"
+  },
+  {
+    "id": "universe-matrix",
+    "x": 640,
+    "y": 448,
+    "color": "#b7c0d5"
+  },
+  {
+    "id": "plasma-refining",
+    "x": 704,
+    "y": 448,
+    "color": "#a291cb"
+  },
+  {
+    "id": "casimir-crystal-advanced",
+    "x": 768,
+    "y": 448,
+    "color": "#d2a9c6"
+  },
+  {
+    "id": "graphene-advanced",
+    "x": 832,
+    "y": 448,
+    "color": "#768394"
+  },
+  {
+    "id": "carbon-nanotube-advanced",
+    "x": 896,
+    "y": 448,
+    "color": "#a5b9d2"
+  },
+  {
+    "id": "organic-crystal-original",
+    "x": 960,
+    "y": 448,
+    "color": "#9b9b71"
+  },
+  {
+    "id": "x-ray-cracking",
+    "x": 1024,
+    "y": 448,
+    "color": "#9288d2"
+  },
+  {
+    "id": "diamond-advanced",
+    "x": 1088,
+    "y": 448,
+    "color": "#8d99aa"
+  },
+  {
+    "id": "crystal-silicon-advanced",
+    "x": 1152,
+    "y": 448,
+    "color": "#678b80"
+  },
+  {
+    "id": "photon-combiner-advanced",
+    "x": 1216,
+    "y": 448,
+    "color": "#bb83b2"
+  },
+  {
+    "id": "mass-energy-storage",
+    "x": 1280,
+    "y": 448,
+    "color": "#5488aa"
+  },
+  {
+    "id": "space-warper-advanced",
+    "x": 1344,
+    "y": 448,
+    "color": "#7c8969"
+  },
+  {
+    "id": "particle-container-advanced",
+    "x": 1408,
+    "y": 448,
+    "color": "#a18fb6"
+  },
+  {
+    "id": "deuterium-fractionation",
+    "x": 0,
+    "y": 512,
+    "color": "#a7bec4"
+  },
+  {
+    "id": "reforming-refine",
+    "x": 64,
+    "y": 512,
+    "color": "#9683b7"
+  },
+  {
+    "id": "iron-vein",
+    "x": 128,
+    "y": 512,
+    "color": "#59829c"
+  },
+  {
+    "id": "copper-vein",
+    "x": 192,
+    "y": 512,
+    "color": "#946b61"
+  },
+  {
+    "id": "silicium-vein",
+    "x": 256,
+    "y": 512,
+    "color": "#799d8d"
+  },
+  {
+    "id": "titanium-vein",
+    "x": 320,
+    "y": 512,
+    "color": "#9a9cab"
+  },
+  {
+    "id": "stone-vein",
+    "x": 384,
+    "y": 512,
+    "color": "#7c7a79"
+  },
+  {
+    "id": "coal-vein",
+    "x": 448,
+    "y": 512,
+    "color": "#453f36"
+  },
+  {
+    "id": "crude-oil-seep",
+    "x": 512,
+    "y": 512,
+    "color": "#676c71"
+  },
+  {
+    "id": "fire-ice-vein",
+    "x": 576,
+    "y": 512,
+    "color": "#939fb0"
+  },
+  {
+    "id": "kimberlite-vein",
+    "x": 640,
+    "y": 512,
+    "color": "#9ba4aa"
+  },
+  {
+    "id": "fractal-silicon-vein",
+    "x": 704,
+    "y": 512,
+    "color": "#5d8070"
+  },
+  {
+    "id": "organic-crystal-vein",
+    "x": 768,
+    "y": 512,
+    "color": "#888f6c"
+  },
+  {
+    "id": "optical-grating-crystal-vein",
+    "x": 832,
+    "y": 512,
+    "color": "#736186"
+  },
+  {
+    "id": "spiniform-stalagmite-crystal-vein",
+    "x": 896,
+    "y": 512,
+    "color": "#899497"
+  },
+  {
+    "id": "unipolar-magnet-vein",
+    "x": 960,
+    "y": 512,
+    "color": "#6e6466"
+  },
+  {
+    "id": "electromagnetism",
+    "x": 1024,
+    "y": 512,
+    "color": "#ffffff"
+  },
+  {
+    "id": "electromagnetic-matrix-technology",
+    "x": 1088,
+    "y": 512,
+    "color": "#ffffff"
+  },
+  {
+    "id": "high-efficiency-plasma-control",
+    "x": 1152,
+    "y": 512,
+    "color": "#ffffff"
+  },
+  {
+    "id": "plasma-extract-refining",
+    "x": 1216,
+    "y": 512,
+    "color": "#ffffff"
+  },
+  {
+    "id": "x-ray-cracking-technology",
+    "x": 1280,
+    "y": 512,
+    "color": "#ffffff"
+  },
+  {
+    "id": "reforming-refine-technology",
+    "x": 1344,
+    "y": 512,
+    "color": "#ffffff"
+  },
+  {
+    "id": "energy-matrix-technology",
+    "x": 1408,
+    "y": 512,
+    "color": "#ffffff"
+  },
+  {
+    "id": "hydrogen-fuel-rod-technology",
+    "x": 0,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "thruster-technology",
+    "x": 64,
+    "y": 576,
+    "color": "#fefefe"
+  },
+  {
+    "id": "reinforced-thruster-technology",
+    "x": 128,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "fluid-storage-encapsulation",
+    "x": 192,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "basic-chemical-engineering",
+    "x": 256,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "polymer-chemical-engineering",
+    "x": 320,
+    "y": 576,
+    "color": "#fefefe"
+  },
+  {
+    "id": "high-strength-crystal",
+    "x": 384,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "structure-matrix-technology",
+    "x": 448,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "casimir-crystal-technology",
+    "x": 512,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "high-strength-glass",
+    "x": 576,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "applied-superconductor",
+    "x": 640,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "high-strength-material",
+    "x": 704,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "particle-control-technology",
+    "x": 768,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "deuterium-fractionation-technology",
+    "x": 832,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "wave-function-interference",
+    "x": 896,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "miniature-particle-collider-technology",
+    "x": 960,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "strange-matter-technology",
+    "x": 1024,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "artificial-star-technology",
+    "x": 1088,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "controlled-annihilation-reaction",
+    "x": 1152,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "proliferator-1-technology",
+    "x": 1216,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "proliferator-2-technology",
+    "x": 1280,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "proliferator-3-technology",
+    "x": 1344,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "basic-assembling-processes",
+    "x": 1408,
+    "y": 576,
+    "color": "#ffffff"
+  },
+  {
+    "id": "high-speed-assembling-processes",
+    "x": 0,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "quantum-printing-technology",
+    "x": 64,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "processor-technology",
+    "x": 128,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "quantum-chip-technology",
+    "x": 192,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "photon-spotlight-mining-technology",
+    "x": 256,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mesoscopic-quantum-entanglement",
+    "x": 320,
+    "y": 640,
+    "color": "#fefefe"
+  },
+  {
+    "id": "semiconductor-material",
+    "x": 384,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "information-matrix-technology",
+    "x": 448,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "automatic-metallurgy",
+    "x": 512,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "smelting-purification",
+    "x": 576,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "crystal-smelting",
+    "x": 640,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "steel-smelting",
+    "x": 704,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "thermal-power",
+    "x": 768,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "titanium-smelting",
+    "x": 832,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "high-strength-titanium-alloy",
+    "x": 896,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "environment-modification",
+    "x": 960,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mini-fusion-power-generation",
+    "x": 1024,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "plane-filter-smelting-technology",
+    "x": 1088,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-collection",
+    "x": 1152,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "photon-frequency-conversion",
+    "x": 1216,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-sail-orbit-system",
+    "x": 1280,
+    "y": 640,
+    "color": "#fdfefe"
+  },
+  {
+    "id": "ray-receiver-technology",
+    "x": 1344,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "planetary-ionosphere-utilization",
+    "x": 1408,
+    "y": 640,
+    "color": "#ffffff"
+  },
+  {
+    "id": "dirac-inversion-mechanism",
+    "x": 0,
+    "y": 704,
+    "color": "#fefefe"
+  },
+  {
+    "id": "universe-matrix-technology",
+    "x": 64,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mission-completed",
+    "x": 128,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "energy-storage",
+    "x": 192,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "interstellar-power-transmission",
+    "x": 256,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "geothermal-extraction",
+    "x": 320,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "high-strength-lightweight-structure",
+    "x": 384,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "vertical-launching-silo-technology",
+    "x": 448,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "dyson-sphere-stress-system-1",
+    "x": 512,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "basic-logistics-system",
+    "x": 576,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "improved-logistics-system",
+    "x": 640,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "high-efficiency-logistics-system",
+    "x": 704,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "planetary-logistics-system",
+    "x": 768,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "interstellar-logistics-system",
+    "x": 832,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "gas-giants-exploitation",
+    "x": 896,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "integrated-logistics-system",
+    "x": 960,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "distribution-logistics-system",
+    "x": 1024,
+    "y": 704,
+    "color": "#fdfdfc"
+  },
+  {
+    "id": "electromagnetic-drive",
+    "x": 1088,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "magnetic-levitation-technology",
+    "x": 1152,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "magnetic-particle-trap",
+    "x": 1216,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "gravitational-wave-refraction",
+    "x": 1280,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "gravity-matrix-technology",
+    "x": 1344,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "super-magnetic-field-generator",
+    "x": 1408,
+    "y": 704,
+    "color": "#ffffff"
+  },
+  {
+    "id": "satellite-power-distribution-system",
+    "x": 0,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-weapon-system",
+    "x": 64,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combustible-unit-tech",
+    "x": 128,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-explosive-unit-tech",
+    "x": 192,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-crystal-explosive-unit-tech",
+    "x": 256,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-engine-tech",
+    "x": 320,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-missile-turret-tech",
+    "x": 384,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-implosion-cannon-tech",
+    "x": 448,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-signal-tower-tech",
+    "x": 512,
+    "y": 768,
+    "color": "#fdfdfd"
+  },
+  {
+    "id": "df-planetary-defense-system",
+    "x": 576,
+    "y": 768,
+    "color": "#fefefe"
+  },
+  {
+    "id": "df-jammer-tower-tech",
+    "x": 640,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-plasma-turret-tech",
+    "x": 704,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-titanium-ammo-box-tech",
+    "x": 768,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-superalloy-ammo-box-tech",
+    "x": 832,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-high-explosive-shell-set-tech",
+    "x": 896,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-supersonic-missile-set-tech",
+    "x": 960,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-crystal-shell-set-tech",
+    "x": 1024,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-gravity-missile-set-tech",
+    "x": 1088,
+    "y": 768,
+    "color": "#fefefe"
+  },
+  {
+    "id": "df-antimatter-capsule-tech",
+    "x": 1152,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-prototype-tech",
+    "x": 1216,
+    "y": 768,
+    "color": "#fefefe"
+  },
+  {
+    "id": "df-precision-drone-tech",
+    "x": 1280,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-attack-drone-tech",
+    "x": 1344,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-corvette-tech",
+    "x": 1408,
+    "y": 768,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-destroyer-tech",
+    "x": 0,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-suppressing-capsule-tech",
+    "x": 64,
+    "y": 832,
+    "color": "#fdfdfd"
+  },
+  {
+    "id": "df-battlefield-analysis-base-tech",
+    "x": 128,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-digital-analog-computation",
+    "x": 192,
+    "y": 832,
+    "color": "#fbfbfb"
+  },
+  {
+    "id": "df-matter-recombination",
+    "x": 256,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-negentropy-recursion",
+    "x": 320,
+    "y": 832,
+    "color": "#fefefe"
+  },
+  {
+    "id": "df-high-density-controlled-annihilation",
+    "x": 384,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mecha-core-1",
+    "x": 448,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mecha-core-2",
+    "x": 512,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mecha-core-3",
+    "x": 576,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mecha-core-4",
+    "x": 640,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mecha-core-5",
+    "x": 704,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mecha-core-6",
+    "x": 768,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-1",
+    "x": 832,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-2",
+    "x": 896,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-3",
+    "x": 960,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-4",
+    "x": 1024,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-5",
+    "x": 1088,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-6",
+    "x": 1152,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-7",
+    "x": 1216,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mechanical-frame-8",
+    "x": 1280,
+    "y": 832,
+    "color": "#ffffff"
+  },
+  {
+    "id": "inventory-capacity-1",
+    "x": 1344,
+    "y": 832,
+    "color": "#fefefe"
+  },
+  {
+    "id": "inventory-capacity-2",
+    "x": 1408,
+    "y": 832,
+    "color": "#fefefe"
+  },
+  {
+    "id": "inventory-capacity-3",
+    "x": 0,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "inventory-capacity-4",
+    "x": 64,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "inventory-capacity-5",
+    "x": 128,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "inventory-capacity-6",
+    "x": 192,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "inventory-capacity-7",
+    "x": 256,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "communication-control-1",
+    "x": 320,
+    "y": 896,
+    "color": "#fdfdfd"
+  },
+  {
+    "id": "communication-control-2",
+    "x": 384,
+    "y": 896,
+    "color": "#fdfdfd"
+  },
+  {
+    "id": "communication-control-3",
+    "x": 448,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "communication-control-4",
+    "x": 512,
+    "y": 896,
+    "color": "#fefdfe"
+  },
+  {
+    "id": "communication-control-5",
+    "x": 576,
+    "y": 896,
+    "color": "#fdfdfd"
+  },
+  {
+    "id": "communication-control-6",
+    "x": 640,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "communication-control-7",
+    "x": 704,
+    "y": 896,
+    "color": "#fefdfe"
+  },
+  {
+    "id": "energy-circuit-1",
+    "x": 768,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "energy-circuit-2",
+    "x": 832,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "energy-circuit-3",
+    "x": 896,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "energy-circuit-4",
+    "x": 960,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "energy-circuit-5",
+    "x": 1024,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "energy-circuit-6",
+    "x": 1088,
+    "y": 896,
+    "color": "#ffffff"
+  },
+  {
+    "id": "drone-engine-1",
+    "x": 1152,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "drone-engine-2",
+    "x": 1216,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "drone-engine-3",
+    "x": 1280,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "drone-engine-4",
+    "x": 1344,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "drone-engine-5",
+    "x": 1408,
+    "y": 896,
+    "color": "#fefefe"
+  },
+  {
+    "id": "drone-engine-6",
+    "x": 0,
+    "y": 960,
+    "color": "#fefefe"
+  },
+  {
+    "id": "mass-construction-1",
+    "x": 64,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mass-construction-2",
+    "x": 128,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mass-construction-3",
+    "x": 192,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mass-construction-4",
+    "x": 256,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "mass-construction-5",
+    "x": 320,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-shield-1",
+    "x": 384,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-shield-2",
+    "x": 448,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-shield-3",
+    "x": 512,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-shield-4",
+    "x": 576,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-shield-5",
+    "x": 640,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-shield-6",
+    "x": 704,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-shield-7",
+    "x": 768,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "drive-engine-1",
+    "x": 832,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "drive-engine-2",
+    "x": 896,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "drive-engine-3",
+    "x": 960,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "drive-engine-4",
+    "x": 1024,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "drive-engine-5",
+    "x": 1088,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "drive-engine-6",
+    "x": 1152,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-auto-reconstruction-marking-1",
+    "x": 1216,
+    "y": 960,
+    "color": "#fefefe"
+  },
+  {
+    "id": "df-auto-reconstruction-marking-2",
+    "x": 1280,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-auto-reconstruction-marking-3",
+    "x": 1344,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-auto-reconstruction-marking-4",
+    "x": 1408,
+    "y": 960,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-auto-reconstruction-marking-5",
+    "x": 0,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-auto-reconstruction-marking-6",
+    "x": 64,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-sail-life-1",
+    "x": 128,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-sail-life-2",
+    "x": 192,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-sail-life-3",
+    "x": 256,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-sail-life-4",
+    "x": 320,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-sail-life-5",
+    "x": 384,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "solar-sail-life-6",
+    "x": 448,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-1",
+    "x": 512,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-2",
+    "x": 576,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-3",
+    "x": 640,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-4",
+    "x": 704,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-5",
+    "x": 768,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-6",
+    "x": 832,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-7",
+    "x": 896,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "ray-transmission-efficiency-8",
+    "x": 960,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "sorter-cargo-stacking-1",
+    "x": 1024,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "sorter-cargo-stacking-2",
+    "x": 1088,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "sorter-cargo-stacking-3",
+    "x": 1152,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "sorter-cargo-stacking-4",
+    "x": 1216,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "sorter-cargo-stacking-5",
+    "x": 1280,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "sorter-cargo-integration",
+    "x": 1344,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "pile-sorter-1",
+    "x": 1408,
+    "y": 1024,
+    "color": "#ffffff"
+  },
+  {
+    "id": "pile-sorter-2",
+    "x": 0,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "pile-sorter-3",
+    "x": 64,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "pile-sorter-4",
+    "x": 128,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "pile-sorter-5",
+    "x": 192,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "pile-sorter-6",
+    "x": 256,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "distribution-range-1",
+    "x": 320,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "distribution-range-2",
+    "x": 384,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "distribution-range-3",
+    "x": 448,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "distribution-range-4",
+    "x": 512,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "distribution-range-5",
+    "x": 576,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-engine-1",
+    "x": 640,
+    "y": 1088,
+    "color": "#fefefe"
+  },
+  {
+    "id": "logistics-carrier-engine-2",
+    "x": 704,
+    "y": 1088,
+    "color": "#fefefe"
+  },
+  {
+    "id": "logistics-carrier-engine-3",
+    "x": 768,
+    "y": 1088,
+    "color": "#fefefe"
+  },
+  {
+    "id": "logistics-carrier-engine-4",
+    "x": 832,
+    "y": 1088,
+    "color": "#fefefe"
+  },
+  {
+    "id": "logistics-carrier-engine-5",
+    "x": 896,
+    "y": 1088,
+    "color": "#fefefe"
+  },
+  {
+    "id": "logistics-carrier-engine-6",
+    "x": 960,
+    "y": 1088,
+    "color": "#fefefe"
+  },
+  {
+    "id": "logistics-carrier-engine-7",
+    "x": 1024,
+    "y": 1088,
+    "color": "#fefefe"
+  },
+  {
+    "id": "logistics-carrier-capacity-1",
+    "x": 1088,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-2",
+    "x": 1152,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-3",
+    "x": 1216,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-4",
+    "x": 1280,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-5",
+    "x": 1344,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-6",
+    "x": 1408,
+    "y": 1088,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-7",
+    "x": 0,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-8",
+    "x": 64,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-9",
+    "x": 128,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-carrier-capacity-12",
+    "x": 192,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-station-integrated-logistics-1",
+    "x": 256,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-station-integrated-logistics-2",
+    "x": 320,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "logistics-station-integrated-logistics-3",
+    "x": 384,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "veins-utilization-1",
+    "x": 448,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "veins-utilization-2",
+    "x": 512,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "veins-utilization-3",
+    "x": 576,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "veins-utilization-4",
+    "x": 640,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "veins-utilization-5",
+    "x": 704,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "veins-utilization-6",
+    "x": 768,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "vertical-construction-1",
+    "x": 832,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "vertical-construction-2",
+    "x": 896,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "vertical-construction-3",
+    "x": 960,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "vertical-construction-4",
+    "x": 1024,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "vertical-construction-5",
+    "x": 1088,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "vertical-construction-6",
+    "x": 1152,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "research-speed-1",
+    "x": 1216,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "research-speed-2",
+    "x": 1280,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "research-speed-3",
+    "x": 1344,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "research-speed-4",
+    "x": 1408,
+    "y": 1152,
+    "color": "#ffffff"
+  },
+  {
+    "id": "universe-exploration-1",
+    "x": 0,
+    "y": 1216,
+    "color": "#fefefe"
+  },
+  {
+    "id": "universe-exploration-2",
+    "x": 64,
+    "y": 1216,
+    "color": "#fefefe"
+  },
+  {
+    "id": "universe-exploration-3",
+    "x": 128,
+    "y": 1216,
+    "color": "#fefefe"
+  },
+  {
+    "id": "universe-exploration-4",
+    "x": 192,
+    "y": 1216,
+    "color": "#fefefe"
+  },
+  {
+    "id": "df-kinetic-weapon-damage-1",
+    "x": 256,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-kinetic-weapon-damage-2",
+    "x": 320,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-kinetic-weapon-damage-3",
+    "x": 384,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-kinetic-weapon-damage-4",
+    "x": 448,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-kinetic-weapon-damage-5",
+    "x": 512,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-kinetic-weapon-damage-6",
+    "x": 576,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-weapon-damage-1",
+    "x": 640,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-weapon-damage-2",
+    "x": 704,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-weapon-damage-3",
+    "x": 768,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-weapon-damage-4",
+    "x": 832,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-weapon-damage-5",
+    "x": 896,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-energy-weapon-damage-6",
+    "x": 960,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-explosive-weapon-damage-1",
+    "x": 1024,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-explosive-weapon-damage-2",
+    "x": 1088,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-explosive-weapon-damage-3",
+    "x": 1152,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-explosive-weapon-damage-4",
+    "x": 1216,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-explosive-weapon-damage-5",
+    "x": 1280,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-explosive-weapon-damage-6",
+    "x": 1344,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-damage-1",
+    "x": 1408,
+    "y": 1216,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-damage-2",
+    "x": 0,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-damage-3",
+    "x": 64,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-damage-4",
+    "x": 128,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-damage-5",
+    "x": 192,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-attack-speed-1",
+    "x": 256,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-attack-speed-2",
+    "x": 320,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-attack-speed-3",
+    "x": 384,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-attack-speed-4",
+    "x": 448,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-attack-speed-5",
+    "x": 512,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-durability-1",
+    "x": 576,
+    "y": 1280,
+    "color": "#fefefe"
+  },
+  {
+    "id": "df-combat-drone-durability-2",
+    "x": 640,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-durability-3",
+    "x": 704,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-durability-4",
+    "x": 768,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-combat-drone-durability-5",
+    "x": 832,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-planetary-shield-1",
+    "x": 896,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-planetary-shield-2",
+    "x": 960,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-planetary-shield-3",
+    "x": 1024,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-planetary-shield-4",
+    "x": 1088,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-planetary-shield-5",
+    "x": 1152,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-ground-squadron-expansion-1",
+    "x": 1216,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-ground-squadron-expansion-2",
+    "x": 1280,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-ground-squadron-expansion-3",
+    "x": 1344,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-ground-squadron-expansion-4",
+    "x": 1408,
+    "y": 1280,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-ground-squadron-expansion-5",
+    "x": 0,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-ground-squadron-expansion-6",
+    "x": 64,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-ground-squadron-expansion-7",
+    "x": 128,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-space-fleet-expansion-1",
+    "x": 192,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-space-fleet-expansion-2",
+    "x": 256,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-space-fleet-expansion-3",
+    "x": 320,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-space-fleet-expansion-4",
+    "x": 384,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-space-fleet-expansion-5",
+    "x": 448,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-space-fleet-expansion-6",
+    "x": 512,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-space-fleet-expansion-7",
+    "x": 576,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-enhanced-structure-1",
+    "x": 640,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-enhanced-structure-2",
+    "x": 704,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-enhanced-structure-3",
+    "x": 768,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-enhanced-structure-4",
+    "x": 832,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-enhanced-structure-5",
+    "x": 896,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-enhanced-structure-6",
+    "x": 960,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-em-weapon-strength-1",
+    "x": 1024,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-em-weapon-strength-2",
+    "x": 1088,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-em-weapon-strength-3",
+    "x": 1152,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-em-weapon-strength-4",
+    "x": 1216,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-em-weapon-strength-5",
+    "x": 1280,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "df-em-weapon-strength-6",
+    "x": 1344,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "buildings",
+    "x": 1408,
+    "y": 1344,
+    "color": "#ffffff"
+  },
+  {
+    "id": "components",
+    "x": 0,
+    "y": 1408,
+    "color": "#ffffff"
+  },
+  {
+    "id": "critical-photon-graviton",
+    "x": 64,
+    "y": 1408,
+    "color": "#658c89"
+  },
+  {
+    "id": "module",
+    "x": 128,
+    "y": 1408,
+    "color": "#7b7b7b"
+  },
+  {
+    "id": "proliferator-1-products",
+    "x": 192,
+    "y": 1408,
+    "color": "#9d8f7f"
+  },
+  {
+    "id": "proliferator-1-speed",
+    "x": 256,
+    "y": 1408,
+    "color": "#968877"
+  },
+  {
+    "id": "proliferator-2-products",
+    "x": 320,
+    "y": 1408,
+    "color": "#7e9c8f"
+  },
+  {
+    "id": "proliferator-2-speed",
+    "x": 384,
+    "y": 1408,
+    "color": "#769588"
+  },
+  {
+    "id": "proliferator-3-products",
+    "x": 448,
+    "y": 1408,
+    "color": "#80939c"
+  },
+  {
+    "id": "proliferator-3-speed",
+    "x": 512,
+    "y": 1408,
+    "color": "#778b95"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "proliferator-1-products",
+    "name": "Proliferator Mk.I (Products)",
+    "tier": "proliferator-1",
+    "productivity": 0.125,
+    "speed": 0,
+    "consumption": 0.3,
+    "sprays": 12,
+    "mode": "products"
+  },
+  {
+    "id": "proliferator-2-products",
+    "name": "Proliferator Mk.II (Products)",
+    "tier": "proliferator-2",
+    "productivity": 0.2,
+    "speed": 0,
+    "consumption": 0.7,
+    "sprays": 24,
+    "mode": "products"
+  },
+  {
+    "id": "proliferator-3-products",
+    "name": "Proliferator Mk.III (Products)",
+    "tier": "proliferator-3",
+    "productivity": 0.25,
+    "speed": 0,
+    "consumption": 1.5,
+    "sprays": 60,
+    "mode": "products"
+  },
+  {
+    "id": "proliferator-1-speed",
+    "name": "Proliferator Mk.I (Speedup)",
+    "tier": "proliferator-1",
+    "productivity": 0,
+    "speed": 0.25,
+    "consumption": 0.3,
+    "sprays": 12,
+    "mode": "speed"
+  },
+  {
+    "id": "proliferator-2-speed",
+    "name": "Proliferator Mk.II (Speedup)",
+    "tier": "proliferator-2",
+    "productivity": 0,
+    "speed": 0.5,
+    "consumption": 0.7,
+    "sprays": 24,
+    "mode": "speed"
+  },
+  {
+    "id": "proliferator-3-speed",
+    "name": "Proliferator Mk.III (Speedup)",
+    "tier": "proliferator-3",
+    "productivity": 0,
+    "speed": 1,
+    "consumption": 1.5,
+    "sprays": 60,
+    "mode": "speed"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "conveyor-belt-1",
+    "name": "Conveyor Belt MK.I",
+    "speed": 6
+  },
+  {
+    "id": "conveyor-belt-2",
+    "name": "Conveyor Belt MK.II",
+    "speed": 12
+  },
+  {
+    "id": "conveyor-belt-3",
+    "name": "Conveyor Belt MK.III",
+    "speed": 30
+  }
+]

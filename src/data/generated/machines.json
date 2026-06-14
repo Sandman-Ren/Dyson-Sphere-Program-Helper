@@ -1,0 +1,470 @@
+[
+  {
+    "id": "wireless-power-tower",
+    "name": "Wireless Power Tower",
+    "speed": 1,
+    "usageKW": 4800,
+    "drainKW": 90,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "satellite-substation",
+    "name": "Satellite Substation",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 720,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "wind-turbine",
+    "name": "Wind Turbine",
+    "speed": 1,
+    "usageKW": -300,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "thermal-power-plant",
+    "name": "Thermal Power Plant",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "none"
+  },
+  {
+    "id": "solar-panel",
+    "name": "Solar Panel",
+    "speed": 1,
+    "usageKW": -360,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "geothermal-power-station",
+    "name": "Geothermal Power Station",
+    "speed": 1,
+    "usageKW": -4800,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "mini-fusion-power-plant",
+    "name": "Mini Fusion Power Plant",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "none"
+  },
+  {
+    "id": "energy-exchanger",
+    "name": "Energy Exchanger",
+    "speed": 1,
+    "usageKW": 54000,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "ray-receiver",
+    "name": "Ray Receiver",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "none"
+  },
+  {
+    "id": "artificial-star",
+    "name": "Artificial Star",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "none"
+  },
+  {
+    "id": "automatic-piler",
+    "name": "Automatic Piler",
+    "speed": 1,
+    "usageKW": 144,
+    "drainKW": 9,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "traffic-monitor",
+    "name": "Traffic Monitor",
+    "speed": 1,
+    "usageKW": 36,
+    "drainKW": 9,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "spray-coater",
+    "name": "Spray Coater",
+    "speed": 1,
+    "usageKW": 90,
+    "drainKW": 4.5,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "logistics-distributor",
+    "name": "Logistics Distributor",
+    "speed": 1,
+    "usageKW": 9000,
+    "drainKW": 18,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "planetary-logistics-station",
+    "name": "Planetary Logistics Station",
+    "speed": 1,
+    "usageKW": 60000,
+    "drainKW": 60,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "interstellar-logistics-station",
+    "name": "Interstellar Logistics Station",
+    "speed": 1,
+    "usageKW": 300000,
+    "drainKW": 60,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "orbital-collector",
+    "name": "Orbital Collector",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "none"
+  },
+  {
+    "id": "sorter-1",
+    "name": "Sorter MK.I",
+    "speed": 1,
+    "usageKW": 18,
+    "drainKW": 9,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "sorter-2",
+    "name": "Sorter MK.II",
+    "speed": 1,
+    "usageKW": 36,
+    "drainKW": 9,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "sorter-3",
+    "name": "Sorter MK.III",
+    "speed": 1,
+    "usageKW": 72,
+    "drainKW": 9,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "sorter-4",
+    "name": "Pile Sorter",
+    "speed": 1,
+    "usageKW": 144,
+    "drainKW": 9,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "mining-machine",
+    "name": "Mining Machine",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "none"
+  },
+  {
+    "id": "advanced-mining-machine",
+    "name": "Advanced Mining Machine",
+    "speed": 2,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 0,
+    "powerType": "none"
+  },
+  {
+    "id": "water-pump",
+    "name": "Water Pump",
+    "speed": 1,
+    "usageKW": 300,
+    "drainKW": 12,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "oil-extractor",
+    "name": "Oil Extractor",
+    "speed": 1,
+    "usageKW": 840,
+    "drainKW": 24,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "oil-refinery",
+    "name": "Oil Refinery",
+    "speed": 1,
+    "usageKW": 960,
+    "drainKW": 24,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "fractionator",
+    "name": "Fractionator",
+    "speed": 1,
+    "usageKW": 720,
+    "drainKW": 18,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "chemical-plant",
+    "name": "Chemical Plant",
+    "speed": 1,
+    "usageKW": 720,
+    "drainKW": 24,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "quantum-chemical-plant",
+    "name": "Quantum Chemical Plant",
+    "speed": 2,
+    "usageKW": 2160,
+    "drainKW": 36,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "miniature-particle-collider",
+    "name": "Miniature Particle Collider",
+    "speed": 1,
+    "usageKW": 12000,
+    "drainKW": 120,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "arc-smelter",
+    "name": "Arc Smelter",
+    "speed": 1,
+    "usageKW": 360,
+    "drainKW": 12,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "plane-smelter",
+    "name": "Plane Smelter",
+    "speed": 2,
+    "usageKW": 1440,
+    "drainKW": 48,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-negentropy-smelter",
+    "name": "Negentropy Smelter",
+    "speed": 3,
+    "usageKW": 2880,
+    "drainKW": 96,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "assembling-machine-1",
+    "name": "Assembling Machine Mk.I",
+    "speed": 0.75,
+    "usageKW": 270,
+    "drainKW": 12,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "assembling-machine-2",
+    "name": "Assembling Machine Mk.II",
+    "speed": 1,
+    "usageKW": 540,
+    "drainKW": 18,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "assembling-machine-3",
+    "name": "Assembling Machine Mk.III",
+    "speed": 1.5,
+    "usageKW": 1080,
+    "drainKW": 24,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-recomposing-assembler",
+    "name": "Re-composing Assembler",
+    "speed": 3,
+    "usageKW": 2700,
+    "drainKW": 54,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "matrix-lab",
+    "name": "Matrix Lab",
+    "speed": 1,
+    "usageKW": 480,
+    "drainKW": 12,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-self-evolution-lab",
+    "name": "Self-evolution Lab",
+    "speed": 3,
+    "usageKW": 1920,
+    "drainKW": 48,
+    "modules": 1,
+    "powerType": "electric"
+  },
+  {
+    "id": "em-rail-ejector",
+    "name": "EM-Rail Ejector",
+    "speed": 1,
+    "usageKW": 1800,
+    "drainKW": 60,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "vertical-launching-silo",
+    "name": "Vertical Launching Silo",
+    "speed": 1,
+    "usageKW": 18000,
+    "drainKW": 60,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-gauss-turret",
+    "name": "Gauss Turret",
+    "speed": 1,
+    "usageKW": 210,
+    "drainKW": 9,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-missile-turret",
+    "name": "Missile Turret",
+    "speed": 1,
+    "usageKW": 600,
+    "drainKW": 18,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-implosion-cannon",
+    "name": "Implosion Cannon",
+    "speed": 1,
+    "usageKW": 750,
+    "drainKW": 30,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-laser-turret",
+    "name": "Laser Turret",
+    "speed": 1,
+    "usageKW": 3000,
+    "drainKW": 120,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-plasma-turret",
+    "name": "Plasma Turret",
+    "speed": 1,
+    "usageKW": 1680,
+    "drainKW": 84,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-plasma-turret-sr",
+    "name": "SR Plasma Turret",
+    "speed": 1,
+    "usageKW": 4200,
+    "drainKW": 2100,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-battlefield-analysis-base",
+    "name": "Battlefield Analysis Base",
+    "speed": 1,
+    "usageKW": 2400,
+    "drainKW": 60,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-jammer-tower",
+    "name": "Jammer Tower",
+    "speed": 1,
+    "usageKW": 1200,
+    "drainKW": 90,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-signal-tower",
+    "name": "Signal Tower",
+    "speed": 1,
+    "usageKW": 9600,
+    "drainKW": 1350,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "df-planetary-shield-generator",
+    "name": "Planetary Shield Generator",
+    "speed": 1,
+    "usageKW": 24000,
+    "drainKW": 12000,
+    "modules": 0,
+    "powerType": "electric"
+  },
+  {
+    "id": "ray-receiver-pro",
+    "name": "Ray Receiver (Graviton lens)",
+    "speed": 1,
+    "usageKW": 0,
+    "drainKW": 0,
+    "modules": 1,
+    "powerType": "none"
+  }
+]

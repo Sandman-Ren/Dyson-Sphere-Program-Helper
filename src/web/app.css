@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+@import '@xyflow/react/dist/style.css';
+
+/*
+ * DSP Helper — always-dark theme.
+ * Palette evokes Dyson Sphere Program's deep-space UI: navy panels,
+ * cyan energy accents, amber for warnings/highlights.
+ * Never use the `dark:` prefix; never hardcode colors in components.
+ */
+:root {
+  --background: #0b1120;
+  --foreground: #e6edf6;
+  --card: #121a2c;
+  --card-foreground: #e6edf6;
+  --popover: #16203a;
+  --popover-foreground: #e6edf6;
+  --primary: #38e0d0;        /* cyan energy */
+  --primary-foreground: #06121a;
+  --secondary: #1b2740;
+  --secondary-foreground: #cdd9ec;
+  --muted: #1b2740;
+  --muted-foreground: #8aa0bf;
+  --accent: #1f2d4a;
+  --accent-foreground: #e6edf6;
+  --amber: #f4b740;          /* highlight / proliferator */
+  --destructive: #f3705a;
+  --border: #243049;
+  --input: #1a2438;
+  --ring: #38e0d0;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-amber: var(--amber);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+/* React Flow surface tuned to the dark theme */
+.react-flow__background { background: var(--background); }
+.react-flow__edge-path { stroke: var(--border); }
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge.highlighted .react-flow__edge-path { stroke: var(--primary); }
+.react-flow__controls { background: var(--card); border: 1px solid var(--border); }
+.react-flow__controls-button {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+  fill: var(--foreground);
+}
+.react-flow__controls-button:hover { background: var(--accent); }
