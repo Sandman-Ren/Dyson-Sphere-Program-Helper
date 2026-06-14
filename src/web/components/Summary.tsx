@@ -3,6 +3,7 @@ import FactoryIcon from 'lucide-react/dist/esm/icons/factory';
 import PickaxeIcon from 'lucide-react/dist/esm/icons/pickaxe';
 import SparklesIcon from 'lucide-react/dist/esm/icons/sparkles';
 import type { ProductionPlan } from '../../calculator/index.js';
+import type { Proliferator } from '../../data/schema.js';
 import type { TimeUnit } from '../hooks/useCalculator.js';
 import { ItemIcon } from './ItemIcon.js';
 import { displayName } from '../data.js';
@@ -14,10 +15,11 @@ interface SummaryProps {
   timeUnit: TimeUnit;
   integerMultiplier: number | null;
   onApplyMultiplier: (k: number) => void;
+  proliferator: Proliferator | null;
 }
 
 /** Aggregated rollups: buildings, raw inputs, power, and proliferator usage. */
-export function Summary({ plan, timeUnit, integerMultiplier, onApplyMultiplier }: SummaryProps) {
+export function Summary({ plan, timeUnit, integerMultiplier, onApplyMultiplier, proliferator }: SummaryProps) {
   const machineEntries = Object.entries(plan.totalMachines).sort((a, b) => b[1] - a[1]);
   const rawEntries = Object.entries(plan.rawResources).sort((a, b) => b[1] - a[1]);
 
@@ -44,8 +46,12 @@ export function Summary({ plan, timeUnit, integerMultiplier, onApplyMultiplier }
         </Stat>
 
         <Stat icon={<SparklesIcon className="size-4 text-amber" />} label="Extras">
-          {plan.proliferatorSpraysPerSecond > 0 ? (
-            <Row id="proliferator-mk3" value={`${rate(plan.proliferatorSpraysPerSecond, timeUnit)} sprays`} />
+          {proliferator && plan.proliferatorSpraysPerSecond > 0 ? (
+            <Row
+              id={proliferator.tier}
+              name={`${proliferator.name} sprays`}
+              value={rate(plan.proliferatorSpraysPerSecond, timeUnit)}
+            />
           ) : (
             <div className="text-xs text-muted-foreground">No proliferator applied</div>
           )}
@@ -71,11 +77,11 @@ function Stat({ icon, label, children }: { icon: React.ReactNode; label: string;
   );
 }
 
-function Row({ id, value, sub }: { id: string; value: string; sub?: string }) {
+function Row({ id, value, sub, name }: { id: string; value: string; sub?: string; name?: string }) {
   return (
     <div className="flex items-center gap-2 text-sm">
       <ItemIcon id={id} size={18} tinted />
-      <span className="truncate text-muted-foreground">{displayName(id)}</span>
+      <span className="truncate text-muted-foreground">{name ?? displayName(id)}</span>
       <span className="ml-auto font-medium tabular-nums">{value}</span>
       {sub && <span className="w-10 text-right text-xs text-muted-foreground tabular-nums">{sub}</span>}
     </div>

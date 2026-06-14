@@ -1,13 +1,13 @@
 import { lazy, Suspense, useCallback, useState } from 'react';
 import { findIntegerMultiplier } from '../calculator/index.js';
 import { useHashTab } from './hooks/useHashTab.js';
-import { useCalculator, DEFAULT_PROLIFERATOR } from './hooks/useCalculator.js';
+import { useCalculator } from './hooks/useCalculator.js';
 import { ItemSelector } from './components/ItemSelector.js';
 import { RateInput } from './components/RateInput.js';
 import { ProductionChain } from './components/ProductionChain.js';
 import { Summary } from './components/Summary.js';
 import { ItemIcon } from './components/ItemIcon.js';
-import { graph, proliferators, meta } from './data.js';
+import { graph, proliferators, techById, meta } from './data.js';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent, TooltipProvider,
   Label, Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
@@ -32,6 +32,7 @@ export function App() {
   }, [calc, setTab]);
 
   const handleViewTech = useCallback((id: string) => {
+    if (!techById.has(id)) return;
     setPendingTech(id);
     setTab('tech-tree');
   }, [setTab]);
@@ -57,7 +58,7 @@ export function App() {
         </header>
 
         <TabsContent value="calculator" className="flex-1 overflow-auto">
-          <CalculatorTab calc={calc} onViewTech={handleViewTech} />
+          <CalculatorTab calc={calc} />
         </TabsContent>
 
         <TabsContent value="tech-tree" className="flex-1" style={{ minHeight: 0 }}>
@@ -85,8 +86,9 @@ export function App() {
   );
 }
 
-function CalculatorTab({ calc, onViewTech: _onViewTech }: { calc: ReturnType<typeof useCalculator>; onViewTech: (id: string) => void }) {
+function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
   const { plan } = calc;
+  const proliferator = proliferators.find((p) => p.id === calc.proliferatorId) ?? null;
   return (
     <div className="mx-auto max-w-4xl p-5">
       <div className="mb-4 flex flex-wrap items-end gap-4">
@@ -125,6 +127,7 @@ function CalculatorTab({ calc, onViewTech: _onViewTech }: { calc: ReturnType<typ
             timeUnit={calc.timeUnit}
             integerMultiplier={findIntegerMultiplier(plan)}
             onApplyMultiplier={(k) => calc.setAmount((prev) => prev * k)}
+            proliferator={proliferator}
           />
           <ProductionChain
             node={plan.root}
@@ -141,5 +144,3 @@ function CalculatorTab({ calc, onViewTech: _onViewTech }: { calc: ReturnType<typ
     </div>
   );
 }
-
-void DEFAULT_PROLIFERATOR;

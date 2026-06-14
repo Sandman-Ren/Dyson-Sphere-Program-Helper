@@ -131,9 +131,10 @@ function solveNode(
   }
 
   if (fx.applied && prolif) {
-    // Each spray covers one item passing through; approximate by crafts × inputs.
-    const itemsThroughput = recipe.in.reduce((sum, i) => sum + i.amount, 0) * craftsPerSecond;
-    addSprays(itemsThroughput / prolif.sprays);
+    // DSP coats each individual input item; one proliferator unit covers
+    // `sprays` items. Estimate consumption from this node's input throughput.
+    const inputItemsPerSecond = recipe.in.reduce((sum, i) => sum + i.amount, 0) * craftsPerSecond;
+    addSprays(inputItemsPerSecond / prolif.sprays);
   }
 
   const children: ProductionNode[] = [];

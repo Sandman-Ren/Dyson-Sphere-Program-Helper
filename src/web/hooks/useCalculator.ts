@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { solve, type MachineOverrides, type ProductionPlan } from '../../calculator/index.js';
-import { graph, proliferators, meta } from '../data.js';
+import { graph, proliferators } from '../data.js';
 
 export type TimeUnit = 'second' | 'minute' | 'hour';
 const UNIT_SECONDS: Record<TimeUnit, number> = { second: 1, minute: 60, hour: 3600 };
@@ -44,4 +44,3 @@ export function useCalculator(): CalculatorState {
 }
 
 export { UNIT_SECONDS };
-export const DEFAULT_PROLIFERATOR = meta.defaultProliferator;
