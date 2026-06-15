@@ -51,7 +51,7 @@ const ui = {
     selectItem: 'Select an item',
     selectItemHint: 'Browse the list or search to view recipes, uses, and unlock requirements.',
     calculate: 'Calculate',
-    stack: 'Stack {{count}}',
+    stack: 'Stack {{value}}',
     rawResource: 'Raw resource',
     producedBy: 'Produced by',
     producedByEmpty: 'This is a raw resource — it is not crafted from any recipe.',

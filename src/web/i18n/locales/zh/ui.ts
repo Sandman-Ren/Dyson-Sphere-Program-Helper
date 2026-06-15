@@ -53,7 +53,7 @@ const ui: UiResource = {
     selectItem: '选择一个物品',
     selectItemHint: '浏览列表或搜索以查看配方、用途和解锁条件。',
     calculate: '计算',
-    stack: '堆叠 {{count}}',
+    stack: '堆叠 {{value}}',
     rawResource: '原始资源',
     producedBy: '由以下产出',
     producedByEmpty: '这是一种原始资源 —— 不由任何配方制造。',

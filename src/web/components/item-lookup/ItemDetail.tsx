@@ -45,7 +45,7 @@ export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onView
           <div className="mt-1.5 flex flex-wrap items-center gap-2">
             {item && <Badge className="capitalize">{categoryName(item.category)}</Badge>}
             {item && item.stack > 0 && (
-              <Badge>{t('lookup.stack', { count: num(item.stack) })}</Badge>
+              <Badge>{t('lookup.stack', { value: num(item.stack) })}</Badge>
             )}
             {!producedBy.length && (
               <Badge className="text-muted-foreground">{t('lookup.rawResource')}</Badge>
