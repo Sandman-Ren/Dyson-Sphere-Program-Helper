@@ -107,4 +107,17 @@ re-run `npm test`, and (if the tech tree uses a build-time layout)
   never from the package barrel.
 - Use the **UI primitives** in `src/web/ui/` instead of raw `<select>`/`<input>`.
 - The calculator layer stays **pure** — no imports from `src/web`.
+- **Internationalized** (English + Simplified Chinese) via `react-i18next`,
+  configured in `src/web/i18n/`. Default language is browser-detected
+  (querystring `?lang=` → localStorage → navigator), persisted to localStorage;
+  English is the fallback.
+- **UI strings** live in `src/web/i18n/locales/<lng>/ui.ts` (en is the source of
+  truth; zh is typed `: UiResource` to enforce key parity). Never hardcode
+  display text — use `useTranslation('ui')` / `t()`.
+- **Game-data names** render through the reactive `useNames()` hook
+  (`name` / `recipeName` / `categoryName`) so they update on language switch. The
+  non-reactive `displayName(id)` in `src/web/data.ts` is for comparators /
+  non-React callers only.
+- **Search** uses the precomputed `src/data/generated/search-index.json` via
+  `matchesSearch` (matches English, Chinese, and pinyin — full and initials).
 - Run `npx tsc -b` and `npm test` before considering a change done.

@@ -15,6 +15,10 @@ import technologiesData from '../data/generated/technologies.json';
 import beltsData from '../data/generated/belts.json';
 import iconsData from '../data/generated/icons.json';
 import metaData from '../data/generated/meta.json';
+import searchIndexData from '../data/generated/search-index.json';
+import type { SearchEntry } from './lib/search-match.js';
+import i18n from './i18n/index.js';
+import { resolveName } from './i18n/resolveName.js';
 
 export interface DspMeta {
   game: string;
@@ -43,16 +47,22 @@ export const machineById = new Map(machines.map((m) => [m.id, m]));
 export const techById = new Map(technologies.map((t) => [t.id, t]));
 export const recipeById = new Map(recipes.map((r) => [r.id, r]));
 
+export const searchIndex = searchIndexData as Record<string, SearchEntry>;
+
 /** Sprite-sheet geometry (icons.webp): 64px tiles on a 1472×1472 grid. */
 export const ICON_TILE = 64;
 export const ICON_SHEET = 1472;
 
-const titleCase = (id: string) =>
-  id.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-
-/** Human-readable display name for any item/recipe/tech id. */
+/**
+ * Non-reactive display name for any item/recipe/tech id, using the active
+ * language. Prefer the `useNames()` hook in components so names re-render on a
+ * language switch; this is for non-React callers (sorting, comparators).
+ */
 export function displayName(id: string): string {
-  return itemById.get(id)?.name ?? techById.get(id)?.name ?? recipeById.get(id)?.name ?? titleCase(id);
+  return resolveName((key, ns) => i18n.t(key, { ns, defaultValue: '' }) as string, id, [
+    'items',
+    'recipes',
+  ]);
 }
 
 /** Accent color for an id, from its icon entry (falls back to the theme border). */

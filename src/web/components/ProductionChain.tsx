@@ -2,10 +2,12 @@ import { useState } from 'react';
 import ChevronRightIcon from 'lucide-react/dist/esm/icons/chevron-right';
 import PickaxeIcon from 'lucide-react/dist/esm/icons/pickaxe';
 import SparklesIcon from 'lucide-react/dist/esm/icons/sparkles';
+import { useTranslation } from 'react-i18next';
 import type { ProductionNode, MachineOverrides } from '../../calculator/index.js';
 import type { TimeUnit } from '../hooks/useCalculator.js';
 import { ItemIcon } from './ItemIcon.js';
-import { displayName, graph } from '../data.js';
+import { useNames } from '../i18n/useNames.js';
+import { graph } from '../data.js';
 import {
   Select, SelectTrigger, SelectContent, SelectItem, Tooltip, TooltipTrigger, TooltipContent,
 } from '../ui/index.js';
@@ -20,10 +22,11 @@ interface ProductionChainProps {
 }
 
 export function ProductionChain(props: ProductionChainProps) {
+  const { t } = useTranslation('ui');
   return (
     <div className="rounded-lg border border-border bg-card">
       <div className="border-b border-border px-3 py-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-        Production chain
+        {t('chain.title')}
       </div>
       <div className="p-1.5">
         <ChainNode {...props} depth={0} />
@@ -33,6 +36,8 @@ export function ProductionChain(props: ProductionChainProps) {
 }
 
 function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }: ProductionChainProps & { depth: number }) {
+  const { t } = useTranslation('ui');
+  const { name } = useNames();
   const [open, setOpen] = useState(depth < 3);
   const hasChildren = node.children.length > 0;
   const producers = node.recipe ? graph.producersFor(node.recipe) : [];
@@ -56,20 +61,20 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
             !hasChildren && 'invisible',
           )}
-          aria-label={open ? 'Collapse' : 'Expand'}
+          aria-label={open ? t('chain.collapse') : t('chain.expand')}
         >
           <ChevronRightIcon className={cn('size-4 transition-transform', open && 'rotate-90')} />
         </button>
 
         <ItemIcon id={node.item} size={22} tinted className="shrink-0" />
-        <span className="min-w-0 truncate font-medium">{displayName(node.item)}</span>
+        <span className="min-w-0 truncate font-medium">{name(node.item)}</span>
 
         {node.proliferated && (
           <Tooltip>
             <TooltipTrigger asChild>
               <SparklesIcon className="size-3.5 shrink-0 text-amber" />
             </TooltipTrigger>
-            <TooltipContent>Proliferator applied</TooltipContent>
+            <TooltipContent>{t('chain.proliferatorApplied')}</TooltipContent>
           </Tooltip>
         )}
 
@@ -86,14 +91,14 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
                   {/* Render the value ourselves so the label truncates reliably
                       (Radix's <SelectValue> wraps the clone in a non-shrinking span). */}
                   <ItemIcon id={node.machine.id} size={16} />
-                  <span className="truncate">{node.machine.name}</span>
+                  <span className="truncate">{name(node.machine.id)}</span>
                 </SelectTrigger>
                 <SelectContent>
                   {producers.map((m) => (
                     <SelectItem key={m.id} value={m.id}>
                       <span className="flex min-w-0 items-center gap-1.5">
                         <ItemIcon id={m.id} size={16} />
-                        <span className="truncate">{m.name}</span>
+                        <span className="truncate">{name(m.id)}</span>
                       </span>
                     </SelectItem>
                   ))}
@@ -101,16 +106,16 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
               </Select>
             ) : (
               <span className="flex flex-1 items-center gap-1.5 truncate text-xs text-muted-foreground">
-                <ItemIcon id={node.machine.id} size={16} />{node.machine.name}
+                <ItemIcon id={node.machine.id} size={16} />{name(node.machine.id)}
               </span>
             )}
-            <span className="w-12 shrink-0 text-right text-xs font-semibold tabular-nums" title={`${num(node.machinesNeeded)} exact`}>
+            <span className="w-12 shrink-0 text-right text-xs font-semibold tabular-nums" title={t('chain.exact', { value: num(node.machinesNeeded) })}>
               ×{num(Math.ceil(node.machinesNeeded - 1e-9))}
             </span>
           </div>
         ) : (
           <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
-            <PickaxeIcon className="size-3.5" />{node.mined ? 'mined' : 'raw input'}
+            <PickaxeIcon className="size-3.5" />{node.mined ? t('chain.mined') : t('chain.rawInput')}
           </span>
         )}
       </div>

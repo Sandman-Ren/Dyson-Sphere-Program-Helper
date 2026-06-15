@@ -9,9 +9,11 @@ import {
   type NodeMouseHandler,
   type NodeTypes,
 } from '@xyflow/react';
+import { useTranslation } from 'react-i18next';
 import SearchIcon from 'lucide-react/dist/esm/icons/search';
 import XIcon from 'lucide-react/dist/esm/icons/x';
 import { Input } from '../../ui/index.js';
+import { useNames } from '../../i18n/useNames.js';
 import { technologies, techById } from '../../data.js';
 import layoutData from '../../../data/generated/tech-tree-layout.json';
 import { TechNode, type TechFlowNode } from './TechNode.js';
@@ -48,6 +50,8 @@ const baseEdges: Edge[] = technologies.flatMap((tech) =>
 
 function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechTreeProps) {
   const { setCenter } = useReactFlow();
+  const { t } = useTranslation('ui');
+  const { name } = useNames();
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [query, setQuery] = useState('');
 
@@ -121,7 +125,7 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
           selected: tech.id === selectedId,
           data: {
             techId: tech.id,
-            name: tech.name,
+            name: name(tech.id),
             upgrade: tech.upgrade,
             matched,
             inPath: pathIds?.has(tech.id) ?? false,
@@ -129,7 +133,7 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
           },
         };
       }),
-    [matchedIds, pathIds, selectedId],
+    [matchedIds, pathIds, selectedId, name],
   );
 
   const edges = useMemo<Edge[]>(() => {
@@ -157,16 +161,16 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
             <Input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search technologies…"
+              placeholder={t('tech.searchTechnologies')}
               className="bg-card pl-8 pr-8 shadow-lg"
-              aria-label="Search technologies"
+              aria-label={t('tech.searchTechnologies')}
             />
             {query && (
               <button
                 type="button"
                 onClick={() => setQuery('')}
                 className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                aria-label="Clear search"
+                aria-label={t('tech.clearSearch')}
               >
                 <XIcon className="size-4" />
               </button>
@@ -174,7 +178,7 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
           </div>
           {matchedIds && (
             <div className="mt-1.5 inline-block rounded-md bg-popover px-2 py-1 text-xs text-muted-foreground shadow">
-              {matchedIds.size} match{matchedIds.size === 1 ? '' : 'es'}
+              {t('tech.matchCount', { count: matchedIds.size })}
             </div>
           )}
         </div>

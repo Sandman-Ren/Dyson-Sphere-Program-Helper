@@ -2,7 +2,8 @@
  * Pure helpers for reasoning about the technology prerequisite graph.
  * Shared by the React Flow viewer and the detail panel.
  */
-import { technologies, techById } from '../../data.js';
+import { technologies, techById, searchIndex } from '../../data.js';
+import { matchesSearch } from '../../lib/search-match.js';
 import type { Technology } from '../../../data/schema.js';
 
 /** Adjacency: tech id -> its (existing) prerequisite tech ids. */
@@ -29,14 +30,10 @@ export function ancestorTechIds(id: string): Set<string> {
   return seen;
 }
 
-/** Case-insensitive name/id match used by the search box. */
+/** Search a technology by english/chinese/pinyin name or id. */
 export function matchesQuery(tech: Technology, q: string): boolean {
   if (!q) return false;
-  const needle = q.toLowerCase();
-  return (
-    tech.name.toLowerCase().includes(needle) ||
-    tech.id.toLowerCase().includes(needle)
-  );
+  return matchesSearch(tech.id, searchIndex[tech.id], q);
 }
 
 /** Total matrices of a single kind consumed across the whole research. */

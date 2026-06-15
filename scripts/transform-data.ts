@@ -8,13 +8,14 @@
  * FactorioLab is MIT-licensed (see docs/data-pipeline.md for attribution).
  * Run with: npm run transform-data
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import type {
   Recipe, RecipeItem, RecipeFlag, Item, Machine, Proliferator,
   Technology, Belt, Icon, Meta,
 } from '../src/data/schema.ts';
+import { buildSearchIndex, type SearchSource } from './lib/search-index.ts';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..');
@@ -35,6 +36,7 @@ interface LabRecipe {
 }
 interface LabData {
   version: Record<string, string>;
+  categories: { id: string; name: string }[];
   items: LabItem[];
   recipes: LabRecipe[];
   icons: Icon[];
@@ -49,6 +51,15 @@ interface LabDefaults {
 
 const data: LabData = JSON.parse(readFileSync(resolve(root, 'scripts/factoriolab-dsp.json'), 'utf8'));
 const defaults: LabDefaults = JSON.parse(readFileSync(resolve(root, 'scripts/factoriolab-defaults.json'), 'utf8'));
+
+interface LabI18n {
+  categories?: Record<string, string>;
+  items?: Record<string, string>;
+  recipes?: Record<string, string>;
+}
+const zh: LabI18n = JSON.parse(
+  readFileSync(resolve(root, 'scripts/factoriolab-dsp-i18n-zh.json'), 'utf8'),
+);
 
 const KNOWN_FLAGS = new Set<RecipeFlag>(['mining', 'technology', 'locked']);
 const toRecipeItems = (m: Record<string, number>): RecipeItem[] =>
@@ -155,9 +166,34 @@ const meta: Meta & { proliferableRecipes: string[] } = {
   proliferableRecipes: data.limitations.productivity ?? [],
 };
 
+// ---- i18n bundles ----
+// English names already live on the items/recipes arrays; only Chinese needs a bundle.
+const zhBundle = {
+  items: zh.items ?? {},
+  recipes: zh.recipes ?? {},
+  categories: zh.categories ?? {},
+};
+const enCategories: Record<string, string> = Object.fromEntries(
+  (data.categories ?? []).map((c) => [c.id, c.name]),
+);
+
+// ---- Search index (english + chinese + pinyin) ----
+// Cover everything the pickers search over: items (incl. machines/techs/proliferators) + recipes.
+const itemIds = new Set(items.map((it) => it.id));
+const searchSources: SearchSource[] = [
+  ...items.map((it) => ({ id: it.id, en: it.name, zh: zhBundle.items[it.id] ?? '' })),
+  ...recipes
+    .filter((r) => !itemIds.has(r.id))
+    .map((r) => ({ id: r.id, en: r.name, zh: zhBundle.recipes[r.id] ?? '' })),
+];
+const searchIndex = buildSearchIndex(searchSources);
+
 // ---- Write ----
-const write = (file: string, value: unknown) =>
-  writeFileSync(resolve(outDir, file), JSON.stringify(value, null, 2) + '\n');
+const write = (file: string, value: unknown) => {
+  const target = resolve(outDir, file);
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, JSON.stringify(value, null, 2) + '\n');
+};
 
 write('items.json', items);
 write('recipes.json', recipes);
@@ -167,9 +203,13 @@ write('proliferators.json', proliferators);
 write('technologies.json', technologies);
 write('icons.json', icons);
 write('meta.json', meta);
+write('i18n/zh.json', zhBundle);
+write('i18n/en-categories.json', enCategories);
+write('search-index.json', searchIndex);
 
 console.log(
   `transform-data: ${items.length} items, ${recipes.length} recipes, ${machines.length} machines, ` +
   `${technologies.length} techs, ${proliferators.length} proliferators, ${belts.length} belts, ` +
-  `${icons.length} icons (DSP ${meta.version})`,
+  `${icons.length} icons (DSP ${meta.version}); ` +
+  `i18n zh items=${Object.keys(zhBundle.items).length}, search index=${Object.keys(searchIndex).length}`,
 );

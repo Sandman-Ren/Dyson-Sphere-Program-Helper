@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import ChevronLeftIcon from 'lucide-react/dist/esm/icons/chevron-left';
 import { ItemList } from './ItemList.js';
 import { ItemDetail } from './ItemDetail.js';
@@ -22,6 +23,7 @@ const BROWSABLE_CATEGORIES = new Set(['buildings', 'buildings-alt', 'components'
  * technologies that unlock it) on the right.
  */
 export function ItemLookup({ selectedItem, onSelectItem, onCalculateItem, onViewTech }: ItemLookupProps) {
+  const { t } = useTranslation('ui');
   const browsable = useMemo(
     () => items.filter((i) => BROWSABLE_CATEGORIES.has(i.category)),
     [],
@@ -43,7 +45,7 @@ export function ItemLookup({ selectedItem, onSelectItem, onCalculateItem, onView
           items={browsableIds}
           value={selectedItem}
           onChange={onSelectItem}
-          placeholder="Search items…"
+          placeholder={t('selector.searchItems')}
         />
         <ItemList items={browsable} selectedItem={selectedItem} onSelectItem={onSelectItem} />
       </aside>
@@ -57,7 +59,7 @@ export function ItemLookup({ selectedItem, onSelectItem, onCalculateItem, onView
             className="-mx-1 mb-2 inline-flex items-center gap-1 rounded px-1 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground active:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
           >
             <ChevronLeftIcon className="size-4" />
-            Back to items
+            {t('lookup.backToItems')}
           </button>
         )}
         <ItemDetail

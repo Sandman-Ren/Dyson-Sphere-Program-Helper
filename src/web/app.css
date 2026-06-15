@@ -67,7 +67,8 @@ html, body, #root {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   /* Keep iOS from inflating text in landscape; prevent sideways scroll bleed. */

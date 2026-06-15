@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import type { Item } from '../../../data/schema.js';
 import { ItemIcon } from '../ItemIcon.js';
-import { displayName } from '../../data.js';
+import { useNames } from '../../i18n/useNames.js';
 import { cn } from '../../lib/cn.js';
 
 interface ItemListProps {
@@ -9,12 +9,6 @@ interface ItemListProps {
   selectedItem: string;
   onSelectItem: (id: string) => void;
 }
-
-const CATEGORY_LABELS: Record<string, string> = {
-  components: 'Components',
-  buildings: 'Buildings',
-  'buildings-alt': 'Buildings',
-};
 
 /** Category display order; anything unlisted falls to the end alphabetically. */
 const CATEGORY_ORDER = ['components', 'buildings', 'buildings-alt'];
@@ -27,6 +21,7 @@ interface Group {
 
 /** A persistent, scrollable list of items grouped by category and ordered by row. */
 export function ItemList({ items, selectedItem, onSelectItem }: ItemListProps) {
+  const { name, categoryName } = useNames();
   const groups = useMemo<Group[]>(() => {
     const byCategory = new Map<string, Item[]>();
     for (const item of items) {
@@ -43,10 +38,10 @@ export function ItemList({ items, selectedItem, onSelectItem }: ItemListProps) {
       })
       .map(([category, list]) => ({
         category,
-        label: CATEGORY_LABELS[category] ?? category,
-        items: list.slice().sort((x, y) => x.row - y.row || displayName(x.id).localeCompare(displayName(y.id))),
+        label: categoryName(category),
+        items: list.slice().sort((x, y) => x.row - y.row || name(x.id).localeCompare(name(y.id))),
       }));
-  }, [items]);
+  }, [items, name, categoryName]);
 
   return (
     <div className="min-h-0 flex-1 overflow-auto rounded-lg border border-border bg-card">
@@ -75,7 +70,7 @@ export function ItemList({ items, selectedItem, onSelectItem }: ItemListProps) {
                     )}
                   >
                     <ItemIcon id={item.id} size={20} tinted />
-                    <span className="truncate">{displayName(item.id)}</span>
+                    <span className="truncate">{name(item.id)}</span>
                   </button>
                 </li>
               );
