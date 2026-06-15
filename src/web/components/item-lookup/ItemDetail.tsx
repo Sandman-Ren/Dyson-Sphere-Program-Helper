@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import ArrowRightIcon from 'lucide-react/dist/esm/icons/arrow-right';
 import PickaxeIcon from 'lucide-react/dist/esm/icons/pickaxe';
 import CalculatorIcon from 'lucide-react/dist/esm/icons/calculator';
@@ -11,8 +12,9 @@ import {
   Button, Badge, Card, Tooltip, TooltipTrigger, TooltipContent,
 } from '../../ui/index.js';
 import {
-  displayName, graph, itemById, technologies,
+  graph, itemById, technologies,
 } from '../../data.js';
+import { useNames } from '../../i18n/useNames.js';
 import { num } from '../../lib/format.js';
 import { cn } from '../../lib/cn.js';
 
@@ -24,6 +26,8 @@ interface ItemDetailProps {
 }
 
 export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onViewTech }: ItemDetailProps) {
+  const { t } = useTranslation('ui');
+  const { name, categoryName } = useNames();
   if (!selectedItem) return <EmptyState />;
 
   const item = itemById.get(selectedItem);
@@ -37,21 +41,21 @@ export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onView
       <header className="flex items-center gap-4">
         <ItemIcon id={selectedItem} size={56} tinted />
         <div className="min-w-0 flex-1">
-          <h2 className="text-xl font-bold leading-tight">{displayName(selectedItem)}</h2>
+          <h2 className="text-xl font-bold leading-tight">{name(selectedItem)}</h2>
           <div className="mt-1.5 flex flex-wrap items-center gap-2">
-            {item && <Badge className="capitalize">{item.category.replace(/-/g, ' ')}</Badge>}
+            {item && <Badge className="capitalize">{categoryName(item.category)}</Badge>}
             {item && item.stack > 0 && (
-              <Badge>Stack {num(item.stack)}</Badge>
+              <Badge>{t('lookup.stack', { count: num(item.stack) })}</Badge>
             )}
             {!producedBy.length && (
-              <Badge className="text-muted-foreground">Raw resource</Badge>
+              <Badge className="text-muted-foreground">{t('lookup.rawResource')}</Badge>
             )}
           </div>
         </div>
         {producible && (
           <Button onClick={() => onCalculateItem(selectedItem)} className="flex-shrink-0">
             <CalculatorIcon className="size-4" />
-            Calculate
+            {t('lookup.calculate')}
           </Button>
         )}
       </header>
@@ -59,10 +63,10 @@ export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onView
       <UnlockedBy producedBy={producedBy} onViewTech={onViewTech} />
 
       {/* Produced by */}
-      <Section title="Produced by" count={producedBy.length}>
+      <Section title={t('lookup.producedBy')} count={producedBy.length}>
         {producedBy.length === 0 ? (
           <p className="text-sm text-muted-foreground">
-            This is a raw resource — it is not crafted from any recipe.
+            {t('lookup.producedByEmpty')}
           </p>
         ) : (
           <div className="flex flex-col gap-2.5">
@@ -75,7 +79,7 @@ export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onView
 
       {/* Used in */}
       {usedIn.length > 0 && (
-        <Section title="Used in" count={usedIn.length}>
+        <Section title={t('lookup.usedIn')} count={usedIn.length}>
           <div className="flex flex-col gap-1">
             {usedIn.map((recipe) => (
               <UsedInRow key={recipe.id} recipe={recipe} onSelectItem={onSelectItem} />
@@ -90,6 +94,8 @@ export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onView
 // ---- Header sub-sections ----
 
 function UnlockedBy({ producedBy, onViewTech }: { producedBy: Recipe[]; onViewTech: (id: string) => void }) {
+  const { t } = useTranslation('ui');
+  const { name } = useNames();
   const unlockingTechs = useMemo(() => {
     if (producedBy.length === 0) return [];
     const recipeIds = new Set(producedBy.map((r) => r.id));
@@ -99,7 +105,7 @@ function UnlockedBy({ producedBy, onViewTech }: { producedBy: Recipe[]; onViewTe
   if (unlockingTechs.length === 0) return null;
 
   return (
-    <Section title="Unlocked by" count={unlockingTechs.length}>
+    <Section title={t('lookup.unlockedBy')} count={unlockingTechs.length}>
       <div className="flex flex-wrap gap-2">
         {unlockingTechs.map((tech) => (
           <button
@@ -113,7 +119,7 @@ function UnlockedBy({ producedBy, onViewTech }: { producedBy: Recipe[]; onViewTe
             )}
           >
             <FlaskConicalIcon className="size-3.5 text-amber" />
-            {tech.name}
+            {name(tech.id)}
           </button>
         ))}
       </div>
@@ -124,17 +130,19 @@ function UnlockedBy({ producedBy, onViewTech }: { producedBy: Recipe[]; onViewTe
 // ---- Recipe card (Produced by) ----
 
 function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (id: string) => void }) {
+  const { t } = useTranslation('ui');
+  const { name, recipeName } = useNames();
   const producers = graph.producersFor(recipe);
   const mining = recipe.flags.includes('mining');
 
   return (
     <Card className="p-3">
       <div className="mb-2.5 flex items-center gap-2">
-        <span className="text-sm font-medium">{recipe.name}</span>
+        <span className="text-sm font-medium">{recipeName(recipe.id)}</span>
         {mining && (
           <Badge className="text-amber">
             <PickaxeIcon className="size-3" />
-            Mining
+            {t('lookup.mining')}
           </Badge>
         )}
       </div>
@@ -153,7 +161,7 @@ function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (i
             ))}
           </div>
         ) : (
-          <span className="text-xs text-muted-foreground">Raw extraction</span>
+          <span className="text-xs text-muted-foreground">{t('lookup.rawExtraction')}</span>
         )}
 
         <ArrowRightIcon className="size-4 flex-shrink-0 text-muted-foreground" />
@@ -168,14 +176,14 @@ function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (i
         {/* Time */}
         <div className="ml-auto flex items-center gap-1 text-xs text-muted-foreground tabular-nums">
           <ClockIcon className="size-3.5" />
-          {num(recipe.time)}s
+          {t('lookup.seconds', { value: num(recipe.time) })}
         </div>
       </div>
 
       {/* Producers */}
       {producers.length > 0 && (
         <div className="mt-2.5 flex items-center gap-2 border-t border-border pt-2.5">
-          <span className="text-xs text-muted-foreground">Made in</span>
+          <span className="text-xs text-muted-foreground">{t('lookup.madeIn')}</span>
           <div className="flex flex-wrap items-center gap-1">
             {producers.map((machine) => (
               <Tooltip key={machine.id}>
@@ -184,7 +192,7 @@ function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (i
                     <ItemIcon id={machine.id} size={22} tinted />
                   </span>
                 </TooltipTrigger>
-                <TooltipContent>{machine.name}</TooltipContent>
+                <TooltipContent>{name(machine.id)}</TooltipContent>
               </Tooltip>
             ))}
           </div>
@@ -196,6 +204,7 @@ function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (i
 
 /** A clickable (or static) item icon + amount used inside recipe cards. */
 function IngredientChip({ id, amount, onClick }: { id: string; amount: number; onClick?: () => void }) {
+  const { name } = useNames();
   const content = (
     <>
       <ItemIcon id={id} size={26} tinted />
@@ -210,7 +219,7 @@ function IngredientChip({ id, amount, onClick }: { id: string; amount: number; o
         <TooltipTrigger asChild>
           <span className={cn(className, 'cursor-help')}>{content}</span>
         </TooltipTrigger>
-        <TooltipContent>{displayName(id)}</TooltipContent>
+        <TooltipContent>{name(id)}</TooltipContent>
       </Tooltip>
     );
   }
@@ -226,7 +235,7 @@ function IngredientChip({ id, amount, onClick }: { id: string; amount: number; o
           {content}
         </button>
       </TooltipTrigger>
-      <TooltipContent>{displayName(id)}</TooltipContent>
+      <TooltipContent>{name(id)}</TooltipContent>
     </Tooltip>
   );
 }
@@ -234,9 +243,10 @@ function IngredientChip({ id, amount, onClick }: { id: string; amount: number; o
 // ---- Used-in row ----
 
 function UsedInRow({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (id: string) => void }) {
+  const { name, recipeName } = useNames();
   return (
     <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-accent/50">
-      <span className="min-w-0 flex-1 truncate text-sm">{recipe.name}</span>
+      <span className="min-w-0 flex-1 truncate text-sm">{recipeName(recipe.id)}</span>
       <ArrowRightIcon className="size-3.5 flex-shrink-0 text-muted-foreground" />
       <div className="flex flex-shrink-0 items-center gap-1">
         {recipe.out.map((output) => (
@@ -251,7 +261,7 @@ function UsedInRow({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (id
                 <span className="text-xs font-medium tabular-nums">{num(output.amount)}</span>
               </button>
             </TooltipTrigger>
-            <TooltipContent>{displayName(output.id)}</TooltipContent>
+            <TooltipContent>{name(output.id)}</TooltipContent>
           </Tooltip>
         ))}
       </div>
@@ -278,12 +288,13 @@ function Section({ title, count, children }: { title: string; count?: number; ch
 }
 
 function EmptyState() {
+  const { t } = useTranslation('ui');
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3 text-center text-muted-foreground">
       <PackageSearchIcon className="size-12 opacity-40" />
       <div>
-        <p className="text-sm font-medium text-foreground">Select an item</p>
-        <p className="text-xs">Browse the list or search to view recipes, uses, and unlock requirements.</p>
+        <p className="text-sm font-medium text-foreground">{t('lookup.selectItem')}</p>
+        <p className="text-xs">{t('lookup.selectItemHint')}</p>
       </div>
     </div>
   );
