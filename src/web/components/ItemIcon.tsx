@@ -1,4 +1,5 @@
-import { iconById, ICON_TILE, ICON_SHEET, iconColor, displayName } from '../data.js';
+import { iconById, ICON_TILE, ICON_SHEET, iconColor } from '../data.js';
+import { useNames } from '../i18n/useNames.js';
 
 const BASE = import.meta.env.BASE_URL; // matches vite.config `base`
 
@@ -16,8 +17,9 @@ interface ItemIconProps {
  * Falls back to a colored dot when the id has no sprite entry.
  */
 export function ItemIcon({ id, size = 24, tinted = false, title, className }: ItemIconProps) {
+  const { name } = useNames();
   const icon = iconById.get(id);
-  const label = title ?? displayName(id);
+  const label = title ?? name(id);
 
   const wrapper: React.CSSProperties = {
     width: size,
