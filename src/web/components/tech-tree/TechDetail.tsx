@@ -3,9 +3,11 @@ import CalculatorIcon from 'lucide-react/dist/esm/icons/calculator';
 import ClockIcon from 'lucide-react/dist/esm/icons/clock';
 import { ItemIcon } from '../ItemIcon.js';
 import { Badge, Button } from '../../ui/index.js';
+import { useTranslation } from 'react-i18next';
 import { num } from '../../lib/format.js';
 import { cn } from '../../lib/cn.js';
-import { displayName, recipeById, graph, techById } from '../../data.js';
+import { recipeById, graph } from '../../data.js';
+import { useNames } from '../../i18n/useNames.js';
 import type { Technology } from '../../../data/schema.js';
 import { matrixTotal } from './techGraph.js';
 
@@ -31,6 +33,8 @@ function formatTime(seconds: number): string {
 
 /** Right-hand inspector for the selected technology. */
 export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: TechDetailProps) {
+  const { t } = useTranslation('ui');
+  const { name, recipeName } = useNames();
   const totalTime = tech.cost.time * tech.cost.hash;
 
   return (
@@ -48,12 +52,14 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
       <header className="flex items-start gap-2.5 border-b border-border p-4">
         <ItemIcon id={tech.id} size={40} tinted />
         <div className="min-w-0 flex-1">
-          <h2 className="text-sm font-semibold leading-snug text-foreground">{tech.name}</h2>
+          <h2 className="text-sm font-semibold leading-snug text-foreground">{name(tech.id)}</h2>
           {tech.upgrade && (
-            <Badge className="mt-1 border-amber/50 bg-amber/15 text-amber">Repeatable upgrade</Badge>
+            <Badge className="mt-1 border-amber/50 bg-amber/15 text-amber">
+              {t('tech.repeatableUpgrade')}
+            </Badge>
           )}
         </div>
-        <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close detail panel">
+        <Button variant="ghost" size="icon" onClick={onClose} aria-label={t('tech.closeDetail')}>
           <XIcon className="size-4" />
         </Button>
       </header>
@@ -62,27 +68,27 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
         {/* Research cost */}
         <section>
           <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Research Cost
+            {t('tech.researchCost')}
           </h3>
           <div className="space-y-1.5">
             {tech.cost.matrices.map((m) => (
               <div key={m.id} className="flex items-center gap-2 text-sm">
                 <ItemIcon id={m.id} size={22} tinted />
-                <span className="flex-1 truncate text-foreground">{displayName(m.id)}</span>
+                <span className="flex-1 truncate text-foreground">{name(m.id)}</span>
                 <span className="font-mono text-foreground">{num(matrixTotal(tech, m.id))}</span>
-                <span className="text-xs text-muted-foreground">×{num(m.amount)}/hash</span>
+                <span className="text-xs text-muted-foreground">{t('tech.perHash', { amount: num(m.amount) })}</span>
               </div>
             ))}
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             <Badge>
-              <span className="text-muted-foreground">Hash</span>
+              <span className="text-muted-foreground">{t('tech.hash')}</span>
               <span className="font-mono text-foreground">{num(tech.cost.hash)}</span>
             </Badge>
             <Badge>
               <ClockIcon className="size-3 text-muted-foreground" />
               <span className="font-mono text-foreground">{formatTime(totalTime)}</span>
-              <span className="text-muted-foreground">@ 1 lab</span>
+              <span className="text-muted-foreground">{t('tech.atOneLab')}</span>
             </Badge>
           </div>
         </section>
@@ -91,23 +97,20 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
         {tech.prerequisites.length > 0 && (
           <section>
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Prerequisites
+              {t('tech.prerequisites')}
             </h3>
             <div className="space-y-1">
-              {tech.prerequisites.map((pid) => {
-                const pre = techById.get(pid);
-                return (
-                  <button
-                    key={pid}
-                    type="button"
-                    onClick={() => onSelectTech(pid)}
-                    className="flex w-full items-center gap-2 rounded-md border border-border bg-secondary/40 px-2 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-accent active:bg-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    <ItemIcon id={pid} size={20} tinted />
-                    <span className="truncate">{pre?.name ?? displayName(pid)}</span>
-                  </button>
-                );
-              })}
+              {tech.prerequisites.map((pid) => (
+                <button
+                  key={pid}
+                  type="button"
+                  onClick={() => onSelectTech(pid)}
+                  className="flex w-full items-center gap-2 rounded-md border border-border bg-secondary/40 px-2 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-accent active:bg-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <ItemIcon id={pid} size={20} tinted />
+                  <span className="truncate">{name(pid)}</span>
+                </button>
+              ))}
             </div>
           </section>
         )}
@@ -115,10 +118,10 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
         {/* Unlocked recipes */}
         <section>
           <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Unlocks
+            {t('tech.unlocks')}
           </h3>
           {tech.recipeUnlock.length === 0 ? (
-            <p className="text-sm text-muted-foreground">No recipes unlocked.</p>
+            <p className="text-sm text-muted-foreground">{t('tech.noRecipes')}</p>
           ) : (
             <div className="space-y-1.5">
               {tech.recipeUnlock.map((rid) => {
@@ -133,7 +136,7 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
                   >
                     <ItemIcon id={iconId} size={22} tinted />
                     <span className="min-w-0 flex-1 truncate text-foreground">
-                      {recipe?.name ?? displayName(rid)}
+                      {recipeName(rid)}
                     </span>
                     {canCalculate && (
                       <Button
@@ -143,7 +146,7 @@ export function TechDetail({ tech, onClose, onSelectTech, onCalculateItem }: Tec
                         onClick={() => onCalculateItem(outId)}
                       >
                         <CalculatorIcon className="size-3.5" />
-                        Calculate
+                        {t('tech.calculate')}
                       </Button>
                     )}
                   </div>

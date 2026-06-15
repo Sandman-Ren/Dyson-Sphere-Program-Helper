@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Handle, Position, type NodeProps, type Node } from '@xyflow/react';
 import { ItemIcon } from '../ItemIcon.js';
 import { cn } from '../../lib/cn.js';
@@ -24,6 +25,7 @@ export type TechFlowNode = Node<TechNodeData, 'tech'>;
  * accent; matched / selected-path nodes get a primary ring.
  */
 function TechNodeComponent({ data, selected }: NodeProps<TechFlowNode>) {
+  const { t } = useTranslation('ui');
   const { techId, name, upgrade, matched, inPath, dimmed } = data;
 
   return (
@@ -50,7 +52,7 @@ function TechNodeComponent({ data, selected }: NodeProps<TechFlowNode>) {
         </div>
         {upgrade && (
           <div className="text-[10px] font-medium uppercase tracking-wide text-amber">
-            Upgrade
+            {t('tech.upgrade')}
           </div>
         )}
       </div>
