@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { findIntegerMultiplier } from '../calculator/index.js';
 import { LanguageSwitcher } from './components/LanguageSwitcher.js';
@@ -33,6 +33,10 @@ export function App() {
   const [pendingTech, setPendingTech] = useState<string | null>(null);
   const calc = useCalculator();
   const { t } = useTranslation('ui');
+
+  useEffect(() => {
+    document.title = t('brand');
+  }, [t]);
 
   const handleCalculateItem = useCallback((id: string) => {
     if (!graph.itemToRecipe.has(id)) return;
