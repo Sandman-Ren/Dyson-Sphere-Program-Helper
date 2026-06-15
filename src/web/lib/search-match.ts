@@ -14,7 +14,7 @@ export function matchesSearch(id: string, entry: SearchEntry | undefined, query:
   return (
     entry.en.includes(q) ||
     entry.zh.includes(q) ||
-    (entry.py !== '' && entry.py.includes(q)) ||
-    (entry.pyInitials !== '' && entry.pyInitials.includes(q))
+    entry.py.includes(q) ||
+    entry.pyInitials.includes(q)
   );
 }
