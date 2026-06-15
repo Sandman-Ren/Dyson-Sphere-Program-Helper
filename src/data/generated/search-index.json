@@ -1,0 +1,3134 @@
+{
+  "tesla-tower": {
+    "en": "tesla tower",
+    "zh": "电力感应塔",
+    "py": "dianliganyingta",
+    "pyInitials": "dlgyt"
+  },
+  "wireless-power-tower": {
+    "en": "wireless power tower",
+    "zh": "无线输电塔",
+    "py": "wuxianshudianta",
+    "pyInitials": "wxsdt"
+  },
+  "satellite-substation": {
+    "en": "satellite substation",
+    "zh": "卫星配电站",
+    "py": "weixingpeidianzhan",
+    "pyInitials": "wxpdz"
+  },
+  "wind-turbine": {
+    "en": "wind turbine",
+    "zh": "风力涡轮机",
+    "py": "fengliwolunji",
+    "pyInitials": "flwlj"
+  },
+  "thermal-power-plant": {
+    "en": "thermal power plant",
+    "zh": "火力发电厂",
+    "py": "huolifadianchang",
+    "pyInitials": "hlfdc"
+  },
+  "solar-panel": {
+    "en": "solar panel",
+    "zh": "太阳能板",
+    "py": "taiyangnengban",
+    "pyInitials": "tynb"
+  },
+  "geothermal-power-station": {
+    "en": "geothermal power station",
+    "zh": "地热发电站",
+    "py": "direfadianzhan",
+    "pyInitials": "drfdz"
+  },
+  "mini-fusion-power-plant": {
+    "en": "mini fusion power plant",
+    "zh": "微型聚变发电站",
+    "py": "weixingjubianfadianzhan",
+    "pyInitials": "wxjbfdz"
+  },
+  "energy-exchanger": {
+    "en": "energy exchanger",
+    "zh": "能量枢纽",
+    "py": "nengliangshuniu",
+    "pyInitials": "nlsn"
+  },
+  "accumulator": {
+    "en": "accumulator",
+    "zh": "蓄电器",
+    "py": "xudianqi",
+    "pyInitials": "xdq"
+  },
+  "accumulator-full": {
+    "en": "accumulator (full)",
+    "zh": "蓄电器 (满)",
+    "py": "xudianqi (man)",
+    "pyInitials": "xdq (m)"
+  },
+  "ray-receiver": {
+    "en": "ray receiver",
+    "zh": "射线接收站",
+    "py": "shexianjieshouzhan",
+    "pyInitials": "sxjsz"
+  },
+  "artificial-star": {
+    "en": "artificial star",
+    "zh": "人造恒星",
+    "py": "renzaohengxing",
+    "pyInitials": "rzhx"
+  },
+  "conveyor-belt-1": {
+    "en": "conveyor belt mk.i",
+    "zh": "传送带",
+    "py": "chuansongdai",
+    "pyInitials": "csd"
+  },
+  "conveyor-belt-2": {
+    "en": "conveyor belt mk.ii",
+    "zh": "高速传送带",
+    "py": "gaosuchuansongdai",
+    "pyInitials": "gscsd"
+  },
+  "conveyor-belt-3": {
+    "en": "conveyor belt mk.iii",
+    "zh": "急速传送带",
+    "py": "jisuchuansongdai",
+    "pyInitials": "jscsd"
+  },
+  "splitter": {
+    "en": "splitter",
+    "zh": "四向分流器",
+    "py": "sixiangfenliuqi",
+    "pyInitials": "sxflq"
+  },
+  "automatic-piler": {
+    "en": "automatic piler",
+    "zh": "自动集装机",
+    "py": "zidongjizhuangji",
+    "pyInitials": "zdjzj"
+  },
+  "traffic-monitor": {
+    "en": "traffic monitor",
+    "zh": "流速监测器",
+    "py": "liusujianceqi",
+    "pyInitials": "lsjcq"
+  },
+  "spray-coater": {
+    "en": "spray coater",
+    "zh": "喷涂机",
+    "py": "pentuji",
+    "pyInitials": "ptj"
+  },
+  "storage-1": {
+    "en": "depot mk.i",
+    "zh": "小型储物仓",
+    "py": "xiaoxingchuwucang",
+    "pyInitials": "xxcwc"
+  },
+  "storage-2": {
+    "en": "depot mk.ii",
+    "zh": "大型储物仓",
+    "py": "daxingchuwucang",
+    "pyInitials": "dxcwc"
+  },
+  "storage-tank": {
+    "en": "storage tank",
+    "zh": "储液罐",
+    "py": "chuyeguan",
+    "pyInitials": "cyg"
+  },
+  "logistics-distributor": {
+    "en": "logistics distributor",
+    "zh": "物流配送器",
+    "py": "wuliupeisongqi",
+    "pyInitials": "wlpsq"
+  },
+  "planetary-logistics-station": {
+    "en": "planetary logistics station",
+    "zh": "行星内物流运输站",
+    "py": "xingxingneiwuliuyunshuzhan",
+    "pyInitials": "xxnwlysz"
+  },
+  "interstellar-logistics-station": {
+    "en": "interstellar logistics station",
+    "zh": "星际物流运输站",
+    "py": "xingjiwuliuyunshuzhan",
+    "pyInitials": "xjwlysz"
+  },
+  "orbital-collector": {
+    "en": "orbital collector",
+    "zh": "轨道采集器",
+    "py": "guidaocaijiqi",
+    "pyInitials": "gdcjq"
+  },
+  "sorter-1": {
+    "en": "sorter mk.i",
+    "zh": "分拣器",
+    "py": "fenjianqi",
+    "pyInitials": "fjq"
+  },
+  "sorter-2": {
+    "en": "sorter mk.ii",
+    "zh": "高速分拣器",
+    "py": "gaosufenjianqi",
+    "pyInitials": "gsfjq"
+  },
+  "sorter-3": {
+    "en": "sorter mk.iii",
+    "zh": "急速分拣器",
+    "py": "jisufenjianqi",
+    "pyInitials": "jsfjq"
+  },
+  "sorter-4": {
+    "en": "pile sorter",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "mining-machine": {
+    "en": "mining machine",
+    "zh": "采矿机",
+    "py": "caikuangji",
+    "pyInitials": "ckj"
+  },
+  "advanced-mining-machine": {
+    "en": "advanced mining machine",
+    "zh": "大型采矿机",
+    "py": "daxingcaikuangji",
+    "pyInitials": "dxckj"
+  },
+  "water-pump": {
+    "en": "water pump",
+    "zh": "抽水站",
+    "py": "choushuizhan",
+    "pyInitials": "csz"
+  },
+  "oil-extractor": {
+    "en": "oil extractor",
+    "zh": "原油萃取站",
+    "py": "yuanyoucuiquzhan",
+    "pyInitials": "yycqz"
+  },
+  "oil-refinery": {
+    "en": "oil refinery",
+    "zh": "原油精炼厂",
+    "py": "yuanyoujinglianchang",
+    "pyInitials": "yyjlc"
+  },
+  "fractionator": {
+    "en": "fractionator",
+    "zh": "分馏塔",
+    "py": "fenliuta",
+    "pyInitials": "flt"
+  },
+  "chemical-plant": {
+    "en": "chemical plant",
+    "zh": "化工厂",
+    "py": "huagongchang",
+    "pyInitials": "hgc"
+  },
+  "quantum-chemical-plant": {
+    "en": "quantum chemical plant",
+    "zh": "量子化工厂",
+    "py": "liangzihuagongchang",
+    "pyInitials": "lzhgc"
+  },
+  "miniature-particle-collider": {
+    "en": "miniature particle collider",
+    "zh": "微型粒子对撞机",
+    "py": "weixingliziduizhuangji",
+    "pyInitials": "wxlzdzj"
+  },
+  "arc-smelter": {
+    "en": "arc smelter",
+    "zh": "电磁熔炉",
+    "py": "diancironglu",
+    "pyInitials": "dcrl"
+  },
+  "plane-smelter": {
+    "en": "plane smelter",
+    "zh": "位面熔炉",
+    "py": "weimianronglu",
+    "pyInitials": "wmrl"
+  },
+  "df-negentropy-smelter": {
+    "en": "negentropy smelter",
+    "zh": "负熵熔炉",
+    "py": "fushangronglu",
+    "pyInitials": "fsrl"
+  },
+  "assembling-machine-1": {
+    "en": "assembling machine mk.i",
+    "zh": "制造台 Mk.I",
+    "py": "zhizaotai mk.i",
+    "pyInitials": "zzt mk.i"
+  },
+  "assembling-machine-2": {
+    "en": "assembling machine mk.ii",
+    "zh": "制造台 Mk.II",
+    "py": "zhizaotai mk.ii",
+    "pyInitials": "zzt mk.ii"
+  },
+  "assembling-machine-3": {
+    "en": "assembling machine mk.iii",
+    "zh": "制造台 Mk.III",
+    "py": "zhizaotai mk.iii",
+    "pyInitials": "zzt mk.iii"
+  },
+  "df-recomposing-assembler": {
+    "en": "re-composing assembler",
+    "zh": "重组式制造台",
+    "py": "zhongzushizhizaotai",
+    "pyInitials": "zzszzt"
+  },
+  "matrix-lab": {
+    "en": "matrix lab",
+    "zh": "矩阵研究站",
+    "py": "juzhenyanjiuzhan",
+    "pyInitials": "jzyjz"
+  },
+  "df-self-evolution-lab": {
+    "en": "self-evolution lab",
+    "zh": "自演化研究站",
+    "py": "ziyanhuayanjiuzhan",
+    "pyInitials": "zyhyjz"
+  },
+  "em-rail-ejector": {
+    "en": "em-rail ejector",
+    "zh": "电磁轨道弹射器",
+    "py": "dianciguidaotansheqi",
+    "pyInitials": "dcgdtsq"
+  },
+  "vertical-launching-silo": {
+    "en": "vertical launching silo",
+    "zh": "垂直发射井",
+    "py": "chuizhifashejing",
+    "pyInitials": "czfsj"
+  },
+  "df-gauss-turret": {
+    "en": "gauss turret",
+    "zh": "高斯机枪塔",
+    "py": "gaosijiqiangta",
+    "pyInitials": "gsjqt"
+  },
+  "df-missile-turret": {
+    "en": "missile turret",
+    "zh": "导弹防御塔",
+    "py": "daodanfangyuta",
+    "pyInitials": "ddfyt"
+  },
+  "df-implosion-cannon": {
+    "en": "implosion cannon",
+    "zh": "聚爆加农炮",
+    "py": "jubaojianongpao",
+    "pyInitials": "jbjnp"
+  },
+  "df-laser-turret": {
+    "en": "laser turret",
+    "zh": "高频激光塔",
+    "py": "gaopinjiguangta",
+    "pyInitials": "gpjgt"
+  },
+  "df-plasma-turret": {
+    "en": "plasma turret",
+    "zh": "磁化电浆炮",
+    "py": "cihuadianjiangpao",
+    "pyInitials": "chdjp"
+  },
+  "df-plasma-turret-sr": {
+    "en": "sr plasma turret",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-battlefield-analysis-base": {
+    "en": "battlefield analysis base",
+    "zh": "战场分析基站",
+    "py": "zhanchangfenxijizhan",
+    "pyInitials": "zcfxjz"
+  },
+  "df-jammer-tower": {
+    "en": "jammer tower",
+    "zh": "干扰塔",
+    "py": "ganraota",
+    "pyInitials": "grt"
+  },
+  "df-signal-tower": {
+    "en": "signal tower",
+    "zh": "信号塔",
+    "py": "xinhaota",
+    "pyInitials": "xht"
+  },
+  "df-planetary-shield-generator": {
+    "en": "planetary shield generator",
+    "zh": "行星护盾发生器",
+    "py": "xingxinghudunfashengqi",
+    "pyInitials": "xxhdfsq"
+  },
+  "ray-receiver-pro": {
+    "en": "ray receiver (graviton lens)",
+    "zh": "射线接收站 (带引力透镜)",
+    "py": "shexianjieshouzhan (daiyinlitoujing)",
+    "pyInitials": "sxjsz (dyltj)"
+  },
+  "iron-ore": {
+    "en": "iron ore",
+    "zh": "铁矿",
+    "py": "tiekuang",
+    "pyInitials": "tk"
+  },
+  "copper-ore": {
+    "en": "copper ore",
+    "zh": "铜矿",
+    "py": "tongkuang",
+    "pyInitials": "tk"
+  },
+  "stone": {
+    "en": "stone",
+    "zh": "石矿",
+    "py": "shikuang",
+    "pyInitials": "sk"
+  },
+  "coal": {
+    "en": "coal",
+    "zh": "煤矿",
+    "py": "meikuang",
+    "pyInitials": "mk"
+  },
+  "silicon-ore": {
+    "en": "silicon ore",
+    "zh": "硅石",
+    "py": "guishi",
+    "pyInitials": "gs"
+  },
+  "titanium-ore": {
+    "en": "titanium ore",
+    "zh": "钛石",
+    "py": "taishi",
+    "pyInitials": "ts"
+  },
+  "water": {
+    "en": "water",
+    "zh": "水",
+    "py": "shui",
+    "pyInitials": "s"
+  },
+  "crude-oil": {
+    "en": "crude oil",
+    "zh": "原油",
+    "py": "yuanyou",
+    "pyInitials": "yy"
+  },
+  "hydrogen": {
+    "en": "hydrogen",
+    "zh": "氢",
+    "py": "qing",
+    "pyInitials": "q"
+  },
+  "deuterium": {
+    "en": "deuterium",
+    "zh": "重氢",
+    "py": "zhongqing",
+    "pyInitials": "zq"
+  },
+  "antimatter": {
+    "en": "antimatter",
+    "zh": "反物质",
+    "py": "fanwuzhi",
+    "pyInitials": "fwz"
+  },
+  "df-core-element": {
+    "en": "core element",
+    "zh": "核心素",
+    "py": "hexinsu",
+    "pyInitials": "hxs"
+  },
+  "critical-photon": {
+    "en": "critical photon",
+    "zh": "临界光子",
+    "py": "linjieguangzi",
+    "pyInitials": "ljgz"
+  },
+  "kimberlite-ore": {
+    "en": "kimberlite ore",
+    "zh": "金伯利矿石",
+    "py": "jinbolikuangshi",
+    "pyInitials": "jblks"
+  },
+  "iron-ingot": {
+    "en": "iron ingot",
+    "zh": "铁块",
+    "py": "tiekuai",
+    "pyInitials": "tk"
+  },
+  "copper-ingot": {
+    "en": "copper ingot",
+    "zh": "铜块",
+    "py": "tongkuai",
+    "pyInitials": "tk"
+  },
+  "stone-brick": {
+    "en": "stone brick",
+    "zh": "石材",
+    "py": "shicai",
+    "pyInitials": "sc"
+  },
+  "energetic-graphite": {
+    "en": "energetic graphite",
+    "zh": "高能石墨",
+    "py": "gaonengshimo",
+    "pyInitials": "gnsm"
+  },
+  "high-purity-silicon": {
+    "en": "high-purity silicon",
+    "zh": "高纯硅块",
+    "py": "gaochunguikuai",
+    "pyInitials": "gcgk"
+  },
+  "titanium-ingot": {
+    "en": "titanium ingot",
+    "zh": "钛块",
+    "py": "taikuai",
+    "pyInitials": "tk"
+  },
+  "sulfuric-acid": {
+    "en": "sulfuric acid",
+    "zh": "硫酸",
+    "py": "liusuan",
+    "pyInitials": "ls"
+  },
+  "refined-oil": {
+    "en": "refined oil",
+    "zh": "精炼油",
+    "py": "jinglianyou",
+    "pyInitials": "jly"
+  },
+  "hydrogen-fuel-rod": {
+    "en": "hydrogen fuel rod",
+    "zh": "液氢燃料棒",
+    "py": "yeqingranliaobang",
+    "pyInitials": "yqrlb"
+  },
+  "deuteron-fuel-rod": {
+    "en": "deuteron fuel rod",
+    "zh": "氘核燃料棒",
+    "py": "daoheranliaobang",
+    "pyInitials": "dhrlb"
+  },
+  "antimatter-fuel-rod": {
+    "en": "antimatter fuel rod",
+    "zh": "反物质燃料棒",
+    "py": "fanwuzhiranliaobang",
+    "pyInitials": "fwzrlb"
+  },
+  "df-strange-annihilation-fuel-rod": {
+    "en": "strange annihilation fuel rod",
+    "zh": "奇异湮灭燃料棒",
+    "py": "qiyiyanmieranliaobang",
+    "pyInitials": "qyymrlb"
+  },
+  "df-missile-set": {
+    "en": "missile set",
+    "zh": "导弹组",
+    "py": "daodanzu",
+    "pyInitials": "ddz"
+  },
+  "fractal-silicon": {
+    "en": "fractal silicon",
+    "zh": "分形硅石",
+    "py": "fenxingguishi",
+    "pyInitials": "fxgs"
+  },
+  "magnet": {
+    "en": "magnet",
+    "zh": "磁铁",
+    "py": "citie",
+    "pyInitials": "ct"
+  },
+  "magnetic-coil": {
+    "en": "magnetic coil",
+    "zh": "磁线圈",
+    "py": "cixianquan",
+    "pyInitials": "cxq"
+  },
+  "glass": {
+    "en": "glass",
+    "zh": "玻璃",
+    "py": "boli",
+    "pyInitials": "bl"
+  },
+  "diamond": {
+    "en": "diamond",
+    "zh": "金刚石",
+    "py": "jingangshi",
+    "pyInitials": "jgs"
+  },
+  "crystal-silicon": {
+    "en": "crystal silicon",
+    "zh": "晶格硅",
+    "py": "jinggegui",
+    "pyInitials": "jgg"
+  },
+  "titanium-alloy": {
+    "en": "titanium alloy",
+    "zh": "钛合金",
+    "py": "taihejin",
+    "pyInitials": "thj"
+  },
+  "df-combustible-unit": {
+    "en": "combustible unit",
+    "zh": "燃烧单元",
+    "py": "ranshaodanyuan",
+    "pyInitials": "rsdy"
+  },
+  "plastic": {
+    "en": "plastic",
+    "zh": "塑料",
+    "py": "suliao",
+    "pyInitials": "sl"
+  },
+  "organic-crystal": {
+    "en": "organic crystal",
+    "zh": "有机晶体",
+    "py": "youjijingti",
+    "pyInitials": "yjjt"
+  },
+  "graphene": {
+    "en": "graphene",
+    "zh": "石墨烯",
+    "py": "shimoxi",
+    "pyInitials": "smx"
+  },
+  "annihilation-constraint-sphere": {
+    "en": "annihilation constraint sphere",
+    "zh": "湮灭约束球",
+    "py": "yanmieyueshuqiu",
+    "pyInitials": "ymysq"
+  },
+  "df-magnum-ammo-box": {
+    "en": "magnum ammo box",
+    "zh": "高频激光塔 (科技)",
+    "py": "gaopinjiguangta (keji)",
+    "pyInitials": "gpjgt (kj)"
+  },
+  "df-supersonic-missile-set": {
+    "en": "supersonic missile set",
+    "zh": "超音速导弹组",
+    "py": "chaoyinsudaodanzu",
+    "pyInitials": "cysddz"
+  },
+  "optical-grating-crystal": {
+    "en": "grating crystal",
+    "zh": "光栅石",
+    "py": "guangshanshi",
+    "pyInitials": "gss"
+  },
+  "steel": {
+    "en": "steel",
+    "zh": "钢",
+    "py": "gang",
+    "pyInitials": "g"
+  },
+  "circuit-board": {
+    "en": "circuit board",
+    "zh": "电路板",
+    "py": "dianluban",
+    "pyInitials": "dlb"
+  },
+  "prism": {
+    "en": "prism",
+    "zh": "棱镜",
+    "py": "lengjing",
+    "pyInitials": "lj"
+  },
+  "electric-motor": {
+    "en": "electric motor",
+    "zh": "电动机",
+    "py": "diandongji",
+    "pyInitials": "ddj"
+  },
+  "microcrystalline-component": {
+    "en": "microcrystalline component",
+    "zh": "微晶原件",
+    "py": "weijingyuanjian",
+    "pyInitials": "wjyj"
+  },
+  "proliferator-1": {
+    "en": "proliferator mk.i",
+    "zh": "增产剂 Mk.I",
+    "py": "zengchanji mk.i",
+    "pyInitials": "zcj mk.i"
+  },
+  "df-explosive-unit": {
+    "en": "explosive unit",
+    "zh": "爆破单元",
+    "py": "baopodanyuan",
+    "pyInitials": "bpdy"
+  },
+  "strange-matter": {
+    "en": "strange matter",
+    "zh": "奇异物质",
+    "py": "qiyiwuzhi",
+    "pyInitials": "qywz"
+  },
+  "titanium-crystal": {
+    "en": "titanium crystal",
+    "zh": "钛晶石",
+    "py": "taijingshi",
+    "pyInitials": "tjs"
+  },
+  "carbon-nanotube": {
+    "en": "carbon nanotube",
+    "zh": "碳纳米管",
+    "py": "tannamiguan",
+    "pyInitials": "tnmg"
+  },
+  "particle-broadband": {
+    "en": "particle broadband",
+    "zh": "粒子宽带",
+    "py": "lizikuandai",
+    "pyInitials": "lzkd"
+  },
+  "df-titanium-ammo-box": {
+    "en": "titanium ammo box",
+    "zh": "钛化弹箱",
+    "py": "taihuatanxiang",
+    "pyInitials": "thtx"
+  },
+  "df-gravity-missile-set": {
+    "en": "gravity missile set",
+    "zh": "引力导弹组",
+    "py": "yinlidaodanzu",
+    "pyInitials": "ylddz"
+  },
+  "spiniform-stalagmite-crystal": {
+    "en": "stalagmite crystal",
+    "zh": "刺笋结晶",
+    "py": "cisunjiejing",
+    "pyInitials": "csjj"
+  },
+  "gear": {
+    "en": "gear",
+    "zh": "齿轮",
+    "py": "chilun",
+    "pyInitials": "cl"
+  },
+  "plasma-exciter": {
+    "en": "plasma exciter",
+    "zh": "电浆激发器",
+    "py": "dianjiangjifaqi",
+    "pyInitials": "djjfq"
+  },
+  "photon-combiner": {
+    "en": "photon combiner",
+    "zh": "光子合并器",
+    "py": "guangzihebingqi",
+    "pyInitials": "gzhbq"
+  },
+  "electromagnetic-turbine": {
+    "en": "electromagnetic turbine",
+    "zh": "电磁涡轮",
+    "py": "dianciwolun",
+    "pyInitials": "dcwl"
+  },
+  "processor": {
+    "en": "processor",
+    "zh": "处理器",
+    "py": "chuliqi",
+    "pyInitials": "clq"
+  },
+  "proliferator-2": {
+    "en": "proliferator mk.ii",
+    "zh": "增产剂 Mk.II",
+    "py": "zengchanji mk.ii",
+    "pyInitials": "zcj mk.ii"
+  },
+  "df-crystal-explosive-unit": {
+    "en": "crystal explosive unit",
+    "zh": "晶石爆破单元",
+    "py": "jingshibaopodanyuan",
+    "pyInitials": "jsbpdy"
+  },
+  "casimir-crystal": {
+    "en": "casimir crystal",
+    "zh": "卡西米尔晶体",
+    "py": "kaximierjingti",
+    "pyInitials": "kxmejt"
+  },
+  "titanium-glass": {
+    "en": "titanium glass",
+    "zh": "钛化玻璃",
+    "py": "taihuaboli",
+    "pyInitials": "thbl"
+  },
+  "plane-filter": {
+    "en": "plane filter",
+    "zh": "位面过滤器",
+    "py": "weimianguolüqi",
+    "pyInitials": "wmglq"
+  },
+  "quantum-chip": {
+    "en": "quantum chip",
+    "zh": "量子芯片",
+    "py": "liangzixinpian",
+    "pyInitials": "lzxp"
+  },
+  "df-superalloy-ammo-box": {
+    "en": "superalloy ammo box",
+    "zh": "超合金弹箱",
+    "py": "chaohejintanxiang",
+    "pyInitials": "chjtx"
+  },
+  "df-shell-set": {
+    "en": "shell set",
+    "zh": "炮弹组",
+    "py": "paodanzu",
+    "pyInitials": "pdz"
+  },
+  "unipolar-magnet": {
+    "en": "unipolar magnet",
+    "zh": "单极磁石",
+    "py": "danjicishi",
+    "pyInitials": "djcs"
+  },
+  "df-engine": {
+    "en": "engine",
+    "zh": "动力引擎",
+    "py": "dongliyinqing",
+    "pyInitials": "dlyq"
+  },
+  "thruster": {
+    "en": "thruster",
+    "zh": "推进器",
+    "py": "tuijinqi",
+    "pyInitials": "tjq"
+  },
+  "reinforced-thruster": {
+    "en": "reinforced thruster",
+    "zh": "加力推进器",
+    "py": "jialituijinqi",
+    "pyInitials": "jltjq"
+  },
+  "super-magnetic-ring": {
+    "en": "super-magnetic ring",
+    "zh": "超级磁场环",
+    "py": "chaojicichanghuan",
+    "pyInitials": "cjcch"
+  },
+  "particle-container": {
+    "en": "particle container",
+    "zh": "粒子容器",
+    "py": "lizirongqi",
+    "pyInitials": "lzrq"
+  },
+  "proliferator-3": {
+    "en": "proliferator mk.iii",
+    "zh": "增产剂 Mk.III",
+    "py": "zengchanji mk.iii",
+    "pyInitials": "zcj mk.iii"
+  },
+  "df-prototype": {
+    "en": "prototype",
+    "zh": "原型机",
+    "py": "yuanxingji",
+    "pyInitials": "yxj"
+  },
+  "df-precision-drone": {
+    "en": "precision drone",
+    "zh": "精准无人机",
+    "py": "jingzhunwurenji",
+    "pyInitials": "jzwrj"
+  },
+  "df-attack-drone": {
+    "en": "attack drone",
+    "zh": "攻击无人机",
+    "py": "gongjiwurenji",
+    "pyInitials": "gjwrj"
+  },
+  "df-corvette": {
+    "en": "corvette",
+    "zh": "护卫舰",
+    "py": "huweijian",
+    "pyInitials": "hwj"
+  },
+  "df-destroyer": {
+    "en": "destroyer",
+    "zh": "驱逐舰",
+    "py": "quzhujian",
+    "pyInitials": "qzj"
+  },
+  "df-plasma-capsule": {
+    "en": "plasma capsule",
+    "zh": "等离子胶囊",
+    "py": "denglizijiaonang",
+    "pyInitials": "dlzjn"
+  },
+  "df-high-explosive-shell-set": {
+    "en": "high-explosive shell set",
+    "zh": "高爆炮弹组",
+    "py": "gaobaopaodanzu",
+    "pyInitials": "gbpdz"
+  },
+  "fire-ice": {
+    "en": "fire ice",
+    "zh": "可燃冰",
+    "py": "keranbing",
+    "pyInitials": "krb"
+  },
+  "logistics-bot": {
+    "en": "logistics bot",
+    "zh": "配送运输机",
+    "py": "peisongyunshuji",
+    "pyInitials": "psysj"
+  },
+  "logistics-drone": {
+    "en": "logistics drone",
+    "zh": "物流运输机",
+    "py": "wuliuyunshuji",
+    "pyInitials": "wlysj"
+  },
+  "logistics-vessel": {
+    "en": "interstellar logistics vessel",
+    "zh": "星际物流运输船",
+    "py": "xingjiwuliuyunshuchuan",
+    "pyInitials": "xjwlysc"
+  },
+  "space-warper": {
+    "en": "space warper",
+    "zh": "空间翘曲器",
+    "py": "kongjianqiaoquqi",
+    "pyInitials": "kjqqq"
+  },
+  "graviton-lens": {
+    "en": "graviton lens",
+    "zh": "引力透镜",
+    "py": "yinlitoujing",
+    "pyInitials": "yltj"
+  },
+  "foundation": {
+    "en": "foundation",
+    "zh": "地基",
+    "py": "diji",
+    "pyInitials": "dj"
+  },
+  "solar-sail": {
+    "en": "solar sail",
+    "zh": "太阳帆",
+    "py": "taiyangfan",
+    "pyInitials": "tyf"
+  },
+  "frame-material": {
+    "en": "frame material",
+    "zh": "框架材料",
+    "py": "kuangjiacailiao",
+    "pyInitials": "kjcl"
+  },
+  "dyson-sphere-component": {
+    "en": "dyson sphere component",
+    "zh": "戴森球组件",
+    "py": "daisenqiuzujian",
+    "pyInitials": "dsqzj"
+  },
+  "small-carrier-rocket": {
+    "en": "small carrier rocket",
+    "zh": "小型运载火箭",
+    "py": "xiaoxingyunzaihuojian",
+    "pyInitials": "xxyzhj"
+  },
+  "df-antimatter-capsule": {
+    "en": "antimatter capsule",
+    "zh": "反物质胶囊",
+    "py": "fanwuzhijiaonang",
+    "pyInitials": "fwzjn"
+  },
+  "df-crystal-shell-set": {
+    "en": "crystal shell set",
+    "zh": "晶石炮弹组",
+    "py": "jingshipaodanzu",
+    "pyInitials": "jspdz"
+  },
+  "log": {
+    "en": "log",
+    "zh": "木材",
+    "py": "mucai",
+    "pyInitials": "mc"
+  },
+  "electromagnetic-matrix": {
+    "en": "electromagnetic matrix",
+    "zh": "电磁矩阵",
+    "py": "diancijuzhen",
+    "pyInitials": "dcjz"
+  },
+  "energy-matrix": {
+    "en": "energy matrix",
+    "zh": "能量矩阵",
+    "py": "nengliangjuzhen",
+    "pyInitials": "nljz"
+  },
+  "structure-matrix": {
+    "en": "structure matrix",
+    "zh": "结构矩阵",
+    "py": "jiegoujuzhen",
+    "pyInitials": "jgjz"
+  },
+  "information-matrix": {
+    "en": "information matrix",
+    "zh": "信息矩阵",
+    "py": "xinxijuzhen",
+    "pyInitials": "xxjz"
+  },
+  "gravity-matrix": {
+    "en": "gravity matrix",
+    "zh": "引力矩阵",
+    "py": "yinlijuzhen",
+    "pyInitials": "yljz"
+  },
+  "universe-matrix": {
+    "en": "universe matrix",
+    "zh": "宇宙矩阵",
+    "py": "yuzhoujuzhen",
+    "pyInitials": "yzjz"
+  },
+  "df-dark-fog-matrix": {
+    "en": "dark fog matrix",
+    "zh": "黑雾矩阵",
+    "py": "heiwujuzhen",
+    "pyInitials": "hwjz"
+  },
+  "df-energy-shard": {
+    "en": "energy shard",
+    "zh": "能量碎片",
+    "py": "nengliangsuipian",
+    "pyInitials": "nlsp"
+  },
+  "df-silicon-based-neuron": {
+    "en": "silicon-based neuron",
+    "zh": "硅基神经元",
+    "py": "guijishenjingyuan",
+    "pyInitials": "gjsjy"
+  },
+  "df-negentropy-singularity": {
+    "en": "negentropy singularity",
+    "zh": "负熵奇点",
+    "py": "fushangqidian",
+    "pyInitials": "fsqd"
+  },
+  "df-matter-recombinator": {
+    "en": "matter recombinator",
+    "zh": "物质重组器",
+    "py": "wuzhizhongzuqi",
+    "pyInitials": "wzzzq"
+  },
+  "df-jamming-capsule": {
+    "en": "jamming capsule",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-suppressing-capsule": {
+    "en": "suppressing capsule",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "plant-fuel": {
+    "en": "plant fuel",
+    "zh": "植物燃料",
+    "py": "zhiwuranliao",
+    "pyInitials": "zwrl"
+  },
+  "proliferator-1-products": {
+    "en": "proliferator mk.i (products)",
+    "zh": "增产剂 Mk.I (额外产出)",
+    "py": "zengchanji mk.i (ewaichanchu)",
+    "pyInitials": "zcj mk.i (ewcc)"
+  },
+  "proliferator-2-products": {
+    "en": "proliferator mk.ii (products)",
+    "zh": "增产剂 Mk.II (额外产出)",
+    "py": "zengchanji mk.ii (ewaichanchu)",
+    "pyInitials": "zcj mk.ii (ewcc)"
+  },
+  "proliferator-3-products": {
+    "en": "proliferator mk.iii (products)",
+    "zh": "增产剂 Mk.III (额外产出)",
+    "py": "zengchanji mk.iii (ewaichanchu)",
+    "pyInitials": "zcj mk.iii (ewcc)"
+  },
+  "proliferator-1-speed": {
+    "en": "proliferator mk.i (speedup)",
+    "zh": "增产剂 Mk.I (生产加速)",
+    "py": "zengchanji mk.i (shengchanjiasu)",
+    "pyInitials": "zcj mk.i (scjs)"
+  },
+  "proliferator-2-speed": {
+    "en": "proliferator mk.ii (speedup)",
+    "zh": "增产剂 Mk.II (生产加速)",
+    "py": "zengchanji mk.ii (shengchanjiasu)",
+    "pyInitials": "zcj mk.ii (scjs)"
+  },
+  "proliferator-3-speed": {
+    "en": "proliferator mk.iii (speedup)",
+    "zh": "增产剂 Mk.III (生产加速)",
+    "py": "zengchanji mk.iii (shengchanjiasu)",
+    "pyInitials": "zcj mk.iii (scjs)"
+  },
+  "applied-superconductor": {
+    "en": "applied superconductor",
+    "zh": "应用型超导体",
+    "py": "yingyongxingchaodaoti",
+    "pyInitials": "yyxcdt"
+  },
+  "artificial-star-technology": {
+    "en": "artificial star",
+    "zh": "人造恒星 (科技)",
+    "py": "renzaohengxing (keji)",
+    "pyInitials": "rzhx (kj)"
+  },
+  "automatic-metallurgy": {
+    "en": "automatic metallurgy",
+    "zh": "自动化冶金",
+    "py": "zidonghuayejin",
+    "pyInitials": "zdhyj"
+  },
+  "basic-assembling-processes": {
+    "en": "basic assembling",
+    "zh": "基础制造工艺",
+    "py": "jichuzhizaogongyi",
+    "pyInitials": "jczzgy"
+  },
+  "basic-chemical-engineering": {
+    "en": "basic chemical engineering",
+    "zh": "基础化工",
+    "py": "jichuhuagong",
+    "pyInitials": "jchg"
+  },
+  "basic-logistics-system": {
+    "en": "basic logistics system",
+    "zh": "基础物流系统",
+    "py": "jichuwuliuxitong",
+    "pyInitials": "jcwlxt"
+  },
+  "casimir-crystal-technology": {
+    "en": "casimir crystal",
+    "zh": "卡西米尔晶体 (科技)",
+    "py": "kaximierjingti (keji)",
+    "pyInitials": "kxmejt (kj)"
+  },
+  "controlled-annihilation-reaction": {
+    "en": "controlled annihilation reaction",
+    "zh": "可控湮灭反应",
+    "py": "kekongyanmiefanying",
+    "pyInitials": "kkymfy"
+  },
+  "crystal-smelting": {
+    "en": "crystal smelting",
+    "zh": "晶体冶炼",
+    "py": "jingtiyelian",
+    "pyInitials": "jtyl"
+  },
+  "deuterium-fractionation-technology": {
+    "en": "deuterium fractionation",
+    "zh": "重氢分馏 (科技)",
+    "py": "zhongqingfenliu (keji)",
+    "pyInitials": "zqfl (kj)"
+  },
+  "df-antimatter-capsule-tech": {
+    "en": "antimatter capsule",
+    "zh": "反物质胶囊 (科技)",
+    "py": "fanwuzhijiaonang (keji)",
+    "pyInitials": "fwzjn (kj)"
+  },
+  "df-attack-drone-tech": {
+    "en": "attack drone",
+    "zh": "攻击无人机 (科技)",
+    "py": "gongjiwurenji (keji)",
+    "pyInitials": "gjwrj (kj)"
+  },
+  "df-battlefield-analysis-base-tech": {
+    "en": "battlefield analysis base",
+    "zh": "战场分析基站 (科技)",
+    "py": "zhanchangfenxijizhan (keji)",
+    "pyInitials": "zcfxjz (kj)"
+  },
+  "df-combustible-unit-tech": {
+    "en": "combustible unit",
+    "zh": "燃烧单元 (科技)",
+    "py": "ranshaodanyuan (keji)",
+    "pyInitials": "rsdy (kj)"
+  },
+  "df-corvette-tech": {
+    "en": "corvette",
+    "zh": "护卫舰 (科技)",
+    "py": "huweijian (keji)",
+    "pyInitials": "hwj (kj)"
+  },
+  "df-crystal-explosive-unit-tech": {
+    "en": "crystal explosive unit",
+    "zh": "晶石爆破单元 (科技)",
+    "py": "jingshibaopodanyuan (keji)",
+    "pyInitials": "jsbpdy (kj)"
+  },
+  "df-crystal-shell-set-tech": {
+    "en": "crystal shell set",
+    "zh": "晶石炮弹组 (科技)",
+    "py": "jingshipaodanzu (keji)",
+    "pyInitials": "jspdz (kj)"
+  },
+  "df-destroyer-tech": {
+    "en": "destroyer",
+    "zh": "驱逐舰 (科技)",
+    "py": "quzhujian (keji)",
+    "pyInitials": "qzj (kj)"
+  },
+  "df-digital-analog-computation": {
+    "en": "digital analog computation",
+    "zh": "数字模拟计算",
+    "py": "shuzimunijisuan",
+    "pyInitials": "szmnjs"
+  },
+  "df-engine-tech": {
+    "en": "engine",
+    "zh": "动力引擎 (科技)",
+    "py": "dongliyinqing (keji)",
+    "pyInitials": "dlyq (kj)"
+  },
+  "df-explosive-unit-tech": {
+    "en": "explosive unit",
+    "zh": "爆破单元 (科技)",
+    "py": "baopodanyuan (keji)",
+    "pyInitials": "bpdy (kj)"
+  },
+  "df-gravity-missile-set-tech": {
+    "en": "gravity missile set",
+    "zh": "引力导弹组 (科技)",
+    "py": "yinlidaodanzu (keji)",
+    "pyInitials": "ylddz (kj)"
+  },
+  "df-high-density-controlled-annihilation": {
+    "en": "high-density controlled annihilation",
+    "zh": "高密度可控湮灭",
+    "py": "gaomidukekongyanmie",
+    "pyInitials": "gmdkkym"
+  },
+  "df-high-explosive-shell-set-tech": {
+    "en": "high-explosive shell set",
+    "zh": "高爆炮弹组 (科技)",
+    "py": "gaobaopaodanzu (keji)",
+    "pyInitials": "gbpdz (kj)"
+  },
+  "df-implosion-cannon-tech": {
+    "en": "implosion cannon",
+    "zh": "聚爆加农炮 (科技)",
+    "py": "jubaojianongpao (keji)",
+    "pyInitials": "jbjnp (kj)"
+  },
+  "df-jammer-tower-tech": {
+    "en": "jammer tower",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-matter-recombination": {
+    "en": "matter recombination",
+    "zh": "物质重组",
+    "py": "wuzhizhongzu",
+    "pyInitials": "wzzz"
+  },
+  "df-missile-turret-tech": {
+    "en": "missile turret",
+    "zh": "导弹防御塔 (科技)",
+    "py": "daodanfangyuta (keji)",
+    "pyInitials": "ddfyt (kj)"
+  },
+  "df-negentropy-recursion": {
+    "en": "negentropy recursion",
+    "zh": "负熵递归",
+    "py": "fushangdigui",
+    "pyInitials": "fsdg"
+  },
+  "df-planetary-defense-system": {
+    "en": "planetary defense system",
+    "zh": "行星防御系统",
+    "py": "xingxingfangyuxitong",
+    "pyInitials": "xxfyxt"
+  },
+  "df-plasma-turret-tech": {
+    "en": "plasma turret",
+    "zh": "磁化电浆炮 (科技)",
+    "py": "cihuadianjiangpao (keji)",
+    "pyInitials": "chdjp (kj)"
+  },
+  "df-precision-drone-tech": {
+    "en": "precision drone",
+    "zh": "精准无人机 (科技)",
+    "py": "jingzhunwurenji (keji)",
+    "pyInitials": "jzwrj (kj)"
+  },
+  "df-prototype-tech": {
+    "en": "prototype",
+    "zh": "原型机 (科技)",
+    "py": "yuanxingji (keji)",
+    "pyInitials": "yxj (kj)"
+  },
+  "df-signal-tower-tech": {
+    "en": "signal tower",
+    "zh": "信号塔 (科技)",
+    "py": "xinhaota (keji)",
+    "pyInitials": "xht (kj)"
+  },
+  "df-superalloy-ammo-box-tech": {
+    "en": "superalloy ammo box",
+    "zh": "超合金弹箱 (科技)",
+    "py": "chaohejintanxiang (keji)",
+    "pyInitials": "chjtx (kj)"
+  },
+  "df-supersonic-missile-set-tech": {
+    "en": "supersonic missile set",
+    "zh": "超音速导弹组 (科技)",
+    "py": "chaoyinsudaodanzu (keji)",
+    "pyInitials": "cysddz (kj)"
+  },
+  "df-suppressing-capsule-tech": {
+    "en": "suppressing capsule",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-titanium-ammo-box-tech": {
+    "en": "titanium ammo box",
+    "zh": "钛化弹箱 (科技)",
+    "py": "taihuatanxiang (keji)",
+    "pyInitials": "thtx (kj)"
+  },
+  "df-weapon-system": {
+    "en": "weapon system",
+    "zh": "武器系统",
+    "py": "wuqixitong",
+    "pyInitials": "wqxt"
+  },
+  "dirac-inversion-mechanism": {
+    "en": "dirac inversion mechanism",
+    "zh": "狄拉克逆变机制",
+    "py": "dilakenibianjizhi",
+    "pyInitials": "dlknbjz"
+  },
+  "distribution-logistics-system": {
+    "en": "distribution logistics system",
+    "zh": "配送物流系统",
+    "py": "peisongwuliuxitong",
+    "pyInitials": "pswlxt"
+  },
+  "dyson-sphere-stress-system-1": {
+    "en": "dyson sphere stress system (lv1)",
+    "zh": "戴森器应力系统 (Lv1)",
+    "py": "daisenqiyinglixitong (lv1)",
+    "pyInitials": "dsqylxt (lv1)"
+  },
+  "electromagnetic-drive": {
+    "en": "electromagnetic drive",
+    "zh": "电磁驱动",
+    "py": "dianciqudong",
+    "pyInitials": "dcqd"
+  },
+  "electromagnetic-matrix-technology": {
+    "en": "electromagnetic matrix",
+    "zh": "电磁矩阵 (科技)",
+    "py": "diancijuzhen (keji)",
+    "pyInitials": "dcjz (kj)"
+  },
+  "electromagnetism": {
+    "en": "electromagnetism",
+    "zh": "电磁学",
+    "py": "diancixue",
+    "pyInitials": "dcx"
+  },
+  "energy-matrix-technology": {
+    "en": "energy matrix",
+    "zh": "能量矩阵 (科技)",
+    "py": "nengliangjuzhen (keji)",
+    "pyInitials": "nljz (kj)"
+  },
+  "energy-storage": {
+    "en": "energy storage",
+    "zh": "能量存储",
+    "py": "nengliangcunchu",
+    "pyInitials": "nlcc"
+  },
+  "environment-modification": {
+    "en": "reclamation",
+    "zh": "移山填海工程",
+    "py": "yishantianhaigongcheng",
+    "pyInitials": "ysthgc"
+  },
+  "fluid-storage-encapsulation": {
+    "en": "fluid storage encapsulation",
+    "zh": "流体储存封装",
+    "py": "liutichucunfengzhuang",
+    "pyInitials": "ltccfz"
+  },
+  "gas-giants-exploitation": {
+    "en": "gas giants exploitation",
+    "zh": "气态行星开采",
+    "py": "qitaixingxingkaicai",
+    "pyInitials": "qtxxkc"
+  },
+  "geothermal-extraction": {
+    "en": "geothermal extraction",
+    "zh": "地热开采",
+    "py": "direkaicai",
+    "pyInitials": "drkc"
+  },
+  "gravitational-wave-refraction": {
+    "en": "gravitational wave refraction",
+    "zh": "引力波折射",
+    "py": "yinlibozheshe",
+    "pyInitials": "ylbzs"
+  },
+  "gravity-matrix-technology": {
+    "en": "gravity matrix",
+    "zh": "引力矩阵 (科技)",
+    "py": "yinlijuzhen (keji)",
+    "pyInitials": "yljz (kj)"
+  },
+  "high-efficiency-logistics-system": {
+    "en": "high-efficiency logistics system",
+    "zh": "高效物流系统",
+    "py": "gaoxiaowuliuxitong",
+    "pyInitials": "gxwlxt"
+  },
+  "high-efficiency-plasma-control": {
+    "en": "high-efficiency plasma control",
+    "zh": "高效电浆控制",
+    "py": "gaoxiaodianjiangkongzhi",
+    "pyInitials": "gxdjkz"
+  },
+  "high-speed-assembling-processes": {
+    "en": "high-speed assembling",
+    "zh": "高速制造工艺",
+    "py": "gaosuzhizaogongyi",
+    "pyInitials": "gszzgy"
+  },
+  "high-strength-crystal": {
+    "en": "high-strength crystal",
+    "zh": "高强度晶体",
+    "py": "gaoqiangdujingti",
+    "pyInitials": "gqdjt"
+  },
+  "high-strength-glass": {
+    "en": "high-strength glass",
+    "zh": "高强度玻璃",
+    "py": "gaoqiangduboli",
+    "pyInitials": "gqdbl"
+  },
+  "high-strength-lightweight-structure": {
+    "en": "high-strength lightweight structure",
+    "zh": "高强度轻质结构",
+    "py": "gaoqiangduqingzhijiegou",
+    "pyInitials": "gqdqzjg"
+  },
+  "high-strength-material": {
+    "en": "high-strength material",
+    "zh": "高强度材料",
+    "py": "gaoqiangducailiao",
+    "pyInitials": "gqdcl"
+  },
+  "high-strength-titanium-alloy": {
+    "en": "high-strength titanium alloy",
+    "zh": "高强度钛合金",
+    "py": "gaoqiangdutaihejin",
+    "pyInitials": "gqdthj"
+  },
+  "hydrogen-fuel-rod-technology": {
+    "en": "hydrogen fuel rod",
+    "zh": "氢燃料棒 (科技)",
+    "py": "qingranliaobang (keji)",
+    "pyInitials": "qrlb (kj)"
+  },
+  "improved-logistics-system": {
+    "en": "upgraded logistics system",
+    "zh": "改良物流系统",
+    "py": "gailiangwuliuxitong",
+    "pyInitials": "glwlxt"
+  },
+  "information-matrix-technology": {
+    "en": "information matrix",
+    "zh": "信息矩阵 (科技)",
+    "py": "xinxijuzhen (keji)",
+    "pyInitials": "xxjz (kj)"
+  },
+  "integrated-logistics-system": {
+    "en": "integrated logistics system",
+    "zh": "集装物流系统",
+    "py": "jizhuangwuliuxitong",
+    "pyInitials": "jzwlxt"
+  },
+  "interstellar-logistics-system": {
+    "en": "interstellar logistics system",
+    "zh": "星际物流系统",
+    "py": "xingjiwuliuxitong",
+    "pyInitials": "xjwlxt"
+  },
+  "interstellar-power-transmission": {
+    "en": "interstellar power transmission",
+    "zh": "星际电力运输",
+    "py": "xingjidianliyunshu",
+    "pyInitials": "xjdlys"
+  },
+  "magnetic-levitation-technology": {
+    "en": "magnetic levitation",
+    "zh": "磁悬浮技术",
+    "py": "cixuanfujishu",
+    "pyInitials": "cxfjs"
+  },
+  "magnetic-particle-trap": {
+    "en": "magnetic particle trap",
+    "zh": "粒子磁力阱",
+    "py": "lizicilijing",
+    "pyInitials": "lzclj"
+  },
+  "mesoscopic-quantum-entanglement": {
+    "en": "mesoscopic quantum entanglement",
+    "zh": "亚微观量子纠缠",
+    "py": "yaweiguanliangzijiuchan",
+    "pyInitials": "ywglzjc"
+  },
+  "mini-fusion-power-generation": {
+    "en": "mini fusion power generation",
+    "zh": "微型核聚变发电",
+    "py": "weixinghejubianfadian",
+    "pyInitials": "wxhjbfd"
+  },
+  "miniature-particle-collider-technology": {
+    "en": "miniature particle collider",
+    "zh": "微型粒子对撞机 (科技)",
+    "py": "weixingliziduizhuangji (keji)",
+    "pyInitials": "wxlzdzj (kj)"
+  },
+  "mission-completed": {
+    "en": "mission completed!",
+    "zh": "任务完成!",
+    "py": "renwuwancheng!",
+    "pyInitials": "rwwc!"
+  },
+  "particle-control-technology": {
+    "en": "particle control",
+    "zh": "粒子可控技术",
+    "py": "lizikekongjishu",
+    "pyInitials": "lzkkjs"
+  },
+  "photon-frequency-conversion": {
+    "en": "photon frequency conversion",
+    "zh": "光子变频",
+    "py": "guangzibianpin",
+    "pyInitials": "gzbp"
+  },
+  "photon-spotlight-mining-technology": {
+    "en": "photon spotlight mining",
+    "zh": "光子聚束采矿技术",
+    "py": "guangzijushucaikuangjishu",
+    "pyInitials": "gzjsckjs"
+  },
+  "plane-filter-smelting-technology": {
+    "en": "plane-filter smelting",
+    "zh": "位面冶金技术",
+    "py": "weimianyejinjishu",
+    "pyInitials": "wmyjjs"
+  },
+  "planetary-ionosphere-utilization": {
+    "en": "planetary ionosphere utilization",
+    "zh": "行星电离层利用",
+    "py": "xingxingdianlicengliyong",
+    "pyInitials": "xxdlcly"
+  },
+  "planetary-logistics-system": {
+    "en": "planetary logistics system",
+    "zh": "行星物流系统",
+    "py": "xingxingwuliuxitong",
+    "pyInitials": "xxwlxt"
+  },
+  "plasma-extract-refining": {
+    "en": "plasma extract refining",
+    "zh": "等离子萃取精炼",
+    "py": "denglizicuiqujinglian",
+    "pyInitials": "dlzcqjl"
+  },
+  "polymer-chemical-engineering": {
+    "en": "polymer chemical engineering",
+    "zh": "高分子化工",
+    "py": "gaofenzihuagong",
+    "pyInitials": "gfzhg"
+  },
+  "processor-technology": {
+    "en": "processor",
+    "zh": "处理器 (科技)",
+    "py": "chuliqi (keji)",
+    "pyInitials": "clq (kj)"
+  },
+  "proliferator-1-technology": {
+    "en": "proliferator mk.i",
+    "zh": "增产剂 Mk.I (科技)",
+    "py": "zengchanji mk.i (keji)",
+    "pyInitials": "zcj mk.i (kj)"
+  },
+  "proliferator-2-technology": {
+    "en": "proliferator mk.ii",
+    "zh": "增产剂 Mk.II (科技)",
+    "py": "zengchanji mk.ii (keji)",
+    "pyInitials": "zcj mk.ii (kj)"
+  },
+  "proliferator-3-technology": {
+    "en": "proliferator mk.iii",
+    "zh": "增产剂 Mk.III (科技)",
+    "py": "zengchanji mk.iii (keji)",
+    "pyInitials": "zcj mk.iii (kj)"
+  },
+  "quantum-chip-technology": {
+    "en": "quantum chip",
+    "zh": "量子芯片 (科技)",
+    "py": "liangzixinpian (keji)",
+    "pyInitials": "lzxp (kj)"
+  },
+  "quantum-printing-technology": {
+    "en": "quantum printing",
+    "zh": "量子打印技术",
+    "py": "liangzidayinjishu",
+    "pyInitials": "lzdyjs"
+  },
+  "ray-receiver-technology": {
+    "en": "ray receiver",
+    "zh": "射线接收站 (科技)",
+    "py": "shexianjieshouzhan (keji)",
+    "pyInitials": "sxjsz (kj)"
+  },
+  "reforming-refine-technology": {
+    "en": "reformed refinement",
+    "zh": "重整精炼 (科技)",
+    "py": "chongzhengjinglian (keji)",
+    "pyInitials": "czjl (kj)"
+  },
+  "reinforced-thruster-technology": {
+    "en": "reinforced thruster",
+    "zh": "加力推进器 (科技)",
+    "py": "jialituijinqi (keji)",
+    "pyInitials": "jltjq (kj)"
+  },
+  "satellite-power-distribution-system": {
+    "en": "satellite power distribution system",
+    "zh": "卫星配电系统",
+    "py": "weixingpeidianxitong",
+    "pyInitials": "wxpdxt"
+  },
+  "semiconductor-material": {
+    "en": "semiconductor material",
+    "zh": "半导体材料",
+    "py": "bandaoticailiao",
+    "pyInitials": "bdtcl"
+  },
+  "smelting-purification": {
+    "en": "smelting purification",
+    "zh": "冶炼提纯",
+    "py": "yeliantichun",
+    "pyInitials": "yltc"
+  },
+  "solar-collection": {
+    "en": "solar collection",
+    "zh": "太阳能收集",
+    "py": "taiyangnengshouji",
+    "pyInitials": "tynsj"
+  },
+  "solar-sail-orbit-system": {
+    "en": "solar sail orbit system",
+    "zh": "太阳帆轨道系统",
+    "py": "taiyangfanguidaoxitong",
+    "pyInitials": "tyfgdxt"
+  },
+  "steel-smelting": {
+    "en": "steel smelting",
+    "zh": "钢材冶炼",
+    "py": "gangcaiyelian",
+    "pyInitials": "gcyl"
+  },
+  "strange-matter-technology": {
+    "en": "strange matter",
+    "zh": "奇异物质 (科技)",
+    "py": "qiyiwuzhi (keji)",
+    "pyInitials": "qywz (kj)"
+  },
+  "structure-matrix-technology": {
+    "en": "structure matrix",
+    "zh": "结构矩阵 (科技)",
+    "py": "jiegoujuzhen (keji)",
+    "pyInitials": "jgjz (kj)"
+  },
+  "super-magnetic-field-generator": {
+    "en": "super magnetic field generator",
+    "zh": "超级磁场发生器",
+    "py": "chaojicichangfashengqi",
+    "pyInitials": "cjccfsq"
+  },
+  "thermal-power": {
+    "en": "thermal power",
+    "zh": "火力发电",
+    "py": "huolifadian",
+    "pyInitials": "hlfd"
+  },
+  "thruster-technology": {
+    "en": "thruster",
+    "zh": "推进器 (科技)",
+    "py": "tuijinqi (keji)",
+    "pyInitials": "tjq (kj)"
+  },
+  "titanium-smelting": {
+    "en": "titanium smelting",
+    "zh": "钛矿冶炼",
+    "py": "taikuangyelian",
+    "pyInitials": "tkyl"
+  },
+  "universe-matrix-technology": {
+    "en": "universe matrix",
+    "zh": "宇宙矩阵 (科技)",
+    "py": "yuzhoujuzhen (keji)",
+    "pyInitials": "yzjz (kj)"
+  },
+  "vertical-launching-silo-technology": {
+    "en": "vertical launching silo",
+    "zh": "垂直发射井 (科技)",
+    "py": "chuizhifashejing (keji)",
+    "pyInitials": "czfsj (kj)"
+  },
+  "wave-function-interference": {
+    "en": "wave function interference",
+    "zh": "波函数干扰",
+    "py": "bohanshuganrao",
+    "pyInitials": "bhsgr"
+  },
+  "x-ray-cracking-technology": {
+    "en": "x-ray cracking",
+    "zh": "X射线裂解 (科技)",
+    "py": "xshexianliejie (keji)",
+    "pyInitials": "xsxlj (kj)"
+  },
+  "communication-control-1": {
+    "en": "communication control (lv1)",
+    "zh": "通讯控制 (Lv1)",
+    "py": "tongxunkongzhi (lv1)",
+    "pyInitials": "txkz (lv1)"
+  },
+  "communication-control-2": {
+    "en": "communication control (lv2)",
+    "zh": "通讯控制 (Lv2)",
+    "py": "tongxunkongzhi (lv2)",
+    "pyInitials": "txkz (lv2)"
+  },
+  "communication-control-3": {
+    "en": "communication control (lv3)",
+    "zh": "通讯控制 (Lv3)",
+    "py": "tongxunkongzhi (lv3)",
+    "pyInitials": "txkz (lv3)"
+  },
+  "communication-control-4": {
+    "en": "communication control (lv4)",
+    "zh": "通讯控制 (Lv4)",
+    "py": "tongxunkongzhi (lv4)",
+    "pyInitials": "txkz (lv4)"
+  },
+  "communication-control-5": {
+    "en": "communication control (lv5)",
+    "zh": "通讯控制 (Lv5)",
+    "py": "tongxunkongzhi (lv5)",
+    "pyInitials": "txkz (lv5)"
+  },
+  "communication-control-6": {
+    "en": "communication control (lv6)",
+    "zh": "通讯控制 (Lv6)",
+    "py": "tongxunkongzhi (lv6)",
+    "pyInitials": "txkz (lv6)"
+  },
+  "communication-control-7": {
+    "en": "communication control (lv7)",
+    "zh": "通讯控制 (Lv7)",
+    "py": "tongxunkongzhi (lv7)",
+    "pyInitials": "txkz (lv7)"
+  },
+  "df-auto-reconstruction-marking-1": {
+    "en": "auto reconstruction marking (lv1)",
+    "zh": "自动标记重建 (Lv1)",
+    "py": "zidongbiaojichongjian (lv1)",
+    "pyInitials": "zdbjcj (lv1)"
+  },
+  "df-auto-reconstruction-marking-2": {
+    "en": "auto reconstruction marking (lv2)",
+    "zh": "自动标记重建 (Lv2)",
+    "py": "zidongbiaojichongjian (lv2)",
+    "pyInitials": "zdbjcj (lv2)"
+  },
+  "df-auto-reconstruction-marking-3": {
+    "en": "auto reconstruction marking (lv3)",
+    "zh": "自动标记重建 (Lv3)",
+    "py": "zidongbiaojichongjian (lv3)",
+    "pyInitials": "zdbjcj (lv3)"
+  },
+  "df-auto-reconstruction-marking-4": {
+    "en": "auto reconstruction marking (lv4)",
+    "zh": "自动标记重建 (Lv4)",
+    "py": "zidongbiaojichongjian (lv4)",
+    "pyInitials": "zdbjcj (lv4)"
+  },
+  "df-auto-reconstruction-marking-5": {
+    "en": "auto reconstruction marking (lv5)",
+    "zh": "自动标记重建 (Lv5)",
+    "py": "zidongbiaojichongjian (lv5)",
+    "pyInitials": "zdbjcj (lv5)"
+  },
+  "df-auto-reconstruction-marking-6": {
+    "en": "auto reconstruction marking (lv6)",
+    "zh": "自动标记重建 (Lv6)",
+    "py": "zidongbiaojichongjian (lv6)",
+    "pyInitials": "zdbjcj (lv6)"
+  },
+  "df-combat-drone-attack-speed-1": {
+    "en": "combat drone attack speed (lv1)",
+    "zh": "战斗无人机射速 (Lv1)",
+    "py": "zhandouwurenjishesu (lv1)",
+    "pyInitials": "zdwrjss (lv1)"
+  },
+  "df-combat-drone-attack-speed-2": {
+    "en": "combat drone attack speed (lv2)",
+    "zh": "战斗无人机射速 (Lv2)",
+    "py": "zhandouwurenjishesu (lv2)",
+    "pyInitials": "zdwrjss (lv2)"
+  },
+  "df-combat-drone-attack-speed-3": {
+    "en": "combat drone attack speed (lv3)",
+    "zh": "战斗无人机射速 (Lv3)",
+    "py": "zhandouwurenjishesu (lv3)",
+    "pyInitials": "zdwrjss (lv3)"
+  },
+  "df-combat-drone-attack-speed-4": {
+    "en": "combat drone attack speed (lv4)",
+    "zh": "战斗无人机射速 (Lv4)",
+    "py": "zhandouwurenjishesu (lv4)",
+    "pyInitials": "zdwrjss (lv4)"
+  },
+  "df-combat-drone-attack-speed-5": {
+    "en": "combat drone attack speed (lv5)",
+    "zh": "战斗无人机射速 (Lv5)",
+    "py": "zhandouwurenjishesu (lv5)",
+    "pyInitials": "zdwrjss (lv5)"
+  },
+  "df-combat-drone-damage-1": {
+    "en": "combat drone damage (lv1)",
+    "zh": "战斗无人机伤害 (Lv1)",
+    "py": "zhandouwurenjishanghai (lv1)",
+    "pyInitials": "zdwrjsh (lv1)"
+  },
+  "df-combat-drone-damage-2": {
+    "en": "combat drone damage (lv2)",
+    "zh": "战斗无人机伤害 (Lv2)",
+    "py": "zhandouwurenjishanghai (lv2)",
+    "pyInitials": "zdwrjsh (lv2)"
+  },
+  "df-combat-drone-damage-3": {
+    "en": "combat drone damage (lv3)",
+    "zh": "战斗无人机伤害 (Lv3)",
+    "py": "zhandouwurenjishanghai (lv3)",
+    "pyInitials": "zdwrjsh (lv3)"
+  },
+  "df-combat-drone-damage-4": {
+    "en": "combat drone damage (lv4)",
+    "zh": "战斗无人机伤害 (Lv4)",
+    "py": "zhandouwurenjishanghai (lv4)",
+    "pyInitials": "zdwrjsh (lv4)"
+  },
+  "df-combat-drone-damage-5": {
+    "en": "combat drone damage (lv5)",
+    "zh": "战斗无人机伤害 (Lv5)",
+    "py": "zhandouwurenjishanghai (lv5)",
+    "pyInitials": "zdwrjsh (lv5)"
+  },
+  "df-combat-drone-durability-1": {
+    "en": "combat drone durability (lv1)",
+    "zh": "战斗无人机耐久 (Lv1)",
+    "py": "zhandouwurenjinaijiu (lv1)",
+    "pyInitials": "zdwrjnj (lv1)"
+  },
+  "df-combat-drone-durability-2": {
+    "en": "combat drone durability (lv2)",
+    "zh": "战斗无人机耐久 (Lv2)",
+    "py": "zhandouwurenjinaijiu (lv2)",
+    "pyInitials": "zdwrjnj (lv2)"
+  },
+  "df-combat-drone-durability-3": {
+    "en": "combat drone durability (lv3)",
+    "zh": "战斗无人机耐久 (Lv3)",
+    "py": "zhandouwurenjinaijiu (lv3)",
+    "pyInitials": "zdwrjnj (lv3)"
+  },
+  "df-combat-drone-durability-4": {
+    "en": "combat drone durability (lv4)",
+    "zh": "战斗无人机耐久 (Lv4)",
+    "py": "zhandouwurenjinaijiu (lv4)",
+    "pyInitials": "zdwrjnj (lv4)"
+  },
+  "df-combat-drone-durability-5": {
+    "en": "combat drone durability (lv5)",
+    "zh": "战斗无人机耐久 (Lv5)",
+    "py": "zhandouwurenjinaijiu (lv5)",
+    "pyInitials": "zdwrjnj (lv5)"
+  },
+  "df-em-weapon-strength-1": {
+    "en": "em weapon strength (lv1)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-em-weapon-strength-2": {
+    "en": "em weapon strength (lv2)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-em-weapon-strength-3": {
+    "en": "em weapon strength (lv3)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-em-weapon-strength-4": {
+    "en": "em weapon strength (lv4)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-em-weapon-strength-5": {
+    "en": "em weapon strength (lv5)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-em-weapon-strength-6": {
+    "en": "em weapon strength (lv6)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-energy-shield-1": {
+    "en": "energy shield (lv1)",
+    "zh": "能量护盾 (Lv1)",
+    "py": "nenglianghudun (lv1)",
+    "pyInitials": "nlhd (lv1)"
+  },
+  "df-energy-shield-2": {
+    "en": "energy shield (lv2)",
+    "zh": "能量护盾 (Lv2)",
+    "py": "nenglianghudun (lv2)",
+    "pyInitials": "nlhd (lv2)"
+  },
+  "df-energy-shield-3": {
+    "en": "energy shield (lv3)",
+    "zh": "能量护盾 (Lv3)",
+    "py": "nenglianghudun (lv3)",
+    "pyInitials": "nlhd (lv3)"
+  },
+  "df-energy-shield-4": {
+    "en": "energy shield (lv4)",
+    "zh": "能量护盾 (Lv4)",
+    "py": "nenglianghudun (lv4)",
+    "pyInitials": "nlhd (lv4)"
+  },
+  "df-energy-shield-5": {
+    "en": "energy shield (lv5)",
+    "zh": "能量护盾 (Lv5)",
+    "py": "nenglianghudun (lv5)",
+    "pyInitials": "nlhd (lv5)"
+  },
+  "df-energy-shield-6": {
+    "en": "energy shield (lv6)",
+    "zh": "能量护盾 (Lv6)",
+    "py": "nenglianghudun (lv6)",
+    "pyInitials": "nlhd (lv6)"
+  },
+  "df-energy-shield-7": {
+    "en": "energy shield (lv26)",
+    "zh": "能量护盾 (Lv7)",
+    "py": "nenglianghudun (lv7)",
+    "pyInitials": "nlhd (lv7)"
+  },
+  "df-energy-weapon-damage-1": {
+    "en": "energy weapon damage (lv1)",
+    "zh": "能量武器伤害 (Lv1)",
+    "py": "nengliangwuqishanghai (lv1)",
+    "pyInitials": "nlwqsh (lv1)"
+  },
+  "df-energy-weapon-damage-2": {
+    "en": "energy weapon damage (lv2)",
+    "zh": "能量武器伤害 (Lv2)",
+    "py": "nengliangwuqishanghai (lv2)",
+    "pyInitials": "nlwqsh (lv2)"
+  },
+  "df-energy-weapon-damage-3": {
+    "en": "energy weapon damage (lv3)",
+    "zh": "能量武器伤害 (Lv3)",
+    "py": "nengliangwuqishanghai (lv3)",
+    "pyInitials": "nlwqsh (lv3)"
+  },
+  "df-energy-weapon-damage-4": {
+    "en": "energy weapon damage (lv4)",
+    "zh": "能量武器伤害 (Lv4)",
+    "py": "nengliangwuqishanghai (lv4)",
+    "pyInitials": "nlwqsh (lv4)"
+  },
+  "df-energy-weapon-damage-5": {
+    "en": "energy weapon damage (lv5)",
+    "zh": "能量武器伤害 (Lv5)",
+    "py": "nengliangwuqishanghai (lv5)",
+    "pyInitials": "nlwqsh (lv5)"
+  },
+  "df-energy-weapon-damage-6": {
+    "en": "energy weapon damage (lv6)",
+    "zh": "能量武器伤害 (Lv6)",
+    "py": "nengliangwuqishanghai (lv6)",
+    "pyInitials": "nlwqsh (lv6)"
+  },
+  "df-enhanced-structure-1": {
+    "en": "enhanced structure (lv1)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-enhanced-structure-2": {
+    "en": "enhanced structure (lv2)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-enhanced-structure-3": {
+    "en": "enhanced structure (lv3)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-enhanced-structure-4": {
+    "en": "enhanced structure (lv4)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-enhanced-structure-5": {
+    "en": "enhanced structure (lv5)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-enhanced-structure-6": {
+    "en": "enhanced structure (lv6)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "df-explosive-weapon-damage-1": {
+    "en": "explosive weapon damage (lv1)",
+    "zh": "爆破武器伤害 (Lv1)",
+    "py": "baopowuqishanghai (lv1)",
+    "pyInitials": "bpwqsh (lv1)"
+  },
+  "df-explosive-weapon-damage-2": {
+    "en": "explosive weapon damage (lv2)",
+    "zh": "爆破武器伤害 (Lv2)",
+    "py": "baopowuqishanghai (lv2)",
+    "pyInitials": "bpwqsh (lv2)"
+  },
+  "df-explosive-weapon-damage-3": {
+    "en": "explosive weapon damage (lv3)",
+    "zh": "爆破武器伤害 (Lv3)",
+    "py": "baopowuqishanghai (lv3)",
+    "pyInitials": "bpwqsh (lv3)"
+  },
+  "df-explosive-weapon-damage-4": {
+    "en": "explosive weapon damage (lv4)",
+    "zh": "爆破武器伤害 (Lv4)",
+    "py": "baopowuqishanghai (lv4)",
+    "pyInitials": "bpwqsh (lv4)"
+  },
+  "df-explosive-weapon-damage-5": {
+    "en": "explosive weapon damage (lv5)",
+    "zh": "爆破武器伤害 (Lv5)",
+    "py": "baopowuqishanghai (lv5)",
+    "pyInitials": "bpwqsh (lv5)"
+  },
+  "df-explosive-weapon-damage-6": {
+    "en": "explosive weapon damage (lv6)",
+    "zh": "爆破武器伤害 (Lv6)",
+    "py": "baopowuqishanghai (lv6)",
+    "pyInitials": "bpwqsh (lv6)"
+  },
+  "df-ground-squadron-expansion-1": {
+    "en": "ground squadron expansion (lv1)",
+    "zh": "地面编队扩容 (Lv1)",
+    "py": "dimianbianduikuorong (lv1)",
+    "pyInitials": "dmbdkr (lv1)"
+  },
+  "df-ground-squadron-expansion-2": {
+    "en": "ground squadron expansion (lv2)",
+    "zh": "地面编队扩容 (Lv2)",
+    "py": "dimianbianduikuorong (lv2)",
+    "pyInitials": "dmbdkr (lv2)"
+  },
+  "df-ground-squadron-expansion-3": {
+    "en": "ground squadron expansion (lv3)",
+    "zh": "地面编队扩容 (Lv3)",
+    "py": "dimianbianduikuorong (lv3)",
+    "pyInitials": "dmbdkr (lv3)"
+  },
+  "df-ground-squadron-expansion-4": {
+    "en": "ground squadron expansion (lv4)",
+    "zh": "地面编队扩容 (Lv4)",
+    "py": "dimianbianduikuorong (lv4)",
+    "pyInitials": "dmbdkr (lv4)"
+  },
+  "df-ground-squadron-expansion-5": {
+    "en": "ground squadron expansion (lv5)",
+    "zh": "地面编队扩容 (Lv5)",
+    "py": "dimianbianduikuorong (lv5)",
+    "pyInitials": "dmbdkr (lv5)"
+  },
+  "df-ground-squadron-expansion-6": {
+    "en": "ground squadron expansion (lv6)",
+    "zh": "地面编队扩容 (Lv6)",
+    "py": "dimianbianduikuorong (lv6)",
+    "pyInitials": "dmbdkr (lv6)"
+  },
+  "df-ground-squadron-expansion-7": {
+    "en": "ground squadron expansion (lv7)",
+    "zh": "地面编队扩容 (Lv7)",
+    "py": "dimianbianduikuorong (lv7)",
+    "pyInitials": "dmbdkr (lv7)"
+  },
+  "df-kinetic-weapon-damage-1": {
+    "en": "kinetic weapon damage (lv1)",
+    "zh": "动能武器伤害 (Lv1)",
+    "py": "dongnengwuqishanghai (lv1)",
+    "pyInitials": "dnwqsh (lv1)"
+  },
+  "df-kinetic-weapon-damage-2": {
+    "en": "kinetic weapon damage (lv2)",
+    "zh": "动能武器伤害 (Lv2)",
+    "py": "dongnengwuqishanghai (lv2)",
+    "pyInitials": "dnwqsh (lv2)"
+  },
+  "df-kinetic-weapon-damage-3": {
+    "en": "kinetic weapon damage (lv3)",
+    "zh": "动能武器伤害 (Lv3)",
+    "py": "dongnengwuqishanghai (lv3)",
+    "pyInitials": "dnwqsh (lv3)"
+  },
+  "df-kinetic-weapon-damage-4": {
+    "en": "kinetic weapon damage (lv4)",
+    "zh": "动能武器伤害 (Lv4)",
+    "py": "dongnengwuqishanghai (lv4)",
+    "pyInitials": "dnwqsh (lv4)"
+  },
+  "df-kinetic-weapon-damage-5": {
+    "en": "kinetic weapon damage (lv5)",
+    "zh": "动能武器伤害 (Lv5)",
+    "py": "dongnengwuqishanghai (lv5)",
+    "pyInitials": "dnwqsh (lv5)"
+  },
+  "df-kinetic-weapon-damage-6": {
+    "en": "kinetic weapon damage (lv6)",
+    "zh": "动能武器伤害 (Lv6)",
+    "py": "dongnengwuqishanghai (lv6)",
+    "pyInitials": "dnwqsh (lv6)"
+  },
+  "df-planetary-shield-1": {
+    "en": "planetary shield (lv1)",
+    "zh": "行星护盾 (Lv1)",
+    "py": "xingxinghudun (lv1)",
+    "pyInitials": "xxhd (lv1)"
+  },
+  "df-planetary-shield-2": {
+    "en": "planetary shield (lv2)",
+    "zh": "行星护盾 (Lv2)",
+    "py": "xingxinghudun (lv2)",
+    "pyInitials": "xxhd (lv2)"
+  },
+  "df-planetary-shield-3": {
+    "en": "planetary shield (lv3)",
+    "zh": "行星护盾 (Lv3)",
+    "py": "xingxinghudun (lv3)",
+    "pyInitials": "xxhd (lv3)"
+  },
+  "df-planetary-shield-4": {
+    "en": "planetary shield (lv4)",
+    "zh": "行星护盾 (Lv4)",
+    "py": "xingxinghudun (lv4)",
+    "pyInitials": "xxhd (lv4)"
+  },
+  "df-planetary-shield-5": {
+    "en": "planetary shield (lv5)",
+    "zh": "行星护盾 (Lv5)",
+    "py": "xingxinghudun (lv5)",
+    "pyInitials": "xxhd (lv5)"
+  },
+  "df-space-fleet-expansion-1": {
+    "en": "space fleet expansion (lv1)",
+    "zh": "太空编队扩容 (Lv1)",
+    "py": "taikongbianduikuorong (lv1)",
+    "pyInitials": "tkbdkr (lv1)"
+  },
+  "df-space-fleet-expansion-2": {
+    "en": "space fleet expansion (lv2)",
+    "zh": "太空编队扩容 (Lv2)",
+    "py": "taikongbianduikuorong (lv2)",
+    "pyInitials": "tkbdkr (lv2)"
+  },
+  "df-space-fleet-expansion-3": {
+    "en": "space fleet expansion (lv3)",
+    "zh": "太空编队扩容 (Lv3)",
+    "py": "taikongbianduikuorong (lv3)",
+    "pyInitials": "tkbdkr (lv3)"
+  },
+  "df-space-fleet-expansion-4": {
+    "en": "space fleet expansion (lv4)",
+    "zh": "太空编队扩容 (Lv4)",
+    "py": "taikongbianduikuorong (lv4)",
+    "pyInitials": "tkbdkr (lv4)"
+  },
+  "df-space-fleet-expansion-5": {
+    "en": "space fleet expansion (lv5)",
+    "zh": "太空编队扩容 (Lv5)",
+    "py": "taikongbianduikuorong (lv5)",
+    "pyInitials": "tkbdkr (lv5)"
+  },
+  "df-space-fleet-expansion-6": {
+    "en": "space fleet expansion (lv6)",
+    "zh": "太空编队扩容 (Lv6)",
+    "py": "taikongbianduikuorong (lv6)",
+    "pyInitials": "tkbdkr (lv6)"
+  },
+  "df-space-fleet-expansion-7": {
+    "en": "space fleet expansion (lv7)",
+    "zh": "太空编队扩容 (Lv7)",
+    "py": "taikongbianduikuorong (lv7)",
+    "pyInitials": "tkbdkr (lv7)"
+  },
+  "distribution-range-1": {
+    "en": "distribution range (lv1)",
+    "zh": "配送范围 (Lv1)",
+    "py": "peisongfanwei (lv1)",
+    "pyInitials": "psfw (lv1)"
+  },
+  "distribution-range-2": {
+    "en": "distribution range (lv2)",
+    "zh": "配送范围 (Lv2)",
+    "py": "peisongfanwei (lv2)",
+    "pyInitials": "psfw (lv2)"
+  },
+  "distribution-range-3": {
+    "en": "distribution range (lv3)",
+    "zh": "配送范围 (Lv3)",
+    "py": "peisongfanwei (lv3)",
+    "pyInitials": "psfw (lv3)"
+  },
+  "distribution-range-4": {
+    "en": "distribution range (lv4)",
+    "zh": "配送范围 (Lv4)",
+    "py": "peisongfanwei (lv4)",
+    "pyInitials": "psfw (lv4)"
+  },
+  "distribution-range-5": {
+    "en": "distribution range (lv5)",
+    "zh": "配送范围 (Lv5)",
+    "py": "peisongfanwei (lv5)",
+    "pyInitials": "psfw (lv5)"
+  },
+  "drive-engine-1": {
+    "en": "drive engine (lv1)",
+    "zh": "驱动引擎 (Lv1)",
+    "py": "qudongyinqing (lv1)",
+    "pyInitials": "qdyq (lv1)"
+  },
+  "drive-engine-2": {
+    "en": "drive engine (lv2)",
+    "zh": "驱动引擎 (Lv2)",
+    "py": "qudongyinqing (lv2)",
+    "pyInitials": "qdyq (lv2)"
+  },
+  "drive-engine-3": {
+    "en": "drive engine (lv3)",
+    "zh": "驱动引擎 (Lv3)",
+    "py": "qudongyinqing (lv3)",
+    "pyInitials": "qdyq (lv3)"
+  },
+  "drive-engine-4": {
+    "en": "drive engine (lv4)",
+    "zh": "驱动引擎 (Lv4)",
+    "py": "qudongyinqing (lv4)",
+    "pyInitials": "qdyq (lv4)"
+  },
+  "drive-engine-5": {
+    "en": "drive engine (lv5)",
+    "zh": "驱动引擎 (Lv5)",
+    "py": "qudongyinqing (lv5)",
+    "pyInitials": "qdyq (lv5)"
+  },
+  "drive-engine-6": {
+    "en": "drive engine (lv6)",
+    "zh": "驱动引擎 (Lv6)",
+    "py": "qudongyinqing (lv6)",
+    "pyInitials": "qdyq (lv6)"
+  },
+  "drone-engine-1": {
+    "en": "drone engine (lv1)",
+    "zh": "无人机引擎 (Lv1)",
+    "py": "wurenjiyinqing (lv1)",
+    "pyInitials": "wrjyq (lv1)"
+  },
+  "drone-engine-2": {
+    "en": "drone engine (lv2)",
+    "zh": "无人机引擎 (Lv2)",
+    "py": "wurenjiyinqing (lv2)",
+    "pyInitials": "wrjyq (lv2)"
+  },
+  "drone-engine-3": {
+    "en": "drone engine (lv3)",
+    "zh": "无人机引擎 (Lv3)",
+    "py": "wurenjiyinqing (lv3)",
+    "pyInitials": "wrjyq (lv3)"
+  },
+  "drone-engine-4": {
+    "en": "drone engine (lv4)",
+    "zh": "无人机引擎 (Lv4)",
+    "py": "wurenjiyinqing (lv4)",
+    "pyInitials": "wrjyq (lv4)"
+  },
+  "drone-engine-5": {
+    "en": "drone engine (lv5)",
+    "zh": "无人机引擎 (Lv5)",
+    "py": "wurenjiyinqing (lv5)",
+    "pyInitials": "wrjyq (lv5)"
+  },
+  "drone-engine-6": {
+    "en": "drone engine (lv6)",
+    "zh": "无人机引擎 (Lv6)",
+    "py": "wurenjiyinqing (lv6)",
+    "pyInitials": "wrjyq (lv6)"
+  },
+  "energy-circuit-1": {
+    "en": "energy circuit (lv1)",
+    "zh": "能量回路 (Lv1)",
+    "py": "nenglianghuilu (lv1)",
+    "pyInitials": "nlhl (lv1)"
+  },
+  "energy-circuit-2": {
+    "en": "energy circuit (lv2)",
+    "zh": "能量回路 (Lv2)",
+    "py": "nenglianghuilu (lv2)",
+    "pyInitials": "nlhl (lv2)"
+  },
+  "energy-circuit-3": {
+    "en": "energy circuit (lv3)",
+    "zh": "能量回路 (Lv3)",
+    "py": "nenglianghuilu (lv3)",
+    "pyInitials": "nlhl (lv3)"
+  },
+  "energy-circuit-4": {
+    "en": "energy circuit (lv4)",
+    "zh": "能量回路 (Lv4)",
+    "py": "nenglianghuilu (lv4)",
+    "pyInitials": "nlhl (lv4)"
+  },
+  "energy-circuit-5": {
+    "en": "energy circuit (lv5)",
+    "zh": "能量回路 (Lv5)",
+    "py": "nenglianghuilu (lv5)",
+    "pyInitials": "nlhl (lv5)"
+  },
+  "energy-circuit-6": {
+    "en": "energy circuit (lv6)",
+    "zh": "能量回路 (Lv6)",
+    "py": "nenglianghuilu (lv6)",
+    "pyInitials": "nlhl (lv6)"
+  },
+  "inventory-capacity-1": {
+    "en": "inventory capacity (lv1)",
+    "zh": "机舱容量 (Lv1)",
+    "py": "jicangrongliang (lv1)",
+    "pyInitials": "jcrl (lv1)"
+  },
+  "inventory-capacity-2": {
+    "en": "inventory capacity (lv2)",
+    "zh": "机舱容量 (Lv2)",
+    "py": "jicangrongliang (lv2)",
+    "pyInitials": "jcrl (lv2)"
+  },
+  "inventory-capacity-3": {
+    "en": "inventory capacity (lv3)",
+    "zh": "机舱容量 (Lv3)",
+    "py": "jicangrongliang (lv3)",
+    "pyInitials": "jcrl (lv3)"
+  },
+  "inventory-capacity-4": {
+    "en": "inventory capacity (lv4)",
+    "zh": "机舱容量 (Lv4)",
+    "py": "jicangrongliang (lv4)",
+    "pyInitials": "jcrl (lv4)"
+  },
+  "inventory-capacity-5": {
+    "en": "inventory capacity (lv5)",
+    "zh": "机舱容量 (Lv5)",
+    "py": "jicangrongliang (lv5)",
+    "pyInitials": "jcrl (lv5)"
+  },
+  "inventory-capacity-6": {
+    "en": "inventory capacity (lv6)",
+    "zh": "机舱容量 (Lv6)",
+    "py": "jicangrongliang (lv6)",
+    "pyInitials": "jcrl (lv6)"
+  },
+  "inventory-capacity-7": {
+    "en": "inventory capacity (lv7)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "logistics-carrier-capacity-1": {
+    "en": "logistics carrier capacity (lv1)",
+    "zh": "运输船机舱扩容 (Lv1)",
+    "py": "yunshuchuanjicangkuorong (lv1)",
+    "pyInitials": "yscjckr (lv1)"
+  },
+  "logistics-carrier-capacity-12": {
+    "en": "logistics carrier capacity (lv12)",
+    "zh": "运输船机舱扩容 (Lv12)",
+    "py": "yunshuchuanjicangkuorong (lv12)",
+    "pyInitials": "yscjckr (lv12)"
+  },
+  "logistics-carrier-capacity-2": {
+    "en": "logistics carrier capacity (lv2)",
+    "zh": "运输船机舱扩容 (Lv2)",
+    "py": "yunshuchuanjicangkuorong (lv2)",
+    "pyInitials": "yscjckr (lv2)"
+  },
+  "logistics-carrier-capacity-3": {
+    "en": "logistics carrier capacity (lv3)",
+    "zh": "运输船机舱扩容 (Lv3)",
+    "py": "yunshuchuanjicangkuorong (lv3)",
+    "pyInitials": "yscjckr (lv3)"
+  },
+  "logistics-carrier-capacity-4": {
+    "en": "logistics carrier capacity (lv4)",
+    "zh": "运输船机舱扩容 (Lv4)",
+    "py": "yunshuchuanjicangkuorong (lv4)",
+    "pyInitials": "yscjckr (lv4)"
+  },
+  "logistics-carrier-capacity-5": {
+    "en": "logistics carrier capacity (lv5)",
+    "zh": "运输船机舱扩容 (Lv5)",
+    "py": "yunshuchuanjicangkuorong (lv5)",
+    "pyInitials": "yscjckr (lv5)"
+  },
+  "logistics-carrier-capacity-6": {
+    "en": "logistics carrier capacity (lv6)",
+    "zh": "运输船机舱扩容 (Lv6)",
+    "py": "yunshuchuanjicangkuorong (lv6)",
+    "pyInitials": "yscjckr (lv6)"
+  },
+  "logistics-carrier-capacity-7": {
+    "en": "logistics carrier capacity (lv7)",
+    "zh": "运输船机舱扩容 (Lv7)",
+    "py": "yunshuchuanjicangkuorong (lv7)",
+    "pyInitials": "yscjckr (lv7)"
+  },
+  "logistics-carrier-capacity-8": {
+    "en": "logistics carrier capacity (lv8)",
+    "zh": "运输船机舱扩容 (Lv8)",
+    "py": "yunshuchuanjicangkuorong (lv8)",
+    "pyInitials": "yscjckr (lv8)"
+  },
+  "logistics-carrier-capacity-9": {
+    "en": "logistics carrier capacity (lv9)",
+    "zh": "运输船机舱扩容 (Lv9)",
+    "py": "yunshuchuanjicangkuorong (lv9)",
+    "pyInitials": "yscjckr (lv9)"
+  },
+  "logistics-carrier-engine-1": {
+    "en": "logistics carrier engine (lv1)",
+    "zh": "运输船引擎 (Lv1)",
+    "py": "yunshuchuanyinqing (lv1)",
+    "pyInitials": "yscyq (lv1)"
+  },
+  "logistics-carrier-engine-2": {
+    "en": "logistics carrier engine (lv2)",
+    "zh": "运输船引擎 (Lv2)",
+    "py": "yunshuchuanyinqing (lv2)",
+    "pyInitials": "yscyq (lv2)"
+  },
+  "logistics-carrier-engine-3": {
+    "en": "logistics carrier engine (lv3)",
+    "zh": "运输船引擎 (Lv3)",
+    "py": "yunshuchuanyinqing (lv3)",
+    "pyInitials": "yscyq (lv3)"
+  },
+  "logistics-carrier-engine-4": {
+    "en": "logistics carrier engine (lv4)",
+    "zh": "运输船引擎 (Lv4)",
+    "py": "yunshuchuanyinqing (lv4)",
+    "pyInitials": "yscyq (lv4)"
+  },
+  "logistics-carrier-engine-5": {
+    "en": "logistics carrier engine (lv5)",
+    "zh": "运输船引擎 (Lv5)",
+    "py": "yunshuchuanyinqing (lv5)",
+    "pyInitials": "yscyq (lv5)"
+  },
+  "logistics-carrier-engine-6": {
+    "en": "logistics carrier engine (lv6)",
+    "zh": "运输船引擎 (Lv6)",
+    "py": "yunshuchuanyinqing (lv6)",
+    "pyInitials": "yscyq (lv6)"
+  },
+  "logistics-carrier-engine-7": {
+    "en": "logistics carrier engine (lv7)",
+    "zh": "运输船引擎 (Lv7)",
+    "py": "yunshuchuanyinqing (lv7)",
+    "pyInitials": "yscyq (lv7)"
+  },
+  "logistics-station-integrated-logistics-1": {
+    "en": "station integrated logistics (lv1)",
+    "zh": "运输站集装物流 (Lv1)",
+    "py": "yunshuzhanjizhuangwuliu (lv1)",
+    "pyInitials": "yszjzwl (lv1)"
+  },
+  "logistics-station-integrated-logistics-2": {
+    "en": "station integrated logistics (lv2)",
+    "zh": "运输站集装物流 (Lv2)",
+    "py": "yunshuzhanjizhuangwuliu (lv2)",
+    "pyInitials": "yszjzwl (lv2)"
+  },
+  "logistics-station-integrated-logistics-3": {
+    "en": "station integrated logistics (lv3)",
+    "zh": "运输站集装物流 (Lv3)",
+    "py": "yunshuzhanjizhuangwuliu (lv3)",
+    "pyInitials": "yszjzwl (lv3)"
+  },
+  "mass-construction-1": {
+    "en": "mass construction (lv1)",
+    "zh": "批量建造 (Lv1)",
+    "py": "piliangjianzao (lv1)",
+    "pyInitials": "pljz (lv1)"
+  },
+  "mass-construction-2": {
+    "en": "mass construction (lv2)",
+    "zh": "批量建造 (Lv2)",
+    "py": "piliangjianzao (lv2)",
+    "pyInitials": "pljz (lv2)"
+  },
+  "mass-construction-3": {
+    "en": "mass construction (lv3)",
+    "zh": "批量建造 (Lv3)",
+    "py": "piliangjianzao (lv3)",
+    "pyInitials": "pljz (lv3)"
+  },
+  "mass-construction-4": {
+    "en": "mass construction (lv4)",
+    "zh": "批量建造 (Lv4)",
+    "py": "piliangjianzao (lv4)",
+    "pyInitials": "pljz (lv4)"
+  },
+  "mass-construction-5": {
+    "en": "mass construction (lv5)",
+    "zh": "批量建造 (Lv5)",
+    "py": "piliangjianzao (lv5)",
+    "pyInitials": "pljz (lv5)"
+  },
+  "mecha-core-1": {
+    "en": "mecha core (lv1)",
+    "zh": "机甲核心 (Lv1)",
+    "py": "jijiahexin (lv1)",
+    "pyInitials": "jjhx (lv1)"
+  },
+  "mecha-core-2": {
+    "en": "mecha core (lv2)",
+    "zh": "机甲核心 (Lv2)",
+    "py": "jijiahexin (lv2)",
+    "pyInitials": "jjhx (lv2)"
+  },
+  "mecha-core-3": {
+    "en": "mecha core (lv3)",
+    "zh": "机甲核心 (Lv3)",
+    "py": "jijiahexin (lv3)",
+    "pyInitials": "jjhx (lv3)"
+  },
+  "mecha-core-4": {
+    "en": "mecha core (lv4)",
+    "zh": "机甲核心 (Lv4)",
+    "py": "jijiahexin (lv4)",
+    "pyInitials": "jjhx (lv4)"
+  },
+  "mecha-core-5": {
+    "en": "mecha core (lv5)",
+    "zh": "机甲核心 (Lv5)",
+    "py": "jijiahexin (lv5)",
+    "pyInitials": "jjhx (lv5)"
+  },
+  "mecha-core-6": {
+    "en": "mecha core (lv6)",
+    "zh": "机甲核心 (Lv6)",
+    "py": "jijiahexin (lv6)",
+    "pyInitials": "jjhx (lv6)"
+  },
+  "mechanical-frame-1": {
+    "en": "mechanical frame (lv1)",
+    "zh": "机械骨骼 (Lv1)",
+    "py": "jixieguge (lv1)",
+    "pyInitials": "jxgg (lv1)"
+  },
+  "mechanical-frame-2": {
+    "en": "mechanical frame (lv2)",
+    "zh": "机械骨骼 (Lv2)",
+    "py": "jixieguge (lv2)",
+    "pyInitials": "jxgg (lv2)"
+  },
+  "mechanical-frame-3": {
+    "en": "mechanical frame (lv3)",
+    "zh": "机械骨骼 (Lv3)",
+    "py": "jixieguge (lv3)",
+    "pyInitials": "jxgg (lv3)"
+  },
+  "mechanical-frame-4": {
+    "en": "mechanical frame (lv4)",
+    "zh": "机械骨骼 (Lv4)",
+    "py": "jixieguge (lv4)",
+    "pyInitials": "jxgg (lv4)"
+  },
+  "mechanical-frame-5": {
+    "en": "mechanical frame (lv5)",
+    "zh": "机械骨骼 (Lv5)",
+    "py": "jixieguge (lv5)",
+    "pyInitials": "jxgg (lv5)"
+  },
+  "mechanical-frame-6": {
+    "en": "mechanical frame (lv6)",
+    "zh": "机械骨骼 (Lv6)",
+    "py": "jixieguge (lv6)",
+    "pyInitials": "jxgg (lv6)"
+  },
+  "mechanical-frame-7": {
+    "en": "mechanical frame (lv7)",
+    "zh": "机械骨骼 (Lv7)",
+    "py": "jixieguge (lv7)",
+    "pyInitials": "jxgg (lv7)"
+  },
+  "mechanical-frame-8": {
+    "en": "mechanical frame (lv8)",
+    "zh": "机械骨骼 (Lv8)",
+    "py": "jixieguge (lv8)",
+    "pyInitials": "jxgg (lv8)"
+  },
+  "pile-sorter-1": {
+    "en": "pile sorter upgrade (lv1)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "pile-sorter-2": {
+    "en": "pile sorter upgrade (lv2)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "pile-sorter-3": {
+    "en": "pile sorter upgrade (lv3)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "pile-sorter-4": {
+    "en": "pile sorter upgrade (lv4)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "pile-sorter-5": {
+    "en": "pile sorter upgrade (lv5)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "pile-sorter-6": {
+    "en": "pile sorter upgrade (lv6)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "ray-transmission-efficiency-1": {
+    "en": "ray transmission efficiency (lv1)",
+    "zh": "射线传输效率 (Lv1)",
+    "py": "shexianchuanshuxiaolü (lv1)",
+    "pyInitials": "sxcsxl (lv1)"
+  },
+  "ray-transmission-efficiency-2": {
+    "en": "ray transmission efficiency (lv2)",
+    "zh": "射线传输效率 (Lv2)",
+    "py": "shexianchuanshuxiaolü (lv2)",
+    "pyInitials": "sxcsxl (lv2)"
+  },
+  "ray-transmission-efficiency-3": {
+    "en": "ray transmission efficiency (lv3)",
+    "zh": "射线传输效率 (Lv3)",
+    "py": "shexianchuanshuxiaolü (lv3)",
+    "pyInitials": "sxcsxl (lv3)"
+  },
+  "ray-transmission-efficiency-4": {
+    "en": "ray transmission efficiency (lv4)",
+    "zh": "射线传输效率 (Lv4)",
+    "py": "shexianchuanshuxiaolü (lv4)",
+    "pyInitials": "sxcsxl (lv4)"
+  },
+  "ray-transmission-efficiency-5": {
+    "en": "ray transmission efficiency (lv5)",
+    "zh": "射线传输效率 (Lv5)",
+    "py": "shexianchuanshuxiaolü (lv5)",
+    "pyInitials": "sxcsxl (lv5)"
+  },
+  "ray-transmission-efficiency-6": {
+    "en": "ray transmission efficiency (lv6)",
+    "zh": "射线传输效率 (Lv6)",
+    "py": "shexianchuanshuxiaolü (lv6)",
+    "pyInitials": "sxcsxl (lv6)"
+  },
+  "ray-transmission-efficiency-7": {
+    "en": "ray transmission efficiency (lv7)",
+    "zh": "射线传输效率 (Lv7)",
+    "py": "shexianchuanshuxiaolü (lv7)",
+    "pyInitials": "sxcsxl (lv7)"
+  },
+  "ray-transmission-efficiency-8": {
+    "en": "ray transmission efficiency (lv8)",
+    "zh": "射线传输效率 (Lv8)",
+    "py": "shexianchuanshuxiaolü (lv8)",
+    "pyInitials": "sxcsxl (lv8)"
+  },
+  "research-speed-1": {
+    "en": "research speed (lv1)",
+    "zh": "研究速度 (Lv1)",
+    "py": "yanjiusudu (lv1)",
+    "pyInitials": "yjsd (lv1)"
+  },
+  "research-speed-2": {
+    "en": "research speed (lv2)",
+    "zh": "研究速度 (Lv2)",
+    "py": "yanjiusudu (lv2)",
+    "pyInitials": "yjsd (lv2)"
+  },
+  "research-speed-3": {
+    "en": "research speed (lv3)",
+    "zh": "研究速度 (Lv3)",
+    "py": "yanjiusudu (lv3)",
+    "pyInitials": "yjsd (lv3)"
+  },
+  "research-speed-4": {
+    "en": "research speed (lv4)",
+    "zh": "研究速度 (Lv4)",
+    "py": "yanjiusudu (lv4)",
+    "pyInitials": "yjsd (lv4)"
+  },
+  "solar-sail-life-1": {
+    "en": "solar sail life (lv1)",
+    "zh": "太阳帆寿命 (Lv1)",
+    "py": "taiyangfanshouming (lv1)",
+    "pyInitials": "tyfsm (lv1)"
+  },
+  "solar-sail-life-2": {
+    "en": "solar sail life (lv2)",
+    "zh": "太阳帆寿命 (Lv2)",
+    "py": "taiyangfanshouming (lv2)",
+    "pyInitials": "tyfsm (lv2)"
+  },
+  "solar-sail-life-3": {
+    "en": "solar sail life (lv3)",
+    "zh": "太阳帆寿命 (Lv3)",
+    "py": "taiyangfanshouming (lv3)",
+    "pyInitials": "tyfsm (lv3)"
+  },
+  "solar-sail-life-4": {
+    "en": "solar sail life (lv4)",
+    "zh": "太阳帆寿命 (Lv4)",
+    "py": "taiyangfanshouming (lv4)",
+    "pyInitials": "tyfsm (lv4)"
+  },
+  "solar-sail-life-5": {
+    "en": "solar sail life (lv5)",
+    "zh": "太阳帆寿命 (Lv5)",
+    "py": "taiyangfanshouming (lv5)",
+    "pyInitials": "tyfsm (lv5)"
+  },
+  "solar-sail-life-6": {
+    "en": "solar sail life (lv6)",
+    "zh": "太阳帆寿命 (Lv6)",
+    "py": "taiyangfanshouming (lv6)",
+    "pyInitials": "tyfsm (lv6)"
+  },
+  "sorter-cargo-integration": {
+    "en": "sorter cargo integration (lv1)",
+    "zh": "",
+    "py": "",
+    "pyInitials": ""
+  },
+  "sorter-cargo-stacking-1": {
+    "en": "sorter cargo stacking (lv1)",
+    "zh": "分拣器货物叠加 (Lv1)",
+    "py": "fenjianqihuowudiejia (lv1)",
+    "pyInitials": "fjqhwdj (lv1)"
+  },
+  "sorter-cargo-stacking-2": {
+    "en": "sorter cargo stacking (lv2)",
+    "zh": "分拣器货物叠加 (Lv2)",
+    "py": "fenjianqihuowudiejia (lv2)",
+    "pyInitials": "fjqhwdj (lv2)"
+  },
+  "sorter-cargo-stacking-3": {
+    "en": "sorter cargo stacking (lv3)",
+    "zh": "分拣器货物叠加 (Lv3)",
+    "py": "fenjianqihuowudiejia (lv3)",
+    "pyInitials": "fjqhwdj (lv3)"
+  },
+  "sorter-cargo-stacking-4": {
+    "en": "sorter cargo stacking (lv4)",
+    "zh": "分拣器货物叠加 (Lv4)",
+    "py": "fenjianqihuowudiejia (lv4)",
+    "pyInitials": "fjqhwdj (lv4)"
+  },
+  "sorter-cargo-stacking-5": {
+    "en": "sorter cargo stacking (lv5)",
+    "zh": "分拣器货物叠加 (Lv5)",
+    "py": "fenjianqihuowudiejia (lv5)",
+    "pyInitials": "fjqhwdj (lv5)"
+  },
+  "universe-exploration-1": {
+    "en": "universe exploration (lv1)",
+    "zh": "宇宙探索 (Lv1)",
+    "py": "yuzhoutansuo (lv1)",
+    "pyInitials": "yzts (lv1)"
+  },
+  "universe-exploration-2": {
+    "en": "universe exploration (lv2)",
+    "zh": "宇宙探索 (Lv2)",
+    "py": "yuzhoutansuo (lv2)",
+    "pyInitials": "yzts (lv2)"
+  },
+  "universe-exploration-3": {
+    "en": "universe exploration (lv3)",
+    "zh": "宇宙探索 (Lv3)",
+    "py": "yuzhoutansuo (lv3)",
+    "pyInitials": "yzts (lv3)"
+  },
+  "universe-exploration-4": {
+    "en": "universe exploration (lv4)",
+    "zh": "宇宙探索 (Lv4)",
+    "py": "yuzhoutansuo (lv4)",
+    "pyInitials": "yzts (lv4)"
+  },
+  "veins-utilization-1": {
+    "en": "vein utilization (lv1)",
+    "zh": "矿物利用 (Lv1)",
+    "py": "kuangwuliyong (lv1)",
+    "pyInitials": "kwly (lv1)"
+  },
+  "veins-utilization-2": {
+    "en": "vein utilization (lv2)",
+    "zh": "矿物利用 (Lv2)",
+    "py": "kuangwuliyong (lv2)",
+    "pyInitials": "kwly (lv2)"
+  },
+  "veins-utilization-3": {
+    "en": "vein utilization (lv3)",
+    "zh": "矿物利用 (Lv3)",
+    "py": "kuangwuliyong (lv3)",
+    "pyInitials": "kwly (lv3)"
+  },
+  "veins-utilization-4": {
+    "en": "vein utilization (lv4)",
+    "zh": "矿物利用 (Lv4)",
+    "py": "kuangwuliyong (lv4)",
+    "pyInitials": "kwly (lv4)"
+  },
+  "veins-utilization-5": {
+    "en": "vein utilization (lv5)",
+    "zh": "矿物利用 (Lv5)",
+    "py": "kuangwuliyong (lv5)",
+    "pyInitials": "kwly (lv5)"
+  },
+  "veins-utilization-6": {
+    "en": "vein utilization (lv6)",
+    "zh": "矿物利用 (Lv6)",
+    "py": "kuangwuliyong (lv6)",
+    "pyInitials": "kwly (lv6)"
+  },
+  "vertical-construction-1": {
+    "en": "vertical construction (lv1)",
+    "zh": "垂直建造 (Lv1)",
+    "py": "chuizhijianzao (lv1)",
+    "pyInitials": "czjz (lv1)"
+  },
+  "vertical-construction-2": {
+    "en": "vertical construction (lv2)",
+    "zh": "垂直建造 (Lv2)",
+    "py": "chuizhijianzao (lv2)",
+    "pyInitials": "czjz (lv2)"
+  },
+  "vertical-construction-3": {
+    "en": "vertical construction (lv3)",
+    "zh": "垂直建造 (Lv3)",
+    "py": "chuizhijianzao (lv3)",
+    "pyInitials": "czjz (lv3)"
+  },
+  "vertical-construction-4": {
+    "en": "vertical construction (lv4)",
+    "zh": "垂直建造 (Lv4)",
+    "py": "chuizhijianzao (lv4)",
+    "pyInitials": "czjz (lv4)"
+  },
+  "vertical-construction-5": {
+    "en": "vertical construction (lv5)",
+    "zh": "垂直建造 (Lv5)",
+    "py": "chuizhijianzao (lv5)",
+    "pyInitials": "czjz (lv5)"
+  },
+  "vertical-construction-6": {
+    "en": "vertical construction (lv6)",
+    "zh": "垂直建造 (Lv6)",
+    "py": "chuizhijianzao (lv6)",
+    "pyInitials": "czjz (lv6)"
+  },
+  "accumulator-discharge": {
+    "en": "accumulator (discharge)",
+    "zh": "蓄电器 (放电)",
+    "py": "xudianqi (fangdian)",
+    "pyInitials": "xdq (fd)"
+  },
+  "plasma-refining": {
+    "en": "plasma refining",
+    "zh": "等离子精炼",
+    "py": "denglizijinglian",
+    "pyInitials": "dlzjl"
+  },
+  "coal-vein": {
+    "en": "coal veins",
+    "zh": "煤矿脉",
+    "py": "meikuangmai",
+    "pyInitials": "mkm"
+  },
+  "copper-vein": {
+    "en": "copper veins",
+    "zh": "铜矿脉",
+    "py": "tongkuangmai",
+    "pyInitials": "tkm"
+  },
+  "critical-photon-graviton": {
+    "en": "critical photon (graviton lens)",
+    "zh": "射线接收站 (带引力透镜) 生成光子",
+    "py": "shexianjieshouzhan (daiyinlitoujing) shengchengguangzi",
+    "pyInitials": "sxjsz (dyltj) scgz"
+  },
+  "crude-oil-seep": {
+    "en": "crude oil seep",
+    "zh": "原油涌泉",
+    "py": "yuanyouyongquan",
+    "pyInitials": "yyyq"
+  },
+  "fire-ice-vein": {
+    "en": "fire ice vein",
+    "zh": "可燃冰矿",
+    "py": "keranbingkuang",
+    "pyInitials": "krbk"
+  },
+  "fractal-silicon-vein": {
+    "en": "fractal silicon veins",
+    "zh": "分形硅矿",
+    "py": "fenxingguikuang",
+    "pyInitials": "fxgk"
+  },
+  "iron-vein": {
+    "en": "iron veins",
+    "zh": "铁矿脉",
+    "py": "tiekuangmai",
+    "pyInitials": "tkm"
+  },
+  "kimberlite-vein": {
+    "en": "kimberlite veins",
+    "zh": "金伯利矿",
+    "py": "jinbolikuang",
+    "pyInitials": "jblk"
+  },
+  "ocean": {
+    "en": "ocean",
+    "zh": "海洋",
+    "py": "haiyang",
+    "pyInitials": "hy"
+  },
+  "optical-grating-crystal-vein": {
+    "en": "grating crystal vein",
+    "zh": "光栅石矿",
+    "py": "guangshanshikuang",
+    "pyInitials": "gssk"
+  },
+  "organic-crystal-vein": {
+    "en": "organic crystal veins",
+    "zh": "有机晶体矿",
+    "py": "youjijingtikuang",
+    "pyInitials": "yjjtk"
+  },
+  "silicium-vein": {
+    "en": "silicon veins",
+    "zh": "硅矿脉",
+    "py": "guikuangmai",
+    "pyInitials": "gkm"
+  },
+  "spiniform-stalagmite-crystal-vein": {
+    "en": "stalagmite crystal vein",
+    "zh": "刺笋矿脉",
+    "py": "cisunkuangmai",
+    "pyInitials": "cskm"
+  },
+  "stone-vein": {
+    "en": "stone veins",
+    "zh": "石矿脉",
+    "py": "shikuangmai",
+    "pyInitials": "skm"
+  },
+  "sulphuric-acid-vein": {
+    "en": "sulphuric acid ocean",
+    "zh": "硫酸海洋",
+    "py": "liusuanhaiyang",
+    "pyInitials": "lshy"
+  },
+  "titanium-vein": {
+    "en": "titanium veins",
+    "zh": "钛矿脉",
+    "py": "taikuangmai",
+    "pyInitials": "tkm"
+  },
+  "unipolar-magnet-vein": {
+    "en": "unipolar magnet veins",
+    "zh": "单极磁矿",
+    "py": "danjicikuang",
+    "pyInitials": "djck"
+  },
+  "x-ray-cracking": {
+    "en": "x-ray cracking",
+    "zh": "X射线裂解",
+    "py": "xshexianliejie",
+    "pyInitials": "xsxlj"
+  },
+  "graphene-advanced": {
+    "en": "graphene (advanced)",
+    "zh": "石墨烯 (高效)",
+    "py": "shimoxi (gaoxiao)",
+    "pyInitials": "smx (gx)"
+  },
+  "crystal-silicon-advanced": {
+    "en": "crystal silicon (advanced)",
+    "zh": "晶格硅 (高效)",
+    "py": "jinggegui (gaoxiao)",
+    "pyInitials": "jgg (gx)"
+  },
+  "diamond-advanced": {
+    "en": "diamond (advanced)",
+    "zh": "金刚石 (高效)",
+    "py": "jingangshi (gaoxiao)",
+    "pyInitials": "jgs (gx)"
+  },
+  "reforming-refine": {
+    "en": "reformed refinement",
+    "zh": "重整精炼",
+    "py": "chongzhengjinglian",
+    "pyInitials": "czjl"
+  },
+  "organic-crystal-original": {
+    "en": "organic crystal (original)",
+    "zh": "有机晶体 (原始)",
+    "py": "youjijingti (yuanshi)",
+    "pyInitials": "yjjt (ys)"
+  },
+  "deuterium-fractionation": {
+    "en": "deuterium fractionation",
+    "zh": "重氢分馏",
+    "py": "zhongqingfenliu",
+    "pyInitials": "zqfl"
+  },
+  "carbon-nanotube-advanced": {
+    "en": "carbon nanotube (advanced)",
+    "zh": "碳纳米管 (高效)",
+    "py": "tannamiguan (gaoxiao)",
+    "pyInitials": "tnmg (gx)"
+  },
+  "photon-combiner-advanced": {
+    "en": "photon combiner (advanced)",
+    "zh": "光子合并器 (高效)",
+    "py": "guangzihebingqi (gaoxiao)",
+    "pyInitials": "gzhbq (gx)"
+  },
+  "casimir-crystal-advanced": {
+    "en": "casimir crystal (advanced)",
+    "zh": "卡西米尔晶体 (高效)",
+    "py": "kaximierjingti (gaoxiao)",
+    "pyInitials": "kxmejt (gx)"
+  },
+  "particle-container-advanced": {
+    "en": "particle container (advanced)",
+    "zh": "粒子容器 (高效)",
+    "py": "lizirongqi (gaoxiao)",
+    "pyInitials": "lzrq (gx)"
+  },
+  "space-warper-advanced": {
+    "en": "space warper (advanced)",
+    "zh": "空间翘曲器 (高级)",
+    "py": "kongjianqiaoquqi (gaoji)",
+    "pyInitials": "kjqqq (gj)"
+  },
+  "mass-energy-storage": {
+    "en": "mass-energy storage",
+    "zh": "质能储存",
+    "py": "zhinengchucun",
+    "pyInitials": "zncc"
+  },
+  "gas-giant": {
+    "en": "gas giant",
+    "zh": "气态巨星",
+    "py": "qitaijuxing",
+    "pyInitials": "qtjx"
+  },
+  "gas-giant-deuterium": {
+    "en": "gas giant (deuterium)",
+    "zh": "气态巨星 (重氢)",
+    "py": "qitaijuxing (zhongqing)",
+    "pyInitials": "qtjx (zq)"
+  },
+  "gas-giant-hydrogen": {
+    "en": "gas giant (hydrogen)",
+    "zh": "气态巨星 (氢)",
+    "py": "qitaijuxing (qing)",
+    "pyInitials": "qtjx (q)"
+  },
+  "ice-giant": {
+    "en": "ice giant",
+    "zh": "冰巨星",
+    "py": "bingjuxing",
+    "pyInitials": "bjx"
+  },
+  "ice-giant-gas-hydrate": {
+    "en": "ice giant (fire ice)",
+    "zh": "冰巨星 (可燃冰)",
+    "py": "bingjuxing (keranbing)",
+    "pyInitials": "bjx (krb)"
+  },
+  "ice-giant-hydrogen": {
+    "en": "ice giant (hydrogen)",
+    "zh": "冰巨星 (氢)",
+    "py": "bingjuxing (qing)",
+    "pyInitials": "bjx (q)"
+  }
+}
