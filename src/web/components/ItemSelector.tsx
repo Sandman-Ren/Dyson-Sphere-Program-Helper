@@ -1,7 +1,10 @@
 import { useMemo, useRef, useState, useEffect } from 'react';
 import SearchIcon from 'lucide-react/dist/esm/icons/search';
 import { ItemIcon } from './ItemIcon.js';
-import { displayName, itemById } from '../data.js';
+import { itemById, searchIndex } from '../data.js';
+import { useNames } from '../i18n/useNames.js';
+import { matchesSearch } from '../lib/search-match.js';
+import { useTranslation } from 'react-i18next';
 import { Input } from '../ui/index.js';
 import { cn } from '../lib/cn.js';
 
@@ -13,7 +16,10 @@ interface ItemSelectorProps {
 }
 
 /** Searchable, icon-rich item picker used by the calculator and lookup tabs. */
-export function ItemSelector({ items, value, onChange, placeholder = 'Search item…' }: ItemSelectorProps) {
+export function ItemSelector({ items, value, onChange, placeholder }: ItemSelectorProps) {
+  const { name } = useNames();
+  const { t } = useTranslation('ui');
+  const resolvedPlaceholder = placeholder ?? t('selector.searchItem');
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const ref = useRef<HTMLDivElement>(null);
@@ -28,19 +34,16 @@ export function ItemSelector({ items, value, onChange, placeholder = 'Search ite
   }, [open]);
 
   const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const filtered = q
-      ? items.filter((id) => displayName(id).toLowerCase().includes(q) || id.includes(q))
-      : items;
+    const filtered = items.filter((id) => matchesSearch(id, searchIndex[id], query));
     return filtered
       .slice()
       .sort((a, b) => {
         const ra = itemById.get(a)?.row ?? 99;
         const rb = itemById.get(b)?.row ?? 99;
-        return ra - rb || displayName(a).localeCompare(displayName(b));
+        return ra - rb || name(a).localeCompare(name(b));
       })
       .slice(0, 200);
-  }, [items, query]);
+  }, [items, query, name]);
 
   return (
     <div ref={ref} className="relative w-full sm:w-auto sm:min-w-[260px]">
@@ -55,10 +58,10 @@ export function ItemSelector({ items, value, onChange, placeholder = 'Search ite
         {value ? (
           <>
             <ItemIcon id={value} size={20} tinted />
-            <span className="truncate">{displayName(value)}</span>
+            <span className="truncate">{name(value)}</span>
           </>
         ) : (
-          <span className="text-muted-foreground">{placeholder}</span>
+          <span className="text-muted-foreground">{resolvedPlaceholder}</span>
         )}
         <SearchIcon className="ml-auto size-4 opacity-60" />
       </button>
@@ -70,12 +73,12 @@ export function ItemSelector({ items, value, onChange, placeholder = 'Search ite
               autoFocus
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Type to filter…"
+              placeholder={t('selector.typeToFilter')}
             />
           </div>
           <div className="max-h-80 overflow-auto p-1">
             {results.length === 0 && (
-              <div className="px-3 py-6 text-center text-sm text-muted-foreground">No matches</div>
+              <div className="px-3 py-6 text-center text-sm text-muted-foreground">{t('selector.noMatches')}</div>
             )}
             {results.map((id) => (
               <button
@@ -90,7 +93,7 @@ export function ItemSelector({ items, value, onChange, placeholder = 'Search ite
                 )}
               >
                 <ItemIcon id={id} size={20} tinted />
-                <span className="truncate">{displayName(id)}</span>
+                <span className="truncate">{name(id)}</span>
               </button>
             ))}
           </div>
