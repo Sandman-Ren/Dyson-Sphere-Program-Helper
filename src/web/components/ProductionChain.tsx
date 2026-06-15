@@ -7,7 +7,7 @@ import type { TimeUnit } from '../hooks/useCalculator.js';
 import { ItemIcon } from './ItemIcon.js';
 import { displayName, graph } from '../data.js';
 import {
-  Select, SelectTrigger, SelectValue, SelectContent, SelectItem, Tooltip, TooltipTrigger, TooltipContent,
+  Select, SelectTrigger, SelectContent, SelectItem, Tooltip, TooltipTrigger, TooltipContent,
 } from '../ui/index.js';
 import { num, rate } from '../lib/format.js';
 import { cn } from '../lib/cn.js';
@@ -83,7 +83,10 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
                 onValueChange={(v) => onMachineChange(node.item, v)}
               >
                 <SelectTrigger className="h-9 min-w-0 flex-1 text-xs sm:h-7">
-                  <SelectValue />
+                  {/* Render the value ourselves so the label truncates reliably
+                      (Radix's <SelectValue> wraps the clone in a non-shrinking span). */}
+                  <ItemIcon id={node.machine.id} size={16} />
+                  <span className="truncate">{node.machine.name}</span>
                 </SelectTrigger>
                 <SelectContent>
                   {producers.map((m) => (

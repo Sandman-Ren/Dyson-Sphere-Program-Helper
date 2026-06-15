@@ -105,11 +105,7 @@ export const TabsContent = RTabs.Content;
 // ---- Select ----
 export const Select = RSelect.Root;
 export const SelectGroup = RSelect.Group;
-
-/** Reflects the selected value; a shrinkable flex box so its label can truncate. */
-export function SelectValue({ className, ...props }: React.ComponentProps<typeof RSelect.Value>) {
-  return <RSelect.Value className={cn('flex min-w-0 items-center', className)} {...props} />;
-}
+export const SelectValue = RSelect.Value;
 
 export function SelectTrigger({ className, children, ...props }: React.ComponentProps<typeof RSelect.Trigger>) {
   return (
@@ -122,7 +118,7 @@ export function SelectTrigger({ className, children, ...props }: React.Component
       {...props}
     >
       {/* Shrinkable value box so a long label truncates instead of pushing the chevron. */}
-      <span className="flex min-w-0 flex-1 items-center">{children}</span>
+      <span className="flex min-w-0 flex-1 items-center gap-1.5">{children}</span>
       <RSelect.Icon><ChevronDownIcon className="size-4 opacity-60" /></RSelect.Icon>
     </RSelect.Trigger>
   );
