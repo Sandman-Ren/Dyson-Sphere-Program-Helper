@@ -179,10 +179,11 @@ const enCategories: Record<string, string> = Object.fromEntries(
 
 // ---- Search index (english + chinese + pinyin) ----
 // Cover everything the pickers search over: items (incl. machines/techs/proliferators) + recipes.
+const itemIds = new Set(items.map((it) => it.id));
 const searchSources: SearchSource[] = [
   ...items.map((it) => ({ id: it.id, en: it.name, zh: zhBundle.items[it.id] ?? '' })),
   ...recipes
-    .filter((r) => !items.some((it) => it.id === r.id))
+    .filter((r) => !itemIds.has(r.id))
     .map((r) => ({ id: r.id, en: r.name, zh: zhBundle.recipes[r.id] ?? '' })),
 ];
 const searchIndex = buildSearchIndex(searchSources);
