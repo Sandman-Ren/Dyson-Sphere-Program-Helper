@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { resolveName, titleCase } from './resolveName.ts';
+import { resolveName, titleCase } from './resolveName.js';
 
 // Fake i18next-style lookup: returns '' for a miss.
 const dict: Record<string, Record<string, string>> = {
