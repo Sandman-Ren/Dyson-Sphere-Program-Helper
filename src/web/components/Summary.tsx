@@ -78,12 +78,18 @@ function Stat({ icon, label, children }: { icon: React.ReactNode; label: string;
 }
 
 function Row({ id, value, sub, name }: { id: string; value: string; sub?: string; name?: string }) {
+  const label = name ?? displayName(id);
   return (
     <div className="flex items-center gap-2 text-sm">
       <ItemIcon id={id} size={18} tinted />
-      <span className="truncate text-muted-foreground">{name ?? displayName(id)}</span>
-      <span className="ml-auto font-medium tabular-nums">{value}</span>
-      {sub && <span className="w-10 text-right text-xs text-muted-foreground tabular-nums">{sub}</span>}
+      {/* Only the label flexes/truncates; the numeric columns stay put. */}
+      <span className="min-w-0 flex-1 truncate text-muted-foreground" title={label}>{label}</span>
+      <span className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums">{value}</span>
+      {sub && (
+        <span className="w-14 shrink-0 whitespace-nowrap text-right text-xs text-muted-foreground tabular-nums">
+          {sub}
+        </span>
+      )}
     </div>
   );
 }
