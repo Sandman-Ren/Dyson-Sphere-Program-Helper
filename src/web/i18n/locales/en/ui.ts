@@ -79,6 +79,17 @@ const ui = {
     noRecipes: 'No recipes unlocked.',
     calculate: 'Calculate',
   },
+  machines: {
+    defaults: 'Machine defaults',
+    best: 'Default (best)',
+    assembler: 'Assembler',
+    smelter: 'Smelter',
+    miner: 'Miner',
+    chemical: 'Chemical plant',
+    lab: 'Research lab',
+    resetOverrides_one: 'Reset {{count}} override',
+    resetOverrides_other: 'Reset {{count}} overrides',
+  },
   language: { label: 'Language', en: 'EN', zh: '中文' },
 };
 

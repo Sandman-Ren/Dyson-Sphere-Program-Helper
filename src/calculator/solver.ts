@@ -1,8 +1,24 @@
 import type { RecipeGraph } from './recipe-graph.js';
-import type { Proliferator } from '../data/schema.js';
+import type { Machine, Proliferator, Recipe } from '../data/schema.js';
+import { familyOfRecipe, type MachineTiers } from './machine-families.js';
 import type {
   ProductionNode, ProductionPlan, MachineOverrides, ProliferatorSetting,
 } from './types.js';
+
+/** The globally-preferred machine for a recipe's family, if it can run the recipe. */
+function tierMachine(
+  graph: RecipeGraph,
+  recipe: Recipe,
+  machineTiers: MachineTiers | undefined,
+): Machine | null {
+  if (!machineTiers) return null;
+  const family = familyOfRecipe(recipe);
+  if (!family) return null;
+  const preferredId = machineTiers[family];
+  // Honor the tier only when the chosen machine can actually run this recipe.
+  if (!preferredId || !recipe.producers.includes(preferredId)) return null;
+  return graph.machineById.get(preferredId) ?? null;
+}
 
 /**
  * Resolve the proliferator effect for a single recipe.
@@ -48,6 +64,7 @@ function proliferatorEffect(
  * @param desiredRatePerSecond - items per second of the target
  * @param machineOverrides - per-item machine choice overrides
  * @param prolifSetting - global proliferator setting
+ * @param machineTiers - global default machine per building family
  */
 export function solve(
   graph: RecipeGraph,
@@ -55,6 +72,7 @@ export function solve(
   desiredRatePerSecond: number,
   machineOverrides?: MachineOverrides,
   prolifSetting?: ProliferatorSetting,
+  machineTiers?: MachineTiers,
 ): ProductionPlan {
   const totalMachines: Record<string, number> = {};
   const rawResources: Record<string, number> = {};
@@ -65,7 +83,7 @@ export function solve(
 
   const root = solveNode(
     graph, targetItem, desiredRatePerSecond, new Set(),
-    machineOverrides, prolif,
+    machineOverrides, prolif, machineTiers,
     (kw) => { totalPowerKW += kw; },
     (id, count) => { totalMachines[id] = (totalMachines[id] ?? 0) + count; },
     (id, rate) => { rawResources[id] = (rawResources[id] ?? 0) + rate; },
@@ -82,6 +100,7 @@ function solveNode(
   visited: Set<string>,
   machineOverrides: MachineOverrides | undefined,
   prolif: Proliferator | null,
+  machineTiers: MachineTiers | undefined,
   addPower: (kw: number) => void,
   addMachine: (id: string, count: number) => void,
   addRaw: (id: string, rate: number) => void,
@@ -112,6 +131,7 @@ function solveNode(
   const overrideId = machineOverrides?.[itemId];
   const machine =
     (overrideId ? graph.machineById.get(overrideId) : undefined) ??
+    tierMachine(graph, recipe, machineTiers) ??
     graph.defaultMachine(recipe);
 
   const fx = proliferatorEffect(prolif, recipe.id, machine?.modules ?? 0, graph);
@@ -142,7 +162,7 @@ function solveNode(
     children.push(
       solveNode(
         graph, ingredient.id, craftsPerSecond * ingredient.amount, visited,
-        machineOverrides, prolif, addPower, addMachine, addRaw, addSprays,
+        machineOverrides, prolif, machineTiers, addPower, addMachine, addRaw, addSprays,
       ),
     );
   }
