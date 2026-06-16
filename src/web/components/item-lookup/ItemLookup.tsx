@@ -1,11 +1,8 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import ChevronLeftIcon from 'lucide-react/dist/esm/icons/chevron-left';
-import { ItemList } from './ItemList.js';
 import { ItemDetail } from './ItemDetail.js';
 import { ItemSelector } from '../ItemSelector.js';
 import { items } from '../../data.js';
-import { cn } from '../../lib/cn.js';
 
 interface ItemLookupProps {
   selectedItem: string;
@@ -18,50 +15,26 @@ interface ItemLookupProps {
 const BROWSABLE_CATEGORIES = new Set(['buildings', 'buildings-alt', 'components']);
 
 /**
- * Item reference browser: a searchable list of items on the left and a rich
- * detail panel (recipes that produce it, recipes that consume it, and the
- * technologies that unlock it) on the right.
+ * Item reference browser: the in-game-style grid picker selects an item, and a
+ * rich detail panel below shows the recipes that produce it, the recipes that
+ * consume it, and the technologies that unlock it.
  */
 export function ItemLookup({ selectedItem, onSelectItem, onCalculateItem, onViewTech }: ItemLookupProps) {
   const { t } = useTranslation('ui');
-  const browsable = useMemo(
-    () => items.filter((i) => BROWSABLE_CATEGORIES.has(i.category)),
+  const browsableIds = useMemo(
+    () => items.filter((i) => BROWSABLE_CATEGORIES.has(i.category)).map((i) => i.id),
     [],
   );
-  const browsableIds = useMemo(() => browsable.map((i) => i.id), [browsable]);
-
-  const showDetail = !!selectedItem;
 
   return (
-    <div className="mx-auto flex h-full max-w-6xl gap-4 p-3 sm:p-4">
-      {/* Left pane — browsable list. On mobile it gives way to the detail view. */}
-      <aside
-        className={cn(
-          'flex w-full flex-col gap-3 sm:w-72 sm:flex-shrink-0',
-          showDetail && 'hidden sm:flex',
-        )}
-      >
-        <ItemSelector
-          items={browsableIds}
-          value={selectedItem}
-          onChange={onSelectItem}
-          placeholder={t('selector.searchItems')}
-        />
-        <ItemList items={browsable} selectedItem={selectedItem} onSelectItem={onSelectItem} />
-      </aside>
-
-      {/* Right pane — details. Hidden on mobile until an item is picked. */}
-      <main className={cn('min-w-0 flex-1 overflow-auto', !showDetail && 'hidden sm:block')}>
-        {showDetail && (
-          <button
-            type="button"
-            onClick={() => onSelectItem('')}
-            className="-mx-1 mb-2 inline-flex items-center gap-1 rounded px-1 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground active:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
-          >
-            <ChevronLeftIcon className="size-4" />
-            {t('lookup.backToItems')}
-          </button>
-        )}
+    <div className="mx-auto flex h-full max-w-4xl flex-col gap-4 p-3 sm:p-4">
+      <ItemSelector
+        items={browsableIds}
+        value={selectedItem}
+        onChange={onSelectItem}
+        placeholder={t('selector.searchItems')}
+      />
+      <main className="min-w-0 flex-1 overflow-auto">
         <ItemDetail
           selectedItem={selectedItem}
           onSelectItem={onSelectItem}

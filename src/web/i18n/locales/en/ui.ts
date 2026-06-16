@@ -47,9 +47,8 @@ const ui = {
     noMatches: 'No matches',
   },
   lookup: {
-    backToItems: 'Back to items',
     selectItem: 'Select an item',
-    selectItemHint: 'Browse the list or search to view recipes, uses, and unlock requirements.',
+    selectItemHint: 'Search for an item to view its recipes, uses, and unlock requirements.',
     calculate: 'Calculate',
     stack: 'Stack {{value}}',
     rawResource: 'Raw resource',
