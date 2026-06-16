@@ -81,6 +81,17 @@ const ui: UiResource = {
     noRecipes: '未解锁任何配方。',
     calculate: '计算',
   },
+  machines: {
+    defaults: '默认建筑',
+    best: '默认（最佳）',
+    assembler: '制造台',
+    smelter: '熔炉',
+    miner: '采矿机',
+    chemical: '化工厂',
+    lab: '研究站',
+    resetOverrides_one: '重置 {{count}} 项覆盖',
+    resetOverrides_other: '重置 {{count}} 项覆盖',
+  },
   language: { label: '语言', en: 'EN', zh: '中文' },
 };
 

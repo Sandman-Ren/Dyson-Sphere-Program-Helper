@@ -73,3 +73,48 @@ describe('solver', () => {
     expect(Object.keys(plan.totalMachines).length).toBeGreaterThan(3);
   });
 });
+
+describe('global machine tiers', () => {
+  it('applies a family tier to every recipe in that family', () => {
+    // arc-smelter (speed 1) instead of the default plane-smelter (speed 2).
+    const plan = solve(graph, 'iron-ingot', 1, undefined, undefined, { smelter: 'arc-smelter' });
+    expect(plan.totalMachines['arc-smelter']).toBeCloseTo(1, 5);
+    expect(plan.totalMachines['plane-smelter']).toBeUndefined();
+  });
+
+  it('lets a per-node override beat the global tier', () => {
+    const plan = solve(
+      graph, 'iron-ingot', 1,
+      { 'iron-ingot': 'plane-smelter' }, // per-node override wins
+      undefined,
+      { smelter: 'arc-smelter' },        // global tier
+    );
+    expect(plan.totalMachines['plane-smelter']).toBeCloseTo(0.5, 5); // speed 2
+    expect(plan.totalMachines['arc-smelter']).toBeUndefined();
+  });
+
+  it('ignores a tier for a family the recipe does not belong to', () => {
+    const plan = solve(graph, 'iron-ingot', 1, undefined, undefined, { assembler: 'assembling-machine-1' });
+    expect(plan.totalMachines['plane-smelter']).toBeCloseTo(0.5, 5); // unaffected default
+  });
+
+  it('applies the miner tier to mined resources deeper in the chain', () => {
+    const plan = solve(graph, 'iron-ingot', 1, undefined, undefined, { miner: 'mining-machine' });
+    expect(plan.totalMachines['mining-machine']).toBeGreaterThan(0);
+    expect(plan.totalMachines['advanced-mining-machine']).toBeUndefined();
+  });
+
+  it('falls back to the recipe default when the chosen tier cannot make a recipe', () => {
+    // A smelting-style recipe whose only producer is arc-smelter.
+    const customRecipes: Recipe[] = [{
+      id: 'thing', name: 'Thing', time: 1,
+      in: [], out: [{ id: 'thing', amount: 1 }],
+      producers: ['arc-smelter'], flags: [],
+    }];
+    const g = buildRecipeGraph(customRecipes, machines, meta);
+    // Prefer plane-smelter, but this recipe only lists arc-smelter → fall back to arc.
+    const plan = solve(g, 'thing', 1, undefined, undefined, { smelter: 'plane-smelter' });
+    expect(plan.totalMachines['arc-smelter']).toBeCloseTo(1, 5);
+    expect(plan.totalMachines['plane-smelter']).toBeUndefined();
+  });
+});
