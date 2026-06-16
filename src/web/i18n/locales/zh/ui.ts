@@ -49,9 +49,8 @@ const ui: UiResource = {
     noMatches: '无匹配项',
   },
   lookup: {
-    backToItems: '返回物品列表',
     selectItem: '选择一个物品',
-    selectItemHint: '浏览列表或搜索以查看配方、用途和解锁条件。',
+    selectItemHint: '搜索物品以查看其配方、用途和解锁条件。',
     calculate: '计算',
     stack: '堆叠 {{value}}',
     rawResource: '原始资源',
