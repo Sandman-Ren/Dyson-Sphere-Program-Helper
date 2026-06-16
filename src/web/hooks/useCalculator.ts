@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   solve, familyOfMachine, MACHINE_FAMILY_ORDER,
-  type MachineOverrides, type MachineTiers, type ProductionPlan,
+  type MachineFamily, type MachineOverrides, type MachineTiers, type ProductionPlan,
 } from '../../calculator/index.js';
 import { graph, proliferators } from '../data.js';
 
@@ -41,7 +41,10 @@ export interface CalculatorState {
   machineOverrides: MachineOverrides;
   setMachineOverrides: React.Dispatch<React.SetStateAction<MachineOverrides>>;
   machineTiers: MachineTiers;
-  setMachineTiers: React.Dispatch<React.SetStateAction<MachineTiers>>;
+  /** Set (machineId) or clear (null) the global default tier for a family. */
+  setMachineTier: (family: MachineFamily, machineId: string | null) => void;
+  /** Drop every per-node override whose machine belongs to a family. */
+  resetFamilyOverrides: (family: MachineFamily) => void;
   proliferatorId: string;
   setProliferatorId: (id: string) => void;
   plan: ProductionPlan | null;
@@ -63,6 +66,21 @@ export function useCalculator(): CalculatorState {
     }
   }, [machineTiers]);
 
+  const setMachineTier = useCallback((family: MachineFamily, machineId: string | null) => {
+    setMachineTiers((prev) => {
+      const next = { ...prev };
+      if (machineId) next[family] = machineId;
+      else delete next[family];
+      return next;
+    });
+  }, []);
+
+  const resetFamilyOverrides = useCallback((family: MachineFamily) => {
+    setMachineOverrides((prev) =>
+      Object.fromEntries(Object.entries(prev).filter(([, mid]) => familyOfMachine(mid) !== family)),
+    );
+  }, []);
+
   const plan = useMemo<ProductionPlan | null>(() => {
     if (!targetItem || !graph.itemToRecipe.has(targetItem)) return null;
     const perSecond = amount / UNIT_SECONDS[timeUnit];
@@ -75,7 +93,7 @@ export function useCalculator(): CalculatorState {
     amount, setAmount,
     timeUnit, setTimeUnit,
     machineOverrides, setMachineOverrides,
-    machineTiers, setMachineTiers,
+    machineTiers, setMachineTier, resetFamilyOverrides,
     proliferatorId, setProliferatorId,
     plan,
   };

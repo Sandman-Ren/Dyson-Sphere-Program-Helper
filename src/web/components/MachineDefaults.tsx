@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import ChevronRightIcon from 'lucide-react/dist/esm/icons/chevron-right';
 import RotateCcwIcon from 'lucide-react/dist/esm/icons/rotate-ccw';
 import { useTranslation } from 'react-i18next';
@@ -36,6 +36,16 @@ export function MachineDefaults({ tiers, machineOverrides, onTierChange, onReset
 
   const activeCount = MACHINE_FAMILY_ORDER.filter((f) => tiers[f]).length;
 
+  // Per-family count of per-node overrides, derived once for all rows.
+  const overrideCounts = useMemo(() => {
+    const counts: Partial<Record<MachineFamily, number>> = {};
+    for (const mid of Object.values(machineOverrides)) {
+      const family = familyOfMachine(mid);
+      if (family) counts[family] = (counts[family] ?? 0) + 1;
+    }
+    return counts;
+  }, [machineOverrides]);
+
   return (
     <div className="mb-4 rounded-lg border border-border bg-card">
       <button
@@ -63,7 +73,7 @@ export function MachineDefaults({ tiers, machineOverrides, onTierChange, onReset
               key={family}
               family={family}
               tiers={tiers}
-              machineOverrides={machineOverrides}
+              overrideCount={overrideCounts[family] ?? 0}
               onTierChange={onTierChange}
               onResetFamily={onResetFamily}
             />
@@ -77,12 +87,12 @@ export function MachineDefaults({ tiers, machineOverrides, onTierChange, onReset
 interface FamilyRowProps {
   family: MachineFamily;
   tiers: MachineTiers;
-  machineOverrides: MachineOverrides;
+  overrideCount: number;
   onTierChange: (family: MachineFamily, machineId: string | null) => void;
   onResetFamily: (family: MachineFamily) => void;
 }
 
-function FamilyRow({ family, tiers, machineOverrides, onTierChange, onResetFamily }: FamilyRowProps) {
+function FamilyRow({ family, tiers, overrideCount, onTierChange, onResetFamily }: FamilyRowProps) {
   const { t } = useTranslation('ui');
   const { name } = useNames();
 
@@ -90,8 +100,6 @@ function FamilyRow({ family, tiers, machineOverrides, onTierChange, onResetFamil
     .map((id) => machineById.get(id))
     .filter((m): m is Machine => m !== undefined);
   const value = tiers[family] ?? DEFAULT_SENTINEL;
-  const overrideCount = Object.values(machineOverrides)
-    .filter((mid) => familyOfMachine(mid) === family).length;
 
   return (
     <div>

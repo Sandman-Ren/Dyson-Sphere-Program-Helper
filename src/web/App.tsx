@@ -1,6 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { findIntegerMultiplier, familyOfMachine } from '../calculator/index.js';
+import { findIntegerMultiplier } from '../calculator/index.js';
 import { LanguageSwitcher } from './components/LanguageSwitcher.js';
 import { MachineDefaults } from './components/MachineDefaults.js';
 import { useNames } from './i18n/useNames.js';
@@ -147,19 +147,8 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
       <MachineDefaults
         tiers={calc.machineTiers}
         machineOverrides={calc.machineOverrides}
-        onTierChange={(family, id) =>
-          calc.setMachineTiers((prev) => {
-            const next = { ...prev };
-            if (id) next[family] = id;
-            else delete next[family];
-            return next;
-          })
-        }
-        onResetFamily={(family) =>
-          calc.setMachineOverrides((prev) =>
-            Object.fromEntries(Object.entries(prev).filter(([, mid]) => familyOfMachine(mid) !== family)),
-          )
-        }
+        onTierChange={calc.setMachineTier}
+        onResetFamily={calc.resetFamilyOverrides}
       />
 
       {plan ? (
