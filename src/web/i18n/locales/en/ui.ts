@@ -62,6 +62,8 @@ const ui = {
     seconds: '{{value}}s',
   },
   tech: {
+    tabTechnologies: 'Technologies',
+    tabUpgrades: 'Upgrades',
     searchTechnologies: 'Search technologies…',
     clearSearch: 'Clear search',
     matchCount_one: '{{count}} match',

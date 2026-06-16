@@ -64,6 +64,8 @@ const ui: UiResource = {
     seconds: '{{value}} 秒',
   },
   tech: {
+    tabTechnologies: '科技',
+    tabUpgrades: '升级',
     searchTechnologies: '搜索科技…',
     clearSearch: '清除搜索',
     matchCount_one: '{{count}} 项匹配',

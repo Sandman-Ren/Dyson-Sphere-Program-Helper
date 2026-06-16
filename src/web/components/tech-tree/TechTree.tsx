@@ -12,8 +12,9 @@ import {
 import { useTranslation } from 'react-i18next';
 import SearchIcon from 'lucide-react/dist/esm/icons/search';
 import XIcon from 'lucide-react/dist/esm/icons/x';
-import { Input } from '../../ui/index.js';
+import { Input, Tabs, TabsList, TabsTrigger } from '../../ui/index.js';
 import { useNames } from '../../i18n/useNames.js';
+import type { Technology } from '../../../data/schema.js';
 import { technologies, techById } from '../../data.js';
 import layoutData from '../../../data/generated/tech-tree-layout.json';
 import { TechNode, type TechFlowNode } from './TechNode.js';
@@ -34,33 +35,67 @@ interface TechLayout {
   nodes: { id: string; x: number; y: number }[];
 }
 
-const layout = layoutData as TechLayout;
-const positionById = new Map(layout.nodes.map((n) => [n.id, { x: n.x, y: n.y }]));
+/** The two in-game research screens. */
+type TechCategory = 'technologies' | 'upgrades';
+const CATEGORIES: TechCategory[] = ['technologies', 'upgrades'];
+
+const layouts = layoutData as Record<TechCategory, TechLayout>;
 const nodeTypes: NodeTypes = { tech: TechNode };
 
-/** Static base edges (prerequisite -> tech); highlighting is applied per-render. */
-const baseEdges: Edge[] = technologies.flatMap((tech) =>
-  (prereqsById.get(tech.id) ?? []).map((prereq) => ({
-    id: `${prereq}->${tech.id}`,
-    source: prereq,
-    target: tech.id,
-    type: 'smoothstep',
-  })),
-);
+// Each tech lives in exactly one category, so a single merged map yields a
+// unique position per tech (in that category's own coordinate space).
+const positionById = new Map<string, { x: number; y: number }>();
+for (const cat of CATEGORIES)
+  for (const n of layouts[cat].nodes) positionById.set(n.id, { x: n.x, y: n.y });
+const { nodeWidth, nodeHeight } = layouts.technologies;
+
+/** Which screen a tech belongs to. */
+function categoryOf(id: string): TechCategory {
+  return techById.get(id)?.upgrade ? 'upgrades' : 'technologies';
+}
+
+const techsByCategory: Record<TechCategory, Technology[]> = {
+  technologies: technologies.filter((t) => !t.upgrade),
+  upgrades: technologies.filter((t) => t.upgrade),
+};
+
+/** Base edges (prerequisite -> tech) within a category; cross-category edges are dropped. */
+function buildEdges(list: Technology[]): Edge[] {
+  const ids = new Set(list.map((t) => t.id));
+  return list.flatMap((tech) =>
+    (prereqsById.get(tech.id) ?? [])
+      .filter((prereq) => ids.has(prereq))
+      .map((prereq) => ({
+        id: `${prereq}->${tech.id}`,
+        source: prereq,
+        target: tech.id,
+        type: 'smoothstep',
+      })),
+  );
+}
+
+const edgesByCategory: Record<TechCategory, Edge[]> = {
+  technologies: buildEdges(techsByCategory.technologies),
+  upgrades: buildEdges(techsByCategory.upgrades),
+};
 
 function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechTreeProps) {
-  const { setCenter } = useReactFlow();
+  const { setCenter, setViewport } = useReactFlow();
   const { t } = useTranslation('ui');
   const { name } = useNames();
+  const [category, setCategory] = useState<TechCategory>('technologies');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [query, setQuery] = useState('');
+
+  const activeTechs = techsByCategory[category];
+  const activeBaseEdges = edgesByCategory[category];
 
   // Center the viewport on a tech node by id.
   const centerOnTech = useCallback(
     (id: string, zoom = 1) => {
       const pos = positionById.get(id);
       if (!pos) return;
-      setCenter(pos.x + layout.nodeWidth / 2, pos.y + layout.nodeHeight / 2, {
+      setCenter(pos.x + nodeWidth / 2, pos.y + nodeHeight / 2, {
         zoom,
         duration: 500,
       });
@@ -71,10 +106,22 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
   const selectTech = useCallback(
     (id: string) => {
       if (!techById.has(id)) return;
+      setCategory(categoryOf(id));
       setSelectedId(id);
       centerOnTech(id, 1);
     },
     [centerOnTech],
+  );
+
+  // Switch screens: reset selection, search, and the viewport to the new tree.
+  const changeCategory = useCallback(
+    (value: string) => {
+      setCategory(value as TechCategory);
+      setSelectedId(null);
+      setQuery('');
+      setViewport({ x: 40, y: 40, zoom: 0.55 }, { duration: 300 });
+    },
+    [setViewport],
   );
 
   // Consume pendingTech once when it arrives from another tab.
@@ -83,27 +130,28 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
     if (!pendingTech || handledPendingRef.current === pendingTech) return;
     handledPendingRef.current = pendingTech;
     if (techById.has(pendingTech)) {
+      setCategory(categoryOf(pendingTech));
       setSelectedId(pendingTech);
       centerOnTech(pendingTech, 1);
     }
     onPendingHandled();
   }, [pendingTech, centerOnTech, onPendingHandled]);
 
-  // Set of matched ids for the active search.
+  // Set of matched ids for the active search (scoped to the current screen).
   const matchedIds = useMemo(() => {
     const q = query.trim();
     if (!q) return null;
     const set = new Set<string>();
-    for (const tech of technologies) if (matchesQuery(tech, q)) set.add(tech.id);
+    for (const tech of activeTechs) if (matchesQuery(tech, q)) set.add(tech.id);
     return set;
-  }, [query]);
+  }, [query, activeTechs]);
 
   // Pan to the first search match when the query changes.
   useEffect(() => {
     if (!matchedIds || matchedIds.size === 0) return;
-    const first = technologies.find((t) => matchedIds.has(t.id));
+    const first = activeTechs.find((tech) => matchedIds.has(tech.id));
     if (first) centerOnTech(first.id, 0.85);
-  }, [matchedIds, centerOnTech]);
+  }, [matchedIds, activeTechs, centerOnTech]);
 
   // Ancestors of the selected tech (for path highlighting).
   const pathIds = useMemo(() => {
@@ -115,7 +163,7 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
 
   const nodes = useMemo<TechFlowNode[]>(
     () =>
-      technologies.map((tech) => {
+      activeTechs.map((tech) => {
         const pos = positionById.get(tech.id) ?? { x: 0, y: 0 };
         const matched = matchedIds?.has(tech.id) ?? false;
         return {
@@ -133,17 +181,17 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
           },
         };
       }),
-    [matchedIds, pathIds, selectedId, name],
+    [activeTechs, matchedIds, pathIds, selectedId, name],
   );
 
   const edges = useMemo<Edge[]>(() => {
-    if (!pathIds) return baseEdges;
-    return baseEdges.map((e) =>
+    if (!pathIds) return activeBaseEdges;
+    return activeBaseEdges.map((e) =>
       pathIds.has(e.source) && pathIds.has(e.target)
         ? { ...e, className: 'highlighted', zIndex: 1 }
         : e,
     );
-  }, [pathIds]);
+  }, [activeBaseEdges, pathIds]);
 
   const onNodeClick = useCallback<NodeMouseHandler>((_, node) => {
     setSelectedId(node.id);
@@ -154,8 +202,14 @@ function TechTreeInner({ pendingTech, onPendingHandled, onCalculateItem }: TechT
   return (
     <div className="flex h-full w-full">
       <div className="relative h-full min-w-0 flex-1">
-        {/* Search overlay */}
-        <div className="absolute left-3 right-3 top-3 z-10 sm:right-auto sm:w-72">
+        {/* Screen toggle + search overlay */}
+        <div className="absolute left-3 right-3 top-3 z-10 flex flex-col gap-2 sm:right-auto sm:w-72">
+          <Tabs value={category} onValueChange={changeCategory}>
+            <TabsList className="rounded-md border border-border bg-card px-1.5 shadow-lg">
+              <TabsTrigger value="technologies">{t('tech.tabTechnologies')}</TabsTrigger>
+              <TabsTrigger value="upgrades">{t('tech.tabUpgrades')}</TabsTrigger>
+            </TabsList>
+          </Tabs>
           <div className="relative">
             <SearchIcon className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input
