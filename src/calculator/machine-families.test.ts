@@ -3,6 +3,7 @@ import {
   MACHINE_FAMILIES, MACHINE_FAMILY_ORDER, familyOfMachine, familyOfRecipe,
 } from './machine-families.js';
 import type { Recipe } from '../data/schema.js';
+import machinesData from '../data/generated/machines.json';
 
 const recipe = (producers: string[]): Recipe => ({
   id: 'r', name: 'r', time: 1, in: [], out: [], producers, flags: [],
@@ -51,6 +52,13 @@ describe('family config integrity', () => {
         expect(seen.has(id)).toBe(false);
         seen.add(id);
       }
+    }
+  });
+
+  it('lists only machine ids that exist in the generated data', () => {
+    const known = new Set((machinesData as { id: string }[]).map((m) => m.id));
+    for (const ids of Object.values(MACHINE_FAMILIES)) {
+      for (const id of ids) expect(known.has(id)).toBe(true);
     }
   });
 });
