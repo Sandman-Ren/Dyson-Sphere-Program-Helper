@@ -27,7 +27,11 @@ export function ItemIcon({ id, size = 24, tinted = false, title, className }: It
     display: 'inline-block',
     flexShrink: 0,
     borderRadius: tinted ? Math.max(3, size * 0.18) : 0,
-    background: tinted ? `color-mix(in srgb, ${iconColor(id)} 22%, transparent)` : undefined,
+    // Use the `backgroundColor` longhand (never the `background` shorthand): the
+    // sprite branch sets `background-*` longhands too, and mixing a shorthand
+    // with longhands makes React's style diffing reset background-image to none
+    // on re-render, blanking the icon.
+    backgroundColor: tinted ? `color-mix(in srgb, ${iconColor(id)} 22%, transparent)` : undefined,
     verticalAlign: 'middle',
   };
 
@@ -36,7 +40,7 @@ export function ItemIcon({ id, size = 24, tinted = false, title, className }: It
       <span
         title={label}
         className={className}
-        style={{ ...wrapper, background: iconColor(id), borderRadius: '50%' }}
+        style={{ ...wrapper, backgroundColor: iconColor(id), borderRadius: '50%' }}
       />
     );
   }
