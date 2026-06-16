@@ -48,6 +48,17 @@ export interface TechLayout {
   nodes: TechLayoutNode[];
 }
 
+/**
+ * Two independent layouts mirroring the in-game split: one-time "Technologies"
+ * and repeatable "Upgrades". Each is laid out on its own so cross-category
+ * prerequisite edges are dropped (the game tracks no dependencies across the
+ * two screens).
+ */
+export interface TechLayouts {
+  technologies: TechLayout;
+  upgrades: TechLayout;
+}
+
 function buildLayout(technologies: Technology[]): TechLayout {
   const g = new dagre.graphlib.Graph();
   g.setGraph({
@@ -94,13 +105,19 @@ function main(): void {
     readFileSync(resolve(generatedDir, 'technologies.json'), 'utf8'),
   ) as Technology[];
 
-  const layout = buildLayout(technologies);
+  const layouts: TechLayouts = {
+    technologies: buildLayout(technologies.filter((t) => !t.upgrade)),
+    upgrades: buildLayout(technologies.filter((t) => t.upgrade)),
+  };
   const outPath = resolve(generatedDir, 'tech-tree-layout.json');
-  writeFileSync(outPath, JSON.stringify(layout));
+  writeFileSync(outPath, JSON.stringify(layouts));
 
   console.log(
-    `Wrote ${layout.nodes.length} positioned tech nodes ` +
-      `(${Math.round(layout.width)}×${Math.round(layout.height)}) to ${outPath}`,
+    `Wrote tech layout to ${outPath}: ` +
+      `${layouts.technologies.nodes.length} technologies ` +
+      `(${Math.round(layouts.technologies.width)}×${Math.round(layouts.technologies.height)}), ` +
+      `${layouts.upgrades.nodes.length} upgrades ` +
+      `(${Math.round(layouts.upgrades.width)}×${Math.round(layouts.upgrades.height)})`,
   );
 }
 
