@@ -1,0 +1,31 @@
+{
+  "_comment": "Chinese names for ids that FactorioLab's zh i18n leaves untranslated (mostly Dark Fog combat content and upgrade tiers). Merged on top of factoriolab-dsp-i18n-zh.json by transform-data.ts, so it survives seed refreshes. Names verified against the bilibili DSP wiki (wiki.biligame.com/dsp); weapon-damage tiers follow the established FactorioLab pattern of the translated siblings (动能/能量/爆破武器伤害). Recipe names are derived from their output item, so only item names are listed here.",
+  "items": {
+    "sorter-4": "集装分拣器",
+    "df-plasma-turret-sr": "近程电浆塔",
+    "df-jamming-capsule": "干扰胶囊",
+    "df-suppressing-capsule": "压制胶囊",
+    "df-jammer-tower-tech": "干扰塔 (科技)",
+    "df-suppressing-capsule-tech": "压制胶囊 (科技)",
+    "df-em-weapon-strength-1": "电磁武器伤害 (Lv1)",
+    "df-em-weapon-strength-2": "电磁武器伤害 (Lv2)",
+    "df-em-weapon-strength-3": "电磁武器伤害 (Lv3)",
+    "df-em-weapon-strength-4": "电磁武器伤害 (Lv4)",
+    "df-em-weapon-strength-5": "电磁武器伤害 (Lv5)",
+    "df-em-weapon-strength-6": "电磁武器伤害 (Lv6)",
+    "df-enhanced-structure-1": "结构强化 (Lv1)",
+    "df-enhanced-structure-2": "结构强化 (Lv2)",
+    "df-enhanced-structure-3": "结构强化 (Lv3)",
+    "df-enhanced-structure-4": "结构强化 (Lv4)",
+    "df-enhanced-structure-5": "结构强化 (Lv5)",
+    "df-enhanced-structure-6": "结构强化 (Lv6)",
+    "inventory-capacity-7": "机舱容量 (Lv7)",
+    "pile-sorter-1": "集装分拣器改良 (Lv1)",
+    "pile-sorter-2": "集装分拣器改良 (Lv2)",
+    "pile-sorter-3": "集装分拣器改良 (Lv3)",
+    "pile-sorter-4": "集装分拣器改良 (Lv4)",
+    "pile-sorter-5": "集装分拣器改良 (Lv5)",
+    "pile-sorter-6": "集装分拣器改良 (Lv6)",
+    "sorter-cargo-integration": "分拣器货物集装 (Lv1)"
+  }
+}

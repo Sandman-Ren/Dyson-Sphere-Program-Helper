@@ -181,9 +181,9 @@
   },
   "sorter-4": {
     "en": "pile sorter",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "集装分拣器",
+    "py": "jizhuangfenjianqi",
+    "pyInitials": "jzfjq"
   },
   "mining-machine": {
     "en": "mining machine",
@@ -337,9 +337,9 @@
   },
   "df-plasma-turret-sr": {
     "en": "sr plasma turret",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "近程电浆塔",
+    "py": "jinchengdianjiangta",
+    "pyInitials": "jcdjt"
   },
   "df-battlefield-analysis-base": {
     "en": "battlefield analysis base",
@@ -1021,15 +1021,15 @@
   },
   "df-jamming-capsule": {
     "en": "jamming capsule",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "干扰胶囊",
+    "py": "ganraojiaonang",
+    "pyInitials": "grjn"
   },
   "df-suppressing-capsule": {
     "en": "suppressing capsule",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "压制胶囊",
+    "py": "yazhijiaonang",
+    "pyInitials": "yzjn"
   },
   "plant-fuel": {
     "en": "plant fuel",
@@ -1225,9 +1225,9 @@
   },
   "df-jammer-tower-tech": {
     "en": "jammer tower",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "干扰塔 (科技)",
+    "py": "ganraota (keji)",
+    "pyInitials": "grt (kj)"
   },
   "df-matter-recombination": {
     "en": "matter recombination",
@@ -1291,9 +1291,9 @@
   },
   "df-suppressing-capsule-tech": {
     "en": "suppressing capsule",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "压制胶囊 (科技)",
+    "py": "yazhijiaonang (keji)",
+    "pyInitials": "yzjn (kj)"
   },
   "df-titanium-ammo-box-tech": {
     "en": "titanium ammo box",
@@ -1879,39 +1879,39 @@
   },
   "df-em-weapon-strength-1": {
     "en": "em weapon strength (lv1)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "电磁武器伤害 (Lv1)",
+    "py": "dianciwuqishanghai (lv1)",
+    "pyInitials": "dcwqsh (lv1)"
   },
   "df-em-weapon-strength-2": {
     "en": "em weapon strength (lv2)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "电磁武器伤害 (Lv2)",
+    "py": "dianciwuqishanghai (lv2)",
+    "pyInitials": "dcwqsh (lv2)"
   },
   "df-em-weapon-strength-3": {
     "en": "em weapon strength (lv3)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "电磁武器伤害 (Lv3)",
+    "py": "dianciwuqishanghai (lv3)",
+    "pyInitials": "dcwqsh (lv3)"
   },
   "df-em-weapon-strength-4": {
     "en": "em weapon strength (lv4)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "电磁武器伤害 (Lv4)",
+    "py": "dianciwuqishanghai (lv4)",
+    "pyInitials": "dcwqsh (lv4)"
   },
   "df-em-weapon-strength-5": {
     "en": "em weapon strength (lv5)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "电磁武器伤害 (Lv5)",
+    "py": "dianciwuqishanghai (lv5)",
+    "pyInitials": "dcwqsh (lv5)"
   },
   "df-em-weapon-strength-6": {
     "en": "em weapon strength (lv6)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "电磁武器伤害 (Lv6)",
+    "py": "dianciwuqishanghai (lv6)",
+    "pyInitials": "dcwqsh (lv6)"
   },
   "df-energy-shield-1": {
     "en": "energy shield (lv1)",
@@ -1993,39 +1993,39 @@
   },
   "df-enhanced-structure-1": {
     "en": "enhanced structure (lv1)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "结构强化 (Lv1)",
+    "py": "jiegouqianghua (lv1)",
+    "pyInitials": "jgqh (lv1)"
   },
   "df-enhanced-structure-2": {
     "en": "enhanced structure (lv2)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "结构强化 (Lv2)",
+    "py": "jiegouqianghua (lv2)",
+    "pyInitials": "jgqh (lv2)"
   },
   "df-enhanced-structure-3": {
     "en": "enhanced structure (lv3)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "结构强化 (Lv3)",
+    "py": "jiegouqianghua (lv3)",
+    "pyInitials": "jgqh (lv3)"
   },
   "df-enhanced-structure-4": {
     "en": "enhanced structure (lv4)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "结构强化 (Lv4)",
+    "py": "jiegouqianghua (lv4)",
+    "pyInitials": "jgqh (lv4)"
   },
   "df-enhanced-structure-5": {
     "en": "enhanced structure (lv5)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "结构强化 (Lv5)",
+    "py": "jiegouqianghua (lv5)",
+    "pyInitials": "jgqh (lv5)"
   },
   "df-enhanced-structure-6": {
     "en": "enhanced structure (lv6)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "结构强化 (Lv6)",
+    "py": "jiegouqianghua (lv6)",
+    "pyInitials": "jgqh (lv6)"
   },
   "df-explosive-weapon-damage-1": {
     "en": "explosive weapon damage (lv1)",
@@ -2389,9 +2389,9 @@
   },
   "inventory-capacity-7": {
     "en": "inventory capacity (lv7)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "机舱容量 (Lv7)",
+    "py": "jicangrongliang (lv7)",
+    "pyInitials": "jcrl (lv7)"
   },
   "logistics-carrier-capacity-1": {
     "en": "logistics carrier capacity (lv1)",
@@ -2629,39 +2629,39 @@
   },
   "pile-sorter-1": {
     "en": "pile sorter upgrade (lv1)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "集装分拣器改良 (Lv1)",
+    "py": "jizhuangfenjianqigailiang (lv1)",
+    "pyInitials": "jzfjqgl (lv1)"
   },
   "pile-sorter-2": {
     "en": "pile sorter upgrade (lv2)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "集装分拣器改良 (Lv2)",
+    "py": "jizhuangfenjianqigailiang (lv2)",
+    "pyInitials": "jzfjqgl (lv2)"
   },
   "pile-sorter-3": {
     "en": "pile sorter upgrade (lv3)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "集装分拣器改良 (Lv3)",
+    "py": "jizhuangfenjianqigailiang (lv3)",
+    "pyInitials": "jzfjqgl (lv3)"
   },
   "pile-sorter-4": {
     "en": "pile sorter upgrade (lv4)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "集装分拣器改良 (Lv4)",
+    "py": "jizhuangfenjianqigailiang (lv4)",
+    "pyInitials": "jzfjqgl (lv4)"
   },
   "pile-sorter-5": {
     "en": "pile sorter upgrade (lv5)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "集装分拣器改良 (Lv5)",
+    "py": "jizhuangfenjianqigailiang (lv5)",
+    "pyInitials": "jzfjqgl (lv5)"
   },
   "pile-sorter-6": {
     "en": "pile sorter upgrade (lv6)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "集装分拣器改良 (Lv6)",
+    "py": "jizhuangfenjianqigailiang (lv6)",
+    "pyInitials": "jzfjqgl (lv6)"
   },
   "ray-transmission-efficiency-1": {
     "en": "ray transmission efficiency (lv1)",
@@ -2773,9 +2773,9 @@
   },
   "sorter-cargo-integration": {
     "en": "sorter cargo integration (lv1)",
-    "zh": "",
-    "py": "",
-    "pyInitials": ""
+    "zh": "分拣器货物集装 (Lv1)",
+    "py": "fenjianqihuowujizhuang (lv1)",
+    "pyInitials": "fjqhwjz (lv1)"
   },
   "sorter-cargo-stacking-1": {
     "en": "sorter cargo stacking (lv1)",

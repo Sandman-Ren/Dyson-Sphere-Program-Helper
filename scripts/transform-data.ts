@@ -60,6 +60,11 @@ interface LabI18n {
 const zh: LabI18n = JSON.parse(
   readFileSync(resolve(root, 'scripts/factoriolab-dsp-i18n-zh.json'), 'utf8'),
 );
+// Our additions for ids FactorioLab's zh leaves untranslated; merged on top of
+// the upstream snapshot so they survive a seed refresh.
+const zhOverrides: LabI18n = JSON.parse(
+  readFileSync(resolve(root, 'scripts/factoriolab-dsp-i18n-zh-overrides.json'), 'utf8'),
+);
 
 const KNOWN_FLAGS = new Set<RecipeFlag>(['mining', 'technology', 'locked']);
 const toRecipeItems = (m: Record<string, number>): RecipeItem[] =>
@@ -168,9 +173,25 @@ const meta: Meta & { proliferableRecipes: string[] } = {
 
 // ---- i18n bundles ----
 // English names already live on the items/recipes arrays; only Chinese needs a bundle.
+const zhItems: Record<string, string> = { ...(zh.items ?? {}), ...(zhOverrides.items ?? {}) };
+const zhRecipes: Record<string, string> = { ...(zh.recipes ?? {}), ...(zhOverrides.recipes ?? {}) };
+// DSP names a recipe after its product, so fill any recipe still missing a zh
+// name from its single output item (covers the Dark Fog `df-*` variants whose
+// product is already translated).
+let derivedRecipeNames = 0;
+for (const r of recipes) {
+  if (zhRecipes[r.id]) continue;
+  if (r.out.length === 1) {
+    const out = zhItems[r.out[0].id];
+    if (out) {
+      zhRecipes[r.id] = out;
+      derivedRecipeNames += 1;
+    }
+  }
+}
 const zhBundle = {
-  items: zh.items ?? {},
-  recipes: zh.recipes ?? {},
+  items: zhItems,
+  recipes: zhRecipes,
   categories: zh.categories ?? {},
 };
 const enCategories: Record<string, string> = Object.fromEntries(
@@ -211,5 +232,6 @@ console.log(
   `transform-data: ${items.length} items, ${recipes.length} recipes, ${machines.length} machines, ` +
   `${technologies.length} techs, ${proliferators.length} proliferators, ${belts.length} belts, ` +
   `${icons.length} icons (DSP ${meta.version}); ` +
-  `i18n zh items=${Object.keys(zhBundle.items).length}, search index=${Object.keys(searchIndex).length}`,
+  `i18n zh items=${Object.keys(zhBundle.items).length}, recipes=${Object.keys(zhBundle.recipes).length} ` +
+  `(+${derivedRecipeNames} derived from output), search index=${Object.keys(searchIndex).length}`,
 );
