@@ -60,9 +60,16 @@ export function buildRecipeGraph(
       all.push(recipe);
       itemToAllRecipes.set(out.id, all);
 
-      // Primary recipe: first non-excluded producer wins.
-      if (!isExcluded && !itemToRecipe.has(out.id)) {
-        itemToRecipe.set(out.id, recipe);
+      // Primary recipe: prefer a craft recipe over a mining/pump recipe. The
+      // mining variant (sulfuric acid ocean, organic crystal vein, gas-giant
+      // collection) is a planet-specific bonus, not the universal source — so a
+      // craft recipe upgrades an already-chosen mining primary. Among recipes of
+      // the same kind, the first non-excluded one wins.
+      if (!isExcluded) {
+        const current = itemToRecipe.get(out.id);
+        if (!current || (current.flags.includes('mining') && !recipe.flags.includes('mining'))) {
+          itemToRecipe.set(out.id, recipe);
+        }
       }
     }
     for (const inp of recipe.in) {
@@ -70,6 +77,14 @@ export function buildRecipeGraph(
       consumers.push(recipe);
       itemToConsumers.set(inp.id, consumers);
     }
+  }
+
+  // An item is only raw when its chosen primary is a mining recipe. Items that
+  // default to a craft recipe (sulfuric acid, organic crystal, hydrogen,
+  // deuterium) are produced, not mined — otherwise the solver would both list
+  // them as raw and drill into their craft inputs.
+  for (const [itemId, recipe] of itemToRecipe) {
+    if (!recipe.flags.includes('mining')) minedResources.delete(itemId);
   }
 
   const producersFor = (recipe: Recipe): Machine[] =>
