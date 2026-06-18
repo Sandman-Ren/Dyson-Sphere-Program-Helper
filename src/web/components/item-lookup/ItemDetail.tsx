@@ -71,7 +71,7 @@ export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onView
         ) : (
           <div className="flex flex-col gap-2.5">
             {producedBy.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} onSelectItem={onSelectItem} />
+              <RecipeCard key={recipe.id} recipe={recipe} currentId={selectedItem} onSelectItem={onSelectItem} />
             ))}
           </div>
         )}
@@ -80,9 +80,9 @@ export function ItemDetail({ selectedItem, onSelectItem, onCalculateItem, onView
       {/* Used in */}
       {usedIn.length > 0 && (
         <Section title={t('lookup.usedIn')} count={usedIn.length}>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2.5">
             {usedIn.map((recipe) => (
-              <UsedInRow key={recipe.id} recipe={recipe} onSelectItem={onSelectItem} />
+              <RecipeCard key={recipe.id} recipe={recipe} currentId={selectedItem} onSelectItem={onSelectItem} />
             ))}
           </div>
         </Section>
@@ -127,9 +127,18 @@ function UnlockedBy({ producedBy, onViewTech }: { producedBy: Recipe[]; onViewTe
   );
 }
 
-// ---- Recipe card (Produced by) ----
+// ---- Recipe card (shared by "Produced by" and "Used in") ----
 
-function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (id: string) => void }) {
+/**
+ * A recipe shown as inputs → outputs with its time and producers. Every
+ * ingredient links to its own detail except `currentId` (the item being
+ * viewed), which stays static — so in "Produced by" the output is inert and in
+ * "Used in" the consumed item is inert, while everything else navigates.
+ */
+function RecipeCard(
+  { recipe, currentId, onSelectItem }:
+  { recipe: Recipe; currentId: string; onSelectItem: (id: string) => void },
+) {
   const { t } = useTranslation('ui');
   const { name, recipeName } = useNames();
   const producers = graph.producersFor(recipe);
@@ -156,7 +165,7 @@ function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (i
                 key={input.id}
                 id={input.id}
                 amount={input.amount}
-                onClick={() => onSelectItem(input.id)}
+                onClick={input.id === currentId ? undefined : () => onSelectItem(input.id)}
               />
             ))}
           </div>
@@ -169,7 +178,12 @@ function RecipeCard({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (i
         {/* Outputs */}
         <div className="flex flex-wrap items-center gap-1.5">
           {recipe.out.map((output) => (
-            <IngredientChip key={output.id} id={output.id} amount={output.amount} />
+            <IngredientChip
+              key={output.id}
+              id={output.id}
+              amount={output.amount}
+              onClick={output.id === currentId ? undefined : () => onSelectItem(output.id)}
+            />
           ))}
         </div>
 
@@ -237,35 +251,6 @@ function IngredientChip({ id, amount, onClick }: { id: string; amount: number; o
       </TooltipTrigger>
       <TooltipContent>{name(id)}</TooltipContent>
     </Tooltip>
-  );
-}
-
-// ---- Used-in row ----
-
-function UsedInRow({ recipe, onSelectItem }: { recipe: Recipe; onSelectItem: (id: string) => void }) {
-  const { name, recipeName } = useNames();
-  return (
-    <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-accent/50">
-      <span className="min-w-0 flex-1 truncate text-sm">{recipeName(recipe.id)}</span>
-      <ArrowRightIcon className="size-3.5 flex-shrink-0 text-muted-foreground" />
-      <div className="flex flex-shrink-0 items-center gap-1">
-        {recipe.out.map((output) => (
-          <Tooltip key={output.id}>
-            <TooltipTrigger asChild>
-              <button
-                type="button"
-                onClick={() => onSelectItem(output.id)}
-                className="flex items-center gap-1 rounded px-1 py-0.5 cursor-pointer transition-colors hover:bg-accent active:bg-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                <ItemIcon id={output.id} size={20} tinted />
-                <span className="text-xs font-medium tabular-nums">{num(output.amount)}</span>
-              </button>
-            </TooltipTrigger>
-            <TooltipContent>{name(output.id)}</TooltipContent>
-          </Tooltip>
-        ))}
-      </div>
-    </div>
   );
 }
 
