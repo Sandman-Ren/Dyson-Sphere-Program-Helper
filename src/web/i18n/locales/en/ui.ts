@@ -28,8 +28,15 @@ const ui = {
     extras: 'Extras',
     sprays: '{{name}} sprays',
     noProliferator: 'No proliferator applied',
-    scaleToWhole: 'Scale ×{{k}} → whole buildings',
+    minimumIntegerRatio: 'Minimum integer ratio',
+    apply: 'Apply',
     none: '—',
+  },
+  ratio: {
+    title: 'Machine ratio',
+    reset: 'Reset',
+    clickToExclude: '{{name}} — click to exclude',
+    clickToInclude: '{{name}} — click to include',
   },
   chain: {
     title: 'Production chain',

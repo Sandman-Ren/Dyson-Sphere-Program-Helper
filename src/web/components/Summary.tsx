@@ -58,12 +58,18 @@ export function Summary({ plan, timeUnit, integerMultiplier, onApplyMultiplier, 
           ) : (
             <div className="text-xs text-muted-foreground">{t('summary.noProliferator')}</div>
           )}
-          {integerMultiplier && integerMultiplier > 1 && (
-            <Button variant="outline" size="sm" className="mt-2" onClick={() => onApplyMultiplier(integerMultiplier)}>
-              {t('summary.scaleToWhole', { k: integerMultiplier })}
-            </Button>
-          )}
         </Stat>
+
+        {integerMultiplier !== null && integerMultiplier > 1 && (
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-border bg-background px-3 py-2 text-sm sm:col-span-2 lg:col-span-4">
+            <span className="text-muted-foreground">
+              {t('summary.minimumIntegerRatio')}: <strong className="font-semibold tabular-nums text-foreground">×{integerMultiplier}</strong>
+            </span>
+            <Button variant="outline" size="sm" onClick={() => onApplyMultiplier(integerMultiplier)}>
+              {t('summary.apply')}
+            </Button>
+          </div>
+        )}
       </div>
     </Card>
   );

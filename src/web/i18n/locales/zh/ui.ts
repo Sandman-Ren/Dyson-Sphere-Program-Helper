@@ -30,8 +30,15 @@ const ui: UiResource = {
     extras: '额外',
     sprays: '{{name}} 喷涂',
     noProliferator: '未使用增产剂',
-    scaleToWhole: '放大 ×{{k}} → 整数建筑',
+    minimumIntegerRatio: '最小整数比',
+    apply: '应用',
     none: '—',
+  },
+  ratio: {
+    title: '建筑比例',
+    reset: '重置',
+    clickToExclude: '{{name}} —— 点击以排除',
+    clickToInclude: '{{name}} —— 点击以包含',
   },
   chain: {
     title: '生产链',

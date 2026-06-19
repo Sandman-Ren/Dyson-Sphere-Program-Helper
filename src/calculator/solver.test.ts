@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { buildRecipeGraph } from './recipe-graph.js';
-import { solve } from './solver.js';
+import {
+  solve, findIntegerMultiplier, findIntegerMultiplierForValues, computeIntegerRatios,
+} from './solver.js';
 import type { Recipe, Machine, Proliferator } from '../data/schema.js';
 import recipesData from '../data/generated/recipes.json';
 import machinesData from '../data/generated/machines.json';
@@ -116,5 +118,56 @@ describe('global machine tiers', () => {
     const plan = solve(g, 'thing', 1, undefined, undefined, { smelter: 'plane-smelter' });
     expect(plan.totalMachines['arc-smelter']).toBeCloseTo(1, 5);
     expect(plan.totalMachines['plane-smelter']).toBeUndefined();
+  });
+});
+
+describe('integer ratios', () => {
+  it('reduces values to their minimum integer ratio', () => {
+    // 1.6 : 2.0 : 0.4 → ×5 → 8 : 10 : 2 → ÷2 → 4 : 5 : 1
+    expect(computeIntegerRatios([1.6, 2.0, 0.4])).toEqual([4, 5, 1]);
+  });
+
+  it('leaves whole-number values in lowest terms', () => {
+    expect(computeIntegerRatios([2, 4, 6])).toEqual([1, 2, 3]);
+    expect(computeIntegerRatios([3, 5])).toEqual([3, 5]); // coprime → unchanged
+  });
+
+  it('handles trivial inputs', () => {
+    expect(computeIntegerRatios([])).toEqual([]);
+    expect(computeIntegerRatios([1.5])).toEqual([1]); // single value reduces to 1
+  });
+
+  it('tolerates floating-point dust in the counts', () => {
+    expect(computeIntegerRatios([0.5 + 1e-12, 1, 1.5])).toEqual([1, 2, 3]);
+  });
+
+  it('does not collapse a tiny but nonzero count to 0', () => {
+    const r = computeIntegerRatios([0.0004, 1]); // ~1 : 2500
+    expect(r).not.toBeNull();
+    expect(r).not.toContain(0); // the needed count must never round away to 0
+    expect(r![0]).toBe(1);
+  });
+
+  it('returns null when a nonzero count is too small to scale to an integer', () => {
+    // Past findDenominator's cap: bail so the UI shows a decimal ratio, not 0.
+    expect(computeIntegerRatios([1e-6, 1])).toBeNull();
+  });
+
+  it('returns null when no reasonable multiplier exists', () => {
+    expect(findIntegerMultiplierForValues([Math.PI, 1], 50)).toBeNull();
+    // Denominators 317 and 331 are coprime → LCM 104_927 exceeds the 100_000 cap.
+    expect(computeIntegerRatios([1 / 317, 1 / 331])).toBeNull();
+  });
+
+  it('finds the whole-plan multiplier from a solved chain', () => {
+    // magnetic-coil at 1/s yields fractional building counts; the multiplier
+    // must scale every one of them to a whole number.
+    const plan = solve(graph, 'magnetic-coil', 1);
+    const k = findIntegerMultiplier(plan);
+    expect(k).not.toBeNull();
+    for (const c of Object.values(plan.totalMachines)) {
+      const scaled = c * k!;
+      expect(Math.abs(scaled - Math.round(scaled))).toBeLessThan(1e-3);
+    }
   });
 });

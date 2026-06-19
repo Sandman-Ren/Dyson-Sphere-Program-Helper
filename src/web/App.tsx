@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { findIntegerMultiplier } from '../calculator/index.js';
 import { LanguageSwitcher } from './components/LanguageSwitcher.js';
@@ -10,6 +10,7 @@ import { ItemSelector } from './components/ItemSelector.js';
 import { RateInput } from './components/RateInput.js';
 import { ProductionChain } from './components/ProductionChain.js';
 import { Summary } from './components/Summary.js';
+import { RatioStrip } from './components/RatioStrip.js';
 import { ItemIcon } from './components/ItemIcon.js';
 import { graph, proliferators, techById, meta } from './data.js';
 import {
@@ -112,6 +113,8 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
   const { t } = useTranslation('ui');
   const { name } = useNames();
   const proliferator = proliferators.find((p) => p.id === calc.proliferatorId) ?? null;
+  // Walk the whole tree only when the plan itself changes, not on every paint.
+  const integerMultiplier = useMemo(() => (plan ? findIntegerMultiplier(plan) : null), [plan]);
   return (
     <div className="mx-auto max-w-4xl p-3 sm:p-5">
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:gap-4">
@@ -156,10 +159,11 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
           <Summary
             plan={plan}
             timeUnit={calc.timeUnit}
-            integerMultiplier={findIntegerMultiplier(plan)}
+            integerMultiplier={integerMultiplier}
             onApplyMultiplier={(k) => calc.setAmount((prev) => prev * k)}
             proliferator={proliferator}
           />
+          <RatioStrip plan={plan} />
           <ProductionChain
             node={plan.root}
             timeUnit={calc.timeUnit}

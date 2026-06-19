@@ -193,17 +193,49 @@ function lcm(a: number, b: number): number {
 }
 function findDenominator(v: number, maxDenom = 10000, eps = 0.001): number {
   for (let q = 1; q <= maxDenom; q++) {
-    if (Math.abs(v * q - Math.round(v * q)) < eps) return q;
+    const scaled = v * q;
+    const rounded = Math.round(scaled);
+    // Require a *nonzero* whole number: accepting the smallest q that merely
+    // rounds a tiny value toward 0 would collapse a needed count to 0.
+    if (rounded !== 0 && Math.abs(scaled - rounded) < eps) return q;
   }
   return 1;
 }
 
-/** Smallest k so every machine count becomes (near-)integer, or null if > maxK. */
-export function findIntegerMultiplier(plan: ProductionPlan, maxK = 100_000): number | null {
+/** Smallest k so every value becomes (near-)integer, or null if > maxK. */
+export function findIntegerMultiplierForValues(values: number[], maxK = 100_000): number | null {
   let k = 1;
-  for (const v of collectMachinesNeeded(plan.root)) {
+  for (const v of values) {
     k = lcm(k, findDenominator(v));
     if (k > maxK) return null;
   }
   return k;
+}
+
+/**
+ * Reduce a set of values to their minimum integer ratio.
+ *
+ * Scales by the LCM multiplier so every value is a whole number, then divides
+ * through by the GCD to express the ratio in lowest terms. Returns `null` when
+ * no multiplier within `maxK` brings every value within `eps` of an integer, or
+ * when a nonzero value is too small to scale to a whole number — in both cases
+ * the caller falls back to a decimal display rather than show a misleading ratio.
+ */
+export function computeIntegerRatios(values: number[]): number[] | null {
+  if (values.length === 0) return [];
+  const k = findIntegerMultiplierForValues(values);
+  if (k === null) return null;
+
+  const ints = values.map((v) => Math.round(v * k));
+  // A nonzero count that scales to 0 can't be honestly shown as an integer.
+  if (ints.some((n, i) => n === 0 && values[i] !== 0)) return null;
+
+  let d = ints[0]!;
+  for (let i = 1; i < ints.length; i++) d = gcd(d, ints[i]!);
+  return d > 1 ? ints.map((v) => v / d) : ints;
+}
+
+/** Smallest k so every machine count becomes (near-)integer, or null if > maxK. */
+export function findIntegerMultiplier(plan: ProductionPlan, maxK = 100_000): number | null {
+  return findIntegerMultiplierForValues(collectMachinesNeeded(plan.root), maxK);
 }
