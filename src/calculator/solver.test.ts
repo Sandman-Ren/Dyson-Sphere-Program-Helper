@@ -76,6 +76,44 @@ describe('solver', () => {
   });
 });
 
+describe('per-occurrence recipe overrides', () => {
+  it('switches a node to the chosen recipe, changing its machine', () => {
+    const base = solve(graph, 'deuterium', 5);
+    expect(base.root.recipe?.id).toBe('deuterium-fractionation');
+
+    // override the root Deuterium node to the Particle Collider recipe ('deuterium')
+    const overridden = solve(graph, 'deuterium', 5, undefined, undefined, undefined, { deuterium: 'deuterium' });
+    expect(overridden.root.recipe?.id).toBe('deuterium');
+    expect(overridden.root.machine?.id).not.toBe(base.root.machine?.id);
+    expect(graph.recipeById.get('deuterium')!.producers).toContain(overridden.root.machine?.id);
+  });
+
+  it('treats a mining-recipe override as a raw resource with no children', () => {
+    // sulfuric-acid defaults to the chemical craft; override to the ocean vein.
+    const plan = solve(graph, 'sulfuric-acid', 4, undefined, undefined, undefined, {
+      'sulfuric-acid': 'sulphuric-acid-vein',
+    });
+    expect(plan.root.recipe?.id).toBe('sulphuric-acid-vein');
+    expect(plan.root.mined).toBe(true);
+    expect(plan.root.children).toHaveLength(0);
+    expect(plan.rawResources['sulfuric-acid']).toBeCloseTo(4, 5);
+  });
+
+  it('ignores an override whose recipe is unknown or does not produce the item', () => {
+    const def = graph.itemToRecipe.get('iron-ingot')!.id;
+    const unknown = solve(graph, 'iron-ingot', 1, undefined, undefined, undefined, { 'iron-ingot': 'nope' });
+    expect(unknown.root.recipe?.id).toBe(def);
+    const wrong = solve(graph, 'iron-ingot', 1, undefined, undefined, undefined, { 'iron-ingot': 'magnetic-coil' });
+    expect(wrong.root.recipe?.id).toBe(def);
+  });
+
+  it('keys overrides by node path, not item id', () => {
+    // A path that does not match the root node leaves the default in place.
+    const plan = solve(graph, 'deuterium', 5, undefined, undefined, undefined, { 'some>other>path': 'deuterium' });
+    expect(plan.root.recipe?.id).toBe('deuterium-fractionation');
+  });
+});
+
 describe('global machine tiers', () => {
   it('applies a family tier to every recipe in that family', () => {
     // arc-smelter (speed 1) instead of the default plane-smelter (speed 2).

@@ -44,3 +44,20 @@ describe('primary recipe selection for mineable-and-craftable items', () => {
     expect(plan.rawResources['sulfuric-acid']).toBeUndefined();
   });
 });
+
+describe('recipe alternatives lookup', () => {
+  it('recipeById resolves excluded advanced recipes', () => {
+    expect(graph.recipeById.get('diamond-advanced')?.out[0].id).toBe('diamond');
+  });
+
+  it('recipesFor lists every producer of an item, default recipe first', () => {
+    const list = graph.recipesFor('deuterium');
+    expect(list.length).toBeGreaterThan(1);
+    expect(list[0].id).toBe(graph.itemToRecipe.get('deuterium')!.id);
+    expect(new Set(list.map((r) => r.id)).size).toBe(list.length); // no duplicates
+  });
+
+  it('recipesFor returns [] for an item with no recipe', () => {
+    expect(graph.recipesFor('definitely-not-an-item')).toEqual([]);
+  });
+});

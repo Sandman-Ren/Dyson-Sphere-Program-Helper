@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   solve, familyOfMachine, MACHINE_FAMILY_ORDER,
-  type MachineFamily, type MachineOverrides, type MachineTiers, type ProductionPlan,
+  type MachineFamily, type MachineOverrides, type MachineTiers,
+  type RecipeOverrides, type ProductionPlan,
 } from '../../calculator/index.js';
 import { graph, proliferators } from '../data.js';
 
@@ -45,6 +46,9 @@ export interface CalculatorState {
   setMachineTier: (family: MachineFamily, machineId: string | null) => void;
   /** Drop every per-node override whose machine belongs to a family. */
   resetFamilyOverrides: (family: MachineFamily) => void;
+  recipeOverrides: RecipeOverrides;
+  /** Set (recipeId) or clear (null) the recipe for a node path. */
+  setRecipeOverride: (path: string, recipeId: string | null) => void;
   proliferatorId: string;
   setProliferatorId: (id: string) => void;
   plan: ProductionPlan | null;
@@ -56,6 +60,7 @@ export function useCalculator(): CalculatorState {
   const [timeUnit, setTimeUnit] = useState<TimeUnit>('minute');
   const [machineOverrides, setMachineOverrides] = useState<MachineOverrides>({});
   const [machineTiers, setMachineTiers] = useState<MachineTiers>(loadMachineTiers);
+  const [recipeOverrides, setRecipeOverrides] = useState<RecipeOverrides>({});
   const [proliferatorId, setProliferatorId] = useState<string>('none');
 
   useEffect(() => {
@@ -65,6 +70,19 @@ export function useCalculator(): CalculatorState {
       /* storage unavailable — keep the in-memory selection */
     }
   }, [machineTiers]);
+
+  // Per-occurrence recipe choices are keyed by tree path, so they only make
+  // sense for the current target's chain — drop them when the target changes.
+  useEffect(() => { setRecipeOverrides({}); }, [targetItem]);
+
+  const setRecipeOverride = useCallback((path: string, recipeId: string | null) => {
+    setRecipeOverrides((prev) => {
+      const next = { ...prev };
+      if (recipeId) next[path] = recipeId;
+      else delete next[path];
+      return next;
+    });
+  }, []);
 
   const setMachineTier = useCallback((family: MachineFamily, machineId: string | null) => {
     setMachineTiers((prev) => {
@@ -85,8 +103,8 @@ export function useCalculator(): CalculatorState {
     if (!targetItem || !graph.itemToRecipe.has(targetItem)) return null;
     const perSecond = amount / UNIT_SECONDS[timeUnit];
     const proliferator = proliferators.find((p) => p.id === proliferatorId) ?? null;
-    return solve(graph, targetItem, perSecond, machineOverrides, { proliferator }, machineTiers);
-  }, [targetItem, amount, timeUnit, machineOverrides, proliferatorId, machineTiers]);
+    return solve(graph, targetItem, perSecond, machineOverrides, { proliferator }, machineTiers, recipeOverrides);
+  }, [targetItem, amount, timeUnit, machineOverrides, proliferatorId, machineTiers, recipeOverrides]);
 
   return {
     targetItem, setTargetItem,
@@ -94,6 +112,7 @@ export function useCalculator(): CalculatorState {
     timeUnit, setTimeUnit,
     machineOverrides, setMachineOverrides,
     machineTiers, setMachineTier, resetFamilyOverrides,
+    recipeOverrides, setRecipeOverride,
     proliferatorId, setProliferatorId,
     plan,
   };

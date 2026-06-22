@@ -48,6 +48,7 @@ const ui: UiResource = {
     mined: '开采',
     rawInput: '原始输入',
     exact: '精确 {{value}}',
+    recipe: '配方',
   },
   selector: {
     searchItem: '搜索物品…',

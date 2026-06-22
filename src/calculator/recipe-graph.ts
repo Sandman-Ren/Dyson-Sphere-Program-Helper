@@ -8,6 +8,10 @@ export interface RecipeGraph {
   itemToAllRecipes: Map<string, Recipe[]>;
   /** All recipes that consume a given item id (for the "used in" view). */
   itemToConsumers: Map<string, Recipe[]>;
+  /** Every recipe by id (including excluded variants), for recipe-override lookup. */
+  recipeById: Map<string, Recipe>;
+  /** All recipes that produce an item, default recipe first (for the recipe picker). */
+  recipesFor: (itemId: string) => Recipe[];
   /** Machine lookup by id. */
   machineById: Map<string, Machine>;
   /** Machines that can run a recipe, sorted by speed ascending. */
@@ -36,6 +40,7 @@ export function buildRecipeGraph(
 ): RecipeGraph {
   const excluded = new Set(meta.excludedRecipes);
   const machineById = new Map(machines.map((m) => [m.id, m]));
+  const recipeById = new Map(recipes.map((r) => [r.id, r]));
 
   const itemToRecipe = new Map<string, Recipe>();
   const itemToAllRecipes = new Map<string, Recipe[]>();
@@ -101,12 +106,21 @@ export function buildRecipeGraph(
     return pool[pool.length - 1]!; // highest speed
   };
 
+  const recipesFor = (itemId: string): Recipe[] => {
+    const all = itemToAllRecipes.get(itemId) ?? [];
+    const primary = itemToRecipe.get(itemId);
+    if (!primary) return [...all];
+    return [primary, ...all.filter((r) => r.id !== primary.id)];
+  };
+
   const allProducts = [...itemToRecipe.keys()].sort();
 
   return {
     itemToRecipe,
     itemToAllRecipes,
     itemToConsumers,
+    recipeById,
+    recipesFor,
     machineById,
     producersFor,
     defaultMachine,

@@ -3,6 +3,9 @@ import type { Recipe, Machine, Proliferator } from '../data/schema.js';
 /** Per-item machine overrides: produced-item id → machine id. */
 export type MachineOverrides = Record<string, string>;
 
+/** Per-occurrence recipe overrides: node path → recipe id. */
+export type RecipeOverrides = Record<string, string>;
+
 /** How a proliferator is applied across the whole plan. */
 export interface ProliferatorSetting {
   proliferator: Proliferator | null;

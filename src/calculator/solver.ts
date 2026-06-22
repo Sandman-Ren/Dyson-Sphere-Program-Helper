@@ -2,7 +2,7 @@ import type { RecipeGraph } from './recipe-graph.js';
 import type { Machine, Proliferator, Recipe } from '../data/schema.js';
 import { familyOfRecipe, type MachineTiers } from './machine-families.js';
 import type {
-  ProductionNode, ProductionPlan, MachineOverrides, ProliferatorSetting,
+  ProductionNode, ProductionPlan, MachineOverrides, RecipeOverrides, ProliferatorSetting,
 } from './types.js';
 
 /** The globally-preferred machine for a recipe's family, if it can run the recipe. */
@@ -65,6 +65,7 @@ function proliferatorEffect(
  * @param machineOverrides - per-item machine choice overrides
  * @param prolifSetting - global proliferator setting
  * @param machineTiers - global default machine per building family
+ * @param recipeOverrides - per-occurrence recipe choice overrides (node path → recipe id)
  */
 export function solve(
   graph: RecipeGraph,
@@ -73,6 +74,7 @@ export function solve(
   machineOverrides?: MachineOverrides,
   prolifSetting?: ProliferatorSetting,
   machineTiers?: MachineTiers,
+  recipeOverrides?: RecipeOverrides,
 ): ProductionPlan {
   const totalMachines: Record<string, number> = {};
   const rawResources: Record<string, number> = {};
@@ -82,8 +84,8 @@ export function solve(
   const prolif = prolifSetting?.proliferator ?? null;
 
   const root = solveNode(
-    graph, targetItem, desiredRatePerSecond, new Set(),
-    machineOverrides, prolif, machineTiers,
+    graph, targetItem, desiredRatePerSecond, new Set(), targetItem,
+    machineOverrides, prolif, machineTiers, recipeOverrides,
     (kw) => { totalPowerKW += kw; },
     (id, count) => { totalMachines[id] = (totalMachines[id] ?? 0) + count; },
     (id, rate) => { rawResources[id] = (rawResources[id] ?? 0) + rate; },
@@ -98,16 +100,25 @@ function solveNode(
   itemId: string,
   ratePerSecond: number,
   visited: Set<string>,
+  path: string,
   machineOverrides: MachineOverrides | undefined,
   prolif: Proliferator | null,
   machineTiers: MachineTiers | undefined,
+  recipeOverrides: RecipeOverrides | undefined,
   addPower: (kw: number) => void,
   addMachine: (id: string, count: number) => void,
   addRaw: (id: string, rate: number) => void,
   addSprays: (sprays: number) => void,
 ): ProductionNode {
-  const recipe = graph.itemToRecipe.get(itemId);
-  const mined = graph.minedResources.has(itemId);
+  // Honor a per-occurrence recipe override only when it actually produces this
+  // item; otherwise fall back to the default primary recipe.
+  const overrideId = recipeOverrides?.[path];
+  const override = overrideId ? graph.recipeById.get(overrideId) : undefined;
+  const recipe = override && override.out.some((o) => o.id === itemId)
+    ? override
+    : graph.itemToRecipe.get(itemId);
+  // The chosen recipe decides whether this node is a raw/mined source.
+  const mined = recipe ? recipe.flags.includes('mining') : graph.minedResources.has(itemId);
 
   const leaf = (addToRaw: boolean): ProductionNode => {
     if (addToRaw) addRaw(itemId, ratePerSecond);
@@ -128,9 +139,13 @@ function solveNode(
   visited = new Set(visited);
   visited.add(itemId);
 
-  const overrideId = machineOverrides?.[itemId];
+  // Apply the per-item machine override only when that machine can run the
+  // chosen recipe — a recipe switch must not keep a now-invalid machine.
+  const machineOverrideId = machineOverrides?.[itemId];
   const machine =
-    (overrideId ? graph.machineById.get(overrideId) : undefined) ??
+    (machineOverrideId && recipe.producers.includes(machineOverrideId)
+      ? graph.machineById.get(machineOverrideId)
+      : undefined) ??
     tierMachine(graph, recipe, machineTiers) ??
     graph.defaultMachine(recipe);
 
@@ -162,7 +177,9 @@ function solveNode(
     children.push(
       solveNode(
         graph, ingredient.id, craftsPerSecond * ingredient.amount, visited,
-        machineOverrides, prolif, machineTiers, addPower, addMachine, addRaw, addSprays,
+        `${path}>${ingredient.id}`,
+        machineOverrides, prolif, machineTiers, recipeOverrides,
+        addPower, addMachine, addRaw, addSprays,
       ),
     );
   }

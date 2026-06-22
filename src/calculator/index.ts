@@ -4,7 +4,7 @@ export {
   solve, findIntegerMultiplier, findIntegerMultiplierForValues, computeIntegerRatios,
 } from './solver.js';
 export type {
-  ProductionNode, ProductionPlan, MachineOverrides, ProliferatorSetting,
+  ProductionNode, ProductionPlan, MachineOverrides, RecipeOverrides, ProliferatorSetting,
 } from './types.js';
 export {
   MACHINE_FAMILIES, MACHINE_FAMILY_ORDER, familyOfMachine, familyOfRecipe,

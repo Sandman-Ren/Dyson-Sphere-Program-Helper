@@ -46,6 +46,7 @@ const ui = {
     mined: 'mined',
     rawInput: 'raw input',
     exact: '{{value}} exact',
+    recipe: 'Recipe',
   },
   selector: {
     searchItem: 'Search item…',

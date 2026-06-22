@@ -169,6 +169,7 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
             timeUnit={calc.timeUnit}
             machineOverrides={calc.machineOverrides}
             onMachineChange={(item, machine) => calc.setMachineOverrides((prev) => ({ ...prev, [item]: machine }))}
+            onRecipeChange={calc.setRecipeOverride}
           />
         </>
       ) : (

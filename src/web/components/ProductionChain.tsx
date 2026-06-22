@@ -19,6 +19,7 @@ interface ProductionChainProps {
   timeUnit: TimeUnit;
   machineOverrides: MachineOverrides;
   onMachineChange: (item: string, machine: string) => void;
+  onRecipeChange: (path: string, recipeId: string) => void;
 }
 
 export function ProductionChain(props: ProductionChainProps) {
@@ -29,18 +30,22 @@ export function ProductionChain(props: ProductionChainProps) {
         {t('chain.title')}
       </div>
       <div className="p-1.5">
-        <ChainNode {...props} depth={0} />
+        <ChainNode {...props} depth={0} path={props.node.item} />
       </div>
     </div>
   );
 }
 
-function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }: ProductionChainProps & { depth: number }) {
+function ChainNode({
+  node, timeUnit, machineOverrides, onMachineChange, onRecipeChange, depth, path,
+}: ProductionChainProps & { depth: number; path: string }) {
   const { t } = useTranslation('ui');
-  const { name } = useNames();
+  const { name, recipeName } = useNames();
   const [open, setOpen] = useState(depth < 3);
   const hasChildren = node.children.length > 0;
   const producers = node.recipe ? graph.producersFor(node.recipe) : [];
+  // Alternative recipes the user can switch this node to (default-first).
+  const recipes = graph.recipesFor(node.item);
 
   return (
     <div>
@@ -79,6 +84,25 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
         )}
 
         <span className="ml-auto shrink-0 font-medium tabular-nums text-primary">{rate(node.ratePerSecond, timeUnit)}</span>
+
+        {node.recipe && recipes.length > 1 && (
+          <Select value={node.recipe.id} onValueChange={(v) => onRecipeChange(path, v)}>
+            <SelectTrigger className="h-9 w-full min-w-0 text-xs sm:h-7 sm:w-44 sm:shrink-0" aria-label={t('chain.recipe')}>
+              <ItemIcon id={node.recipe.id} size={16} />
+              <span className="truncate">{recipeName(node.recipe.id)}</span>
+            </SelectTrigger>
+            <SelectContent>
+              {recipes.map((r) => (
+                <SelectItem key={r.id} value={r.id}>
+                  <span className="flex min-w-0 items-center gap-1.5">
+                    <ItemIcon id={r.id} size={16} />
+                    <span className="truncate">{recipeName(r.id)}</span>
+                  </span>
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        )}
 
         {node.machine ? (
           <div className="flex w-full items-center gap-1.5 sm:w-56 sm:shrink-0">
@@ -129,7 +153,9 @@ function ChainNode({ node, timeUnit, machineOverrides, onMachineChange, depth }:
               timeUnit={timeUnit}
               machineOverrides={machineOverrides}
               onMachineChange={onMachineChange}
+              onRecipeChange={onRecipeChange}
               depth={depth + 1}
+              path={`${path}>${child.item}`}
             />
           ))}
         </div>
