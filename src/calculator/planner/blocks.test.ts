@@ -73,6 +73,10 @@ describe('groupPlan', () => {
     // a's block now contains the shared recipe at the portion feeding a (2/s).
     expect(a.recipes.find((r) => r.mainItem === 'shared')!.runsPerSecond).toBeCloseTo(2, 9);
     expect(a.imports.some((i) => i.item === 'raw' && i.raw)).toBe(true);
+    // shared is inlined — it must NOT appear as an import of block a.
+    expect(a.imports.every((i) => i.item !== 'shared')).toBe(true);
+    // block a must contain the inlined shared recipe.
+    expect(a.recipes.some((r) => r.mainItem === 'shared')).toBe(true);
   });
 });
 

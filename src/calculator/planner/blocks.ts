@@ -184,10 +184,9 @@ export function groupPlan(
         const rate = inp.amount * runs;
         if (rate <= EPS) continue;
         const producer = plan.producerOf.get(inp.id);
-        const isRaw = !producer || producer.recipe.flags.includes('mining') || !blockItems.has(inp.id);
-        const crossesBoundary = blockItems.has(inp.id) || isRaw;
-        if (!crossesBoundary) continue; // produced inline within this block — not an import
         const raw = !producer || producer.recipe.flags.includes('mining');
+        const crossesBoundary = blockItems.has(inp.id) || raw;
+        if (!crossesBoundary) continue; // produced inline within this block — not an import
         const byItem = importAgg.get(blockId) ?? new Map();
         importAgg.set(blockId, byItem);
         const cur = byItem.get(inp.id) ?? { rate: 0, raw };
