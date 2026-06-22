@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { buildRecipeGraph } from '../recipe-graph.js';
 import { balance } from './matrix.js';
-import { scoreIntermediates } from './blocks.js';
+import { scoreIntermediates, groupPlan, commonalityIndex } from './blocks.js';
 import type { Recipe, Machine } from '../../data/schema.js';
 
 const S: Machine = { id: 's', name: 'S', speed: 1, usageKW: 100, drainKW: 0, modules: 0, powerType: 'electric' };
@@ -46,6 +46,45 @@ const EVEN4 = synth([
   { id: 'r-out2', name: 'r-out2', time: 1, in: [{ id: 'i1', amount: 0.5 }, { id: 'i3', amount: 3 }, { id: 'i4', amount: 4 }], out: [{ id: 'out2', amount: 1 }], producers: ['s'], flags: [] },
   { id: 'r-out3', name: 'r-out3', time: 1, in: [{ id: 'i2', amount: 2 }, { id: 'i3', amount: 2 }], out: [{ id: 'out3', amount: 1 }], producers: ['s'], flags: [] },
 ]);
+
+describe('groupPlan', () => {
+  it('carves a shared block fed into both targets and reconciles totals', () => {
+    const plan = balance(SHARED, [{ item: 'a', ratePerSecond: 2 }, { item: 'b', ratePerSecond: 3 }]);
+    const grouped = groupPlan(plan, [{ item: 'a', ratePerSecond: 2 }, { item: 'b', ratePerSecond: 3 }], new Set(['a', 'b', 'shared']));
+
+    const block = (id: string) => grouped.blocks.find((bl) => bl.item === id)!;
+    expect(grouped.blocks.map((b) => b.item).sort()).toEqual(['a', 'b', 'shared']);
+    // shared block exports 5/s total, consumed 2 by a and 3 by b.
+    expect(block('shared').exportRate).toBeCloseTo(5, 9);
+    expect(block('shared').feeds.sort((x, y) => x.block.localeCompare(y.block)))
+      .toEqual([{ block: 'a', rate: 2 }, { block: 'b', rate: 3 }]);
+    // a imports 2 shared; b imports 3 shared.
+    expect(block('a').imports).toEqual([{ item: 'shared', rate: 2, raw: false }]);
+    // block run-rates sum back to the global shared run-rate (5).
+    expect(block('shared').recipes.find((r) => r.mainItem === 'shared')!.runsPerSecond).toBeCloseTo(5, 9);
+  });
+
+  it('inlines a shared item into its single consumer when not a block', () => {
+    const plan = balance(SHARED, [{ item: 'a', ratePerSecond: 2 }, { item: 'b', ratePerSecond: 3 }]);
+    // 'shared' demoted to inline → split across a and b blocks.
+    const grouped = groupPlan(plan, [{ item: 'a', ratePerSecond: 2 }, { item: 'b', ratePerSecond: 3 }], new Set(['a', 'b']));
+    expect(grouped.blocks.map((b) => b.item).sort()).toEqual(['a', 'b']);
+    const a = grouped.blocks.find((b) => b.item === 'a')!;
+    // a's block now contains the shared recipe at the portion feeding a (2/s).
+    expect(a.recipes.find((r) => r.mainItem === 'shared')!.runsPerSecond).toBeCloseTo(2, 9);
+    expect(a.imports.some((i) => i.item === 'raw' && i.raw)).toBe(true);
+  });
+});
+
+describe('commonalityIndex', () => {
+  it('is 0 for a single target and >0 when targets share intermediates', () => {
+    const one = balance(SHARED, [{ item: 'a', ratePerSecond: 1 }]);
+    expect(commonalityIndex(one, [{ item: 'a', ratePerSecond: 1 }])).toBeCloseTo(0, 9);
+
+    const two = balance(SHARED, [{ item: 'a', ratePerSecond: 1 }, { item: 'b', ratePerSecond: 1 }]);
+    expect(commonalityIndex(two, [{ item: 'a', ratePerSecond: 1 }, { item: 'b', ratePerSecond: 1 }])).toBeGreaterThan(0);
+  });
+});
 
 describe('scoreIntermediates', () => {
   it('flags a high-fan-out shared item as a suggestion', () => {

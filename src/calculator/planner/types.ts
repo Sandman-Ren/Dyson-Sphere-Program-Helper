@@ -36,6 +36,39 @@ export interface PlannerError {
   message: string;
 }
 
+export interface BlockImport {
+  item: string;
+  rate: number;   // items/s imported into this block
+  raw: boolean;   // true when the import is a raw/mined resource
+}
+
+export interface BlockFeed {
+  block: string;  // consumer block's export item id
+  rate: number;   // items/s of this block's export consumed by that block
+}
+
+/** A self-contained production cell exporting exactly one item. */
+export interface Block {
+  item: string;                    // the export item id
+  kind: 'target' | 'shared';
+  exportRate: number;              // items/s leaving the block (external + to other blocks)
+  recipes: SolvedRecipe[];         // internal recipes (run-rates scaled to this block's share)
+  machines: Record<string, number>;
+  powerKW: number;
+  imports: BlockImport[];
+  feeds: BlockFeed[];
+}
+
+export interface GroupedPlan {
+  blocks: Block[];
+  commonalityIndex: number;        // 0..1 Martin & Ishii commonality of the target set
+  totalMachines: Record<string, number>;
+  rawResources: Record<string, number>;
+  totalPowerKW: number;
+  surpluses: ItemBalance[];
+  errors: PlannerError[];
+}
+
 /** The consolidated, byproduct-netted plan (pre-grouping). */
 export interface BalancedPlan {
   recipes: SolvedRecipe[];
