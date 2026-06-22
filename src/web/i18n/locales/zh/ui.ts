@@ -12,7 +12,7 @@ const ui: UiResource = {
     planner: '生产规划',
   },
   loading: '正在加载{{what}}…',
-  loadingTargets: { researchTree: '科技树', itemLookup: '物品查询' },
+  loadingTargets: { researchTree: '科技树', itemLookup: '物品查询', planner: '生产规划' },
   calculator: {
     produce: '生产目标',
     proliferator: '增产剂',

@@ -107,7 +107,7 @@ export function App() {
         </TabsContent>
 
         <TabsContent value="planner" className="flex-1 overflow-auto">
-          <Suspense fallback={<Loading what={t('tabs.planner')} />}>
+          <Suspense fallback={<Loading what={t('loadingTargets.planner')} />}>
             <PlannerTab />
           </Suspense>
         </TabsContent>

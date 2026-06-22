@@ -10,7 +10,7 @@ const ui = {
     planner: 'Planner',
   },
   loading: 'Loading {{what}}…',
-  loadingTargets: { researchTree: 'research tree', itemLookup: 'item lookup' },
+  loadingTargets: { researchTree: 'research tree', itemLookup: 'item lookup', planner: 'production planner' },
   calculator: {
     produce: 'Produce',
     proliferator: 'Proliferator',

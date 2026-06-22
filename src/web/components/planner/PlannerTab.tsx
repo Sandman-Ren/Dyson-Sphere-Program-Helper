@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PlusIcon from 'lucide-react/dist/esm/icons/plus';
 import XIcon from 'lucide-react/dist/esm/icons/x';
@@ -26,6 +26,10 @@ export function PlannerTab() {
   const [adding, setAdding] = useState(false);
 
   const suggestionById = new Map(plan.suggestions.map((s) => [s.item, s]));
+  const promotable = useMemo(
+    () => plan.suggestions.filter((s) => s.suggested && !plan.blockItems.has(s.item)),
+    [plan.suggestions, plan.blockItems],
+  );
 
   return (
     <div className="mx-auto max-w-5xl p-3 sm:p-5">
@@ -103,11 +107,11 @@ export function PlannerTab() {
           <PlannerTotals plan={plan.plan} timeUnit={plan.timeUnit} />
 
           {/* Suggestions that are not currently blocks → offer to promote. */}
-          {plan.suggestions.filter((s) => s.suggested && !plan.blockItems.has(s.item)).length > 0 && (
+          {promotable.length > 0 && (
             <Card className="mb-4 p-3">
               <Label className="mb-2">{t('planner.suggestions')}</Label>
               <div className="flex flex-wrap gap-2">
-                {plan.suggestions.filter((s) => s.suggested && !plan.blockItems.has(s.item)).map((s) => (
+                {promotable.map((s) => (
                   <Button key={s.item} variant="outline" size="sm" onClick={() => plan.toggleBlock(s.item)}>
                     <ItemIcon id={s.item} size={16} tinted />
                     <span className="ml-1.5">{name(s.item)}</span>

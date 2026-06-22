@@ -60,6 +60,22 @@ export function solveLinearSystem(a: number[][], b: number[]): number[] | null {
  * 1. A valid per-item recipe override.
  * 2. A non-excluded recipe where `itemId` is the sole output (dedicated recipe).
  * 3. The graph's `itemToRecipe` primary (first-registered, which may be a multi-output recipe).
+ *
+ * WHY THIS DIVERGES FROM solver.ts
+ * solver.ts uses `graph.itemToRecipe` directly (the first-registered recipe for an
+ * item, which may be a multi-output recipe). That is fine for a single-item chain
+ * where there is only one "main" row in the system.
+ *
+ * The planner builds a square items×recipes matrix: every produced item gets its
+ * own balance row and one recipe column. If a multi-output recipe is assigned as
+ * the "main" recipe for one of its byproduct items, the *same recipe column* ends
+ * up as the pivot for two different rows — coupling those rows and often making
+ * the matrix singular (or over-constrained). Preferring a dedicated single-output
+ * recipe for each item keeps the system well-posed.
+ *
+ * Consequence: the Planner and Calculator tabs may occasionally select different
+ * default recipes for the same item (e.g. an item that is both a primary product
+ * and a byproduct of another recipe). This is intentional.
  */
 function recipeForItem(
   graph: RecipeGraph,
