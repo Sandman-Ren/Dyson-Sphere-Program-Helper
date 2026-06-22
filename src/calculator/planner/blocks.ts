@@ -32,7 +32,12 @@ export function scoreIntermediates(plan: BalancedPlan, targetItems: Set<string>)
   );
 
   const throughputs = items.map((i) => throughput.get(i) ?? 0).filter((t) => t > 0).sort((a, b) => a - b);
-  const median = throughputs.length ? throughputs[Math.floor(throughputs.length / 2)]! : 0;
+  const mid = Math.floor(throughputs.length / 2);
+  const median = throughputs.length === 0
+    ? 0
+    : throughputs.length % 2 === 1
+      ? throughputs[mid]!
+      : (throughputs[mid - 1]! + throughputs[mid]!) / 2;
 
   const out: BlockSuggestion[] = items.map((item) => {
     const fanOut = consumers.get(item)?.size ?? 0;
