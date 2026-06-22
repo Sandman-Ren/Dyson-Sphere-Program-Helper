@@ -20,6 +20,7 @@ import {
 
 const TechTree = lazy(() => import('./components/tech-tree/TechTree.js').then((m) => ({ default: m.TechTree })));
 const ItemLookup = lazy(() => import('./components/item-lookup/ItemLookup.js').then((m) => ({ default: m.ItemLookup })));
+const PlannerTab = lazy(() => import('./components/planner/PlannerTab.js').then((m) => ({ default: m.PlannerTab })));
 
 const Loading = ({ what }: { what: string }) => {
   const { t } = useTranslation('ui');
@@ -76,6 +77,7 @@ export function App() {
               <span className="sm:hidden">{t('tabs.items')}</span>
               <span className="hidden sm:inline">{t('tabs.itemLookup')}</span>
             </TabsTrigger>
+            <TabsTrigger value="planner" className="flex-1 sm:flex-none">{t('tabs.planner')}</TabsTrigger>
           </TabsList>
         </header>
 
@@ -101,6 +103,12 @@ export function App() {
               onCalculateItem={handleCalculateItem}
               onViewTech={handleViewTech}
             />
+          </Suspense>
+        </TabsContent>
+
+        <TabsContent value="planner" className="flex-1 overflow-auto">
+          <Suspense fallback={<Loading what={t('tabs.planner')} />}>
+            <PlannerTab />
           </Suspense>
         </TabsContent>
       </Tabs>
