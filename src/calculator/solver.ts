@@ -1,60 +1,10 @@
 import type { RecipeGraph } from './recipe-graph.js';
-import type { Machine, Proliferator, Recipe } from '../data/schema.js';
-import { familyOfRecipe, type MachineTiers } from './machine-families.js';
+import type { Proliferator } from '../data/schema.js';
+import type { MachineTiers } from './machine-families.js';
 import type {
   ProductionNode, ProductionPlan, MachineOverrides, RecipeOverrides, ProliferatorSetting,
 } from './types.js';
-
-/** The globally-preferred machine for a recipe's family, if it can run the recipe. */
-function tierMachine(
-  graph: RecipeGraph,
-  recipe: Recipe,
-  machineTiers: MachineTiers | undefined,
-): Machine | null {
-  if (!machineTiers) return null;
-  const family = familyOfRecipe(recipe);
-  if (!family) return null;
-  const preferredId = machineTiers[family];
-  // Honor the tier only when the chosen machine can actually run this recipe.
-  if (!preferredId || !recipe.producers.includes(preferredId)) return null;
-  return graph.machineById.get(preferredId) ?? null;
-}
-
-/**
- * Resolve the proliferator effect for a single recipe.
- *
- * - "products" mode multiplies output (only on eligible recipes), so the same
- *   inputs yield more — fewer crafts are needed for a target rate.
- * - "speed" mode multiplies machine speed, so each building crafts faster.
- * Both raise power draw by the proliferator's `consumption` factor.
- */
-function proliferatorEffect(
-  prolif: Proliferator | null,
-  recipeId: string,
-  machineModules: number,
-  graph: RecipeGraph,
-): { outputMultiplier: number; speedMultiplier: number; powerMultiplier: number; applied: boolean } {
-  const none = { outputMultiplier: 1, speedMultiplier: 1, powerMultiplier: 1, applied: false };
-  if (!prolif || machineModules <= 0) return none;
-
-  if (prolif.mode === 'products') {
-    // Extra products only apply to the curated proliferable recipe list.
-    if (!graph.proliferableRecipes.has(recipeId)) return none;
-    return {
-      outputMultiplier: 1 + prolif.productivity,
-      speedMultiplier: 1,
-      powerMultiplier: 1 + prolif.consumption,
-      applied: true,
-    };
-  }
-  // Speed mode applies to any recipe with a module slot.
-  return {
-    outputMultiplier: 1,
-    speedMultiplier: 1 + prolif.speed,
-    powerMultiplier: 1 + prolif.consumption,
-    applied: true,
-  };
-}
+import { proliferatorEffect, resolveMachine } from './recipe-runtime.js';
 
 /**
  * Recursively solve the production chain for a target item at a desired rate.
@@ -141,13 +91,7 @@ function solveNode(
 
   // Apply the per-item machine override only when that machine can run the
   // chosen recipe — a recipe switch must not keep a now-invalid machine.
-  const machineOverrideId = machineOverrides?.[itemId];
-  const machine =
-    (machineOverrideId && recipe.producers.includes(machineOverrideId)
-      ? graph.machineById.get(machineOverrideId)
-      : undefined) ??
-    tierMachine(graph, recipe, machineTiers) ??
-    graph.defaultMachine(recipe);
+  const machine = resolveMachine(graph, recipe, itemId, machineOverrides, machineTiers);
 
   const fx = proliferatorEffect(prolif, recipe.id, machine?.modules ?? 0, graph);
 

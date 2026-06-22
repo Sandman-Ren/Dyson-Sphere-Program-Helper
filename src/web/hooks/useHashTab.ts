@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const VALID = new Set(['calculator', 'tech-tree', 'item-lookup']);
+const VALID = new Set(['calculator', 'tech-tree', 'item-lookup', 'planner']);
 const DEFAULT_TAB = 'calculator';
 
 interface HashState {
