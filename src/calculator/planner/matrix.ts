@@ -177,9 +177,6 @@ export function balance(
     const machine = machines[j]!;
     const effect = fx[j]!;
     const run = clampedRuns[j]!;
-    if (runs[j]! < -1e-6) {
-      errors.push({ item: mainItem, kind: 'infeasible', message: `Negative run-rate for ${mainItem}.` });
-    }
     const speed = (machine?.speed ?? 1) * effect.speedMultiplier;
     const machinesNeeded = run * (recipe.time / speed);
     let powerKW = 0;

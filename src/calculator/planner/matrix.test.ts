@@ -52,6 +52,7 @@ describe('balance — byproduct netting', () => {
     const bpBalance = plan.balances.find((b) => b.item === 'bp')!;
     expect(bpBalance.surplus).toBeCloseTo(6, 9);
     expect(plan.surpluses.some((s) => s.item === 'bp')).toBe(true);
+    expect(plan.errors).toHaveLength(0);
   });
 });
 
