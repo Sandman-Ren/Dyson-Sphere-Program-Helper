@@ -66,8 +66,9 @@ export function usePlanner(): PlannerState {
   const [machineTiers, setMachineTiers] = useState<MachineTiers>(loadMachineTiers);
   const [machineOverrides, setMachineOverrides] = useState<MachineOverrides>({});
   // User promotions/demotions, layered over the auto-suggested set.
-  const [promoted, setPromoted] = useState<Set<string>>(new Set());
-  const [demoted, setDemoted] = useState<Set<string>>(new Set());
+  const [blockOverrides, setBlockOverrides] = useState<{ promoted: Set<string>; demoted: Set<string> }>(
+    () => ({ promoted: new Set(), demoted: new Set() }),
+  );
 
   useEffect(() => {
     try { localStorage.setItem(TIERS_KEY, JSON.stringify(machineTiers)); } catch { /* ignore */ }
@@ -99,18 +100,14 @@ export function usePlanner(): PlannerState {
   }, []);
 
   const toggleBlock = useCallback((item: string) => {
-    setPromoted((p) => {
-      const next = new Set(p);
-      setDemoted((d) => {
-        const nd = new Set(d);
-        // Flip based on current effective membership computed in the reducer scope.
-        if (next.has(item)) { next.delete(item); }
-        else if (nd.has(item)) { nd.delete(item); }
-        else if (autoBlockRef.current.has(item)) { nd.add(item); }
-        else { next.add(item); }
-        return nd;
-      });
-      return next;
+    setBlockOverrides(({ promoted: p, demoted: d }) => {
+      const promoted = new Set(p);
+      const demoted = new Set(d);
+      if (promoted.has(item))                  { promoted.delete(item); }
+      else if (demoted.has(item))              { demoted.delete(item); }
+      else if (autoBlockRef.current.has(item)) { demoted.add(item); }
+      else                                     { promoted.add(item); }
+      return { promoted, demoted };
     });
   }, []);
 
@@ -151,11 +148,11 @@ export function usePlanner(): PlannerState {
 
   const blockItems = useMemo(() => {
     const set = new Set(autoBlock);
-    for (const item of demoted) set.delete(item);
-    for (const item of promoted) set.add(item);
+    for (const item of blockOverrides.demoted) set.delete(item);
+    for (const item of blockOverrides.promoted) set.add(item);
     for (const item of targetItems) set.add(item); // targets always blocks
     return set;
-  }, [autoBlock, demoted, promoted, targetItems]);
+  }, [autoBlock, blockOverrides, targetItems]);
 
   const plan = useMemo<GroupedPlan | null>(() => {
     if (!balanced) return null;
