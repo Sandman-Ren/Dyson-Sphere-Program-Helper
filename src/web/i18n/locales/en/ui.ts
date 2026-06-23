@@ -20,6 +20,7 @@ const ui = {
     perSecond: 'per second',
     perMinute: 'per minute',
     perHour: 'per hour',
+    sharedBadgeTitle: 'Used by {{count}} targets',
   },
   summary: {
     buildings: 'Buildings',

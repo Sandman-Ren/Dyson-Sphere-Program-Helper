@@ -22,6 +22,7 @@ const ui: UiResource = {
     perSecond: '每秒',
     perMinute: '每分钟',
     perHour: '每小时',
+    sharedBadgeTitle: '{{count}} 个目标共用',
   },
   summary: {
     buildings: '建筑',
