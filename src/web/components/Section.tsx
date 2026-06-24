@@ -17,7 +17,7 @@ interface SectionProps {
 export function Section({ title, defaultOpen = true, actions, children, className }: SectionProps) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <Card className={cn('mb-4 overflow-hidden', className)}>
+    <Card className={cn('mb-4', className)}>
       <div className="flex items-center gap-2 pr-2">
         <button
           type="button"
