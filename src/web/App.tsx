@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PlusIcon from 'lucide-react/dist/esm/icons/plus';
 import XIcon from 'lucide-react/dist/esm/icons/x';
@@ -12,6 +12,7 @@ import { ItemSelector } from './components/ItemSelector.js';
 import { ProductionChain } from './components/ProductionChain.js';
 import { Summary } from './components/Summary.js';
 import { SharedComponents } from './components/SharedComponents.js';
+import { Section } from './components/Section.js';
 import { RatioStrip } from './components/RatioStrip.js';
 import { ItemIcon } from './components/ItemIcon.js';
 import { graph, proliferators, techById, meta } from './data.js';
@@ -114,14 +115,12 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
   const { t } = useTranslation('ui');
   const { name } = useNames();
   const proliferator = proliferators.find((p) => p.id === calc.proliferatorId) ?? null;
-  const multi = calc.solved.length > 1;
   const onFocus = (item: string) => calc.setFocusedItem(calc.focusedItem === item ? null : item);
 
   return (
     <div className="mx-auto max-w-4xl p-3 sm:p-5">
       {/* Targets */}
-      <div className="mb-4">
-        <Label className="mb-1">{t('calculator.targets')}</Label>
+      <Section title={t('calculator.targets')}>
         <div className="flex flex-col gap-2">
           {calc.targets.map((row) => (
             <div key={row.id} className="flex flex-wrap items-center gap-2">
@@ -141,7 +140,7 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
           ))}
         </div>
         <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:gap-4">
-          <Button variant="outline" size="sm" className="self-start" onClick={() => calc.addTarget('iron-ingot')}>
+          <Button variant="outline" size="sm" className="self-start" onClick={() => calc.addTarget('')}>
             <PlusIcon className="mr-1 size-4" />{t('calculator.addTarget')}
           </Button>
           <div className="w-full sm:w-auto">
@@ -173,7 +172,7 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
             </Select>
           </div>
         </div>
-      </div>
+      </Section>
 
       <MachineDefaults
         tiers={calc.machineTiers}
@@ -184,13 +183,15 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
 
       {calc.combined ? (
         <>
-          <Summary
-            totals={calc.combined}
-            timeUnit={calc.timeUnit}
-            integerMultiplier={calc.integerMultiplier}
-            onApplyMultiplier={(k) => calc.scaleAllAmounts(k)}
-            proliferator={proliferator}
-          />
+          <Section title={t('summary.title')}>
+            <Summary
+              totals={calc.combined}
+              timeUnit={calc.timeUnit}
+              integerMultiplier={calc.integerMultiplier}
+              onApplyMultiplier={(k) => calc.scaleAllAmounts(k)}
+              proliferator={proliferator}
+            />
+          </Section>
 
           <SharedComponents
             result={calc.shared}
@@ -199,16 +200,48 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
             onFocusItem={onFocus}
           />
 
-          {calc.solved.map(({ target, plan }) => (
-            <div key={target.id} className="mb-4">
-              {multi && (
-                <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
-                  <ItemIcon id={target.item} size={20} tinted />
-                  <span className="truncate">{name(target.item)}</span>
-                  <span className="text-muted-foreground">· {rate(target.amount / UNIT_SECONDS[calc.timeUnit], calc.timeUnit)}</span>
-                </div>
-              )}
-              <RatioStrip plan={plan} />
+          <ProductionChainSection calc={calc} />
+        </>
+      ) : (
+        <div className="rounded-lg border border-dashed border-border p-10 text-center text-muted-foreground">
+          {t('calculator.empty')}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ProductionChainSection({ calc }: { calc: ReturnType<typeof useCalculator> }) {
+  const { t } = useTranslation('ui');
+  const { name } = useNames();
+  const signalSeq = useRef(0);
+  const [expandSignal, setExpandSignal] = useState<{ id: number; open: boolean } | null>(null);
+  const multi = calc.solved.length > 1;
+  const onFocus = (item: string) => calc.setFocusedItem(calc.focusedItem === item ? null : item);
+  const fire = (open: boolean) => setExpandSignal({ id: (signalSeq.current += 1), open });
+
+  return (
+    <Section
+      title={t('chain.title')}
+      actions={(
+        <>
+          <Button variant="outline" size="sm" onClick={() => fire(true)}>{t('calculator.expandAll')}</Button>
+          <Button variant="outline" size="sm" onClick={() => fire(false)}>{t('calculator.foldAll')}</Button>
+        </>
+      )}
+    >
+      <div className="space-y-4">
+        {calc.solved.map(({ target, plan }) => (
+          <div key={target.id}>
+            {multi && (
+              <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
+                <ItemIcon id={target.item} size={20} tinted />
+                <span className="truncate">{name(target.item)}</span>
+                <span className="text-muted-foreground">· {rate(target.amount / UNIT_SECONDS[calc.timeUnit], calc.timeUnit)}</span>
+              </div>
+            )}
+            <RatioStrip plan={plan} />
+            <div className="rounded-lg border border-border bg-card p-1.5">
               <ProductionChain
                 node={plan.root}
                 timeUnit={calc.timeUnit}
@@ -218,15 +251,12 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
                 sharedCounts={calc.shared.sharedCounts}
                 focusedItem={calc.focusedItem}
                 onFocusItem={onFocus}
+                expandSignal={expandSignal}
               />
             </div>
-          ))}
-        </>
-      ) : (
-        <div className="rounded-lg border border-dashed border-border p-10 text-center text-muted-foreground">
-          {t('calculator.empty')}
-        </div>
-      )}
-    </div>
+          </div>
+        ))}
+      </div>
+    </Section>
   );
 }

@@ -78,7 +78,7 @@ export interface CalculatorState {
 const newTarget = (item: string, amount = 60): CalcTarget => ({ id: `t${rowSeq++}`, item, amount });
 
 export function useCalculator(): CalculatorState {
-  const [targets, setTargets] = useState<CalcTarget[]>(() => [newTarget('electromagnetic-matrix')]);
+  const [targets, setTargets] = useState<CalcTarget[]>(() => [newTarget('')]);
   const [timeUnit, setTimeUnit] = useState<TimeUnit>('minute');
   const [machineOverrides, setMachineOverrides] = useState<MachineOverrides>({});
   const [machineTiers, setMachineTiers] = useState<MachineTiers>(loadMachineTiers);

@@ -3,8 +3,8 @@ import CornerDownRightIcon from 'lucide-react/dist/esm/icons/corner-down-right';
 import type { SharedComponentNode, SharedComponentsResult } from '../../calculator/shared-components.js';
 import type { TimeUnit } from '../hooks/useCalculator.js';
 import { ItemIcon } from './ItemIcon.js';
+import { Section } from './Section.js';
 import { useNames } from '../i18n/useNames.js';
-import { Card } from '../ui/index.js';
 import { rate } from '../lib/format.js';
 import { cn } from '../lib/cn.js';
 
@@ -20,10 +20,7 @@ export function SharedComponents({ result, timeUnit, focusedItem, onFocusItem }:
   const { t } = useTranslation('ui');
   if (result.roots.length === 0) return null;
   return (
-    <Card className="mb-4 p-4">
-      <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-        {t('calculator.sharedComponents')}
-      </div>
+    <Section title={t('calculator.sharedComponents')}>
       <div className="space-y-0.5">
         {result.roots.map((node, i) => (
           <SharedRow
@@ -36,7 +33,7 @@ export function SharedComponents({ result, timeUnit, focusedItem, onFocusItem }:
           />
         ))}
       </div>
-    </Card>
+    </Section>
   );
 }
 

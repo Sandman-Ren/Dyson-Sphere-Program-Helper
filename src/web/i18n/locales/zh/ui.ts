@@ -27,8 +27,11 @@ const ui: UiResource = {
     addTarget: '添加目标',
     removeTarget: '移除目标',
     targets: '目标',
+    expandAll: '全部展开',
+    foldAll: '全部折叠',
   },
   summary: {
+    title: '汇总',
     buildings: '建筑',
     rawResources: '原始资源',
     powerDraw: '电力消耗',

@@ -25,8 +25,11 @@ const ui = {
     addTarget: 'Add target',
     removeTarget: 'Remove target',
     targets: 'Targets',
+    expandAll: 'Expand all',
+    foldAll: 'Fold all',
   },
   summary: {
+    title: 'Summary',
     buildings: 'Buildings',
     rawResources: 'Raw resources',
     powerDraw: 'Power draw',

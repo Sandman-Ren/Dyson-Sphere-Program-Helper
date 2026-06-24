@@ -8,7 +8,7 @@ import type { Proliferator } from '../../data/schema.js';
 import type { TimeUnit } from '../hooks/useCalculator.js';
 import { ItemIcon } from './ItemIcon.js';
 import { useNames } from '../i18n/useNames.js';
-import { Card, Button } from '../ui/index.js';
+import { Button } from '../ui/index.js';
 import { num, rate, power } from '../lib/format.js';
 
 interface SummaryProps {
@@ -27,8 +27,7 @@ export function Summary({ totals, timeUnit, integerMultiplier, onApplyMultiplier
   const rawEntries = Object.entries(totals.rawResources).sort((a, b) => b[1] - a[1]);
 
   return (
-    <Card className="mb-4 p-4">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Stat icon={<FactoryIcon className="size-4 text-primary" />} label={t('summary.buildings')}>
           {machineEntries.length === 0 && <Empty />}
           {machineEntries.map(([id, count]) => (
@@ -70,8 +69,7 @@ export function Summary({ totals, timeUnit, integerMultiplier, onApplyMultiplier
             </Button>
           </div>
         )}
-      </div>
-    </Card>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ChevronRightIcon from 'lucide-react/dist/esm/icons/chevron-right';
 import PickaxeIcon from 'lucide-react/dist/esm/icons/pickaxe';
 import SparklesIcon from 'lucide-react/dist/esm/icons/sparkles';
@@ -26,29 +26,27 @@ interface ProductionChainProps {
   focusedItem?: string | null;
   /** click a shared item to focus/trace it. */
   onFocusItem?: (item: string) => void;
+  /** Bump with a new object to force every node open/closed (expand/fold all). */
+  expandSignal?: { id: number; open: boolean } | null;
 }
 
+/** The bare production-chain tree (no card/title — wrap it in a Section). */
 export function ProductionChain(props: ProductionChainProps) {
-  const { t } = useTranslation('ui');
-  return (
-    <div className="rounded-lg border border-border bg-card">
-      <div className="border-b border-border px-3 py-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-        {t('chain.title')}
-      </div>
-      <div className="p-1.5">
-        <ChainNode {...props} depth={0} path={props.node.item} />
-      </div>
-    </div>
-  );
+  return <ChainNode {...props} depth={0} path={props.node.item} />;
 }
 
 function ChainNode({
   node, timeUnit, machineOverrides, onMachineChange, onRecipeChange,
-  sharedCounts, focusedItem, onFocusItem, depth, path,
+  sharedCounts, focusedItem, onFocusItem, expandSignal, depth, path,
 }: ProductionChainProps & { depth: number; path: string }) {
   const { t } = useTranslation('ui');
   const { name, recipeName } = useNames();
-  const [open, setOpen] = useState(depth < 3);
+  // Default: expand the root so its immediate components show; deeper levels collapsed.
+  const [open, setOpen] = useState(depth < 1);
+  // Expand-all / fold-all: a new signal object forces every node open/closed.
+  useEffect(() => {
+    if (expandSignal) setOpen(expandSignal.open);
+  }, [expandSignal]);
   const hasChildren = node.children.length > 0;
   const producers = node.recipe ? graph.producersFor(node.recipe) : [];
   // Alternative recipes the user can switch this node to (default-first).
@@ -181,6 +179,7 @@ function ChainNode({
               sharedCounts={sharedCounts}
               focusedItem={focusedItem}
               onFocusItem={onFocusItem}
+              expandSignal={expandSignal}
               depth={depth + 1}
               path={`${path}>${child.item}`}
             />
