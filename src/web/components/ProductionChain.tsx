@@ -20,6 +20,12 @@ interface ProductionChainProps {
   machineOverrides: MachineOverrides;
   onMachineChange: (item: string, machine: string) => void;
   onRecipeChange: (path: string, recipeId: string) => void;
+  /** shared item id → target count; present → render a ×N badge + accent. */
+  sharedCounts?: Map<string, number>;
+  /** the item whose occurrences should glow (click-to-trace). */
+  focusedItem?: string | null;
+  /** click a shared item to focus/trace it. */
+  onFocusItem?: (item: string) => void;
 }
 
 export function ProductionChain(props: ProductionChainProps) {
@@ -37,7 +43,8 @@ export function ProductionChain(props: ProductionChainProps) {
 }
 
 function ChainNode({
-  node, timeUnit, machineOverrides, onMachineChange, onRecipeChange, depth, path,
+  node, timeUnit, machineOverrides, onMachineChange, onRecipeChange,
+  sharedCounts, focusedItem, onFocusItem, depth, path,
 }: ProductionChainProps & { depth: number; path: string }) {
   const { t } = useTranslation('ui');
   const { name, recipeName } = useNames();
@@ -47,6 +54,10 @@ function ChainNode({
   // Alternative recipes the user can switch this node to (default-first).
   const recipes = graph.recipesFor(node.item);
 
+  const sharedCount = sharedCounts?.get(node.item);
+  const isShared = sharedCount !== undefined;
+  const isFocused = focusedItem != null && focusedItem === node.item;
+
   return (
     <div>
       <div
@@ -54,6 +65,8 @@ function ChainNode({
           'flex flex-wrap items-center gap-x-2 gap-y-1 rounded py-1.5 pr-2 hover:bg-accent/50',
           // Responsive indent: tighter steps on mobile to preserve row width.
           'pl-[calc(var(--d)*0.75rem_+_0.5rem)] sm:pl-[calc(var(--d)*1.125rem_+_0.5rem)]',
+          isShared && 'ring-1 ring-inset ring-amber/40',
+          isFocused && 'bg-amber/15 ring-2 ring-inset ring-amber',
         )}
         style={{ '--d': depth } as React.CSSProperties}
       >
@@ -73,6 +86,17 @@ function ChainNode({
 
         <ItemIcon id={node.item} size={22} tinted className="shrink-0" />
         <span className="min-w-0 truncate font-medium">{name(node.item)}</span>
+
+        {isShared && (
+          <button
+            type="button"
+            onClick={() => onFocusItem?.(node.item)}
+            className="shrink-0 rounded bg-amber/15 px-1.5 py-0.5 text-[11px] font-semibold tabular-nums text-amber transition-colors hover:bg-amber/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            title={t('calculator.sharedBadgeTitle', { count: sharedCount })}
+          >
+            ×{sharedCount}
+          </button>
+        )}
 
         {node.proliferated && (
           <Tooltip>
@@ -154,6 +178,9 @@ function ChainNode({
               machineOverrides={machineOverrides}
               onMachineChange={onMachineChange}
               onRecipeChange={onRecipeChange}
+              sharedCounts={sharedCounts}
+              focusedItem={focusedItem}
+              onFocusItem={onFocusItem}
               depth={depth + 1}
               path={`${path}>${child.item}`}
             />

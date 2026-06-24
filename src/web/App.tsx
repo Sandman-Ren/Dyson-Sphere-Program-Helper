@@ -1,26 +1,27 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { findIntegerMultiplier } from '../calculator/index.js';
+import PlusIcon from 'lucide-react/dist/esm/icons/plus';
+import XIcon from 'lucide-react/dist/esm/icons/x';
 import { LanguageSwitcher } from './components/LanguageSwitcher.js';
 import { MachineDefaults } from './components/MachineDefaults.js';
 import { useNames } from './i18n/useNames.js';
 import { useHashTab } from './hooks/useHashTab.js';
-import { useCalculator } from './hooks/useCalculator.js';
+import { useCalculator, UNIT_SECONDS } from './hooks/useCalculator.js';
+import { rate } from './lib/format.js';
 import { ItemSelector } from './components/ItemSelector.js';
-import { RateInput } from './components/RateInput.js';
 import { ProductionChain } from './components/ProductionChain.js';
 import { Summary } from './components/Summary.js';
+import { SharedComponents } from './components/SharedComponents.js';
 import { RatioStrip } from './components/RatioStrip.js';
 import { ItemIcon } from './components/ItemIcon.js';
 import { graph, proliferators, techById, meta } from './data.js';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent, TooltipProvider,
-  Label, Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
+  Button, Input, Label, Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
 } from './ui/index.js';
 
 const TechTree = lazy(() => import('./components/tech-tree/TechTree.js').then((m) => ({ default: m.TechTree })));
 const ItemLookup = lazy(() => import('./components/item-lookup/ItemLookup.js').then((m) => ({ default: m.ItemLookup })));
-const PlannerTab = lazy(() => import('./components/planner/PlannerTab.js').then((m) => ({ default: m.PlannerTab })));
 
 const Loading = ({ what }: { what: string }) => {
   const { t } = useTranslation('ui');
@@ -43,7 +44,7 @@ export function App() {
 
   const handleCalculateItem = useCallback((id: string) => {
     if (!graph.itemToRecipe.has(id)) return;
-    calc.setTargetItem(id);
+    calc.setSingleTarget(id);
     setTab('calculator');
   }, [calc, setTab]);
 
@@ -77,7 +78,6 @@ export function App() {
               <span className="sm:hidden">{t('tabs.items')}</span>
               <span className="hidden sm:inline">{t('tabs.itemLookup')}</span>
             </TabsTrigger>
-            <TabsTrigger value="planner" className="flex-1 sm:flex-none">{t('tabs.planner')}</TabsTrigger>
           </TabsList>
         </header>
 
@@ -105,53 +105,73 @@ export function App() {
             />
           </Suspense>
         </TabsContent>
-
-        <TabsContent value="planner" className="flex-1 overflow-auto">
-          <Suspense fallback={<Loading what={t('loadingTargets.planner')} />}>
-            <PlannerTab />
-          </Suspense>
-        </TabsContent>
       </Tabs>
     </TooltipProvider>
   );
 }
 
 function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
-  const { plan } = calc;
   const { t } = useTranslation('ui');
   const { name } = useNames();
   const proliferator = proliferators.find((p) => p.id === calc.proliferatorId) ?? null;
-  // Walk the whole tree only when the plan itself changes, not on every paint.
-  const integerMultiplier = useMemo(() => (plan ? findIntegerMultiplier(plan) : null), [plan]);
+  const multi = calc.solved.length > 1;
+  const onFocus = (item: string) => calc.setFocusedItem(calc.focusedItem === item ? null : item);
+
   return (
     <div className="mx-auto max-w-4xl p-3 sm:p-5">
-      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:gap-4">
-        <div className="w-full sm:w-auto">
-          <Label className="mb-1">{t('calculator.produce')}</Label>
-          <ItemSelector items={graph.allProducts} value={calc.targetItem} onChange={calc.setTargetItem} />
+      {/* Targets */}
+      <div className="mb-4">
+        <Label className="mb-1">{t('calculator.targets')}</Label>
+        <div className="flex flex-col gap-2">
+          {calc.targets.map((row) => (
+            <div key={row.id} className="flex flex-wrap items-center gap-2">
+              <ItemSelector items={graph.allProducts} value={row.item} onChange={(id) => calc.setTargetItem(row.id, id)} />
+              <Input
+                type="number" min={0} step="any"
+                value={Number.isFinite(row.amount) ? row.amount : ''}
+                onChange={(e) => calc.setTargetAmount(row.id, Number(e.target.value) || 0)}
+                className="w-24 flex-shrink-0 sm:w-28"
+              />
+              {calc.targets.length > 1 && (
+                <Button variant="ghost" size="sm" onClick={() => calc.removeTarget(row.id)} aria-label={t('calculator.removeTarget')}>
+                  <XIcon className="size-4" />
+                </Button>
+              )}
+            </div>
+          ))}
         </div>
-        <RateInput
-          amount={calc.amount}
-          onAmountChange={calc.setAmount}
-          timeUnit={calc.timeUnit}
-          onTimeUnitChange={calc.setTimeUnit}
-        />
-        <div className="w-full sm:w-auto">
-          <Label className="mb-1">{t('calculator.proliferator')}</Label>
-          <Select value={calc.proliferatorId} onValueChange={calc.setProliferatorId}>
-            <SelectTrigger className="w-full sm:w-auto sm:min-w-[13rem]"><SelectValue /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="none">{t('calculator.none')}</SelectItem>
-              {proliferators.map((p) => (
-                <SelectItem key={p.id} value={p.id}>
-                  <span className="flex min-w-0 items-center gap-1.5">
-                    <ItemIcon id={p.tier} size={16} />
-                    <span className="truncate">{name(p.id)}</span>
-                  </span>
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+        <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:gap-4">
+          <Button variant="outline" size="sm" className="self-start" onClick={() => calc.addTarget('iron-ingot')}>
+            <PlusIcon className="mr-1 size-4" />{t('calculator.addTarget')}
+          </Button>
+          <div className="w-full sm:w-auto">
+            <Label className="mb-1">{t('calculator.targetRate')}</Label>
+            <Select value={calc.timeUnit} onValueChange={(v) => calc.setTimeUnit(v as typeof calc.timeUnit)}>
+              <SelectTrigger className="w-full sm:min-w-[8rem]"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="second">{t('calculator.perSecond')}</SelectItem>
+                <SelectItem value="minute">{t('calculator.perMinute')}</SelectItem>
+                <SelectItem value="hour">{t('calculator.perHour')}</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="w-full sm:w-auto">
+            <Label className="mb-1">{t('calculator.proliferator')}</Label>
+            <Select value={calc.proliferatorId} onValueChange={calc.setProliferatorId}>
+              <SelectTrigger className="w-full sm:w-auto sm:min-w-[13rem]"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="none">{t('calculator.none')}</SelectItem>
+                {proliferators.map((p) => (
+                  <SelectItem key={p.id} value={p.id}>
+                    <span className="flex min-w-0 items-center gap-1.5">
+                      <ItemIcon id={p.tier} size={16} />
+                      <span className="truncate">{name(p.id)}</span>
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </div>
 
@@ -162,23 +182,45 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
         onResetFamily={calc.resetFamilyOverrides}
       />
 
-      {plan ? (
+      {calc.combined ? (
         <>
           <Summary
-            plan={plan}
+            totals={calc.combined}
             timeUnit={calc.timeUnit}
-            integerMultiplier={integerMultiplier}
-            onApplyMultiplier={(k) => calc.setAmount((prev) => prev * k)}
+            integerMultiplier={calc.integerMultiplier}
+            onApplyMultiplier={(k) => calc.scaleAllAmounts(k)}
             proliferator={proliferator}
           />
-          <RatioStrip plan={plan} />
-          <ProductionChain
-            node={plan.root}
+
+          <SharedComponents
+            result={calc.shared}
             timeUnit={calc.timeUnit}
-            machineOverrides={calc.machineOverrides}
-            onMachineChange={(item, machine) => calc.setMachineOverrides((prev) => ({ ...prev, [item]: machine }))}
-            onRecipeChange={calc.setRecipeOverride}
+            focusedItem={calc.focusedItem}
+            onFocusItem={onFocus}
           />
+
+          {calc.solved.map(({ target, plan }) => (
+            <div key={target.id} className="mb-4">
+              {multi && (
+                <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
+                  <ItemIcon id={target.item} size={20} tinted />
+                  <span className="truncate">{name(target.item)}</span>
+                  <span className="text-muted-foreground">· {rate(target.amount / UNIT_SECONDS[calc.timeUnit], calc.timeUnit)}</span>
+                </div>
+              )}
+              <RatioStrip plan={plan} />
+              <ProductionChain
+                node={plan.root}
+                timeUnit={calc.timeUnit}
+                machineOverrides={calc.machineOverrides}
+                onMachineChange={(item, machine) => calc.setMachineOverrides((prev) => ({ ...prev, [item]: machine }))}
+                onRecipeChange={(path, recipeId) => calc.setRecipeOverride(target.id, path, recipeId)}
+                sharedCounts={calc.shared.sharedCounts}
+                focusedItem={calc.focusedItem}
+                onFocusItem={onFocus}
+              />
+            </div>
+          ))}
         </>
       ) : (
         <div className="rounded-lg border border-dashed border-border p-10 text-center text-muted-foreground">
