@@ -3,7 +3,7 @@ import FactoryIcon from 'lucide-react/dist/esm/icons/factory';
 import PickaxeIcon from 'lucide-react/dist/esm/icons/pickaxe';
 import SparklesIcon from 'lucide-react/dist/esm/icons/sparkles';
 import { useTranslation } from 'react-i18next';
-import type { ProductionPlan } from '../../calculator/index.js';
+import type { CombinedTotals } from '../../calculator/shared-components.js';
 import type { Proliferator } from '../../data/schema.js';
 import type { TimeUnit } from '../hooks/useCalculator.js';
 import { ItemIcon } from './ItemIcon.js';
@@ -12,7 +12,7 @@ import { Card, Button } from '../ui/index.js';
 import { num, rate, power } from '../lib/format.js';
 
 interface SummaryProps {
-  plan: ProductionPlan;
+  totals: CombinedTotals;
   timeUnit: TimeUnit;
   integerMultiplier: number | null;
   onApplyMultiplier: (k: number) => void;
@@ -20,11 +20,11 @@ interface SummaryProps {
 }
 
 /** Aggregated rollups: buildings, raw inputs, power, and proliferator usage. */
-export function Summary({ plan, timeUnit, integerMultiplier, onApplyMultiplier, proliferator }: SummaryProps) {
+export function Summary({ totals, timeUnit, integerMultiplier, onApplyMultiplier, proliferator }: SummaryProps) {
   const { t } = useTranslation('ui');
   const { name } = useNames();
-  const machineEntries = Object.entries(plan.totalMachines).sort((a, b) => b[1] - a[1]);
-  const rawEntries = Object.entries(plan.rawResources).sort((a, b) => b[1] - a[1]);
+  const machineEntries = Object.entries(totals.totalMachines).sort((a, b) => b[1] - a[1]);
+  const rawEntries = Object.entries(totals.rawResources).sort((a, b) => b[1] - a[1]);
 
   return (
     <Card className="mb-4 p-4">
@@ -44,16 +44,16 @@ export function Summary({ plan, timeUnit, integerMultiplier, onApplyMultiplier, 
         </Stat>
 
         <Stat icon={<ZapIcon className="size-4 text-primary" />} label={t('summary.powerDraw')}>
-          <div className="text-lg font-semibold">{power(plan.totalPowerKW)}</div>
+          <div className="text-lg font-semibold">{power(totals.totalPowerKW)}</div>
           <div className="text-xs text-muted-foreground">{t('summary.peakElectric')}</div>
         </Stat>
 
         <Stat icon={<SparklesIcon className="size-4 text-amber" />} label={t('summary.extras')}>
-          {proliferator && plan.proliferatorSpraysPerSecond > 0 ? (
+          {proliferator && totals.proliferatorSpraysPerSecond > 0 ? (
             <Row
               id={proliferator.tier}
               name={t('summary.sprays', { name: name(proliferator.id) })}
-              value={rate(plan.proliferatorSpraysPerSecond, timeUnit)}
+              value={rate(totals.proliferatorSpraysPerSecond, timeUnit)}
             />
           ) : (
             <div className="text-xs text-muted-foreground">{t('summary.noProliferator')}</div>
