@@ -4,7 +4,7 @@ import { Card } from '../ui/index.js';
 import { cn } from '../lib/cn.js';
 
 interface SectionProps {
-  title: string;
+  title: React.ReactNode;
   /** Whether the section starts expanded (default true). */
   defaultOpen?: boolean;
   /** Right-aligned controls shown in the header when open (e.g. expand/fold all). */

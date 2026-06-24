@@ -6,7 +6,7 @@ import { LanguageSwitcher } from './components/LanguageSwitcher.js';
 import { MachineDefaults } from './components/MachineDefaults.js';
 import { useNames } from './i18n/useNames.js';
 import { useHashTab } from './hooks/useHashTab.js';
-import { useCalculator, UNIT_SECONDS } from './hooks/useCalculator.js';
+import { useCalculator, UNIT_SECONDS, type SolvedTarget } from './hooks/useCalculator.js';
 import { rate } from './lib/format.js';
 import { ItemSelector } from './components/ItemSelector.js';
 import { ProductionChain } from './components/ProductionChain.js';
@@ -208,7 +208,9 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
             onFocusItem={onFocus}
           />
 
-          <ProductionChainSection calc={calc} />
+          {calc.solved.map((entry) => (
+            <TargetChain key={entry.target.id} calc={calc} entry={entry} />
+          ))}
         </>
       ) : (
         <div className="rounded-lg border border-dashed border-border p-10 text-center text-muted-foreground">
@@ -219,52 +221,46 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
   );
 }
 
-function ProductionChainSection({ calc }: { calc: ReturnType<typeof useCalculator> }) {
+function TargetChain({ calc, entry }: { calc: ReturnType<typeof useCalculator>; entry: SolvedTarget }) {
+  const { target, plan } = entry;
   const { t } = useTranslation('ui');
   const { name } = useNames();
   const signalSeq = useRef(0);
   const [expandSignal, setExpandSignal] = useState<{ id: number; open: boolean } | null>(null);
-  const multi = calc.solved.length > 1;
   const onFocus = (item: string) => calc.setFocusedItem(calc.focusedItem === item ? null : item);
   const fire = (open: boolean) => setExpandSignal({ id: (signalSeq.current += 1), open });
 
+  const title = (
+    <>
+      <ItemIcon id={target.item} size={20} tinted />
+      <span>{name(target.item)} · {rate(target.amount / UNIT_SECONDS[target.unit], calc.displayUnit)}</span>
+    </>
+  );
+
   return (
-    <Section
-      title={t('chain.title')}
-      actions={(
-        <>
-          <Button variant="outline" size="sm" onClick={() => fire(true)}>{t('calculator.expandAll')}</Button>
-          <Button variant="outline" size="sm" onClick={() => fire(false)}>{t('calculator.foldAll')}</Button>
-        </>
-      )}
-    >
-      <div className="space-y-4">
-        {calc.solved.map(({ target, plan }) => (
-          <div key={target.id}>
-            {multi && (
-              <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
-                <ItemIcon id={target.item} size={20} tinted />
-                <span className="truncate">{name(target.item)}</span>
-                <span className="text-muted-foreground">· {rate(target.amount / UNIT_SECONDS[target.unit], calc.displayUnit)}</span>
-              </div>
-            )}
-            <RatioStrip plan={plan} />
-            <div className="rounded-lg border border-border bg-card p-1.5">
-              <ProductionChain
-                node={plan.root}
-                timeUnit={calc.displayUnit}
-                machineOverrides={calc.machineOverrides}
-                onMachineChange={(item, machine) => calc.setMachineOverrides((prev) => ({ ...prev, [item]: machine }))}
-                onRecipeChange={(path, recipeId) => calc.setRecipeOverride(target.id, path, recipeId)}
-                sharedCounts={calc.shared.sharedCounts}
-                focusedItem={calc.focusedItem}
-                onFocusItem={onFocus}
-                expandSignal={expandSignal}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+    <Section title={title}>
+      <RatioStrip plan={plan} />
+      <Section
+        title={t('chain.title')}
+        actions={(
+          <>
+            <Button variant="outline" size="sm" onClick={() => fire(true)}>{t('calculator.expandAll')}</Button>
+            <Button variant="outline" size="sm" onClick={() => fire(false)}>{t('calculator.foldAll')}</Button>
+          </>
+        )}
+      >
+        <ProductionChain
+          node={plan.root}
+          timeUnit={calc.displayUnit}
+          machineOverrides={calc.machineOverrides}
+          onMachineChange={(item, machine) => calc.setMachineOverrides((prev) => ({ ...prev, [item]: machine }))}
+          onRecipeChange={(path, recipeId) => calc.setRecipeOverride(target.id, path, recipeId)}
+          sharedCounts={calc.shared.sharedCounts}
+          focusedItem={calc.focusedItem}
+          onFocusItem={onFocus}
+          expandSignal={expandSignal}
+        />
+      </Section>
     </Section>
   );
 }

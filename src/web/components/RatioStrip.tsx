@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import type { ProductionNode, ProductionPlan } from '../../calculator/index.js';
 import { computeIntegerRatios } from '../../calculator/index.js';
 import { ItemIcon } from './ItemIcon.js';
+import { Section } from './Section.js';
 import { useNames } from '../i18n/useNames.js';
 import { Tooltip, TooltipTrigger, TooltipContent } from '../ui/index.js';
 import { cn } from '../lib/cn.js';
@@ -83,25 +84,23 @@ export function RatioStrip({ plan }: RatioStripProps) {
   // The first included chip gets no leading ':' separator.
   const firstIncluded = entries.find((e) => !excluded.has(e.item))?.item;
 
+  const reset = excluded.size > 0 ? (
+    <button
+      type="button"
+      onClick={() => setExcluded(new Set())}
+      className={cn(
+        'inline-flex items-center gap-1 rounded text-[11px] font-medium normal-case tracking-normal',
+        'text-muted-foreground transition-colors hover:text-foreground',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+      )}
+    >
+      <RotateCcwIcon className="size-3" />
+      {t('ratio.reset')}
+    </button>
+  ) : undefined;
+
   return (
-    <div className="mb-4 rounded-lg border border-border bg-card p-3">
-      <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-        <span>{t('ratio.title')}</span>
-        {excluded.size > 0 && (
-          <button
-            type="button"
-            onClick={() => setExcluded(new Set())}
-            className={cn(
-              'inline-flex items-center gap-1 rounded text-[11px] font-medium normal-case tracking-normal',
-              'text-muted-foreground transition-colors hover:text-foreground',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-            )}
-          >
-            <RotateCcwIcon className="size-3" />
-            {t('ratio.reset')}
-          </button>
-        )}
-      </div>
+    <Section title={t('ratio.title')} actions={reset}>
       <div className="flex flex-wrap items-center gap-1.5">
         {entries.map((entry) => {
           const isExcluded = excluded.has(entry.item);
@@ -141,6 +140,6 @@ export function RatioStrip({ plan }: RatioStripProps) {
           );
         })}
       </div>
-    </div>
+    </Section>
   );
 }
