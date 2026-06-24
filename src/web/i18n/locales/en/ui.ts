@@ -25,6 +25,7 @@ const ui = {
     addTarget: 'Add target',
     removeTarget: 'Remove target',
     targets: 'Targets',
+    displayUnit: 'Display rate',
     expandAll: 'Expand all',
     foldAll: 'Fold all',
   },

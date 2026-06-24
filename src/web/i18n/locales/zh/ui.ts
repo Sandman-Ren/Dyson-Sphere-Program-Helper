@@ -27,6 +27,7 @@ const ui: UiResource = {
     addTarget: '添加目标',
     removeTarget: '移除目标',
     targets: '目标',
+    displayUnit: '显示速率',
     expandAll: '全部展开',
     foldAll: '全部折叠',
   },

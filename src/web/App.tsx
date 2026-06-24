@@ -129,8 +129,16 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
                 type="number" min={0} step="any"
                 value={Number.isFinite(row.amount) ? row.amount : ''}
                 onChange={(e) => calc.setTargetAmount(row.id, Number(e.target.value) || 0)}
-                className="w-24 flex-shrink-0 sm:w-28"
+                className="w-20 flex-shrink-0 sm:w-24"
               />
+              <Select value={row.unit} onValueChange={(v) => calc.setTargetUnit(row.id, v as typeof row.unit)}>
+                <SelectTrigger className="w-28 flex-shrink-0"><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="second">{t('calculator.perSecond')}</SelectItem>
+                  <SelectItem value="minute">{t('calculator.perMinute')}</SelectItem>
+                  <SelectItem value="hour">{t('calculator.perHour')}</SelectItem>
+                </SelectContent>
+              </Select>
               {calc.targets.length > 1 && (
                 <Button variant="ghost" size="sm" onClick={() => calc.removeTarget(row.id)} aria-label={t('calculator.removeTarget')}>
                   <XIcon className="size-4" />
@@ -144,8 +152,8 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
             <PlusIcon className="mr-1 size-4" />{t('calculator.addTarget')}
           </Button>
           <div className="w-full sm:w-auto">
-            <Label className="mb-1">{t('calculator.targetRate')}</Label>
-            <Select value={calc.timeUnit} onValueChange={(v) => calc.setTimeUnit(v as typeof calc.timeUnit)}>
+            <Label className="mb-1">{t('calculator.displayUnit')}</Label>
+            <Select value={calc.displayUnit} onValueChange={(v) => calc.setDisplayUnit(v as typeof calc.displayUnit)}>
               <SelectTrigger className="w-full sm:min-w-[8rem]"><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="second">{t('calculator.perSecond')}</SelectItem>
@@ -186,7 +194,7 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
           <Section title={t('summary.title')}>
             <Summary
               totals={calc.combined}
-              timeUnit={calc.timeUnit}
+              timeUnit={calc.displayUnit}
               integerMultiplier={calc.integerMultiplier}
               onApplyMultiplier={(k) => calc.scaleAllAmounts(k)}
               proliferator={proliferator}
@@ -195,7 +203,7 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
 
           <SharedComponents
             result={calc.shared}
-            timeUnit={calc.timeUnit}
+            timeUnit={calc.displayUnit}
             focusedItem={calc.focusedItem}
             onFocusItem={onFocus}
           />
@@ -237,14 +245,14 @@ function ProductionChainSection({ calc }: { calc: ReturnType<typeof useCalculato
               <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
                 <ItemIcon id={target.item} size={20} tinted />
                 <span className="truncate">{name(target.item)}</span>
-                <span className="text-muted-foreground">· {rate(target.amount / UNIT_SECONDS[calc.timeUnit], calc.timeUnit)}</span>
+                <span className="text-muted-foreground">· {rate(target.amount / UNIT_SECONDS[target.unit], calc.displayUnit)}</span>
               </div>
             )}
             <RatioStrip plan={plan} />
             <div className="rounded-lg border border-border bg-card p-1.5">
               <ProductionChain
                 node={plan.root}
-                timeUnit={calc.timeUnit}
+                timeUnit={calc.displayUnit}
                 machineOverrides={calc.machineOverrides}
                 onMachineChange={(item, machine) => calc.setMachineOverrides((prev) => ({ ...prev, [item]: machine }))}
                 onRecipeChange={(path, recipeId) => calc.setRecipeOverride(target.id, path, recipeId)}

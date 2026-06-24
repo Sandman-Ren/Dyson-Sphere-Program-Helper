@@ -20,6 +20,8 @@ export interface CalcTarget {
   id: string;
   item: string;
   amount: number;
+  /** The unit the player entered `amount` in. */
+  unit: TimeUnit;
 }
 
 function sanitizeTiers(value: unknown): MachineTiers {
@@ -52,10 +54,12 @@ export interface CalculatorState {
   removeTarget: (id: string) => void;
   setTargetItem: (id: string, item: string) => void;
   setTargetAmount: (id: string, amount: number) => void;
+  setTargetUnit: (id: string, unit: TimeUnit) => void;
   /** Replace the whole list with one item (deep-link from other tabs). */
   setSingleTarget: (item: string) => void;
-  timeUnit: TimeUnit;
-  setTimeUnit: (u: TimeUnit) => void;
+  /** Unit used to display every computed rate. */
+  displayUnit: TimeUnit;
+  setDisplayUnit: (u: TimeUnit) => void;
   scaleAllAmounts: (k: number) => void;
   machineOverrides: MachineOverrides;
   setMachineOverrides: React.Dispatch<React.SetStateAction<MachineOverrides>>;
@@ -75,11 +79,12 @@ export interface CalculatorState {
   shared: SharedComponentsResult;
 }
 
-const newTarget = (item: string, amount = 60): CalcTarget => ({ id: `t${rowSeq++}`, item, amount });
+const newTarget = (item: string, unit: TimeUnit = 'minute', amount = 60): CalcTarget =>
+  ({ id: `t${rowSeq++}`, item, amount, unit });
 
 export function useCalculator(): CalculatorState {
   const [targets, setTargets] = useState<CalcTarget[]>(() => [newTarget('')]);
-  const [timeUnit, setTimeUnit] = useState<TimeUnit>('minute');
+  const [displayUnit, setDisplayUnit] = useState<TimeUnit>('minute');
   const [machineOverrides, setMachineOverrides] = useState<MachineOverrides>({});
   const [machineTiers, setMachineTiers] = useState<MachineTiers>(loadMachineTiers);
   const [recipeOverridesByTarget, setRecipeOverridesByTarget] = useState<Record<string, RecipeOverrides>>({});
@@ -109,6 +114,9 @@ export function useCalculator(): CalculatorState {
   }, []);
   const setTargetAmount = useCallback((id: string, amount: number) => {
     setTargets((prev) => prev.map((t) => (t.id === id ? { ...t, amount: Math.max(0, amount) } : t)));
+  }, []);
+  const setTargetUnit = useCallback((id: string, unit: TimeUnit) => {
+    setTargets((prev) => prev.map((t) => (t.id === id ? { ...t, unit } : t)));
   }, []);
   const setSingleTarget = useCallback((item: string) => {
     setTargets([newTarget(item)]);
@@ -145,11 +153,11 @@ export function useCalculator(): CalculatorState {
       .map((t) => ({
         target: t,
         plan: solve(
-          graph, t.item, t.amount / UNIT_SECONDS[timeUnit],
+          graph, t.item, t.amount / UNIT_SECONDS[t.unit],
           machineOverrides, { proliferator }, machineTiers, recipeOverridesByTarget[t.id],
         ),
       })),
-    [targets, timeUnit, machineOverrides, proliferator, machineTiers, recipeOverridesByTarget],
+    [targets, machineOverrides, proliferator, machineTiers, recipeOverridesByTarget],
   );
 
   const plans = useMemo(() => solved.map((s) => s.plan), [solved]);
@@ -161,8 +169,8 @@ export function useCalculator(): CalculatorState {
   const shared = useMemo(() => buildSharedComponents(plans), [plans]);
 
   return {
-    targets, addTarget, removeTarget, setTargetItem, setTargetAmount, setSingleTarget,
-    timeUnit, setTimeUnit, scaleAllAmounts,
+    targets, addTarget, removeTarget, setTargetItem, setTargetAmount, setTargetUnit, setSingleTarget,
+    displayUnit, setDisplayUnit, scaleAllAmounts,
     machineOverrides, setMachineOverrides,
     machineTiers, setMachineTier, resetFamilyOverrides,
     recipeOverridesByTarget, setRecipeOverride,
