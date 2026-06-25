@@ -111,6 +111,21 @@ const ui: UiResource = {
     resetOverrides_one: '重置 {{count}} 项覆盖',
     resetOverrides_other: '重置 {{count}} 项覆盖',
   },
+  setups: {
+    label: '方案',
+    none: '暂无保存的方案',
+    unsaved: '未保存',
+    save: '保存',
+    saveAs: '另存为',
+    rename: '重命名方案',
+    delete: '删除方案',
+    deleteConfirm: '删除方案"{{name}}"？',
+    share: '分享',
+    copied: '已复制！',
+    namePlaceholder: '方案名称',
+    cancel: '取消',
+    confirm: '保存',
+  },
   language: { label: '语言', en: 'EN', zh: '中文' },
 };
 

@@ -109,6 +109,21 @@ const ui = {
     resetOverrides_one: 'Reset {{count}} override',
     resetOverrides_other: 'Reset {{count}} overrides',
   },
+  setups: {
+    label: 'Setup',
+    none: 'No saved setups',
+    unsaved: 'Unsaved',
+    save: 'Save',
+    saveAs: 'Save As',
+    rename: 'Rename setup',
+    delete: 'Delete setup',
+    deleteConfirm: 'Delete setup "{{name}}"?',
+    share: 'Share',
+    copied: 'Copied!',
+    namePlaceholder: 'Setup name',
+    cancel: 'Cancel',
+    confirm: 'Save',
+  },
   language: { label: 'Language', en: 'EN', zh: '中文' },
 };
 
