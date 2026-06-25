@@ -19,6 +19,8 @@ export interface SetupsState {
   rename: (id: string, name: string) => void;
   remove: (id: string) => void;
   shareUrl: () => string;
+  /** Detach from the active setup so the working state becomes unsaved. */
+  clearActive: () => void;
 }
 
 export interface UseSetupsArgs {
@@ -104,6 +106,11 @@ export function useSetups({ getSnapshot, applySnapshot, sanitize }: UseSetupsArg
     return `${base}?s=${encodeSetupUrl(getSnapshot())}${window.location.hash}`;
   }, [getSnapshot]);
 
+  const clearActive = useCallback(() => {
+    if (store.activeId === null) return;
+    persist({ ...store, activeId: null });
+  }, [store, persist]);
+
   const setups = useMemo<SetupListItem[]>(
     () => store.setups.map((s) => ({ id: s.id, name: s.name })),
     [store],
@@ -114,6 +121,6 @@ export function useSetups({ getSnapshot, applySnapshot, sanitize }: UseSetupsArg
     activeId: store.activeId,
     activeName: activeSetup?.name ?? null,
     isDirty,
-    load, save, saveAs, rename, remove, shareUrl,
+    load, save, saveAs, rename, remove, shareUrl, clearActive,
   };
 }

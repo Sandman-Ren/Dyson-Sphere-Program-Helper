@@ -42,6 +42,31 @@ const setupValidators: SnapshotValidators = {
   isValidProliferator: (id) => id === 'none' || proliferators.some((p) => p.id === id),
 };
 
+/**
+ * Read (and strip) a `?s=` shared-setup param exactly once, at module load —
+ * before React renders. Doing this here rather than in an effect makes it
+ * robust to StrictMode's double-invoked mount effect: the param is consumed a
+ * single time, so the second effect pass can't see an already-stripped URL and
+ * fall through to auto-restoring the active setup (which would clobber the
+ * import). A non-null result means a `?s=` was present (valid or not), so the
+ * startup effect must NOT auto-restore; `snapshot` is the decoded payload (null
+ * if the param was malformed).
+ */
+const pendingShare: { snapshot: ReturnType<typeof decodeSetupUrl> } | null = (() => {
+  if (typeof window === 'undefined') return null;
+  const params = new URLSearchParams(window.location.search);
+  const shared = params.get('s');
+  if (shared === null) return null;
+  const decoded = decodeSetupUrl(shared);
+  params.delete('s');
+  const qs = params.toString();
+  window.history.replaceState(
+    null, '',
+    `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`,
+  );
+  return { snapshot: decoded };
+})();
+
 export function App() {
   const { tab, subpath, setTab, navigate } = useHashTab();
   const [pendingTech, setPendingTech] = useState<string | null>(null);
@@ -58,21 +83,17 @@ export function App() {
   }, [t]);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const shared = params.get('s');
-    if (shared) {
-      const decoded = decodeSetupUrl(shared);
-      if (decoded) calc.applySnapshot(sanitizeSnapshot(decoded, setupValidators));
-      params.delete('s');
-      const qs = params.toString();
-      window.history.replaceState(
-        null, '',
-        `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`,
-      );
-      return; // imported as unsaved — leave activeId null
+    // A shared `?s=` param (already consumed at module load) takes precedence
+    // and is imported as an unsaved setup; otherwise auto-restore the last
+    // active setup. Never both — a present share param must not auto-restore.
+    if (pendingShare) {
+      if (pendingShare.snapshot) {
+        calc.applySnapshot(sanitizeSnapshot(pendingShare.snapshot, setupValidators));
+      }
+      setups.clearActive(); // imported (or malformed) — detach so it reads as unsaved
+      return;
     }
     if (setups.activeId) setups.load(setups.activeId);
-    // mount-only: restore last setup or import a shared one
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
