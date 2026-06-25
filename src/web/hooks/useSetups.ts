@@ -24,16 +24,20 @@ export interface SetupsState {
 export interface UseSetupsArgs {
   getSnapshot: () => SetupSnapshot;
   applySnapshot: (snapshot: SetupSnapshot) => void;
+  sanitize: (snapshot: SetupSnapshot) => SetupSnapshot;
 }
 
-export function useSetups({ getSnapshot, applySnapshot }: UseSetupsArgs): SetupsState {
+export function useSetups({ getSnapshot, applySnapshot, sanitize }: UseSetupsArgs): SetupsState {
   const [store, setStore] = useState<StoredSetups>(() => {
     const loaded = loadStoredSetups();
     for (const s of loaded.setups) {
       const n = Number(s.id.replace(/^s/, ''));
       if (Number.isFinite(n) && n >= setupSeq) setupSeq = n + 1;
     }
-    return loaded;
+    return {
+      ...loaded,
+      setups: loaded.setups.map((s) => ({ ...s, snapshot: sanitize(s.snapshot) })),
+    };
   });
 
   const persist = useCallback((next: StoredSetups) => {

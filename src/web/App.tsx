@@ -46,7 +46,11 @@ export function App() {
   const { tab, subpath, setTab, navigate } = useHashTab();
   const [pendingTech, setPendingTech] = useState<string | null>(null);
   const calc = useCalculator();
-  const setups = useSetups({ getSnapshot: calc.getSnapshot, applySnapshot: calc.applySnapshot });
+  const setups = useSetups({
+    getSnapshot: calc.getSnapshot,
+    applySnapshot: calc.applySnapshot,
+    sanitize: (s) => sanitizeSnapshot(s, setupValidators),
+  });
   const { t } = useTranslation('ui');
 
   useEffect(() => {
