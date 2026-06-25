@@ -9,6 +9,7 @@ import {
   type CombinedTotals, type SharedComponentsResult,
 } from '../../calculator/shared-components.js';
 import { graph, proliferators } from '../data.js';
+import type { SetupSnapshot } from '../lib/setups.js';
 
 export type TimeUnit = 'second' | 'minute' | 'hour';
 const UNIT_SECONDS: Record<TimeUnit, number> = { second: 1, minute: 60, hour: 3600 };
@@ -72,6 +73,8 @@ export interface CalculatorState {
   setProliferatorId: (id: string) => void;
   focusedItem: string | null;
   setFocusedItem: (item: string | null) => void;
+  getSnapshot: () => SetupSnapshot;
+  applySnapshot: (snapshot: SetupSnapshot) => void;
   // Derived
   solved: SolvedTarget[];
   combined: CombinedTotals | null;
@@ -147,6 +150,31 @@ export function useCalculator(): CalculatorState {
 
   const proliferator = useMemo(() => proliferators.find((p) => p.id === proliferatorId) ?? null, [proliferatorId]);
 
+  const getSnapshot = useCallback((): SetupSnapshot => ({
+    v: 1,
+    targets: targets.map((t) => ({ item: t.item, amount: t.amount, unit: t.unit })),
+    displayUnit,
+    proliferatorId,
+    machineOverrides,
+    recipeOverrides: targets.map((t) => recipeOverridesByTarget[t.id] ?? {}),
+  }), [targets, displayUnit, proliferatorId, machineOverrides, recipeOverridesByTarget]);
+
+  const applySnapshot = useCallback((snapshot: SetupSnapshot) => {
+    const restored = snapshot.targets.map((t) => ({
+      id: `t${rowSeq++}`, item: t.item, amount: t.amount, unit: t.unit,
+    }));
+    const overrides: Record<string, RecipeOverrides> = {};
+    restored.forEach((t, i) => {
+      const ro = snapshot.recipeOverrides[i];
+      if (ro && Object.keys(ro).length > 0) overrides[t.id] = { ...ro };
+    });
+    setTargets(restored.length > 0 ? restored : [newTarget('')]);
+    setDisplayUnit(snapshot.displayUnit);
+    setProliferatorId(snapshot.proliferatorId);
+    setMachineOverrides({ ...snapshot.machineOverrides });
+    setRecipeOverridesByTarget(overrides);
+  }, []);
+
   const solved = useMemo<SolvedTarget[]>(() =>
     targets
       .filter((t) => graph.itemToRecipe.has(t.item) && t.amount > 0)
@@ -176,6 +204,7 @@ export function useCalculator(): CalculatorState {
     recipeOverridesByTarget, setRecipeOverride,
     proliferatorId, setProliferatorId,
     focusedItem, setFocusedItem,
+    getSnapshot, applySnapshot,
     solved, combined, integerMultiplier, shared,
   };
 }
