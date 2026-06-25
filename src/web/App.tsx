@@ -7,6 +7,9 @@ import { MachineDefaults } from './components/MachineDefaults.js';
 import { useNames } from './i18n/useNames.js';
 import { useHashTab } from './hooks/useHashTab.js';
 import { useCalculator, UNIT_SECONDS, type SolvedTarget } from './hooks/useCalculator.js';
+import { useSetups } from './hooks/useSetups.js';
+import { SetupBar } from './components/SetupBar.js';
+import { decodeSetupUrl, sanitizeSnapshot, type SnapshotValidators } from './lib/setups.js';
 import { rate } from './lib/format.js';
 import { ItemSelector } from './components/ItemSelector.js';
 import { ProductionChain } from './components/ProductionChain.js';
@@ -15,7 +18,7 @@ import { SharedComponents } from './components/SharedComponents.js';
 import { Section } from './components/Section.js';
 import { RatioStrip } from './components/RatioStrip.js';
 import { ItemIcon } from './components/ItemIcon.js';
-import { graph, proliferators, techById, meta } from './data.js';
+import { graph, proliferators, techById, meta, machineById } from './data.js';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent, TooltipProvider,
   Button, Input, Label, Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
@@ -33,15 +36,66 @@ const Loading = ({ what }: { what: string }) => {
   );
 };
 
+const setupValidators: SnapshotValidators = {
+  isValidItem: (id) => graph.itemToRecipe.has(id),
+  isValidMachine: (id) => machineById.has(id),
+  isValidProliferator: (id) => id === 'none' || proliferators.some((p) => p.id === id),
+};
+
+/**
+ * Read (and strip) a `?s=` shared-setup param exactly once, at module load —
+ * before React renders. Doing this here rather than in an effect makes it
+ * robust to StrictMode's double-invoked mount effect: the param is consumed a
+ * single time, so the second effect pass can't see an already-stripped URL and
+ * fall through to auto-restoring the active setup (which would clobber the
+ * import). A non-null result means a `?s=` was present (valid or not), so the
+ * startup effect must NOT auto-restore; `snapshot` is the decoded payload (null
+ * if the param was malformed).
+ */
+const pendingShare: { snapshot: ReturnType<typeof decodeSetupUrl> } | null = (() => {
+  if (typeof window === 'undefined') return null;
+  const params = new URLSearchParams(window.location.search);
+  const shared = params.get('s');
+  if (shared === null) return null;
+  const decoded = decodeSetupUrl(shared);
+  params.delete('s');
+  const qs = params.toString();
+  window.history.replaceState(
+    null, '',
+    `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`,
+  );
+  return { snapshot: decoded };
+})();
+
 export function App() {
   const { tab, subpath, setTab, navigate } = useHashTab();
   const [pendingTech, setPendingTech] = useState<string | null>(null);
   const calc = useCalculator();
+  const setups = useSetups({
+    getSnapshot: calc.getSnapshot,
+    applySnapshot: calc.applySnapshot,
+    sanitize: (s) => sanitizeSnapshot(s, setupValidators),
+  });
   const { t } = useTranslation('ui');
 
   useEffect(() => {
     document.title = t('brand');
   }, [t]);
+
+  useEffect(() => {
+    // A shared `?s=` param (already consumed at module load) takes precedence
+    // and is imported as an unsaved setup; otherwise auto-restore the last
+    // active setup. Never both — a present share param must not auto-restore.
+    if (pendingShare) {
+      if (pendingShare.snapshot) {
+        calc.applySnapshot(sanitizeSnapshot(pendingShare.snapshot, setupValidators));
+      }
+      setups.clearActive(); // imported (or malformed) — detach so it reads as unsaved
+      return;
+    }
+    if (setups.activeId) setups.load(setups.activeId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleCalculateItem = useCallback((id: string) => {
     if (!graph.itemToRecipe.has(id)) return;
@@ -83,7 +137,7 @@ export function App() {
         </header>
 
         <TabsContent value="calculator" className="flex-1 overflow-auto">
-          <CalculatorTab calc={calc} />
+          <CalculatorTab calc={calc} setups={setups} />
         </TabsContent>
 
         <TabsContent value="tech-tree" className="flex-1" style={{ minHeight: 0 }}>
@@ -111,7 +165,10 @@ export function App() {
   );
 }
 
-function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
+function CalculatorTab({ calc, setups }: {
+  calc: ReturnType<typeof useCalculator>;
+  setups: ReturnType<typeof useSetups>;
+}) {
   const { t } = useTranslation('ui');
   const { name } = useNames();
   const proliferator = proliferators.find((p) => p.id === calc.proliferatorId) ?? null;
@@ -119,6 +176,7 @@ function CalculatorTab({ calc }: { calc: ReturnType<typeof useCalculator> }) {
 
   return (
     <div className="mx-auto max-w-4xl p-3 sm:p-5">
+      <SetupBar setups={setups} />
       {/* Targets */}
       <Section title={t('calculator.targets')}>
         <div className="flex flex-col gap-2">

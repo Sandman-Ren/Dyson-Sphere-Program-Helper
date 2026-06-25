@@ -3,9 +3,10 @@
  * Every component reads CSS variables from app.css — no hardcoded colors.
  */
 import * as React from 'react';
-import { Tabs as RTabs, Select as RSelect, Tooltip as RTooltip } from 'radix-ui';
+import { Tabs as RTabs, Select as RSelect, Tooltip as RTooltip, Dialog as RDialog } from 'radix-ui';
 import CheckIcon from 'lucide-react/dist/esm/icons/check';
 import ChevronDownIcon from 'lucide-react/dist/esm/icons/chevron-down';
+import XIcon from 'lucide-react/dist/esm/icons/x';
 import { cn } from '../lib/cn.js';
 
 // ---- Button ----
@@ -176,4 +177,40 @@ export function TooltipContent({ className, ...props }: React.ComponentProps<typ
       />
     </RTooltip.Portal>
   );
+}
+
+// ---- Dialog ----
+export const Dialog = RDialog.Root;
+export const DialogTrigger = RDialog.Trigger;
+export const DialogClose = RDialog.Close;
+
+export function DialogContent({ className, children, ...props }: React.ComponentProps<typeof RDialog.Content>) {
+  return (
+    <RDialog.Portal>
+      <RDialog.Overlay className="fixed inset-0 z-50 bg-black/60" />
+      <RDialog.Content
+        className={cn(
+          'fixed left-1/2 top-1/2 z-50 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 -translate-y-1/2',
+          'rounded-lg border border-border bg-card p-4 shadow-lg focus:outline-none',
+          className,
+        )}
+        {...props}
+      >
+        {children}
+        <RDialog.Close
+          className="absolute right-3 top-3 text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="Close"
+        >
+          <XIcon className="size-4" />
+        </RDialog.Close>
+      </RDialog.Content>
+    </RDialog.Portal>
+  );
+}
+
+export function DialogTitle({ className, ...props }: React.ComponentProps<typeof RDialog.Title>) {
+  return <RDialog.Title className={cn('text-sm font-semibold text-foreground', className)} {...props} />;
+}
+export function DialogDescription({ className, ...props }: React.ComponentProps<typeof RDialog.Description>) {
+  return <RDialog.Description className={cn('mt-1 text-xs text-muted-foreground', className)} {...props} />;
 }
