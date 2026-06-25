@@ -49,15 +49,11 @@ export function useSetups({ getSnapshot, applySnapshot }: UseSetupsArgs): Setups
   const isDirty = activeKey != null && activeKey !== canonicalSnapshotKey(getSnapshot());
 
   const load = useCallback((id: string) => {
-    setStore((prev) => {
-      const found = prev.setups.find((s) => s.id === id);
-      if (!found) return prev;
-      applySnapshot(found.snapshot);
-      const next = { ...prev, activeId: id };
-      saveStoredSetups(next);
-      return next;
-    });
-  }, [applySnapshot]);
+    const found = store.setups.find((s) => s.id === id);
+    if (!found) return;
+    applySnapshot(found.snapshot);
+    persist({ ...store, activeId: id });
+  }, [store, applySnapshot, persist]);
 
   const save = useCallback(() => {
     if (!store.activeId) return;
