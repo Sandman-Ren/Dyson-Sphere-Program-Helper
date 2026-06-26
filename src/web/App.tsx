@@ -194,8 +194,9 @@ function CalculatorTab({ calc, setups }: {
                   const unbounded = alloc ? !alloc.bounded : false;
                   const max = alloc?.sliderMax ?? 0;                 // items/s
                   const eff = alloc?.effectiveRate ?? 0;             // items/s
-                  const maxInUnit = max / UNIT_SECONDS[row.unit];
-                  const effInUnit = eff / UNIT_SECONDS[row.unit];
+                  // items/s → the target's display unit (e.g. ×60 for per-minute).
+                  const maxInUnit = max * UNIT_SECONDS[row.unit];
+                  const effInUnit = eff * UNIT_SECONDS[row.unit];
                   const span = Math.max(maxInUnit, effInUnit, 0.0001);
                   return unbounded ? (
                     <div className="flex items-center gap-2">
