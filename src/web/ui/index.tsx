@@ -3,7 +3,7 @@
  * Every component reads CSS variables from app.css — no hardcoded colors.
  */
 import * as React from 'react';
-import { Tabs as RTabs, Select as RSelect, Tooltip as RTooltip, Dialog as RDialog } from 'radix-ui';
+import { Tabs as RTabs, Select as RSelect, Tooltip as RTooltip, Dialog as RDialog, Slider as RSlider } from 'radix-ui';
 import CheckIcon from 'lucide-react/dist/esm/icons/check';
 import ChevronDownIcon from 'lucide-react/dist/esm/icons/chevron-down';
 import XIcon from 'lucide-react/dist/esm/icons/x';
@@ -213,4 +213,22 @@ export function DialogTitle({ className, ...props }: React.ComponentProps<typeof
 }
 export function DialogDescription({ className, ...props }: React.ComponentProps<typeof RDialog.Description>) {
   return <RDialog.Description className={cn('mt-1 text-xs text-muted-foreground', className)} {...props} />;
+}
+
+// ---- Slider ----
+export function Slider({ className, ...props }: React.ComponentProps<typeof RSlider.Root>) {
+  return (
+    <RSlider.Root
+      className={cn('relative flex h-5 w-full touch-none select-none items-center', className)}
+      {...props}
+    >
+      <RSlider.Track className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-secondary">
+        <RSlider.Range className="absolute h-full rounded-full bg-primary" />
+      </RSlider.Track>
+      <RSlider.Thumb
+        className="block size-4 rounded-full border border-primary bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        aria-label="value"
+      />
+    </RSlider.Root>
+  );
 }
