@@ -373,6 +373,17 @@ function TargetChain({ calc, entry }: { calc: ReturnType<typeof useCalculator>; 
           focusedItem={calc.focusedItem}
           onFocusItem={onFocus}
           expandSignal={expandSignal}
+          onPinSupply={(item, ratePerSecond) => {
+            // Seed the pool from this node at the display unit, converting items/s → that unit.
+            calc.setPinnedSupply(item, ratePerSecond * UNIT_SECONDS[calc.displayUnit], calc.displayUnit);
+          }}
+          pinnedItems={new Set(Object.keys(calc.pinnedSupply))}
+          unpinnableItems={(() => {
+            const s = new Set<string>();
+            for (const p of proliferators) { s.add(p.id); if (p.tier) s.add(p.tier); }
+            for (const tt of calc.targets) if (tt.item) s.add(tt.item);
+            return s;
+          })()}
         />
       </Section>
     </Section>
