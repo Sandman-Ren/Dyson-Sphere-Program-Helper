@@ -18,6 +18,7 @@ import { SharedComponents } from './components/SharedComponents.js';
 import { Section } from './components/Section.js';
 import { RatioStrip } from './components/RatioStrip.js';
 import { ItemIcon } from './components/ItemIcon.js';
+import { AvailableSupply } from './components/AvailableSupply.js';
 import { graph, proliferators, techById, meta, machineById } from './data.js';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent, TooltipProvider,
@@ -36,10 +37,14 @@ const Loading = ({ what }: { what: string }) => {
   );
 };
 
+const proliferatorItemIds = new Set(proliferators.flatMap((p) => (p.tier ? [p.id, p.tier] : [p.id])));
+
 const setupValidators: SnapshotValidators = {
   isValidItem: (id) => graph.itemToRecipe.has(id),
   isValidMachine: (id) => machineById.has(id),
   isValidProliferator: (id) => id === 'none' || proliferators.some((p) => p.id === id),
+  // Mined raw veins have mining recipes, so itemToRecipe covers them; proliferators are excluded.
+  isPinnableItem: (id) => graph.itemToRecipe.has(id) && !proliferatorItemIds.has(id),
 };
 
 /**
@@ -239,6 +244,8 @@ function CalculatorTab({ calc, setups }: {
           </div>
         </div>
       </Section>
+
+      <AvailableSupply calc={calc} />
 
       <MachineDefaults
         tiers={calc.machineTiers}
