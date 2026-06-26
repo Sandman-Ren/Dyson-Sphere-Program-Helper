@@ -22,7 +22,7 @@ import { AvailableSupply } from './components/AvailableSupply.js';
 import { graph, proliferators, techById, meta, machineById } from './data.js';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent, TooltipProvider,
-  Button, Input, Label, Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
+  Button, Input, Label, Select, SelectTrigger, SelectValue, SelectContent, SelectItem, Slider,
 } from './ui/index.js';
 
 const TechTree = lazy(() => import('./components/tech-tree/TechTree.js').then((m) => ({ default: m.TechTree })));
@@ -188,18 +188,67 @@ function CalculatorTab({ calc, setups }: {
           {calc.targets.map((row) => (
             <div key={row.id} className="flex flex-wrap items-center gap-2">
               <ItemSelector items={graph.allProducts} value={row.item} onChange={(id) => calc.setTargetItem(row.id, id)} />
-              <Input
-                type="number" min={0} step="any"
-                value={Number.isFinite(row.amount) ? row.amount : ''}
-                onChange={(e) => calc.setTargetAmount(row.id, Number(e.target.value) || 0)}
-                className="w-20 flex-shrink-0 sm:w-24"
-              />
-              <Select value={row.unit} onValueChange={(v) => calc.setTargetUnit(row.id, v as typeof row.unit)}>
-                <SelectTrigger className="w-28 flex-shrink-0"><SelectValue /></SelectTrigger>
+              {row.mode === 'variable' ? (
+                (() => {
+                  const alloc = calc.allocation.targets.get(row.id);
+                  const unbounded = alloc ? !alloc.bounded : false;
+                  const max = alloc?.sliderMax ?? 0;                 // items/s
+                  const eff = alloc?.effectiveRate ?? 0;             // items/s
+                  const maxInUnit = max / UNIT_SECONDS[row.unit];
+                  const effInUnit = eff / UNIT_SECONDS[row.unit];
+                  const span = Math.max(maxInUnit, effInUnit, 0.0001);
+                  return unbounded ? (
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number" min={0} step="any"
+                        value={Number.isFinite(row.amount) ? row.amount : ''}
+                        onChange={(e) => calc.setVariableRate(row.id, (Number(e.target.value) || 0) / UNIT_SECONDS[row.unit])}
+                        className="w-20 flex-shrink-0 sm:w-24"
+                      />
+                      <span className="text-[11px] text-muted-foreground">{t('calculator.variableUnbounded')}</span>
+                    </div>
+                  ) : (
+                    <div className="flex min-w-[10rem] flex-1 items-center gap-2">
+                      <Slider
+                        className="flex-1"
+                        min={0}
+                        max={span}
+                        step={span / 1000}
+                        value={[effInUnit]}
+                        onValueCommit={(v) => calc.setVariableRate(row.id, (v[0] ?? 0) / UNIT_SECONDS[row.unit])}
+                      />
+                      <span className="w-24 shrink-0 text-right text-xs font-medium tabular-nums text-primary">
+                        {rate(eff, calc.displayUnit)}
+                      </span>
+                    </div>
+                  );
+                })()
+              ) : (
+                <>
+                  <Input
+                    type="number" min={0} step="any"
+                    value={Number.isFinite(row.amount) ? row.amount : ''}
+                    onChange={(e) => calc.setTargetAmount(row.id, Number(e.target.value) || 0)}
+                    className="w-20 flex-shrink-0 sm:w-24"
+                  />
+                  <Select value={row.unit} onValueChange={(v) => calc.setTargetUnit(row.id, v as typeof row.unit)}>
+                    <SelectTrigger className="w-28 flex-shrink-0"><SelectValue /></SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="second">{t('calculator.perSecond')}</SelectItem>
+                      <SelectItem value="minute">{t('calculator.perMinute')}</SelectItem>
+                      <SelectItem value="hour">{t('calculator.perHour')}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </>
+              )}
+              <Select
+                value={row.mode}
+                onValueChange={(v) => calc.setTargetMode(row.id, v as 'fixed' | 'variable')}
+              >
+                <SelectTrigger className="w-28 flex-shrink-0" aria-label={t('calculator.modeFixed')}><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="second">{t('calculator.perSecond')}</SelectItem>
-                  <SelectItem value="minute">{t('calculator.perMinute')}</SelectItem>
-                  <SelectItem value="hour">{t('calculator.perHour')}</SelectItem>
+                  <SelectItem value="fixed">{t('calculator.modeFixed')}</SelectItem>
+                  <SelectItem value="variable" disabled={!graph.itemToRecipe.has(row.item)}>{t('calculator.modeVariable')}</SelectItem>
                 </SelectContent>
               </Select>
               {calc.targets.length > 1 && (
@@ -298,7 +347,7 @@ function TargetChain({ calc, entry }: { calc: ReturnType<typeof useCalculator>; 
   const title = (
     <>
       <ItemIcon id={target.item} size={20} tinted />
-      <span>{name(target.item)} · {rate(target.amount / UNIT_SECONDS[target.unit], calc.displayUnit)}</span>
+      <span>{name(target.item)} · {rate(plan.root.ratePerSecond, calc.displayUnit)}</span>
     </>
   );
 
