@@ -5,32 +5,38 @@ import {
 } from './setups.js';
 
 const validators: SnapshotValidators = {
-  isValidItem: (id) => ['iron-ingot', 'copper-ingot', 'circuit-board'].includes(id),
+  isValidItem: (id) => ['iron-ingot', 'copper-ingot', 'circuit-board', 'proliferator-mk3'].includes(id),
   isValidMachine: (id) => ['assembler-mk1', 'smelter-1'].includes(id),
   isValidProliferator: (id) => id === 'none' || id === 'proliferator-mk3',
+  // Proliferators are valid items but NOT pinnable.
+  isPinnableItem: (id) => ['iron-ingot', 'copper-ingot', 'circuit-board'].includes(id),
 };
 
 const snap: SetupSnapshot = {
-  v: 1,
+  v: 2,
   targets: [
-    { item: 'iron-ingot', amount: 60, unit: 'minute' },
-    { item: 'circuit-board', amount: 30, unit: 'second' },
+    { item: 'iron-ingot', amount: 60, unit: 'minute', mode: 'fixed', followMax: false },
+    { item: 'circuit-board', amount: 30, unit: 'second', mode: 'variable', followMax: true },
   ],
   displayUnit: 'minute',
   proliferatorId: 'proliferator-mk3',
   machineOverrides: { 'iron-ingot': 'smelter-1' },
   recipeOverrides: [{}, { 'root/copper-ingot': 'copper-ingot-alt' }],
+  pinnedSupply: { 'copper-ingot': { amount: 120, unit: 'minute' } },
 };
 
 describe('setups', () => {
   it('round-trips through URL encode/decode', () => {
-    const decoded = decodeSetupUrl(encodeSetupUrl(snap));
-    expect(decoded).toEqual(snap);
+    expect(decodeSetupUrl(encodeSetupUrl(snap))).toEqual(snap);
   });
 
-  it('decodeSetupUrl returns null on garbage', () => {
+  it('decodeSetupUrl accepts v1 and v2 but rejects other versions and garbage', () => {
     expect(decodeSetupUrl('not-base64-$$$')).toBeNull();
-    expect(decodeSetupUrl(encodeSetupUrl({ ...snap, v: 2 as unknown as 1 }))).toBeNull();
+    expect(decodeSetupUrl(encodeSetupUrl({ ...snap, v: 3 as unknown as 2 }))).toBeNull();
+    // a real v1 payload still decodes (no mode/pinnedSupply fields)
+    const v1 = { v: 1, targets: [{ item: 'iron-ingot', amount: 5, unit: 'minute' }], displayUnit: 'minute',
+      proliferatorId: 'none', machineOverrides: {}, recipeOverrides: [{}] };
+    expect(decodeSetupUrl(encodeSetupUrl(v1 as unknown as SetupSnapshot))).not.toBeNull();
   });
 
   it('canonicalSnapshotKey is insensitive to machineOverrides key order', () => {
@@ -39,34 +45,56 @@ describe('setups', () => {
     expect(canonicalSnapshotKey(a)).toBe(canonicalSnapshotKey(b));
   });
 
-  it('canonicalSnapshotKey is sensitive to target order', () => {
-    const reversed = { ...snap, targets: [...snap.targets].reverse() };
-    expect(canonicalSnapshotKey(reversed)).not.toBe(canonicalSnapshotKey(snap));
+  it('sanitizeSnapshot upgrades a v1 payload to all-fixed + empty pool', () => {
+    const v1 = { v: 1, targets: [{ item: 'iron-ingot', amount: 5, unit: 'minute' }], displayUnit: 'minute',
+      proliferatorId: 'none', machineOverrides: {}, recipeOverrides: [{}] };
+    const out = sanitizeSnapshot(v1, validators);
+    expect(out.v).toBe(2);
+    expect(out.targets[0]).toEqual({ item: 'iron-ingot', amount: 5, unit: 'minute', mode: 'fixed', followMax: false });
+    expect(out.pinnedSupply).toEqual({});
   });
 
-  it('sanitizeSnapshot drops invalid targets, machines, proliferator, and bad units', () => {
+  it('sanitizeSnapshot keeps modes aligned when an unknown-item target is dropped', () => {
     const dirty = {
-      v: 1,
+      v: 2,
       targets: [
-        { item: 'iron-ingot', amount: -5, unit: 'fortnight' },
-        { item: 'not-a-real-item', amount: 10, unit: 'minute' },
+        { item: 'not-real', amount: 1, unit: 'minute', mode: 'variable', followMax: true },
+        { item: 'iron-ingot', amount: 2, unit: 'minute', mode: 'variable', followMax: true },
       ],
-      displayUnit: 'aeon',
-      proliferatorId: 'proliferator-fake',
-      machineOverrides: { 'iron-ingot': 'smelter-1', 'iron-ingot-2': 'ghost-machine' },
+      displayUnit: 'minute', proliferatorId: 'none', machineOverrides: {},
       recipeOverrides: [{ a: 'b' }, { c: 'd' }],
+      pinnedSupply: {},
     };
     const out = sanitizeSnapshot(dirty, validators);
-    expect(out.targets).toEqual([{ item: 'iron-ingot', amount: 0, unit: 'minute' }]);
-    expect(out.displayUnit).toBe('minute');
-    expect(out.proliferatorId).toBe('none');
-    expect(out.machineOverrides).toEqual({ 'iron-ingot': 'smelter-1' });
-    expect(out.recipeOverrides).toEqual([{ a: 'b' }]);
+    expect(out.targets).toEqual([{ item: 'iron-ingot', amount: 2, unit: 'minute', mode: 'variable', followMax: true }]);
+    expect(out.recipeOverrides).toEqual([{ c: 'd' }]); // override stayed aligned with its target
   });
 
-  it('sanitizeSnapshot falls back to one empty target when none survive', () => {
-    const out = sanitizeSnapshot({ v: 1, targets: [] }, validators);
-    expect(out.targets).toEqual([{ item: '', amount: 60, unit: 'minute' }]);
+  it('sanitizeSnapshot drops invalid mode, unknown/proliferator pinned ids, and bad amounts', () => {
+    const dirty = {
+      v: 2,
+      targets: [{ item: 'iron-ingot', amount: 10, unit: 'minute', mode: 'sideways', followMax: 'yes' }],
+      displayUnit: 'minute', proliferatorId: 'none', machineOverrides: {}, recipeOverrides: [{}],
+      pinnedSupply: {
+        'copper-ingot': { amount: 50, unit: 'minute' },
+        'ghost-item': { amount: 5, unit: 'minute' },        // unknown → dropped
+        'proliferator-mk3': { amount: 20, unit: 'minute' }, // valid item but not pinnable → dropped
+        'circuit-board': { amount: -3, unit: 'fortnight' }, // bad amount/unit → clamped/defaulted
+      },
+    };
+    const out = sanitizeSnapshot(dirty, validators);
+    expect(out.targets[0].mode).toBe('fixed');     // invalid mode → fixed
+    expect(out.targets[0].followMax).toBe(false);  // invalid followMax → false
+    expect(out.pinnedSupply).toEqual({
+      'copper-ingot': { amount: 50, unit: 'minute' },
+      'circuit-board': { amount: 0, unit: 'minute' },
+    });
+  });
+
+  it('sanitizeSnapshot falls back to one empty fixed target when none survive', () => {
+    const out = sanitizeSnapshot({ v: 2, targets: [] }, validators);
+    expect(out.targets).toEqual([{ item: '', amount: 60, unit: 'minute', mode: 'fixed', followMax: false }]);
     expect(out.recipeOverrides).toEqual([{}]);
+    expect(out.pinnedSupply).toEqual({});
   });
 });

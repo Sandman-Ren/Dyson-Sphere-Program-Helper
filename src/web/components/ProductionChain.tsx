@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ChevronRightIcon from 'lucide-react/dist/esm/icons/chevron-right';
 import PickaxeIcon from 'lucide-react/dist/esm/icons/pickaxe';
 import SparklesIcon from 'lucide-react/dist/esm/icons/sparkles';
+import PinIcon from 'lucide-react/dist/esm/icons/pin';
 import { useTranslation } from 'react-i18next';
 import type { ProductionNode, MachineOverrides } from '../../calculator/index.js';
 import type { TimeUnit } from '../hooks/useCalculator.js';
@@ -28,6 +29,12 @@ interface ProductionChainProps {
   onFocusItem?: (item: string) => void;
   /** Bump with a new object to force every node open/closed (expand/fold all). */
   expandSignal?: { id: number; open: boolean } | null;
+  /** Pin this node's item as available supply at the given rate. */
+  onPinSupply?: (item: string, ratePerSecond: number) => void;
+  /** Items currently pinned (render the affordance as active). */
+  pinnedItems?: Set<string>;
+  /** Items that cannot be pinned (proliferators, target outputs). */
+  unpinnableItems?: Set<string>;
 }
 
 /** The bare production-chain tree (no card/title — wrap it in a Section). */
@@ -37,7 +44,8 @@ export function ProductionChain(props: ProductionChainProps) {
 
 function ChainNode({
   node, timeUnit, machineOverrides, onMachineChange, onRecipeChange,
-  sharedCounts, focusedItem, onFocusItem, expandSignal, depth, path,
+  sharedCounts, focusedItem, onFocusItem, expandSignal,
+  onPinSupply, pinnedItems, unpinnableItems, depth, path,
 }: ProductionChainProps & { depth: number; path: string }) {
   const { t } = useTranslation('ui');
   const { name, recipeName } = useNames();
@@ -106,6 +114,26 @@ function ChainNode({
         )}
 
         <span className="ml-auto shrink-0 font-medium tabular-nums text-primary">{rate(node.ratePerSecond, timeUnit)}</span>
+
+        {onPinSupply && !unpinnableItems?.has(node.item) && (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button
+                type="button"
+                onClick={() => onPinSupply(node.item, node.ratePerSecond)}
+                className={cn(
+                  'shrink-0 rounded p-1 text-muted-foreground transition-colors hover:text-amber',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                  pinnedItems?.has(node.item) && 'text-amber',
+                )}
+                aria-label={t('chain.limitSupply')}
+              >
+                <PinIcon className="size-3.5" />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent>{pinnedItems?.has(node.item) ? t('chain.supplyLimited') : t('chain.limitSupply')}</TooltipContent>
+          </Tooltip>
+        )}
 
         {node.recipe && recipes.length > 1 && (
           <Select value={node.recipe.id} onValueChange={(v) => onRecipeChange(path, v)}>
@@ -180,6 +208,9 @@ function ChainNode({
               focusedItem={focusedItem}
               onFocusItem={onFocusItem}
               expandSignal={expandSignal}
+              onPinSupply={onPinSupply}
+              pinnedItems={pinnedItems}
+              unpinnableItems={unpinnableItems}
               depth={depth + 1}
               path={`${path}>${child.item}`}
             />
