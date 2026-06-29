@@ -63,6 +63,9 @@ const ui = {
     recipe: 'Recipe',
     limitSupply: 'Limit available supply',
     supplyLimited: 'Supply-limited',
+    ratioTitle: 'Rate relative to the target output',
+    colRatio: 'Ratio',
+    colRate: 'Rate',
   },
   supply: {
     title: 'Available supply',

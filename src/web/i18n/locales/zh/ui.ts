@@ -65,6 +65,9 @@ const ui: UiResource = {
     recipe: '配方',
     limitSupply: '限制可用供给',
     supplyLimited: '供给受限',
+    ratioTitle: '相对于目标产物的产率',
+    colRatio: '比例',
+    colRate: '速率',
   },
   supply: {
     title: '可用供给',
