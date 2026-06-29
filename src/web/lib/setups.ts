@@ -1,15 +1,18 @@
 import type { MachineOverrides, RecipeOverrides } from '../../calculator/index.js';
 import type { TimeUnit } from '../hooks/useCalculator.js';
 
-export interface SnapshotTarget { item: string; amount: number; unit: TimeUnit; }
+export type TargetMode = 'fixed' | 'variable';
+export interface SnapshotTarget { item: string; amount: number; unit: TimeUnit; mode: TargetMode; followMax: boolean; }
+export interface PinnedSupplyEntry { amount: number; unit: TimeUnit; }
 
 export interface SetupSnapshot {
-  v: 1;
+  v: 2;
   targets: SnapshotTarget[];
   displayUnit: TimeUnit;
   proliferatorId: string;
   machineOverrides: MachineOverrides;
   recipeOverrides: RecipeOverrides[];
+  pinnedSupply: Record<string, PinnedSupplyEntry>;
 }
 
 export interface StoredSetup { id: string; name: string; snapshot: SetupSnapshot; }
@@ -19,6 +22,8 @@ export interface SnapshotValidators {
   isValidItem(id: string): boolean;
   isValidMachine(id: string): boolean;
   isValidProliferator(id: string): boolean;
+  /** Whether an item may be pinned as available supply (known item, not a proliferator). */
+  isPinnableItem(id: string): boolean;
 }
 
 const STORAGE_KEY = 'dsp-setups';
@@ -63,7 +68,7 @@ export function encodeSetupUrl(snapshot: SetupSnapshot): string {
 export function decodeSetupUrl(raw: string): SetupSnapshot | null {
   try {
     const parsed = JSON.parse(fromBase64Url(raw));
-    if (!parsed || parsed.v !== 1 || !Array.isArray(parsed.targets)) return null;
+    if (!parsed || (parsed.v !== 1 && parsed.v !== 2) || !Array.isArray(parsed.targets)) return null;
     return parsed as SetupSnapshot;
   } catch {
     return null;
@@ -99,6 +104,8 @@ function sanitizeRecord(value: unknown): RecipeOverrides {
   return out;
 }
 
+const isMode = (m: unknown): m is TargetMode => m === 'fixed' || m === 'variable';
+
 export function sanitizeSnapshot(input: unknown, v: SnapshotValidators): SetupSnapshot {
   const src = (input && typeof input === 'object') ? input as Record<string, unknown> : {};
   const rawTargets = Array.isArray(src.targets) ? src.targets : [];
@@ -109,14 +116,16 @@ export function sanitizeSnapshot(input: unknown, v: SnapshotValidators): SetupSn
   rawTargets.forEach((t, i) => {
     const tt = (t && typeof t === 'object') ? t as Record<string, unknown> : {};
     const item = typeof tt.item === 'string' ? tt.item : '';
-    if (item && !v.isValidItem(item)) return; // drop unknown product
+    if (item && !v.isValidItem(item)) return; // drop unknown product (keeps mode+override aligned)
     const amount = typeof tt.amount === 'number' && Number.isFinite(tt.amount) && tt.amount >= 0 ? tt.amount : 0;
     const unit = isUnit(tt.unit) ? tt.unit : 'minute';
-    targets.push({ item, amount, unit });
+    const mode = isMode(tt.mode) ? tt.mode : 'fixed';      // v1 payloads have no mode → fixed
+    const followMax = tt.followMax === true;
+    targets.push({ item, amount, unit, mode, followMax });
     recipeOverrides.push(sanitizeRecord(rawRecipes[i]));
   });
   if (targets.length === 0) {
-    targets.push({ item: '', amount: 60, unit: 'minute' });
+    targets.push({ item: '', amount: 60, unit: 'minute', mode: 'fixed', followMax: false });
     recipeOverrides.push({});
   }
 
@@ -129,9 +138,20 @@ export function sanitizeSnapshot(input: unknown, v: SnapshotValidators): SetupSn
     }
   }
 
+  const pinnedSupply: Record<string, PinnedSupplyEntry> = {};
+  const ps = (src.pinnedSupply && typeof src.pinnedSupply === 'object')
+    ? src.pinnedSupply as Record<string, unknown> : {};
+  for (const [item, entry] of Object.entries(ps)) {
+    if (!v.isPinnableItem(item)) continue;                 // unknown OR proliferator ids excluded
+    const e = (entry && typeof entry === 'object') ? entry as Record<string, unknown> : {};
+    const amount = typeof e.amount === 'number' && Number.isFinite(e.amount) && e.amount >= 0 ? e.amount : 0;
+    const unit = isUnit(e.unit) ? e.unit : 'minute';
+    pinnedSupply[item] = { amount, unit };
+  }
+
   const proliferatorId = typeof src.proliferatorId === 'string' && v.isValidProliferator(src.proliferatorId)
     ? src.proliferatorId : 'none';
   const displayUnit = isUnit(src.displayUnit) ? src.displayUnit : 'minute';
 
-  return { v: 1, targets, displayUnit, proliferatorId, machineOverrides, recipeOverrides };
+  return { v: 2, targets, displayUnit, proliferatorId, machineOverrides, recipeOverrides, pinnedSupply };
 }
