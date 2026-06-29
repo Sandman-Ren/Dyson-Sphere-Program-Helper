@@ -52,7 +52,7 @@ const COL = {
 /** The bare production-chain tree (no card/title — wrap it in a Section). */
 export function ProductionChain(props: ProductionChainProps) {
   return (
-    <div>
+    <>
       <ChainHeader />
       <ChainNode
         {...props}
@@ -60,7 +60,7 @@ export function ProductionChain(props: ProductionChainProps) {
         path={props.node.item}
         rootRatePerSecond={props.node.ratePerSecond}
       />
-    </div>
+    </>
   );
 }
 
@@ -262,30 +262,26 @@ function ChainNode({
         )}
       </div>
 
-      {open && hasChildren && (
-        <div>
-          {node.children.map((child, i) => (
-            <ChainNode
-              key={`${child.item}-${i}`}
-              node={child}
-              timeUnit={timeUnit}
-              machineOverrides={machineOverrides}
-              onMachineChange={onMachineChange}
-              onRecipeChange={onRecipeChange}
-              sharedCounts={sharedCounts}
-              focusedItem={focusedItem}
-              onFocusItem={onFocusItem}
-              expandSignal={expandSignal}
-              onPinSupply={onPinSupply}
-              pinnedItems={pinnedItems}
-              unpinnableItems={unpinnableItems}
-              depth={depth + 1}
-              path={`${path}>${child.item}`}
-              rootRatePerSecond={rootRatePerSecond}
-            />
-          ))}
-        </div>
-      )}
+      {open && hasChildren && node.children.map((child, i) => (
+        <ChainNode
+          key={`${child.item}-${i}`}
+          node={child}
+          timeUnit={timeUnit}
+          machineOverrides={machineOverrides}
+          onMachineChange={onMachineChange}
+          onRecipeChange={onRecipeChange}
+          sharedCounts={sharedCounts}
+          focusedItem={focusedItem}
+          onFocusItem={onFocusItem}
+          expandSignal={expandSignal}
+          onPinSupply={onPinSupply}
+          pinnedItems={pinnedItems}
+          unpinnableItems={unpinnableItems}
+          depth={depth + 1}
+          path={`${path}>${child.item}`}
+          rootRatePerSecond={rootRatePerSecond}
+        />
+      ))}
     </div>
   );
 }
