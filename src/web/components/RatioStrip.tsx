@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import RotateCcwIcon from 'lucide-react/dist/esm/icons/rotate-ccw';
+import InfoIcon from 'lucide-react/dist/esm/icons/info';
 import { useTranslation } from 'react-i18next';
 import type { NodeSelector, ProductionNode, ProductionPlan } from '../../calculator/index.js';
 import { collectItemTotals, computeIntegerRatios } from '../../calculator/index.js';
@@ -26,6 +27,8 @@ interface RatioStripProps {
   title: string;
   /** Per-node value each item is ranked by (building count vs throughput share). */
   selector: NodeSelector;
+  /** Optional one-line explanation shown via an info icon in the header. */
+  info?: string;
 }
 
 /**
@@ -35,7 +38,7 @@ interface RatioStripProps {
  * at several depths is summed once. Clicking a chip excludes it so the ratio can
  * focus on a subset of the chain.
  */
-export function RatioStrip({ plan, title, selector }: RatioStripProps) {
+export function RatioStrip({ plan, title, selector, info }: RatioStripProps) {
   const { t } = useTranslation('ui');
   const { name } = useNames();
   const [excluded, setExcluded] = useState<Set<string>>(new Set());
@@ -104,8 +107,35 @@ export function RatioStrip({ plan, title, selector }: RatioStripProps) {
     </button>
   ) : undefined;
 
+  // The info icon lives in the header's actions slot (outside the section's
+  // toggle button) to avoid nesting interactive elements.
+  const infoTrigger = info ? (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <button
+          type="button"
+          aria-label={info}
+          className={cn(
+            'inline-flex items-center rounded text-muted-foreground transition-colors hover:text-foreground',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+          )}
+        >
+          <InfoIcon className="size-3.5" />
+        </button>
+      </TooltipTrigger>
+      <TooltipContent>{info}</TooltipContent>
+    </Tooltip>
+  ) : undefined;
+
+  const actions = infoTrigger || reset ? (
+    <>
+      {infoTrigger}
+      {reset}
+    </>
+  ) : undefined;
+
   return (
-    <Section title={title} actions={reset}>
+    <Section title={title} actions={actions}>
       <div className="flex flex-wrap items-center gap-1.5">
         {entries.map((entry) => {
           const isExcluded = excluded.has(entry.item);

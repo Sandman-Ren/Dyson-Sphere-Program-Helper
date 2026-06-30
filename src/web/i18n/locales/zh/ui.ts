@@ -56,6 +56,7 @@ const ui: UiResource = {
   },
   share: {
     title: '组件份额',
+    titleInfo: '各物品占总产量的份额（含原矿与目标产物）——与建筑速度无关，区别于建筑比例。',
   },
   chain: {
     title: '生产链',

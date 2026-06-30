@@ -355,7 +355,7 @@ function TargetChain({ calc, entry }: { calc: ReturnType<typeof useCalculator>; 
   return (
     <Section title={title}>
       <RatioStrip plan={plan} title={t('ratio.title')} selector={machineCountSelector} />
-      <RatioStrip plan={plan} title={t('share.title')} selector={throughputSelector} />
+      <RatioStrip plan={plan} title={t('share.title')} selector={throughputSelector} info={t('share.titleInfo')} />
       <Section
         title={t('chain.title')}
         actions={(

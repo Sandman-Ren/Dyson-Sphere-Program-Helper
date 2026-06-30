@@ -54,6 +54,7 @@ const ui = {
   },
   share: {
     title: 'Component shares',
+    titleInfo: 'Each item’s share of total throughput (raw resources and the target included) — independent of building speed, unlike Machine ratio.',
   },
   chain: {
     title: 'Production chain',
