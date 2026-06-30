@@ -54,6 +54,9 @@ const ui: UiResource = {
     clickToExclude: '{{name}} —— 点击以排除',
     clickToInclude: '{{name}} —— 点击以包含',
   },
+  share: {
+    title: '组件份额',
+  },
   chain: {
     title: '生产链',
     collapse: '折叠',

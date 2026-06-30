@@ -16,7 +16,7 @@ import { ProductionChain } from './components/ProductionChain.js';
 import { Summary } from './components/Summary.js';
 import { SharedComponents } from './components/SharedComponents.js';
 import { Section } from './components/Section.js';
-import { RatioStrip } from './components/RatioStrip.js';
+import { RatioStrip, machineCountSelector, throughputSelector } from './components/RatioStrip.js';
 import { ItemIcon } from './components/ItemIcon.js';
 import { AvailableSupply } from './components/AvailableSupply.js';
 import { graph, proliferators, techById, meta, machineById } from './data.js';
@@ -354,7 +354,8 @@ function TargetChain({ calc, entry }: { calc: ReturnType<typeof useCalculator>; 
 
   return (
     <Section title={title}>
-      <RatioStrip plan={plan} />
+      <RatioStrip plan={plan} title={t('ratio.title')} selector={machineCountSelector} />
+      <RatioStrip plan={plan} title={t('share.title')} selector={throughputSelector} />
       <Section
         title={t('chain.title')}
         actions={(
