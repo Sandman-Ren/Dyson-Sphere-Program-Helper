@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { buildRecipeGraph } from './recipe-graph.js';
 import { solve } from './solver.js';
-import { combinePlans, collectMachineCounts, buildSharedComponents } from './shared-components.js';
+import { combinePlans, collectMachineCounts, collectItemTotals, buildSharedComponents } from './shared-components.js';
+import type { NodeSelector } from './shared-components.js';
 import type { Recipe, Machine } from '../data/schema.js';
 
 const S: Machine = { id: 's', name: 'S', speed: 1, usageKW: 100, drainKW: 0, modules: 0, powerType: 'electric' };
@@ -35,6 +36,45 @@ describe('collectMachineCounts', () => {
     const counts = collectMachineCounts([solve(SHARED, 'a', 2)]);
     expect(counts.length).toBeGreaterThan(0);
     expect(counts.every((n) => n > 0)).toBe(true);
+  });
+});
+
+describe('collectItemTotals', () => {
+  const throughput: NodeSelector = (n) => n.ratePerSecond;
+  const machines: NodeSelector = (n) => (n.machine && n.machinesNeeded > 0 ? n.machinesNeeded : null);
+
+  it('sums a selected value per item, including the root target and raw resources', () => {
+    const totals = collectItemTotals(solve(SHARED, 'a', 2).root, throughput);
+    expect(totals.get('a')).toBeCloseTo(2, 9);       // root/target included
+    expect(totals.get('shared')).toBeCloseTo(2, 9);
+    expect(totals.get('ore')).toBeCloseTo(2, 9);     // mined raw included
+  });
+
+  it('merges diamond dependencies, summing both occurrences of a shared item', () => {
+    // r needs m1 + m2; both consume `common`, so `common` appears twice in one tree.
+    const g = synth([
+      { id: 'r', name: 'r', time: 1, in: [{ id: 'm1', amount: 1 }, { id: 'm2', amount: 1 }], out: [{ id: 'r', amount: 1 }], producers: ['s'], flags: [] },
+      { id: 'm1', name: 'm1', time: 1, in: [{ id: 'common', amount: 1 }], out: [{ id: 'm1', amount: 1 }], producers: ['s'], flags: [] },
+      { id: 'm2', name: 'm2', time: 1, in: [{ id: 'common', amount: 1 }], out: [{ id: 'm2', amount: 1 }], producers: ['s'], flags: [] },
+      { id: 'common', name: 'common', time: 1, in: [{ id: 'ore', amount: 1 }], out: [{ id: 'common', amount: 1 }], producers: ['s'], flags: [] },
+      { id: 'ore', name: 'ore', time: 1, in: [], out: [{ id: 'ore', amount: 1 }], producers: ['s'], flags: ['mining'] },
+    ]);
+    const totals = collectItemTotals(solve(g, 'r', 1).root, throughput);
+    expect(totals.get('common')).toBeCloseTo(2, 9);  // 1 via m1 + 1 via m2
+    expect(totals.get('ore')).toBeCloseTo(2, 9);
+  });
+
+  it('omits nodes the selector skips', () => {
+    // `raw` has no recipe → a machine-less leaf the machine selector rejects.
+    const g = synth([
+      { id: 'a', name: 'a', time: 1, in: [{ id: 'shared', amount: 1 }], out: [{ id: 'a', amount: 1 }], producers: ['s'], flags: [] },
+      { id: 'shared', name: 'shared', time: 1, in: [{ id: 'raw', amount: 1 }], out: [{ id: 'shared', amount: 1 }], producers: ['s'], flags: [] },
+    ]);
+    const root = solve(g, 'a', 1).root;
+    const byMachine = collectItemTotals(root, machines);
+    expect(byMachine.has('raw')).toBe(false);        // no machine → skipped
+    expect(byMachine.has('a')).toBe(true);
+    expect(collectItemTotals(root, throughput).has('raw')).toBe(true); // throughput counts it
   });
 });
 

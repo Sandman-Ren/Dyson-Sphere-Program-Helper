@@ -1,44 +1,49 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import RotateCcwIcon from 'lucide-react/dist/esm/icons/rotate-ccw';
 import { useTranslation } from 'react-i18next';
-import type { ProductionNode, ProductionPlan } from '../../calculator/index.js';
-import { computeIntegerRatios } from '../../calculator/index.js';
+import type { NodeSelector, ProductionNode, ProductionPlan } from '../../calculator/index.js';
+import { collectItemTotals, computeIntegerRatios } from '../../calculator/index.js';
 import { ItemIcon } from './ItemIcon.js';
 import { Section } from './Section.js';
 import { useNames } from '../i18n/useNames.js';
 import { Tooltip, TooltipTrigger, TooltipContent } from '../ui/index.js';
 import { cn } from '../lib/cn.js';
 
-/** The same produced item can appear at several depths; sum its building counts. */
-function collectRatioEntries(node: ProductionNode, totals: Map<string, number>): void {
-  if (node.machine && node.machinesNeeded > 0) {
-    totals.set(node.item, (totals.get(node.item) ?? 0) + node.machinesNeeded);
-  }
-  for (const child of node.children) collectRatioEntries(child, totals);
-}
+/** Machine ratio: each crafted item's fractional building count. */
+export const machineCountSelector: NodeSelector = (node: ProductionNode) =>
+  node.machine && node.machinesNeeded > 0 ? node.machinesNeeded : null;
+
+/** Component shares: each item's total throughput (raws and the target included). */
+export const throughputSelector: NodeSelector = (node: ProductionNode) =>
+  node.ratePerSecond > 0 ? node.ratePerSecond : null;
 
 /** Largest integer ratio we'll show before falling back to normalized decimals. */
 const MAX_INTEGER_RATIO = 200;
 
 interface RatioStripProps {
   plan: ProductionPlan;
+  /** Section heading for this strip. */
+  title: string;
+  /** Per-node value each item is ranked by (building count vs throughput share). */
+  selector: NodeSelector;
 }
 
 /**
- * A strip of clickable item chips showing the relative number of buildings each
- * crafted item needs, expressed as a minimum integer ratio (e.g. 4 : 5 : 1).
- * Clicking a chip excludes it so the ratio can focus on a subset of the chain.
+ * A strip of clickable item chips expressing each item's `selector` value as a
+ * minimum integer ratio (e.g. 4 : 5 : 1) — either relative building counts
+ * ("Machine ratio") or relative throughput ("Component shares"). The same item
+ * at several depths is summed once. Clicking a chip excludes it so the ratio can
+ * focus on a subset of the chain.
  */
-export function RatioStrip({ plan }: RatioStripProps) {
+export function RatioStrip({ plan, title, selector }: RatioStripProps) {
   const { t } = useTranslation('ui');
   const { name } = useNames();
   const [excluded, setExcluded] = useState<Set<string>>(new Set());
 
   const entries = useMemo(() => {
-    const totals = new Map<string, number>();
-    collectRatioEntries(plan.root, totals);
-    return [...totals.entries()].map(([item, machinesNeeded]) => ({ item, machinesNeeded }));
-  }, [plan]);
+    const totals = collectItemTotals(plan.root, selector);
+    return [...totals.entries()].map(([item, value]) => ({ item, value }));
+  }, [plan, selector]);
 
   // Forget exclusions whenever the target item (and thus the chain) changes.
   const targetItem = plan.root.item;
@@ -51,7 +56,7 @@ export function RatioStrip({ plan }: RatioStripProps) {
     const included = entries.filter((e) => !excluded.has(e.item));
     if (included.length === 0) return map;
 
-    const values = included.map((e) => e.machinesNeeded);
+    const values = included.map((e) => e.value);
     const intRatios = computeIntegerRatios(values);
 
     if (intRatios && Math.max(...intRatios) <= MAX_INTEGER_RATIO) {
@@ -62,7 +67,7 @@ export function RatioStrip({ plan }: RatioStripProps) {
     const minVal = Math.min(...values);
     if (minVal > 0) {
       for (const e of included) {
-        const normalized = e.machinesNeeded / minVal;
+        const normalized = e.value / minVal;
         const rounded = Math.round(normalized);
         map.set(e.item, Math.abs(normalized - rounded) < 0.05 ? String(rounded) : normalized.toFixed(1));
       }
@@ -100,7 +105,7 @@ export function RatioStrip({ plan }: RatioStripProps) {
   ) : undefined;
 
   return (
-    <Section title={t('ratio.title')} actions={reset}>
+    <Section title={title} actions={reset}>
       <div className="flex flex-wrap items-center gap-1.5">
         {entries.map((entry) => {
           const isExcluded = excluded.has(entry.item);

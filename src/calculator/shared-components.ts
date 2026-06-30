@@ -33,6 +33,33 @@ export function collectMachineCounts(plans: ProductionPlan[]): number[] {
   return values;
 }
 
+/**
+ * Picks the per-node value to accumulate for an item, or `null` to skip the node.
+ * The same item can appear at several depths; {@link collectItemTotals} sums the
+ * selected values together so each item is counted once with its full total.
+ */
+export type NodeSelector = (node: ProductionNode) => number | null;
+
+/**
+ * Sum a selected per-node value by item across a whole production tree.
+ *
+ * Diamond dependencies (an item produced for two branches) are merged: each
+ * occurrence's selected value is added to the same item key. Nodes for which the
+ * selector returns `null` (or a non-positive number) are omitted entirely.
+ */
+export function collectItemTotals(root: ProductionNode, selector: NodeSelector): Map<string, number> {
+  const totals = new Map<string, number>();
+  const walk = (n: ProductionNode): void => {
+    const value = selector(n);
+    if (value !== null && value > 0) {
+      totals.set(n.item, (totals.get(n.item) ?? 0) + value);
+    }
+    for (const c of n.children) walk(c);
+  };
+  walk(root);
+  return totals;
+}
+
 export interface SharedComponentNode {
   item: string;
   combinedRatePerSecond: number;

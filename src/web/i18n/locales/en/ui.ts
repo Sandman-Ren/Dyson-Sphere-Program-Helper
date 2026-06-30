@@ -52,6 +52,9 @@ const ui = {
     clickToExclude: '{{name}} — click to exclude',
     clickToInclude: '{{name}} — click to include',
   },
+  share: {
+    title: 'Component shares',
+  },
   chain: {
     title: 'Production chain',
     collapse: 'Collapse',
